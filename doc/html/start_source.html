@@ -106,16 +106,14 @@ $(document).ready(function(){initNavTree('start_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="start.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;#!/bin/bash</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;FORMAT=FLOAT_LE</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;arecord -D plughw:1,0 -r 48000 -c 1 -f $FORMAT -q | sdr $1 $2 | \</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;aplay -D plughw:1,0 -r 48000 -c 2 -f $FORMAT -t raw -q </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;arecord -D plughw:1,0 -r 48000 -c 1 -f FLOAT_LE -q | vaso</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_2ea30aa2956a8db99dd22aa5e597f384.html">bin</a></li><li class="navelem"><a class="el" href="start.html">start</a></li>
-    <li class="footer">Generated on Wed Mar 30 2016 14:58:45 for My Project by
+    <li class="footer">Generated on Wed Mar 30 2016 16:17:51 for My Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

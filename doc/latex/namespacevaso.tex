@@ -26,6 +26,8 @@ std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{Patien
 \item 
 std\+::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, auto filename)
 \item 
+\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
+\item 
 void \hyperlink{namespacevaso_a9d0e5d69685ee494d286db6ece005156}{average} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$avg, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} count, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
 \item 
 void \hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{diff} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
@@ -69,9 +71,7 @@ Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+co
 
 Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
 
-Nicholas K. Nolan
-
-Samuel Andrew Wisner, \href{mailto:awisne94@gmail.com}{\tt awisne94@gmail.\+com} 
+Nicholas K. Nolan 
 \end{DoxyAuthor}
 
 
@@ -95,6 +95,30 @@ Definition at line 58 of file definitions.\+hpp.
 
 
 \subsection{Function Documentation}
+\hypertarget{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{\index{vaso@{vaso}!average@{average}}
+\index{average@{average}!vaso@{vaso}}
+\subsubsection[{average}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float32} vaso\+::average (
+\begin{DoxyParamCaption}
+\item[{{\bf float32} $\ast$}]{data, }
+\item[{{\bf uint32}}]{size}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}
+Takes the average of all elements in an array
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the array from which to compute the average\\
+\hline
+{\em size} & the number of elements in the data array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the computed average 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file sigmath.\+hpp.
+
 \hypertarget{namespacevaso_a9d0e5d69685ee494d286db6ece005156}{\index{vaso@{vaso}!average@{average}}
 \index{average@{average}!vaso@{vaso}}
 \subsubsection[{average}]{\setlength{\rightskip}{0pt plus 5cm}void vaso\+::average (
@@ -120,7 +144,7 @@ Element-\/wise averaging along the first dimension of a two-\/dimensional array.
 \end{DoxyParams}
 
 
-Definition at line 94 of file sigmath.\+hpp.
+Definition at line 109 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_abab641a332f2e834dfcdf294c0429426}{\index{vaso@{vaso}!Current\+Data\+Name@{Current\+Data\+Name}}
 \index{Current\+Data\+Name@{Current\+Data\+Name}!vaso@{vaso}}
@@ -157,7 +181,7 @@ Computes the left-\/handed first derivative of a discrete signal. The first elem
 \end{DoxyParams}
 
 
-Definition at line 98 of file sigmath.\+hpp.
+Definition at line 113 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{\index{vaso@{vaso}!fft@{fft}}
 \index{fft@{fft}!vaso@{vaso}}
@@ -180,7 +204,7 @@ This code is based on code from \href{http://rosettacode.org/wiki/Fast_Fourier_t
 \end{DoxyParams}
 
 
-Definition at line 102 of file sigmath.\+hpp.
+Definition at line 117 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{\index{vaso@{vaso}!Initial\+Data\+Name@{Initial\+Data\+Name}}
 \index{Initial\+Data\+Name@{Initial\+Data\+Name}!vaso@{vaso}}
@@ -225,7 +249,7 @@ Computes the magitude of an array of complex numbers.
 \end{DoxyParams}
 
 
-Definition at line 150 of file sigmath.\+hpp.
+Definition at line 165 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_a649803d9dd74002f7975dba6b48b56ce}{\index{vaso@{vaso}!max@{max}}
 \index{max@{max}!vaso@{vaso}}
@@ -246,7 +270,7 @@ Finds the maximum value in an array.
 \end{DoxyParams}
 
 
-Definition at line 154 of file sigmath.\+hpp.
+Definition at line 169 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{\index{vaso@{vaso}!Patient\+Name@{Patient\+Name}}
 \index{Patient\+Name@{Patient\+Name}!vaso@{vaso}}
@@ -355,7 +379,7 @@ Applies an nth-\/order moving-\/average filter to a discrete signal.
 \end{DoxyParams}
 
 
-Definition at line 158 of file sigmath.\+hpp.
+Definition at line 173 of file sigmath.\+hpp.
 
 \hypertarget{namespacevaso_aec526a2735f71ef68cea3e00ae943edf}{\index{vaso@{vaso}!Start\+Processing@{Start\+Processing}}
 \index{Start\+Processing@{Start\+Processing}!vaso@{vaso}}

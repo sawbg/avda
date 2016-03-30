@@ -10,7 +10,7 @@
   \indexspace
 
   \item {diff}
-    \subitem {vaso}, \hyperpage{8}
+    \subitem {vaso}, \hyperpage{9}
 
   \indexspace
 
@@ -55,7 +55,7 @@
 
   \item {vaso}, \hyperpage{7}
     \subitem {average}, \hyperpage{8}
-    \subitem {diff}, \hyperpage{8}
+    \subitem {diff}, \hyperpage{9}
     \subitem {fft}, \hyperpage{9}
     \subitem {Left}, \hyperpage{8}
     \subitem {mag}, \hyperpage{9}

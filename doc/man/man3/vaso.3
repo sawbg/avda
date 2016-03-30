@@ -35,6 +35,9 @@ contains functions related to the file I/O use in this program
 .RI "std::string \fBWriteParams\fP (\fBDataParams\fP params, auto filename)"
 .br
 .ti -1c
+.RI "\fBfloat32\fP \fBaverage\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
 .RI "void \fBaverage\fP (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
 .br
 .ti -1c
@@ -90,9 +93,7 @@ Samuel Andrew Wisner, awisner94@gmail.com
 .PP
 Samuel Andrew Wisner, awisner94@gmail.com 
 .PP
-Nicholas K\&. Nolan
-.PP
-Samuel Andrew Wisner, awisne94@gmail.com 
+Nicholas K\&. Nolan 
 .RE
 .PP
 
@@ -111,6 +112,24 @@ The side of the head to which a recording pertains\&.
 Definition at line 58 of file definitions\&.hpp\&.
 .SH "Function Documentation"
 .PP 
+.SS "\fBfloat32\fP vaso::average (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Takes the average of all elements in an array
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the array from which to compute the average
+.br
+\fIsize\fP the number of elements in the data array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the computed average 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file sigmath\&.hpp\&.
 .SS "void vaso::average (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fPcount, \fBuint32\fPsize)"
 Element-wise averaging along the first dimension of a two-dimensional array\&.
 .PP
@@ -127,7 +146,7 @@ Element-wise averaging along the first dimension of a two-dimensional array\&.
 .PP
 
 .PP
-Definition at line 94 of file sigmath\&.hpp\&.
+Definition at line 109 of file sigmath\&.hpp\&.
 .SS "std::string vaso::CurrentDataName ()"
 Gets a data-based name to which the file(s) created in a session to be saved\&.
 .PP
@@ -151,7 +170,7 @@ Computes the left-handed first derivative of a discrete signal\&. The first elem
 .PP
 
 .PP
-Definition at line 98 of file sigmath\&.hpp\&.
+Definition at line 113 of file sigmath\&.hpp\&.
 .SS "void vaso::fft (\fBcfloat32\fP *data, \fBuint32\fPsize)"
 Replaces the values of an array of cfloat32's with the array's DFT using a decimation-in-frequency algorithm\&.
 .PP
@@ -166,7 +185,7 @@ This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transfo
 .PP
 
 .PP
-Definition at line 102 of file sigmath\&.hpp\&.
+Definition at line 117 of file sigmath\&.hpp\&.
 .SS "std::string vaso::InitialDataName (autodir)"
 Finds the filename of the oldest (i\&.e\&., baseline) data is saved\&.
 .PP
@@ -197,7 +216,7 @@ Computes the magitude of an array of complex numbers\&.
 .PP
 
 .PP
-Definition at line 150 of file sigmath\&.hpp\&.
+Definition at line 165 of file sigmath\&.hpp\&.
 .SS "void vaso::max (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Finds the maximum value in an array\&.
 .PP
@@ -210,7 +229,7 @@ Finds the maximum value in an array\&.
 .PP
 
 .PP
-Definition at line 154 of file sigmath\&.hpp\&.
+Definition at line 169 of file sigmath\&.hpp\&.
 .SS "std::string vaso::PatientName ()"
 Prompts a user to enter a first, middle, and last name for a patients and creates a directory (if necessary) in which all of a patient's data can be saved\&.
 .PP
@@ -283,7 +302,7 @@ Applies an nth-order moving-average filter to a discrete signal\&.
 .PP
 
 .PP
-Definition at line 158 of file sigmath\&.hpp\&.
+Definition at line 173 of file sigmath\&.hpp\&.
 .SS "void vaso::StartProcessing (\fBProcData\fPprocdata)"
 Begins processing the recorded data\&. Should be called before or immediately after the first recording\&.
 .PP

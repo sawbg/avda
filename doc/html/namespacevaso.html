@@ -132,6 +132,8 @@ Functions</h2></td></tr>
 <tr class="separator:a6f1a23c617aae2e2c4af5e8016b4d03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#ad8543c0caabf3836b4a93a78e0d487d1">WriteParams</a> (<a class="el" href="structDataParams.html">DataParams</a> params, auto filename)</td></tr>
 <tr class="separator:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3205136b1cd04b4c6b9d7be73661796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#ad3205136b1cd04b4c6b9d7be73661796">average</a> (<a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *data, <a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> size)</td></tr>
+<tr class="separator:ad3205136b1cd04b4c6b9d7be73661796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0e5d69685ee494d286db6ece005156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a9d0e5d69685ee494d286db6ece005156">average</a> (<a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *data, <a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *avg, <a class="el" href="definitions_8hpp.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> count, <a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> size)</td></tr>
 <tr class="separator:a9d0e5d69685ee494d286db6ece005156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d108bce812e906d8b1810815774c7ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a7d108bce812e906d8b1810815774c7ea">diff</a> (<a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *data, <a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> size)</td></tr>
@@ -168,9 +170,7 @@ Variables</h2></td></tr>
 <dd>
 Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd>
 <dd>
-Nicholas K. Nolan</dd>
-<dd>
-Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'e94'+'@g'+'mai'+'l.'+'com'; return false;">awisn<span style="display: none;">.nosp@m.</span>e94@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+Nicholas K. Nolan </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="a77c5d9704657d49d456f691ddd8abf7c"></a>
 <div class="memitem">
@@ -202,6 +202,43 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ad3205136b1cd04b4c6b9d7be73661796"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> vaso::average </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a>&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Takes the average of all elements in an array</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the array from which to compute the average</td></tr>
+    <tr><td class="paramname">size</td><td>the number of elements in the data array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the computed average </dd></dl>
+
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00105">105</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9d0e5d69685ee494d286db6ece005156"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +285,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00094">94</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00109">109</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +340,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00098">98</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00113">113</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -340,7 +377,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00102">102</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00117">117</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -409,7 +446,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00150">150</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00165">165</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -445,7 +482,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00154">154</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00169">169</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -601,7 +638,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00158">158</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+<p>Definition at line <a class="el" href="sigmath_8hpp_source.html#l00173">173</a> of file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
 
 </div>
 </div>
@@ -687,7 +724,7 @@ Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacevaso.html">vaso</a></li>
-    <li class="footer">Generated on Wed Mar 30 2016 14:58:45 for My Project by
+    <li class="footer">Generated on Wed Mar 30 2016 16:17:51 for My Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
