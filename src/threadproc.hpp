@@ -16,9 +16,9 @@ namespace vaso {
 	
 	/**
 	 * Computes recording parameters in a separate thread in a thread-safe
-	 * manner. AUtomatically waits for each recording to finish before
+	 * manner. Automatically waits for each recording to finish before
 	 * processing it. This file is meant to be called ONLY from the
-	 * StartProcessing function.
+	 * StartProcessing() function.
 	 *
 	 * @param procdata a struct containing the values necessary to processing
 	 * the audio
@@ -39,7 +39,7 @@ namespace vaso {
 
 	// DEFINITIONS
 	
-	void* processing(void* procdata) {
+	void* process(void* procdata) {
 
 	}
 
