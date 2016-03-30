@@ -1,49 +1,70 @@
 \begin{theindex}
 
-  \item {bin/start}, \hyperpage{13}
+  \item {average}
+    \subitem {vaso}, \hyperpage{8}
+
+  \indexspace
+
+  \item {bin/start}, \hyperpage{15}
+
+  \indexspace
+
+  \item {diff}
+    \subitem {vaso}, \hyperpage{8}
 
   \indexspace
 
   \item {fft}
-    \subitem {vaso}, \hyperpage{8}
+    \subitem {vaso}, \hyperpage{9}
 
   \indexspace
 
   \item {Left}
-    \subitem {vaso}, \hyperpage{7}
+    \subitem {vaso}, \hyperpage{8}
 
   \indexspace
 
-  \item {makefile}, \hyperpage{13}
+  \item {mag}
+    \subitem {vaso}, \hyperpage{9}
+  \item {makefile}, \hyperpage{15}
+  \item {max}
+    \subitem {vaso}, \hyperpage{9}
 
   \indexspace
 
   \item {play}
-    \subitem {vaso}, \hyperpage{8}
+    \subitem {vaso}, \hyperpage{10}
   \item {process}
-    \subitem {vaso}, \hyperpage{8}
+    \subitem {vaso}, \hyperpage{10}
   \item {processing}
-    \subitem {vaso}, \hyperpage{8}
+    \subitem {vaso}, \hyperpage{10}
 
   \indexspace
 
   \item {Right}
-    \subitem {vaso}, \hyperpage{7}
+    \subitem {vaso}, \hyperpage{8}
 
   \indexspace
 
   \item {Side}
-    \subitem {vaso}, \hyperpage{7}
+    \subitem {vaso}, \hyperpage{8}
+  \item {smooth}
+    \subitem {vaso}, \hyperpage{10}
 
   \indexspace
 
   \item {vaso}, \hyperpage{7}
-    \subitem {fft}, \hyperpage{8}
-    \subitem {Left}, \hyperpage{7}
-    \subitem {play}, \hyperpage{8}
-    \subitem {process}, \hyperpage{8}
-    \subitem {processing}, \hyperpage{8}
-    \subitem {Right}, \hyperpage{7}
-    \subitem {Side}, \hyperpage{7}
+    \subitem {average}, \hyperpage{8}
+    \subitem {diff}, \hyperpage{8}
+    \subitem {fft}, \hyperpage{9}
+    \subitem {Left}, \hyperpage{8}
+    \subitem {mag}, \hyperpage{9}
+    \subitem {max}, \hyperpage{9}
+    \subitem {play}, \hyperpage{10}
+    \subitem {process}, \hyperpage{10}
+    \subitem {processing}, \hyperpage{10}
+    \subitem {Right}, \hyperpage{8}
+    \subitem {Side}, \hyperpage{8}
+    \subitem {smooth}, \hyperpage{10}
 
 \end{theindex}

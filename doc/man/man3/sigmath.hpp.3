@@ -8,6 +8,8 @@ src/sigmath.hpp \-
 .PP
 \fC#include <complex>\fP
 .br
+\fC#include <initializer_list>\fP
+.br
 \fC#include 'definitions\&.hpp'\fP
 .br
 
@@ -17,12 +19,28 @@ src/sigmath.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
+.RI "\fIcontains functions related to the file I/O use in this program \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
+.RI "void \fBvaso::average\fP (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBvaso::diff\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
 .RI "void \fBvaso::fft\fP (\fBcfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBvaso::mag\fP (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBvaso::max\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBvaso::smooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
 .br
 .in -1c
 .SH "Author"

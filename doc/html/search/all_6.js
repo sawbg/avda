@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left',['Left',['../namespacevaso.html#a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff',1,'vaso']]]
+  ['initialdataname',['InitialDataName',['../namespacevaso.html#af8f45524d4770053c2b812ce33a7095f',1,'vaso']]]
 ];

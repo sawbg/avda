@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['currentdataname',['CurrentDataName',['../namespacevaso.html#abab641a332f2e834dfcdf294c0429426',1,'vaso']]]
+  ['average',['average',['../namespacevaso.html#a9d0e5d69685ee494d286db6ece005156',1,'vaso']]]
 ];

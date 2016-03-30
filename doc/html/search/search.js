@@ -7,11 +7,11 @@
 
 var indexSectionsWithContent =
 {
-  0: "bcdefilmprstuvw",
+  0: "abcdefilmprstuvw",
   1: "dp",
   2: "v",
   3: "dfmst",
-  4: "cfimprsw",
+  4: "acdfimprsw",
   5: "p",
   6: "bcfsu",
   7: "s",

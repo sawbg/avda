@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialdataname',['InitialDataName',['../namespacevaso.html#a38d8ffc663580ac23ac3fa9f673257f0',1,'vaso']]]
+  ['diff',['diff',['../namespacevaso.html#a7d108bce812e906d8b1810815774c7ea',1,'vaso']]]
 ];

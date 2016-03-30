@@ -6,6 +6,8 @@ src/sound.hpp \-
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <string>\fP
+.br
 \fC#include 'definitions\&.hpp'\fP
 .br
 
@@ -15,12 +17,13 @@ src/sound.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
+.RI "\fIcontains functions related to the file I/O use in this program \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "void \fBvaso::play\fP (std::string filename)"
+.RI "void \fBvaso::play\fP (auto filename)"
 .br
 .in -1c
 .SH "Author"

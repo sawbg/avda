@@ -7,51 +7,56 @@
 \contentsline {chapter}{\numberline {4}Namespace Documentation}{7}{chapter.4}
 \contentsline {section}{\numberline {4.1}vaso Namespace Reference}{7}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Enumeration Type Documentation}{7}{subsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Side}{7}{subsubsection.4.1.2.1}
+\contentsline {subsection}{\numberline {4.1.2}Enumeration Type Documentation}{8}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Side}{8}{subsubsection.4.1.2.1}
 \contentsline {subsection}{\numberline {4.1.3}Function Documentation}{8}{subsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{8}{subsubsection.4.1.3.1}
-\contentsline {subsubsection}{\numberline {4.1.3.2}fft}{8}{subsubsection.4.1.3.2}
-\contentsline {subsubsection}{\numberline {4.1.3.3}Initial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{8}{subsubsection.4.1.3.3}
-\contentsline {subsubsection}{\numberline {4.1.3.4}Patient\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{8}{subsubsection.4.1.3.4}
-\contentsline {subsubsection}{\numberline {4.1.3.5}play}{8}{subsubsection.4.1.3.5}
-\contentsline {subsubsection}{\numberline {4.1.3.6}process}{8}{subsubsection.4.1.3.6}
-\contentsline {subsubsection}{\numberline {4.1.3.7}processing}{8}{subsubsection.4.1.3.7}
-\contentsline {subsubsection}{\numberline {4.1.3.8}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params}{8}{subsubsection.4.1.3.8}
-\contentsline {subsubsection}{\numberline {4.1.3.9}Start\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Processing}{8}{subsubsection.4.1.3.9}
-\contentsline {subsubsection}{\numberline {4.1.3.10}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params}{8}{subsubsection.4.1.3.10}
-\contentsline {subsection}{\numberline {4.1.4}Variable Documentation}{9}{subsection.4.1.4}
-\contentsline {subsubsection}{\numberline {4.1.4.1}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H}{9}{subsubsection.4.1.4.1}
-\contentsline {chapter}{\numberline {5}Class Documentation}{11}{chapter.5}
-\contentsline {section}{\numberline {5.1}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params Struct Reference}{11}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{11}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Proc\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data Struct Reference}{11}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}
-\contentsline {chapter}{\numberline {6}File Documentation}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}bin/start File Reference}{13}{section.6.1}
-\contentsline {section}{\numberline {6.2}etc/doxygen.config File Reference}{13}{section.6.2}
-\contentsline {section}{\numberline {6.3}makefile File Reference}{13}{section.6.3}
-\contentsline {section}{\numberline {6.4}src/definitions.hpp File Reference}{13}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Macro Definition Documentation}{14}{subsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.1.1}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M}{14}{subsubsection.6.4.1.1}
-\contentsline {subsection}{\numberline {6.4.2}Typedef Documentation}{14}{subsection.6.4.2}
-\contentsline {subsubsection}{\numberline {6.4.2.1}byte}{14}{subsubsection.6.4.2.1}
-\contentsline {subsubsection}{\numberline {6.4.2.2}cfloat32}{15}{subsubsection.6.4.2.2}
-\contentsline {subsubsection}{\numberline {6.4.2.3}float32}{15}{subsubsection.6.4.2.3}
-\contentsline {subsubsection}{\numberline {6.4.2.4}float64}{15}{subsubsection.6.4.2.4}
-\contentsline {subsubsection}{\numberline {6.4.2.5}sint16}{15}{subsubsection.6.4.2.5}
-\contentsline {subsubsection}{\numberline {6.4.2.6}sint32}{15}{subsubsection.6.4.2.6}
-\contentsline {subsubsection}{\numberline {6.4.2.7}sint64}{15}{subsubsection.6.4.2.7}
-\contentsline {subsubsection}{\numberline {6.4.2.8}sint8}{15}{subsubsection.6.4.2.8}
-\contentsline {subsubsection}{\numberline {6.4.2.9}uint16}{15}{subsubsection.6.4.2.9}
-\contentsline {subsubsection}{\numberline {6.4.2.10}uint32}{15}{subsubsection.6.4.2.10}
-\contentsline {subsubsection}{\numberline {6.4.2.11}uint64}{15}{subsubsection.6.4.2.11}
-\contentsline {subsubsection}{\numberline {6.4.2.12}uint8}{15}{subsubsection.6.4.2.12}
-\contentsline {section}{\numberline {6.5}src/fileio.hpp File Reference}{16}{section.6.5}
-\contentsline {section}{\numberline {6.6}src/main.cpp File Reference}{17}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Function Documentation}{17}{subsection.6.6.1}
-\contentsline {subsubsection}{\numberline {6.6.1.1}main}{17}{subsubsection.6.6.1.1}
-\contentsline {section}{\numberline {6.7}src/sigmath.hpp File Reference}{17}{section.6.7}
-\contentsline {section}{\numberline {6.8}src/sound.hpp File Reference}{18}{section.6.8}
-\contentsline {section}{\numberline {6.9}src/threadproc.hpp File Reference}{19}{section.6.9}
-\contentsline {chapter}{Index}{20}{section*.20}
+\contentsline {subsubsection}{\numberline {4.1.3.1}average}{8}{subsubsection.4.1.3.1}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Current\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{8}{subsubsection.4.1.3.2}
+\contentsline {subsubsection}{\numberline {4.1.3.3}diff}{8}{subsubsection.4.1.3.3}
+\contentsline {subsubsection}{\numberline {4.1.3.4}fft}{9}{subsubsection.4.1.3.4}
+\contentsline {subsubsection}{\numberline {4.1.3.5}Initial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{9}{subsubsection.4.1.3.5}
+\contentsline {subsubsection}{\numberline {4.1.3.6}mag}{9}{subsubsection.4.1.3.6}
+\contentsline {subsubsection}{\numberline {4.1.3.7}max}{9}{subsubsection.4.1.3.7}
+\contentsline {subsubsection}{\numberline {4.1.3.8}Patient\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Name}{10}{subsubsection.4.1.3.8}
+\contentsline {subsubsection}{\numberline {4.1.3.9}play}{10}{subsubsection.4.1.3.9}
+\contentsline {subsubsection}{\numberline {4.1.3.10}process}{10}{subsubsection.4.1.3.10}
+\contentsline {subsubsection}{\numberline {4.1.3.11}processing}{10}{subsubsection.4.1.3.11}
+\contentsline {subsubsection}{\numberline {4.1.3.12}Read\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params}{10}{subsubsection.4.1.3.12}
+\contentsline {subsubsection}{\numberline {4.1.3.13}smooth}{10}{subsubsection.4.1.3.13}
+\contentsline {subsubsection}{\numberline {4.1.3.14}Start\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Processing}{11}{subsubsection.4.1.3.14}
+\contentsline {subsubsection}{\numberline {4.1.3.15}Write\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params}{11}{subsubsection.4.1.3.15}
+\contentsline {subsection}{\numberline {4.1.4}Variable Documentation}{11}{subsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.4.1}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}H}{11}{subsubsection.4.1.4.1}
+\contentsline {chapter}{\numberline {5}Class Documentation}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params Struct Reference}{13}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{13}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Proc\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Data Struct Reference}{13}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{13}{subsection.5.2.1}
+\contentsline {chapter}{\numberline {6}File Documentation}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}bin/start File Reference}{15}{section.6.1}
+\contentsline {section}{\numberline {6.2}etc/doxygen.config File Reference}{15}{section.6.2}
+\contentsline {section}{\numberline {6.3}makefile File Reference}{15}{section.6.3}
+\contentsline {section}{\numberline {6.4}src/definitions.hpp File Reference}{15}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Macro Definition Documentation}{16}{subsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.1.1}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M}{16}{subsubsection.6.4.1.1}
+\contentsline {subsection}{\numberline {6.4.2}Typedef Documentation}{16}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}byte}{16}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}cfloat32}{17}{subsubsection.6.4.2.2}
+\contentsline {subsubsection}{\numberline {6.4.2.3}float32}{17}{subsubsection.6.4.2.3}
+\contentsline {subsubsection}{\numberline {6.4.2.4}float64}{17}{subsubsection.6.4.2.4}
+\contentsline {subsubsection}{\numberline {6.4.2.5}sint16}{17}{subsubsection.6.4.2.5}
+\contentsline {subsubsection}{\numberline {6.4.2.6}sint32}{17}{subsubsection.6.4.2.6}
+\contentsline {subsubsection}{\numberline {6.4.2.7}sint64}{17}{subsubsection.6.4.2.7}
+\contentsline {subsubsection}{\numberline {6.4.2.8}sint8}{17}{subsubsection.6.4.2.8}
+\contentsline {subsubsection}{\numberline {6.4.2.9}uint16}{17}{subsubsection.6.4.2.9}
+\contentsline {subsubsection}{\numberline {6.4.2.10}uint32}{17}{subsubsection.6.4.2.10}
+\contentsline {subsubsection}{\numberline {6.4.2.11}uint64}{17}{subsubsection.6.4.2.11}
+\contentsline {subsubsection}{\numberline {6.4.2.12}uint8}{17}{subsubsection.6.4.2.12}
+\contentsline {section}{\numberline {6.5}src/fileio.hpp File Reference}{18}{section.6.5}
+\contentsline {section}{\numberline {6.6}src/main.cpp File Reference}{18}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Function Documentation}{19}{subsection.6.6.1}
+\contentsline {subsubsection}{\numberline {6.6.1.1}main}{19}{subsubsection.6.6.1.1}
+\contentsline {section}{\numberline {6.7}src/sigmath.hpp File Reference}{19}{section.6.7}
+\contentsline {section}{\numberline {6.8}src/sound.hpp File Reference}{20}{section.6.8}
+\contentsline {section}{\numberline {6.9}src/threadproc.hpp File Reference}{21}{section.6.9}
+\contentsline {chapter}{Index}{23}{section*.20}

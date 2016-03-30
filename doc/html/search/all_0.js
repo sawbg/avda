@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['byte',['byte',['../definitions_8hpp.html#a0c8186d9b9b7880309c27230bbb5e69d',1,'definitions.hpp']]]
+  ['average',['average',['../namespacevaso.html#a9d0e5d69685ee494d286db6ece005156',1,'vaso']]]
 ];

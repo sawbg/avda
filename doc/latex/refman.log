@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.3.4)  30 MAR 2016 11:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.3.4)  30 MAR 2016 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1062,11 +1062,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 13.
+(Font)              scaled to size 6.29996pt on input line 14.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 14.
  [3
 
 ])
@@ -1113,137 +1113,166 @@ Chapter 3.
 Chapter 4.
 (./namespacevaso.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 4.
+(Font)              scaled to size 10.79993pt on input line 9.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 7.
+(Font)              scaled to size 10.79993pt on input line 9.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 12.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 7.
+(Font)              scaled to size 8.99994pt on input line 12.
+[7]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 42.
+(Font)              scaled to size 8.99994pt on input line 67.
 
-Underfull \hbox (badness 10000) detected at line 42
+Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 43.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 68.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 52.
+(Font)              using `T1/pcr/m/n' instead on input line 81.
 
 
-Underfull \hbox (badness 10000) detected at line 54
+Underfull \hbox (badness 10000) detected at line 83
 [][][]
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 58.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 87.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 58.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 87.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 8.99994pt on input line 58.
-[7]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 75.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 87.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
 (Font)              scaled to size 8.99994pt on input line 87.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 107.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 107.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 94.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 94.
- [8]) [9] [10
+(Font)              scaled to size 8.99994pt on input line 112.
+
+Underfull \hbox (badness 10000) detected at line 134
+[][][]
+ []
+
+[8]
+Underfull \hbox (badness 10000) detected at line 199
+[][][]
+ []
+
+[9]
+Underfull \hbox (badness 10000) detected at line 262
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 301
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 329
+[][][]
+ []
+
+[10]) [11] [12
 
 ]
 Chapter 5.
-(./structDataParams.tex) (./structProcData.tex) [11] [12
+(./structDataParams.tex) (./structProcData.tex) [13] [14
 
 ]
 Chapter 6.
 (./start.tex) (./doxygen_8config.tex) (./makefile.tex) (./definitions_8hpp.tex
-<definitions_8hpp__incl.pdf, id=445, 176.66pt x 156.585pt>
+<definitions_8hpp__incl.pdf, id=508, 176.66pt x 156.585pt>
 File: definitions_8hpp__incl.pdf Graphic file (type pdf)
 
 <use definitions_8hpp__incl.pdf>
 Package pdftex.def Info: definitions_8hpp__incl.pdf used on input line 10.
 (pdftex.def)             Requested size: 176.0pt x 156.00162pt.
 
-<definitions_8hpp__dep__incl.pdf, id=446, 562.1pt x 156.585pt>
+<definitions_8hpp__dep__incl.pdf, id=509, 562.1pt x 156.585pt>
 File: definitions_8hpp__dep__incl.pdf Graphic file (type pdf)
 
 <use definitions_8hpp__dep__incl.pdf>
 Package pdftex.def Info: definitions_8hpp__dep__incl.pdf used on input line 18.
 
 (pdftex.def)             Requested size: 350.0pt x 97.49982pt.
- [13 <./definitions_8hpp__incl.pdf> <./definitions_8hpp__dep__incl.pdf
+ [15 <./definitions_8hpp__incl.pdf> <./definitions_8hpp__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./definitions_8hpp__dep__incl.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
 >]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 37.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 37.
+(Font)              scaled to size 8.09995pt on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 32.
 
 Underfull \hbox (badness 10000) detected at line 82
 [][][]
  []
 
-[14]) (./fileio_8hpp.tex
-<fileio_8hpp__incl.pdf, id=505, 293.095pt x 212.795pt>
+[16]) (./fileio_8hpp.tex
+<fileio_8hpp__incl.pdf, id=567, 293.095pt x 212.795pt>
 File: fileio_8hpp__incl.pdf Graphic file (type pdf)
 
 <use fileio_8hpp__incl.pdf>
 Package pdftex.def Info: fileio_8hpp__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 292.0pt x 211.99895pt.
- [15]) (./main_8cpp.tex
-<main_8cpp__incl.pdf, id=520, 160.6pt x 212.795pt>
+ [17]) (./main_8cpp.tex
+<main_8cpp__incl.pdf, id=581, 293.095pt x 212.795pt>
 File: main_8cpp__incl.pdf Graphic file (type pdf)
  <use main_8cpp__incl.pdf>
-Package pdftex.def Info: main_8cpp__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 160.0pt x 212.00543pt.
+Package pdftex.def Info: main_8cpp__incl.pdf used on input line 12.
+(pdftex.def)             Requested size: 292.0pt x 211.99895pt.
 
-Underfull \vbox (badness 5475) has occurred while \output is active []
-
- [16 <./fileio_8hpp__incl.pdf>]) (./sigmath_8hpp.tex
-<sigmath_8hpp__incl.pdf, id=536, 197.73875pt x 212.795pt>
+[18 <./fileio_8hpp__incl.pdf>]) (./sigmath_8hpp.tex
+<sigmath_8hpp__incl.pdf, id=596, 264.99pt x 212.795pt>
 File: sigmath_8hpp__incl.pdf Graphic file (type pdf)
 
 <use sigmath_8hpp__incl.pdf>
-Package pdftex.def Info: sigmath_8hpp__incl.pdf used on input line 11.
-(pdftex.def)             Requested size: 197.0pt x 212.0022pt.
+Package pdftex.def Info: sigmath_8hpp__incl.pdf used on input line 12.
+(pdftex.def)             Requested size: 264.0pt x 212.01518pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17 <./main_8cpp__incl.pdf>]) (./sound_8hpp.tex
-<sound_8hpp__incl.pdf, id=553, 160.6pt x 212.795pt>
+ [19 <./main_8cpp__incl.pdf>]) (./sound_8hpp.tex
+<sound_8hpp__incl.pdf, id=632, 220.825pt x 212.795pt>
 File: sound_8hpp__incl.pdf Graphic file (type pdf)
- <use sound_8hpp__incl.pdf>
-Package pdftex.def Info: sound_8hpp__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 160.0pt x 212.00543pt.
 
-[18 <./sigmath_8hpp__incl.pdf> <./sound_8hpp__incl.pdf
+<use sound_8hpp__incl.pdf>
+Package pdftex.def Info: sound_8hpp__incl.pdf used on input line 11.
+(pdftex.def)             Requested size: 220.0pt x 212.00868pt.
 
-pdfTeX warning: pdflatex (file ./sound_8hpp__incl.pdf): PDF inclusion: multiple
- pdfs with page group included in a single page
->]) (./threadproc_8hpp.tex
-<threadproc_8hpp__incl.pdf, id=573, 236.885pt x 212.795pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./sigmath_8hpp__incl.pdf>]) (./threadproc_8hpp.tex
+<threadproc_8hpp__incl.pdf, id=648, 236.885pt x 212.795pt>
 File: threadproc_8hpp__incl.pdf Graphic file (type pdf)
 
 <use threadproc_8hpp__incl.pdf>
 Package pdftex.def Info: threadproc_8hpp__incl.pdf used on input line 11.
 (pdftex.def)             Requested size: 236.0pt x 212.00543pt.
-) [19 <./threadproc_8hpp__incl.pdf>]
-(./refman.ind [20
+ [21 <./sound_8hpp__incl.pdf> <./threadproc_8hpp__incl.pdf
+
+pdfTeX warning: pdflatex (file ./threadproc_8hpp__incl.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]) [22] (./refman.ind [23
 
 
 ])
@@ -1253,7 +1282,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 4377EDD9BFD274182548D52056BE1CD7;9928.
+(rerunfilecheck)             Checksum: C7901EE05274A49C8C9678F8A3AC5E7D;10648.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1261,13 +1290,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 170.
  ) 
 Here is how much of TeX's memory you used:
- 12671 strings out of 495020
- 176623 string characters out of 6181325
- 254896 words of memory out of 5000000
- 15491 multiletter control sequences out of 15000+600000
- 84671 words of font info for 113 fonts, out of 8000000 for 9000
+ 12707 strings out of 495020
+ 177460 string characters out of 6181325
+ 256176 words of memory out of 5000000
+ 15514 multiletter control sequences out of 15000+600000
+ 86470 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 48i,17n,43p,1496b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,17n,43p,1497b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
@@ -1277,10 +1306,10 @@ urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (24 pages, 157997 bytes).
+Output written on refman.pdf (27 pages, 170484 bytes).
 PDF statistics:
- 676 PDF objects out of 1000 (max. 8388607)
- 620 compressed objects within 7 object streams
- 137 named destinations out of 1000 (max. 500000)
- 492 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 714 compressed objects within 8 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 
