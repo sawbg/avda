@@ -1,0 +1,197 @@
+\hypertarget{namespacevaso}{\section{vaso Namespace Reference}
+\label{namespacevaso}\index{vaso@{vaso}}
+}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side} \{ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Side\+::\+Left}, 
+\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Side\+::\+Right}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{Current\+Data\+Name} ()
+\item 
+std\+::string \hyperlink{namespacevaso_a38d8ffc663580ac23ac3fa9f673257f0}{Initial\+Data\+Name} (std\+::string dir)
+\item 
+std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{Patient\+Name} ()
+\item 
+\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespacevaso_ad97ffefae9a9b6ae48eba1103c0cb8e3}{Read\+Params} (std\+::string filename)
+\item 
+std\+::string \hyperlink{namespacevaso_aa17e0f380924c116f8d835f42de7187c}{Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, std\+::string filename)
+\item 
+void \hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{fft} (\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
+\item 
+void \hyperlink{namespacevaso_ae6ba895cfb9c97f341da9b17246f38a9}{play} (std\+::string filename)
+\item 
+void $\ast$ \hyperlink{namespacevaso_acd767ffd09e8d7323a0275e8f88a6de2}{process} (void $\ast$procdata)
+\item 
+void \hyperlink{namespacevaso_aec526a2735f71ef68cea3e00ae943edf}{Start\+Processing} (\hyperlink{structProcData}{Proc\+Data} procdata)
+\item 
+void $\ast$ \hyperlink{namespacevaso_ae553d67666b43a570bbb1753b2a624d2}{processing} (void $\ast$procdata)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H} = \char`\"{}/home/pi/patients/\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com}
+
+Samuel Andrew Wisner, \href{mailto:awisne94@gmail.com}{\tt awisne94@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{\index{vaso@{vaso}!Side@{Side}}
+\index{Side@{Side}!vaso@{vaso}}
+\subsubsection[{Side}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf vaso\+::\+Side}\hspace{0.3cm}{\ttfamily [strong]}}}\label{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Left@{Left}!vaso@{vaso}}\index{vaso@{vaso}!Left@{Left}}\item[{\em 
+\hypertarget{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Left}\label{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}
+}]\index{Right@{Right}!vaso@{vaso}}\index{vaso@{vaso}!Right@{Right}}\item[{\em 
+\hypertarget{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Right}\label{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 57 of file definitions.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacevaso_abab641a332f2e834dfcdf294c0429426}{\index{vaso@{vaso}!Current\+Data\+Name@{Current\+Data\+Name}}
+\index{Current\+Data\+Name@{Current\+Data\+Name}!vaso@{vaso}}
+\subsubsection[{Current\+Data\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Current\+Data\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_abab641a332f2e834dfcdf294c0429426}
+
+
+Definition at line 23 of file fileio.\+hpp.
+
+\hypertarget{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{\index{vaso@{vaso}!fft@{fft}}
+\index{fft@{fft}!vaso@{vaso}}
+\subsubsection[{fft}]{\setlength{\rightskip}{0pt plus 5cm}void vaso\+::fft (
+\begin{DoxyParamCaption}
+\item[{{\bf cfloat32} $\ast$}]{data, }
+\item[{{\bf uint32}}]{size}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}
+Replaces the values of an array of cfloat32's with the array's D\+F\+T using a decimation-\/in-\/frequency algorithm.
+
+This code is based on code from \href{http://rosettacode.org/wiki/Fast_Fourier_transform#C.2B.2B}{\tt http\+://rosettacode.\+org/wiki/\+Fast\+\_\+\+Fourier\+\_\+transform\#\+C.\+2\+B.\+2\+B}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the array whose values should be replaced with its D\+F\+T\\
+\hline
+{\em size} & the number of elements in the data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file sigmath.\+hpp.
+
+\hypertarget{namespacevaso_a38d8ffc663580ac23ac3fa9f673257f0}{\index{vaso@{vaso}!Initial\+Data\+Name@{Initial\+Data\+Name}}
+\index{Initial\+Data\+Name@{Initial\+Data\+Name}!vaso@{vaso}}
+\subsubsection[{Initial\+Data\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Initial\+Data\+Name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{dir}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_a38d8ffc663580ac23ac3fa9f673257f0}
+
+
+Definition at line 30 of file fileio.\+hpp.
+
+\hypertarget{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{\index{vaso@{vaso}!Patient\+Name@{Patient\+Name}}
+\index{Patient\+Name@{Patient\+Name}!vaso@{vaso}}
+\subsubsection[{Patient\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Patient\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}
+
+
+Definition at line 37 of file fileio.\+hpp.
+
+\hypertarget{namespacevaso_ae6ba895cfb9c97f341da9b17246f38a9}{\index{vaso@{vaso}!play@{play}}
+\index{play@{play}!vaso@{vaso}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void vaso\+::play (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_ae6ba895cfb9c97f341da9b17246f38a9}
+
+
+Definition at line 11 of file sound.\+hpp.
+
+\hypertarget{namespacevaso_acd767ffd09e8d7323a0275e8f88a6de2}{\index{vaso@{vaso}!process@{process}}
+\index{process@{process}!vaso@{vaso}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vaso\+::process (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{procdata}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_acd767ffd09e8d7323a0275e8f88a6de2}
+\hypertarget{namespacevaso_ae553d67666b43a570bbb1753b2a624d2}{\index{vaso@{vaso}!processing@{processing}}
+\index{processing@{processing}!vaso@{vaso}}
+\subsubsection[{processing}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vaso\+::processing (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{procdata}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_ae553d67666b43a570bbb1753b2a624d2}
+
+
+Definition at line 28 of file threadproc.\+hpp.
+
+\hypertarget{namespacevaso_ad97ffefae9a9b6ae48eba1103c0cb8e3}{\index{vaso@{vaso}!Read\+Params@{Read\+Params}}
+\index{Read\+Params@{Read\+Params}!vaso@{vaso}}
+\subsubsection[{Read\+Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\+Params} vaso\+::\+Read\+Params (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_ad97ffefae9a9b6ae48eba1103c0cb8e3}
+
+
+Definition at line 44 of file fileio.\+hpp.
+
+\hypertarget{namespacevaso_aec526a2735f71ef68cea3e00ae943edf}{\index{vaso@{vaso}!Start\+Processing@{Start\+Processing}}
+\index{Start\+Processing@{Start\+Processing}!vaso@{vaso}}
+\subsubsection[{Start\+Processing}]{\setlength{\rightskip}{0pt plus 5cm}void vaso\+::\+Start\+Processing (
+\begin{DoxyParamCaption}
+\item[{{\bf Proc\+Data}}]{procdata}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_aec526a2735f71ef68cea3e00ae943edf}
+
+
+Definition at line 32 of file threadproc.\+hpp.
+
+\hypertarget{namespacevaso_aa17e0f380924c116f8d835f42de7187c}{\index{vaso@{vaso}!Write\+Params@{Write\+Params}}
+\index{Write\+Params@{Write\+Params}!vaso@{vaso}}
+\subsubsection[{Write\+Params}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Write\+Params (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Params}}]{params, }
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_aa17e0f380924c116f8d835f42de7187c}
+
+
+Definition at line 51 of file fileio.\+hpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{\index{vaso@{vaso}!P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}}
+\index{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}!vaso@{vaso}}
+\subsubsection[{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string vaso\+::\+P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H = \char`\"{}/home/pi/patients/\char`\"{}}}\label{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}
+
+
+Definition at line 18 of file fileio.\+hpp.
+

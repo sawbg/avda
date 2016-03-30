@@ -1,0 +1,141 @@
+.TH "vaso" 3 "Wed Mar 30 2016" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vaso \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSide\fP { \fBSide::Left\fP, \fBSide::Right\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBCurrentDataName\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBInitialDataName\fP (std::string dir)"
+.br
+.ti -1c
+.RI "std::string \fBPatientName\fP ()"
+.br
+.ti -1c
+.RI "\fBDataParams\fP \fBReadParams\fP (std::string filename)"
+.br
+.ti -1c
+.RI "std::string \fBWriteParams\fP (\fBDataParams\fP params, std::string filename)"
+.br
+.ti -1c
+.RI "void \fBfft\fP (\fBcfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBplay\fP (std::string filename)"
+.br
+.ti -1c
+.RI "void * \fBprocess\fP (void *procdata)"
+.br
+.ti -1c
+.RI "void \fBStartProcessing\fP (\fBProcData\fP procdata)"
+.br
+.ti -1c
+.RI "void * \fBprocessing\fP (void *procdata)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBPATIENT_PATH\fP = '/home/pi/patients/'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com
+.PP
+Samuel Andrew Wisner, awisne94@gmail.com 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBvaso::Side\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILeft \fP\fP
+.TP
+\fB\fIRight \fP\fP
+.PP
+Definition at line 57 of file definitions\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "std::string vaso::CurrentDataName ()"
+
+.PP
+Definition at line 23 of file fileio\&.hpp\&.
+.SS "void vaso::fft (\fBcfloat32\fP *data, \fBuint32\fPsize)"
+Replaces the values of an array of cfloat32's with the array's DFT using a decimation-in-frequency algorithm\&.
+.PP
+This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transform#C.2B.2B\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the array whose values should be replaced with its DFT
+.br
+\fIsize\fP the number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file sigmath\&.hpp\&.
+.SS "std::string vaso::InitialDataName (std::stringdir)"
+
+.PP
+Definition at line 30 of file fileio\&.hpp\&.
+.SS "std::string vaso::PatientName ()"
+
+.PP
+Definition at line 37 of file fileio\&.hpp\&.
+.SS "void vaso::play (std::stringfilename)"
+
+.PP
+Definition at line 11 of file sound\&.hpp\&.
+.SS "void* vaso::process (void *procdata)"
+
+.SS "void* vaso::processing (void *procdata)"
+
+.PP
+Definition at line 28 of file threadproc\&.hpp\&.
+.SS "\fBDataParams\fP vaso::ReadParams (std::stringfilename)"
+
+.PP
+Definition at line 44 of file fileio\&.hpp\&.
+.SS "void vaso::StartProcessing (\fBProcData\fPprocdata)"
+
+.PP
+Definition at line 32 of file threadproc\&.hpp\&.
+.SS "std::string vaso::WriteParams (\fBDataParams\fPparams, std::stringfilename)"
+
+.PP
+Definition at line 51 of file fileio\&.hpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const std::string vaso::PATIENT_PATH = '/home/pi/patients/'"
+
+.PP
+Definition at line 18 of file fileio\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.
