@@ -64,9 +64,6 @@ contains functions related to the file I/O use in this program
 .ti -1c
 .RI "void \fBStartProcessing\fP (\fBProcData\fP procdata)"
 .br
-.ti -1c
-.RI "void * \fBprocessing\fP (void *procdata)"
-.br
 .in -1c
 .SS "Variables"
 
@@ -254,7 +251,7 @@ Plays a WAVE file in a loop in a non-blocking manner\&.
 
 .PP
 Definition at line 19 of file sound\&.hpp\&.
-.SS "void* vaso::process (void *procdata)"
+.SS "void * vaso::process (void *procdata)"
 Computes recording parameters in a separate thread in a thread-safe manner\&. AUtomatically waits for each recording to finish before processing it\&. This file is meant to be called ONLY from the StartProcessing function\&.
 .PP
 \fBParameters:\fP
@@ -267,8 +264,6 @@ Computes recording parameters in a separate thread in a thread-safe manner\&. AU
 a (void) pointer to a \fBDataParams\fP struct containing the computed parameters for a patient 
 .RE
 .PP
-
-.SS "void* vaso::processing (void *procdata)"
 
 .PP
 Definition at line 42 of file threadproc\&.hpp\&.
