@@ -34,25 +34,26 @@ typedef double float64;
 typedef std::complex<float32> cfloat32;
 
 /**
- *
+ * A structure containing the calculated results from processing the audio
+ * recordings.
  */
 typedef struct {
 
 } DataParams;
 
 /**
- *
+ * A structure containing information needed in the process() thread.
  */
 typedef struct {
 
 } ProcData;
 
 /**
- * 
+ * This namespace contains all code related to this project.
  */
 namespace vaso {
 	/**
-	 *
+	 * The side of the head to which a recording pertains.
 	 */
 	enum class Side { Left, Right };
 }

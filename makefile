@@ -12,4 +12,6 @@ docs:
 	git commit -m "Updated documentation."
 	git push
 
+vaso:
+	$(GCC) src/main.cpp -o bin/vaso
 
