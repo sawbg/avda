@@ -39,7 +39,7 @@ namespace vaso {
 	 * @return a map of the averaged left- and right-side parameters in
 	 * DataParams structures
 	 */
-	void* Process(void* params) {
+	std::map<Side, DataParams> Process(void* params) {
 		// redeclare structure
 		ThreadParams* p = (ThreadParams*)params;
 
