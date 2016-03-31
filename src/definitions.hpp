@@ -9,7 +9,9 @@
 #define definitions_H
 
 #include <complex>
+#include <map>
 
+#define ERROR -1
 #define ENUM signed char
 
 typedef unsigned char byte;
@@ -34,12 +36,11 @@ typedef double float64;
 typedef std::complex<float32> cfloat32;
 
 /**
- * A structure containing the calculated results from processing the audio
- * recordings.
+ * Contains the calculated results from processing the audio recordings.
  */
 typedef struct {
 	float32 freq;
-	float32 nois;
+	float32 noise;
 } DataParams;
 
 /**
@@ -60,5 +61,18 @@ namespace vaso {
 	 */
 	enum class Side { Left, Right };
 }
+
+/**
+ * Contains the information needed by the thread that executes the Process()
+ * function.
+ */
+typedef struct {
+	float32** data;
+	uint8 recCount;
+	uint32 sampleCount;
+	uint32 sampleFreq;
+	uint8* counter;
+	std::map<vaso::Side, DataParams> results;
+} ThreadParams;
 
 #endif
