@@ -9,12 +9,21 @@
 #define sigmath_H
 
 #include <complex>
-#include <initializer_list>
 
 #include "definitions.hpp"
 
 namespace vaso {
 	// PROTOTYPES
+
+	/**
+	 * Ensures all elements in an array are positive. Note that this function
+	 * replaces array elements if necessary. It does not populate a new array.
+	 *
+	 * @param data the array whose elements must all be positive
+	 *
+	 * @param size the number of elements in the data array
+	 */
+	void absolute(float32* data, uint32 size);
 
 	/**
 	 * Takes the average of all elements in an array
@@ -26,6 +35,18 @@ namespace vaso {
 	 * @return the computed average
 	 */
 	float32 average(float32* data, uint32 size);
+
+	/**
+	 * Finds the averages of the elements of an array of DataParams.
+	 *
+	 * @param params the DataParams array
+	 *
+	 * @param size the number of elements in the DataParams array
+	 *
+	 * @return a DataParams structure containing the average values of the
+	 * structure's elements in the params array
+	 */
+	DataParams average(DataParams* params, uint8 size);
 
 	/**
 	 * Element-wise averaging along the first dimension of a two-dimensional
@@ -44,6 +65,19 @@ namespace vaso {
 	 * @param size the number of elements in the second dimension of data
 	 */
 	void average(float32* data, float32* avg, uint8 count, uint32 size);
+
+	/**
+	 * Converts an array of floats to "power decibels", i.e., x[n] =
+	 * 20*log10(x[n]). The decibel values are written to the same array that
+	 * contained the values to be converted. In other words, this function
+	 * should perform an in-place, element-wise conversion.
+	 *
+	 * @param data the array of values to be converted as well as the location
+	 * where the converted values will be written
+	 *
+	 * @param size the number of elements in the data array
+	 */
+	void decibels(float32* data, uint32 size);
 
 	/**
 	 * Computes the left-handed first derivative of a discrete signal. The first
@@ -85,8 +119,10 @@ namespace vaso {
 	 * @param data the array whose maximum value is to be found
 	 *
 	 * @param uint32 size the number of elements in the data array
+	 *
+	 * @return the maximum value and its index in a Maximum structure
 	 */
-	void max(float32* data, uint32 size);
+	Maximum max(float32* data, uint32 size);
 
 	/**
 	 * Applies an nth-order moving-average filter to a discrete signal.
@@ -102,12 +138,26 @@ namespace vaso {
 
 	// DEFINITIONS
 
+	void absolute(float32* data, uint32 size) {
+
+	}
+
 	float32 average(float32* data, uint32 size) {
+
+	}
+
+	DataParams average(DataParams* params, uint8 size) {
 
 	}
 
 	void average(float32* data, float32* avg, uint8 count, uint32 size) {
 		// data is an array. Access like so: data[index]
+	}
+
+	void decibels(float32* data, uint32 size) {
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = 20 * log10(data[i]);
+		}
 	}
 
 	void diff(float32* data, uint32 size) {
@@ -166,7 +216,7 @@ namespace vaso {
 
 	}
 
-	void max(float32* data, uint32 size) {
+	Maximum max(float32* data, uint32 size) {
 
 	}
 
