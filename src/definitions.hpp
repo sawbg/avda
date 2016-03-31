@@ -38,15 +38,18 @@ typedef std::complex<float32> cfloat32;
  * recordings.
  */
 typedef struct {
-
+	float32 freq;
+	float32 nois;
 } DataParams;
 
 /**
- * A structure containing information needed in the process() thread.
+ * Contains the maximum value found in an array and the value's index in that
+ * array.
  */
 typedef struct {
-
-} ProcData;
+	float32 value;
+	uint32 index;
+} Maximum;
 
 /**
  * This namespace contains all code related to this project.
