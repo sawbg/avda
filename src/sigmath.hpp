@@ -221,7 +221,18 @@ namespace vaso {
 	}
 
 	void smooth(float32* data, uint32 size, uint16 order) {
+		float32 coeff = 1 / (float32)order;
+		float32 temp[size];
 
+		for(uint32 i = 0; i < size; i++) {
+			temp[i] = 0;
+
+			for(uint16 j = 0; j < order && j <= i; j++) {
+				temp[i] += data[i - j];
+			}
+
+			temp[i] *= coeff;
+		}
 	}
 }
 
