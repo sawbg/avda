@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['patient_5fpath',['PATIENT_PATH',['../namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9',1,'vaso']]]
+  ['freq',['freq',['../structDataParams.html#a12566e017407647bc8287d62554ad3fb',1,'DataParams']]]
 ];

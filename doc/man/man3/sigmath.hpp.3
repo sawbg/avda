@@ -1,4 +1,4 @@
-.TH "src/sigmath.hpp" 3 "Wed Mar 30 2016" "My Project" \" -*- nroff -*-
+.TH "src/sigmath.hpp" 3 "Thu Mar 31 2016" "My Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,8 +7,6 @@ src/sigmath.hpp \-
 .br
 .PP
 \fC#include <complex>\fP
-.br
-\fC#include <initializer_list>\fP
 .br
 \fC#include 'definitions\&.hpp'\fP
 .br
@@ -25,10 +23,19 @@ src/sigmath.hpp \-
 
 .in +1c
 .ti -1c
+.RI "void \fBvaso::absolute\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
 .RI "\fBfloat32\fP \fBvaso::average\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
+.RI "\fBDataParams\fP \fBvaso::average\fP (\fBDataParams\fP *params, \fBuint8\fP size)"
+.br
+.ti -1c
 .RI "void \fBvaso::average\fP (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBvaso::decibels\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
 .RI "void \fBvaso::diff\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
@@ -40,7 +47,7 @@ src/sigmath.hpp \-
 .RI "void \fBvaso::mag\fP (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fP size)"
 .br
 .ti -1c
-.RI "void \fBvaso::max\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.RI "\fBMaximum\fP \fBvaso::max\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
 .RI "void \fBvaso::smooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"

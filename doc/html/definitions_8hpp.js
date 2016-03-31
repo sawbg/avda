@@ -1,7 +1,7 @@
 var definitions_8hpp =
 [
-    [ "DataParams", "structDataParams.html", null ],
-    [ "ProcData", "structProcData.html", null ],
+    [ "DataParams", "structDataParams.html", "structDataParams" ],
+    [ "Maximum", "structMaximum.html", "structMaximum" ],
     [ "ENUM", "definitions_8hpp.html#a378181c29a641d58f55d647b5a9599f2", null ],
     [ "byte", "definitions_8hpp.html#a0c8186d9b9b7880309c27230bbb5e69d", null ],
     [ "cfloat32", "definitions_8hpp.html#a960be6b6614c08090c16574dba10a421", null ],

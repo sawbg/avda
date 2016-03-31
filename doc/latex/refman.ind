@@ -1,21 +1,30 @@
 \begin{theindex}
 
-  \item {average}
+  \item {absolute}
     \subitem {vaso}, \hyperpage{8}
+  \item {average}
+    \subitem {vaso}, \hyperpage{8, 9}
 
   \indexspace
 
-  \item {bin/start}, \hyperpage{15}
+  \item {bin/start}, \hyperpage{17}
 
   \indexspace
 
+  \item {decibels}
+    \subitem {vaso}, \hyperpage{10}
   \item {diff}
-    \subitem {vaso}, \hyperpage{9}
+    \subitem {vaso}, \hyperpage{10}
 
   \indexspace
 
   \item {fft}
-    \subitem {vaso}, \hyperpage{9}
+    \subitem {vaso}, \hyperpage{10}
+
+  \indexspace
+
+  \item {index}
+    \subitem {Maximum}, \hyperpage{16}
 
   \indexspace
 
@@ -25,17 +34,20 @@
   \indexspace
 
   \item {mag}
-    \subitem {vaso}, \hyperpage{9}
-  \item {makefile}, \hyperpage{15}
+    \subitem {vaso}, \hyperpage{11}
+  \item {makefile}, \hyperpage{17}
   \item {max}
-    \subitem {vaso}, \hyperpage{9}
+    \subitem {vaso}, \hyperpage{11}
+  \item {Maximum}, \hyperpage{15}
+    \subitem {index}, \hyperpage{16}
+    \subitem {value}, \hyperpage{16}
 
   \indexspace
 
   \item {play}
-    \subitem {vaso}, \hyperpage{10}
-  \item {process}
-    \subitem {vaso}, \hyperpage{10}
+    \subitem {vaso}, \hyperpage{12}
+  \item {Process}
+    \subitem {vaso}, \hyperpage{12}
 
   \indexspace
 
@@ -47,21 +59,25 @@
   \item {Side}
     \subitem {vaso}, \hyperpage{8}
   \item {smooth}
-    \subitem {vaso}, \hyperpage{10}
+    \subitem {vaso}, \hyperpage{13}
 
   \indexspace
 
+  \item {value}
+    \subitem {Maximum}, \hyperpage{16}
   \item {vaso}, \hyperpage{7}
-    \subitem {average}, \hyperpage{8}
-    \subitem {diff}, \hyperpage{9}
-    \subitem {fft}, \hyperpage{9}
+    \subitem {absolute}, \hyperpage{8}
+    \subitem {average}, \hyperpage{8, 9}
+    \subitem {decibels}, \hyperpage{10}
+    \subitem {diff}, \hyperpage{10}
+    \subitem {fft}, \hyperpage{10}
     \subitem {Left}, \hyperpage{8}
-    \subitem {mag}, \hyperpage{9}
-    \subitem {max}, \hyperpage{9}
-    \subitem {play}, \hyperpage{10}
-    \subitem {process}, \hyperpage{10}
+    \subitem {mag}, \hyperpage{11}
+    \subitem {max}, \hyperpage{11}
+    \subitem {play}, \hyperpage{12}
+    \subitem {Process}, \hyperpage{12}
     \subitem {Right}, \hyperpage{8}
     \subitem {Side}, \hyperpage{8}
-    \subitem {smooth}, \hyperpage{10}
+    \subitem {smooth}, \hyperpage{13}
 
 \end{theindex}

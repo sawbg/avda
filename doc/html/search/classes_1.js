@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['procdata',['ProcData',['../structProcData.html',1,'']]]
+  ['maximum',['Maximum',['../structMaximum.html',1,'']]]
 ];

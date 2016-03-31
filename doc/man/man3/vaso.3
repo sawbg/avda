@@ -1,4 +1,4 @@
-.TH "vaso" 3 "Wed Mar 30 2016" "My Project" \" -*- nroff -*-
+.TH "vaso" 3 "Thu Mar 31 2016" "My Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,10 +35,22 @@ contains functions related to the file I/O use in this program
 .RI "std::string \fBWriteParams\fP (\fBDataParams\fP params, auto filename)"
 .br
 .ti -1c
+.RI "std::map< \fBDataParams\fP > \fBProcess\fP (\fBfloat32\fP *data, \fBuint8\fP recCount, \fBuint32\fP sampleCount, \fBuint32\fP sampleFreq, \fBuint8\fP *counter)"
+.br
+.ti -1c
+.RI "void \fBabsolute\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
 .RI "\fBfloat32\fP \fBaverage\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
+.RI "\fBDataParams\fP \fBaverage\fP (\fBDataParams\fP *params, \fBuint8\fP size)"
+.br
+.ti -1c
 .RI "void \fBaverage\fP (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBdecibels\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
 .RI "void \fBdiff\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
@@ -50,19 +62,13 @@ contains functions related to the file I/O use in this program
 .RI "void \fBmag\fP (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fP size)"
 .br
 .ti -1c
-.RI "void \fBmax\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.RI "\fBMaximum\fP \fBmax\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
 .br
 .ti -1c
 .RI "void \fBsmooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
 .br
 .ti -1c
 .RI "void \fBplay\fP (auto filename)"
-.br
-.ti -1c
-.RI "void * \fBprocess\fP (void *procdata)"
-.br
-.ti -1c
-.RI "void \fBStartProcessing\fP (\fBProcData\fP procdata)"
 .br
 .in -1c
 .SS "Variables"
@@ -76,11 +82,11 @@ contains functions related to the file I/O use in this program
 .PP 
 contains functions related to the file I/O use in this program 
 
-contains functions related to the program's threaded processing of audio data
-.PP
 contains the function(s) relating to sound
 .PP
 contains the functions necessary to perform the mathematical operations required by this program
+.PP
+contains function()s related to the program's threaded processing of audio data
 .PP
 This namespace contains all code related to this project\&.
 .PP
@@ -106,9 +112,22 @@ The side of the head to which a recording pertains\&.
 .TP
 \fB\fIRight \fP\fP
 .PP
-Definition at line 58 of file definitions\&.hpp\&.
+Definition at line 61 of file definitions\&.hpp\&.
 .SH "Function Documentation"
 .PP 
+.SS "void vaso::absolute (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Ensures all elements in an array are positive\&. Note that this function replaces array elements if necessary\&. It does not populate a new array\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the array whose elements must all be positive
+.br
+\fIsize\fP the number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 141 of file sigmath\&.hpp\&.
 .SS "\fBfloat32\fP vaso::average (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Takes the average of all elements in an array
 .PP
@@ -126,7 +145,25 @@ the computed average
 .PP
 
 .PP
-Definition at line 105 of file sigmath\&.hpp\&.
+Definition at line 145 of file sigmath\&.hpp\&.
+.SS "\fBDataParams\fP vaso::average (\fBDataParams\fP *params, \fBuint8\fPsize)"
+Finds the averages of the elements of an array of \fBDataParams\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparams\fP the \fBDataParams\fP array
+.br
+\fIsize\fP the number of elements in the \fBDataParams\fP array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a \fBDataParams\fP structure containing the average values of the structure's elements in the params array 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file sigmath\&.hpp\&.
 .SS "void vaso::average (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fPcount, \fBuint32\fPsize)"
 Element-wise averaging along the first dimension of a two-dimensional array\&.
 .PP
@@ -143,7 +180,7 @@ Element-wise averaging along the first dimension of a two-dimensional array\&.
 .PP
 
 .PP
-Definition at line 109 of file sigmath\&.hpp\&.
+Definition at line 153 of file sigmath\&.hpp\&.
 .SS "std::string vaso::CurrentDataName ()"
 Gets a data-based name to which the file(s) created in a session to be saved\&.
 .PP
@@ -155,6 +192,19 @@ a partial (?) filename for the current session
 
 .PP
 Definition at line 26 of file fileio\&.hpp\&.
+.SS "void vaso::decibels (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Converts an array of floats to 'power decibels', i\&.e\&., x[n] = 20*log10(x[n])\&. The decibel values are written to the same array that contained the values to be converted\&. In other words, this function should perform an in-place, element-wise conversion\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the array of values to be converted as well as the location where the converted values will be written
+.br
+\fIsize\fP the number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 157 of file sigmath\&.hpp\&.
 .SS "void vaso::diff (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Computes the left-handed first derivative of a discrete signal\&. The first element will be 0\&.
 .PP
@@ -167,7 +217,7 @@ Computes the left-handed first derivative of a discrete signal\&. The first elem
 .PP
 
 .PP
-Definition at line 113 of file sigmath\&.hpp\&.
+Definition at line 163 of file sigmath\&.hpp\&.
 .SS "void vaso::fft (\fBcfloat32\fP *data, \fBuint32\fPsize)"
 Replaces the values of an array of cfloat32's with the array's DFT using a decimation-in-frequency algorithm\&.
 .PP
@@ -182,7 +232,7 @@ This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transfo
 .PP
 
 .PP
-Definition at line 117 of file sigmath\&.hpp\&.
+Definition at line 167 of file sigmath\&.hpp\&.
 .SS "std::string vaso::InitialDataName (autodir)"
 Finds the filename of the oldest (i\&.e\&., baseline) data is saved\&.
 .PP
@@ -213,20 +263,25 @@ Computes the magitude of an array of complex numbers\&.
 .PP
 
 .PP
-Definition at line 165 of file sigmath\&.hpp\&.
-.SS "void vaso::max (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Definition at line 215 of file sigmath\&.hpp\&.
+.SS "\fBMaximum\fP vaso::max (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Finds the maximum value in an array\&.
 .PP
 \fBParameters:\fP
 .RS 4
 \fIdata\fP the array whose maximum value is to be found
 .br
-\fIuint32\fP size the number of elements in the data array 
+\fIuint32\fP size the number of elements in the data array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the maximum value and its index in a \fBMaximum\fP structure 
 .RE
 .PP
 
 .PP
-Definition at line 169 of file sigmath\&.hpp\&.
+Definition at line 219 of file sigmath\&.hpp\&.
 .SS "std::string vaso::PatientName ()"
 Prompts a user to enter a first, middle, and last name for a patients and creates a directory (if necessary) in which all of a patient's data can be saved\&.
 .PP
@@ -251,22 +306,30 @@ Plays a WAVE file in a loop in a non-blocking manner\&.
 
 .PP
 Definition at line 19 of file sound\&.hpp\&.
-.SS "void * vaso::process (void *procdata)"
-Computes recording parameters in a separate thread in a thread-safe manner\&. Automatically waits for each recording to finish before processing it\&. This file is meant to be called ONLY from the \fBStartProcessing()\fP function\&.
+.SS "std::map<\fBDataParams\fP> vaso::Process (\fBfloat32\fP *data, \fBuint8\fPrecCount, \fBuint32\fPsampleCount, \fBuint32\fPsampleFreq, \fBuint8\fP *counter)"
+Processes the recorded audio\&. Meant to be run in a separate thread as the recordings are being made\&. This function assumes that the left-side recordings will be made first\&.
+.PP
+data two-dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio
+.PP
+recCount the number of recordings (left and right together) to be made
 .PP
 \fBParameters:\fP
 .RS 4
-\fIprocdata\fP a struct containing the values necessary to processing the audio
+\fIsampleCount\fP the number of samples in each recording\&. MUST be a power of two\&.
+.br
+\fIsampleFreq\fP the sampling frequency in Hz or Samples/second
+.br
+\fIcounter\fP pointer to an index denoting which recording is currently in progress
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-a (void) pointer to a \fBDataParams\fP struct containing the computed parameters for a patient 
+a map of the averaged left- and right-side parameters in \fBDataParams\fP structures 
 .RE
 .PP
 
 .PP
-Definition at line 42 of file threadproc\&.hpp\&.
+Definition at line 40 of file process\&.hpp\&.
 .SS "\fBDataParams\fP vaso::ReadParams (autofilename)"
 Reads the previously computated parameters found in the specified file\&.
 .PP
@@ -297,18 +360,7 @@ Applies an nth-order moving-average filter to a discrete signal\&.
 .PP
 
 .PP
-Definition at line 173 of file sigmath\&.hpp\&.
-.SS "void vaso::StartProcessing (\fBProcData\fPprocdata)"
-Begins processing the recorded data\&. Should be called before or immediately after the first recording\&.
-.PP
-\fBParameters:\fP
-.RS 4
-\fIproxdata\fP a struct containing the values necessary to processing the audio 
-.RE
-.PP
-
-.PP
-Definition at line 46 of file threadproc\&.hpp\&.
+Definition at line 223 of file sigmath\&.hpp\&.
 .SS "std::string vaso::WriteParams (\fBDataParams\fPparams, autofilename)"
 Writes the parameters to the specified file\&.
 .PP

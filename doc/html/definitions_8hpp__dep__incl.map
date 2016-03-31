@@ -1,7 +1,7 @@
 <map id="src/definitions.hpp" name="src/definitions.hpp">
 <area shape="rect" id="node2" href="$fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="185,155,282,181"/>
-<area shape="rect" id="node4" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="176,80,291,107"/>
-<area shape="rect" id="node5" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="315,80,419,107"/>
-<area shape="rect" id="node6" href="$threadproc_8hpp.html" title="src/threadproc.hpp" alt="" coords="443,80,573,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="134,155,231,181"/>
+<area shape="rect" id="node4" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="304,80,419,107"/>
+<area shape="rect" id="node5" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="351,155,465,181"/>
+<area shape="rect" id="node6" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="176,80,280,107"/>
 </map>

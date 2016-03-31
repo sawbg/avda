@@ -1,5 +1,5 @@
 var annotated =
 [
-    [ "DataParams", "structDataParams.html", null ],
-    [ "ProcData", "structProcData.html", null ]
+    [ "DataParams", "structDataParams.html", "structDataParams" ],
+    [ "Maximum", "structMaximum.html", "structMaximum" ]
 ];

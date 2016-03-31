@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['readparams',['ReadParams',['../namespacevaso.html#a6f1a23c617aae2e2c4af5e8016b4d03e',1,'vaso']]],
-  ['right',['Right',['../namespacevaso.html#a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c',1,'vaso']]]
+  ['patient_5fpath',['PATIENT_PATH',['../namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9',1,'vaso']]],
+  ['patientname',['PatientName',['../namespacevaso.html#a21e264fa912f7ca3f50e7e412ba1582e',1,'vaso']]],
+  ['play',['play',['../namespacevaso.html#a7da499b9b1b5a492bea8ab8681e57c22',1,'vaso']]],
+  ['process',['Process',['../namespacevaso.html#a36b6d07f6078968ee9fef13e8d48b151',1,'vaso']]],
+  ['process_2ehpp',['process.hpp',['../process_8hpp.html',1,'']]]
 ];
