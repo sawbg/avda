@@ -24,40 +24,14 @@ using namespace vaso;
  * of days.
  */
 int main(int argc, char** argv) {
-	// Constants declared
-	const uint8 REC_COUNT = 6;
-	const uint32 SAMPLE_COUNT = pow(2, 18);
-	const uint32 SAMPLE_FREQ = 48000;
-
 	// generate name for patient's file
 	string filename = "";//PatientName();
 
 	// TODO: Load all of patient's parameters
 
 	// Record doppler audio
-	uint8 counter = 0;  // number of current recording
-	float32** buffer;
-
-	for(uint8 i = 0; i < REC_COUNT; i++) {
-		buffer[i] = (float32*)malloc(SAMPLE_COUNT * sizeof(float32));
-	}
+	float32 buffer[REC_COUNT][SAMPLE_COUNT];
 	
-	ThreadParams p;
-	p.data = buffer;
-	p.recCount = REC_COUNT;
-	p.sampleCount = SAMPLE_COUNT;
-	p.sampleFreq = SAMPLE_FREQ;
-	p.counter = &counter;
-
-	pthread_t procThread;
-	int retThread = pthread_create(&procThread, NULL, Process, &p);
-
-	if(retThread != 0) {
-		cerr << "An error occurred creating the processing thread. "
-			"The program will now exit." << endl;
-		return ERROR;
-	}
-
 	for(uint8 i = 0; i < REC_COUNT; i++) {
 		// TODO: Prompt user to press ENTER to start recording
 
@@ -71,19 +45,11 @@ int main(int argc, char** argv) {
 		}
 
 		// TODO: Print message about recording stopped
-
-		counter++;
 	}
 
-	// wait for processing thread to finish, then get results
-	pthread_join(procThread, NULL);
+	map<Side, DataParams> results = Process(buffer);
 
 	// TODO: Print results & probable diagnosis
 
 	// TODO: Write all results to file
-	
-	// Free all malloc'd memory
-	for(uint8 i = 0; i < REC_COUNT; i++) {
-		free(buffer[i]);
-	}
 }

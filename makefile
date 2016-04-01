@@ -13,5 +13,5 @@ docs:
 	git push
 
 vaso:
-	$(GCC) src/main.cpp -o bin/vaso -lpthread
+	$(GCC) src/main.cpp -o bin/vaso
 

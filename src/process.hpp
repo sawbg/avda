@@ -40,41 +40,39 @@ namespace vaso {
 	 * second dimension samples in a recording) that will contain all recorded
 	 * audio
 	 *
-	 * @params recCount the number of recordings (left and right together) to be
+	 * @params REC_COUNT the number of recordings (left and right together) to be
 	 *  made
 	 *
-	 * @param sampleCount the number of samples in each recording. MUST be a
+	 * @param SAMPLE_COUNT the number of samples in each recording. MUST be a
 	 * power of two.
 	 *
-	 * @param sampleFreq the sampling frequency in Hz or Samples/second
+	 * @param SAMPLE_FREQ the sampling frequency in Hz or Samples/second
 	 *
 	 * @return a map of the averaged left- and right-side parameters in
 	 * DataParams structures
 	 */
-	std::map<Side, DataParams> Process(float32** data, uint8 recCount,
-			uint32 sampleCount, uint32 sampleFreq) {
-
-		// just in case sampleCount isn't a power of two
-		if((sampleCount & (sampleCount - 1) != 0) || sampleCount < 2) {
+	std::map<Side, DataParams> Process(float32 data[REC_COUNT][SAMPLE_COUNT]) {
+		// just in case SAMPLE_COUNT isn't a power of two
+		if((SAMPLE_COUNT & (SAMPLE_COUNT - 1) != 0) || SAMPLE_COUNT < 2) {
 			throw std::invalid_argument(
 					"The number of samples is not a power of two!");
 		}
 
 		// declare function-scoped variables
-		uint32 freqSize = sampleCount / 2;
-		cfloat32 cdata[recCount][sampleCount];
-		float32 fdata[recCount][freqSize];
-		DataParams tempParams[recCount];
+		uint32 freqSize = SAMPLE_COUNT / 2;
+		cfloat32 cdata[REC_COUNT][SAMPLE_COUNT];
+		float32 fdata[REC_COUNT][freqSize];
+		DataParams tempParams[REC_COUNT];
 		std::map<Side, DataParams> sideParams;
 
-		for(uint8 rCount = 0; rCount < recCount; rCount++) {
+		for(uint8 rCount = 0; rCount < REC_COUNT; rCount++) {
 			// convert data to complex numbers for fft()
-			for(uint32 i = 0; i < sampleCount; i++) {
+			for(uint32 i = 0; i < SAMPLE_COUNT; i++) {
 				cdata[rCount][i] = data[rCount][i];
 			}
 
 			// find frequency spectrum in relative decibels
-			fft(cdata[rCount], sampleCount);
+			fft(cdata[rCount], SAMPLE_COUNT);
 			mag(cdata[rCount], fdata[rCount], freqSize);
 			Maximum maximum = max(fdata[rCount], freqSize);
 
@@ -100,17 +98,19 @@ namespace vaso {
 
 			// find the parameters of this specific recording
 			uint16 offset = 1000;
-			uint32 index = max(absolute(fdata[rCount][offset],
-						freqSize - offset)).index;
-			tempParams[rCount].freq = index * (float)sampleFreq / freqSize;
+			absolute(&fdata[rCount][offset],	freqSize - offset);
+			uint32 index = max(&fdata[rCount][offset],
+					freqSize - offset).index;
+			tempParams[rCount].freq = index * (float)SAMPLE_FREQ / freqSize;
 			tempParams[rCount].noise =
-				average(fdata[rCount][index + 2 * offset],
+				average(&fdata[rCount][index + 2 * offset],
 						freqSize - 2 * offset);
 		}
 
 		// calculate the parameters for each side to be returned
-		sideParams[Side::Left] = average(tempParams[0], rCount / 2);
-		sideParams[Side::Right] = average(tempParams[rCount / 2], rCount / 2);
+		sideParams[Side::Left] = average(&tempParams[0], REC_COUNT / 2);
+		sideParams[Side::Right] = average(&tempParams[REC_COUNT / 2],
+				REC_COUNT / 2);
 		return sideParams;
 	}
 }
