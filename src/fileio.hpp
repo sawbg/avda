@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "definitions.hpp"
 
@@ -40,16 +41,69 @@ namespace vaso {
 
 	/**
 	 * Prompts a user to enter a first, middle, and last name for a patients and
-	 * creates a directory (if necessary) in which all of a patient's data can
+	 * creates a file (if necessary) in which all of a patient's data can
 	 * be saved.
 	 *
 	 * Must warn a user if the patient folder does not already exist in order to
 	 * prevent missaving data.
 	 *
-	 * @return the directory under which all patient data is saved
+	 * @return the file under which all patient data is saved
 	 */
 	std::string PatientName() {
+		using namespace std;
 
+		string fname = "";
+		string mname = "";
+		string lname = "";
+		string patfil = "";
+		string patientname = "";
+		uint32 track1 = 0;
+		uint32 track2 = 0;
+		ofstream file;
+
+		do {
+			cout << "Please enter the patients name." << endl;
+			cout << "First name: ";
+			getline(cin, fname);
+		        cout << "Middle name: ";
+		        getline(cin, mname);
+			cout << "Last name: ";
+			getline(cin, lname);
+
+			patientname = PATIENT_PATH + lname + ", " + fname + " " + mname + ".csv";	//creates new string with path to patient file
+			cout << patientname << endl;	//prints out patientname. shows user the path to the patient file
+			cout << endl;
+
+			if (!ifstream(patientname)) { //compares patientname to existing files and lets user know if the file does not exist
+				do {		//do while statment to continue asking user about the file if their input is not acceptable
+					cout << "Patient file does not exist, would you like to create file or re-enter their name?" << endl;
+					cout << "  *Type 'create' and press enter key to create the patient file." << endl;
+					cout << "  *Type 'reenter' and press enter key to re-enter the patients name." << endl;
+					cout << endl;
+					getline (cin, patfil);
+
+					if(patfil == "create") {//patfil equals create, track1 and 2  will increase escaping both do while loops
+						track1 = 1;
+						track2 = 1;
+						file.open(patientname);
+						file.close();
+					}
+
+					else if(patfil == "reenter") {
+                               			track1 = 0;
+						track2 = 1;
+					}
+
+					else {
+						cout << endl;
+						cout << "Your input is not acceptable." << endl;
+						cout << endl;
+					}
+				}while(track2 == 0);
+			}
+		}while (track1 = 0);
+
+		return patientname;	//returns the path to the patient file
 	}
 
 	/**
