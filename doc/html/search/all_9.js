@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nois',['nois',['../structDataParams.html#ad85d10f8f222c0cd7eb09560a9aedf28',1,'DataParams']]]
+  ['noise',['noise',['../structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f',1,'DataParams']]]
 ];

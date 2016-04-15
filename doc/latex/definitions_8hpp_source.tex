@@ -1,0 +1,61 @@
+\hypertarget{definitions_8hpp_source}{\section{definitions.\+hpp}
+\label{definitions_8hpp_source}\index{src/definitions.\+hpp@{src/definitions.\+hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00008 \textcolor{preprocessor}{#ifndef definitions\_H}
+00009 \textcolor{preprocessor}{#define definitions\_H}
+00010 
+00011 \textcolor{preprocessor}{#include <complex>}
+00012 \textcolor{preprocessor}{#include <map>}
+00013 
+\hypertarget{definitions_8hpp_source_l00014}{}\hyperlink{definitions_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{00014} \textcolor{preprocessor}{#define ERROR -1}
+\hypertarget{definitions_8hpp_source_l00015}{}\hyperlink{definitions_8hpp_aa44e6143be9e89f19be973956c22e134}{00015} \textcolor{preprocessor}{#define REC\_COUNT 8}
+\hypertarget{definitions_8hpp_source_l00016}{}\hyperlink{definitions_8hpp_a1682c770d91c5d167b621a782be940d4}{00016} \textcolor{preprocessor}{#define SAMPLE\_COUNT 262144}
+\hypertarget{definitions_8hpp_source_l00017}{}\hyperlink{definitions_8hpp_a9401e43a8c86acafb31c8e2709baefa1}{00017} \textcolor{preprocessor}{#define SAMPLE\_FREQ 48000}
+\hypertarget{definitions_8hpp_source_l00018}{}\hyperlink{definitions_8hpp_a378181c29a641d58f55d647b5a9599f2}{00018} \textcolor{preprocessor}{#define ENUM signed char}
+00019 
+\hypertarget{definitions_8hpp_source_l00020}{}\hyperlink{definitions_8hpp_a0c8186d9b9b7880309c27230bbb5e69d}{00020} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{definitions_8hpp_a0c8186d9b9b7880309c27230bbb5e69d}{byte};
+\hypertarget{definitions_8hpp_source_l00021}{}\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{00021} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8};
+\hypertarget{definitions_8hpp_source_l00022}{}\hyperlink{definitions_8hpp_a1a6408291ee3cfd0760a61ac64084154}{00022} \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \hyperlink{definitions_8hpp_a1a6408291ee3cfd0760a61ac64084154}{sint8};
+00023 
+\hypertarget{definitions_8hpp_source_l00024}{}\hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{00024} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16};
+\hypertarget{definitions_8hpp_source_l00025}{}\hyperlink{definitions_8hpp_a74df79fde3c518e55b29ce6360a9c76e}{00025} \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \hyperlink{definitions_8hpp_a74df79fde3c518e55b29ce6360a9c76e}{sint16};
+00026 
+\hypertarget{definitions_8hpp_source_l00027}{}\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{00027} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32};
+\hypertarget{definitions_8hpp_source_l00028}{}\hyperlink{definitions_8hpp_a0573de65958b4fda3a0460ed417dafb8}{00028} \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \hyperlink{definitions_8hpp_a0573de65958b4fda3a0460ed417dafb8}{sint32};
+00029 
+\hypertarget{definitions_8hpp_source_l00030}{}\hyperlink{definitions_8hpp_a29940ae63ec06c9998bba873e25407ad}{00030} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \hyperlink{definitions_8hpp_a29940ae63ec06c9998bba873e25407ad}{uint64};
+\hypertarget{definitions_8hpp_source_l00031}{}\hyperlink{definitions_8hpp_ad91d7e42d1c1abce1d9eeacd54cc0497}{00031} \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \hyperlink{definitions_8hpp_ad91d7e42d1c1abce1d9eeacd54cc0497}{sint64};
+00032 
+\hypertarget{definitions_8hpp_source_l00033}{}\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{00033} \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32};
+\hypertarget{definitions_8hpp_source_l00034}{}\hyperlink{definitions_8hpp_a232fad1b0d6dcc7c16aabde98b2e2a80}{00034} \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} \hyperlink{definitions_8hpp_a232fad1b0d6dcc7c16aabde98b2e2a80}{float64};
+00035 
+\hypertarget{definitions_8hpp_source_l00039}{}\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{00039} \textcolor{keyword}{typedef} std::complex<float32> \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32};
+00040 
+\hypertarget{definitions_8hpp_source_l00044}{}\hyperlink{structDataParams}{00044} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{definitions_8hpp_source_l00045}{}\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{00045}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq};
+\hypertarget{definitions_8hpp_source_l00046}{}\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{00046}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise};
+00047 \} \hyperlink{structDataParams}{DataParams};
+00048 
+\hypertarget{definitions_8hpp_source_l00053}{}\hyperlink{structMaximum}{00053} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{definitions_8hpp_source_l00054}{}\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{00054}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value};
+\hypertarget{definitions_8hpp_source_l00055}{}\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{00055}     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{index};
+00056 \} \hyperlink{structMaximum}{Maximum};
+00057 
+\hypertarget{definitions_8hpp_source_l00061}{}\hyperlink{namespacevaso}{00061} \textcolor{keyword}{namespace }\hyperlink{namespacevaso}{vaso} \{
+\hypertarget{definitions_8hpp_source_l00065}{}\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{00065}     \textcolor{keyword}{enum class} \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side} \{ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Left}, \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Right} \};
+00066 \}
+00067 
+\hypertarget{definitions_8hpp_source_l00072}{}\hyperlink{structThreadParams}{00072} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{definitions_8hpp_source_l00073}{}\hyperlink{structThreadParams_a94da463ea449a9fe597b442be56844b9}{00073}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}** \hyperlink{structThreadParams_a94da463ea449a9fe597b442be56844b9}{data};
+\hypertarget{definitions_8hpp_source_l00074}{}\hyperlink{structThreadParams_a02e6a905a01a79e8b73fbe21318f82b0}{00074}     \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{structThreadParams_a02e6a905a01a79e8b73fbe21318f82b0}{recCount};
+\hypertarget{definitions_8hpp_source_l00075}{}\hyperlink{structThreadParams_ad953eac404cb1fe5057bb6e8fd8bf63f}{00075}     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{structThreadParams_ad953eac404cb1fe5057bb6e8fd8bf63f}{sampleCount};
+\hypertarget{definitions_8hpp_source_l00076}{}\hyperlink{structThreadParams_a4c35a854b35945bda8ce13c01123e420}{00076}     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{structThreadParams_a4c35a854b35945bda8ce13c01123e420}{sampleFreq};
+\hypertarget{definitions_8hpp_source_l00077}{}\hyperlink{structThreadParams_aa23fd1fa0f6a8d38cb42d8ee852bc6a6}{00077}     \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8}* \hyperlink{structThreadParams_aa23fd1fa0f6a8d38cb42d8ee852bc6a6}{counter};
+\hypertarget{definitions_8hpp_source_l00078}{}\hyperlink{structThreadParams_a2332b920eca7ca1fa61cc078e99e0668}{00078}     std::map<vaso::Side, DataParams> \hyperlink{structThreadParams_a2332b920eca7ca1fa61cc078e99e0668}{results};
+00079 \} \hyperlink{structThreadParams}{ThreadParams};
+00080 
+00081 \textcolor{preprocessor}{#endif}
+\end{DoxyCode}

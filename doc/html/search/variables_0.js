@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freq',['freq',['../structDataParams.html#a12566e017407647bc8287d62554ad3fb',1,'DataParams']]]
+  ['counter',['counter',['../structThreadParams.html#aa23fd1fa0f6a8d38cb42d8ee852bc6a6',1,'ThreadParams']]]
 ];

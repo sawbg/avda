@@ -1,7 +1,7 @@
 <map id="src/definitions.hpp" name="src/definitions.hpp">
-<area shape="rect" id="node2" href="$fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="134,155,231,181"/>
-<area shape="rect" id="node4" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="304,80,419,107"/>
-<area shape="rect" id="node5" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="351,155,465,181"/>
-<area shape="rect" id="node6" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="176,80,280,107"/>
+<area shape="rect" id="node2" href="$fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,155,101,181"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="90,229,187,256"/>
+<area shape="rect" id="node4" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="176,155,291,181"/>
+<area shape="rect" id="node5" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="227,80,341,107"/>
+<area shape="rect" id="node6" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="365,80,469,107"/>
 </map>

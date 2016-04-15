@@ -1,4 +1,4 @@
-.TH "vaso" 3 "Thu Mar 31 2016" "My Project" \" -*- nroff -*-
+.TH "vaso" 3 "Fri Apr 15 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,7 +35,7 @@ contains functions related to the file I/O use in this program
 .RI "std::string \fBWriteParams\fP (\fBDataParams\fP params, auto filename)"
 .br
 .ti -1c
-.RI "std::map< \fBDataParams\fP > \fBProcess\fP (\fBfloat32\fP *data, \fBuint8\fP recCount, \fBuint32\fP sampleCount, \fBuint32\fP sampleFreq, \fBuint8\fP *counter)"
+.RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBProcess\fP (\fBfloat32\fP data[\fBREC_COUNT\fP][\fBSAMPLE_COUNT\fP])"
 .br
 .ti -1c
 .RI "void \fBabsolute\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
@@ -112,7 +112,7 @@ The side of the head to which a recording pertains\&.
 .TP
 \fB\fIRight \fP\fP
 .PP
-Definition at line 61 of file definitions\&.hpp\&.
+Definition at line 65 of file definitions\&.hpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "void vaso::absolute (\fBfloat32\fP *data, \fBuint32\fPsize)"
@@ -306,20 +306,20 @@ Plays a WAVE file in a loop in a non-blocking manner\&.
 
 .PP
 Definition at line 19 of file sound\&.hpp\&.
-.SS "std::map<\fBDataParams\fP> vaso::Process (\fBfloat32\fP *data, \fBuint8\fPrecCount, \fBuint32\fPsampleCount, \fBuint32\fPsampleFreq, \fBuint8\fP *counter)"
+.SS "std::map<\fBSide\fP, \fBDataParams\fP> vaso::Process (\fBfloat32\fPdata[REC_COUNT][SAMPLE_COUNT])"
 Processes the recorded audio\&. Meant to be run in a separate thread as the recordings are being made\&. This function assumes that the left-side recordings will be made first\&.
+.PP
+It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan\&. The 'algorithm' is defined as the use of 1) the frequency drop-off and/or 2) a noise value from the frequency band above the drop-off frequency in order to diagnose (with or without other factors and parameters) the presence of a vasospasm in a patient\&. By faculty members and/or students in the UAB ECE department using this algorithm, they agree that the presentation of their code or project that uses this algorithm by anyone directly or indirectly related to the code or project, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan\&. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan\&. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the aforementioned is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual\&.
 .PP
 data two-dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio
 .PP
-recCount the number of recordings (left and right together) to be made
+REC_COUNT the number of recordings (left and right together) to be made
 .PP
 \fBParameters:\fP
 .RS 4
-\fIsampleCount\fP the number of samples in each recording\&. MUST be a power of two\&.
+\fISAMPLE_COUNT\fP the number of samples in each recording\&. MUST be a power of two\&.
 .br
-\fIsampleFreq\fP the sampling frequency in Hz or Samples/second
-.br
-\fIcounter\fP pointer to an index denoting which recording is currently in progress
+\fISAMPLE_FREQ\fP the sampling frequency in Hz or Samples/second
 .RE
 .PP
 \fBReturns:\fP
@@ -329,7 +329,7 @@ a map of the averaged left- and right-side parameters in \fBDataParams\fP struct
 .PP
 
 .PP
-Definition at line 40 of file process\&.hpp\&.
+Definition at line 54 of file process\&.hpp\&.
 .SS "\fBDataParams\fP vaso::ReadParams (autofilename)"
 Reads the previously computated parameters found in the specified file\&.
 .PP
@@ -380,4 +380,4 @@ Absolute path to the folder containing the patients' data
 Definition at line 18 of file fileio\&.hpp\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for My Project from the source code\&.
+Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

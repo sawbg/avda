@@ -7,10 +7,6 @@
 
   \indexspace
 
-  \item {bin/start}, \hyperpage{17}
-
-  \indexspace
-
   \item {decibels}
     \subitem {vaso}, \hyperpage{10}
   \item {diff}
@@ -24,7 +20,7 @@
   \indexspace
 
   \item {index}
-    \subitem {Maximum}, \hyperpage{16}
+    \subitem {Maximum}, \hyperpage{18}
 
   \indexspace
 
@@ -35,12 +31,11 @@
 
   \item {mag}
     \subitem {vaso}, \hyperpage{11}
-  \item {makefile}, \hyperpage{17}
   \item {max}
     \subitem {vaso}, \hyperpage{11}
-  \item {Maximum}, \hyperpage{15}
-    \subitem {index}, \hyperpage{16}
-    \subitem {value}, \hyperpage{16}
+  \item {Maximum}, \hyperpage{17}
+    \subitem {index}, \hyperpage{18}
+    \subitem {value}, \hyperpage{18}
 
   \indexspace
 
@@ -59,12 +54,12 @@
   \item {Side}
     \subitem {vaso}, \hyperpage{8}
   \item {smooth}
-    \subitem {vaso}, \hyperpage{13}
+    \subitem {vaso}, \hyperpage{14}
 
   \indexspace
 
   \item {value}
-    \subitem {Maximum}, \hyperpage{16}
+    \subitem {Maximum}, \hyperpage{18}
   \item {vaso}, \hyperpage{7}
     \subitem {absolute}, \hyperpage{8}
     \subitem {average}, \hyperpage{8, 9}
@@ -78,6 +73,6 @@
     \subitem {Process}, \hyperpage{12}
     \subitem {Right}, \hyperpage{8}
     \subitem {Side}, \hyperpage{8}
-    \subitem {smooth}, \hyperpage{13}
+    \subitem {smooth}, \hyperpage{14}
 
 \end{theindex}

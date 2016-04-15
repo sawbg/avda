@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writeparams',['WriteParams',['../namespacevaso.html#ad8543c0caabf3836b4a93a78e0d487d1',1,'vaso']]]
+  ['value',['value',['../structMaximum.html#aa7e84cbf37b694670142670014366969',1,'Maximum']]],
+  ['vaso',['vaso',['../namespacevaso.html',1,'']]]
 ];

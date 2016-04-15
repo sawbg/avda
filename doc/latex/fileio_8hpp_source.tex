@@ -1,0 +1,40 @@
+\hypertarget{fileio_8hpp_source}{\section{fileio.\+hpp}
+\label{fileio_8hpp_source}\index{src/fileio.\+hpp@{src/fileio.\+hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00006 \textcolor{preprocessor}{#ifndef fileio\_H}
+00007 \textcolor{preprocessor}{#define fileio\_H}
+00008 
+00009 \textcolor{preprocessor}{#include <iostream>}
+00010 \textcolor{preprocessor}{#include <string>}
+00011 
+00012 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00013 
+00014 \textcolor{keyword}{namespace }\hyperlink{namespacevaso}{vaso} \{
+\hypertarget{fileio_8hpp_source_l00018}{}\hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{00018}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
+00019 
+\hypertarget{fileio_8hpp_source_l00026}{}\hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{00026}     std::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{CurrentDataName}() \{
+00027 
+00028     \}
+00029 
+\hypertarget{fileio_8hpp_source_l00037}{}\hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{00037}     std::string \hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{InitialDataName}(\textcolor{keyword}{auto} dir) \{
+00038 
+00039     \}
+00040 
+\hypertarget{fileio_8hpp_source_l00051}{}\hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{00051}     std::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{PatientName}() \{
+00052 
+00053     \}
+00054 
+\hypertarget{fileio_8hpp_source_l00064}{}\hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{00064}     \hyperlink{structDataParams}{DataParams} \hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{ReadParams}(\textcolor{keyword}{auto} filename) \{
+00065 
+00066     \}
+00067 
+\hypertarget{fileio_8hpp_source_l00073}{}\hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{00073}     std::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{WriteParams}(\hyperlink{structDataParams}{DataParams} params, \textcolor{keyword}{auto} filename) \{
+00074 
+00075     \}
+00076 \}
+00077 
+00078 \textcolor{preprocessor}{#endif}
+\end{DoxyCode}

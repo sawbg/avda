@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: src/definitions.hpp File Reference</title>
+<title>Andrew and Nick&#39;s Project: src/definitions.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Andrew and Nick&#39;s Project
    </div>
   </td>
  </tr>
@@ -112,6 +112,7 @@ $(document).ready(function(){initNavTree('definitions_8hpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for definitions.hpp:</div>
 <div class="dyncontent">
@@ -124,7 +125,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="definitions_8hpp__dep__incl.png" border="0" usemap="#src_2definitions_8hppdep" alt=""/></div>
 <map name="src_2definitions_8hppdep" id="src_2definitions_8hppdep">
-<area shape="rect" id="node2" href="fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,80,101,107"/><area shape="rect" id="node3" href="main_8cpp.html" title="src/main.cpp" alt="" coords="134,155,231,181"/><area shape="rect" id="node4" href="sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="304,80,419,107"/><area shape="rect" id="node5" href="process_8hpp.html" title="src/process.hpp" alt="" coords="351,155,465,181"/><area shape="rect" id="node6" href="sound_8hpp.html" title="src/sound.hpp" alt="" coords="176,80,280,107"/></map>
+<area shape="rect" id="node2" href="fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,155,101,181"/><area shape="rect" id="node3" href="main_8cpp.html" title="src/main.cpp" alt="" coords="90,229,187,256"/><area shape="rect" id="node4" href="process_8hpp.html" title="src/process.hpp" alt="" coords="176,155,291,181"/><area shape="rect" id="node5" href="sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="227,80,341,107"/><area shape="rect" id="node6" href="sound_8hpp.html" title="src/sound.hpp" alt="" coords="365,80,469,107"/></map>
 </div>
 </div>
 <p><a href="definitions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -135,6 +136,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMaximum.html">Maximum</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structThreadParams.html">ThreadParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -144,8 +147,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a8fe83ac76edc595f6b98cd4a4127aed5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8hpp.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:a8fe83ac76edc595f6b98cd4a4127aed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations.  <a href="#a8fe83ac76edc595f6b98cd4a4127aed5">More...</a><br /></td></tr>
+<tr class="separator:a8fe83ac76edc595f6b98cd4a4127aed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44e6143be9e89f19be973956c22e134"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8hpp.html#aa44e6143be9e89f19be973956c22e134">REC_COUNT</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:aa44e6143be9e89f19be973956c22e134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1682c770d91c5d167b621a782be940d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8hpp.html#a1682c770d91c5d167b621a782be940d4">SAMPLE_COUNT</a>&#160;&#160;&#160;262144</td></tr>
+<tr class="separator:a1682c770d91c5d167b621a782be940d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9401e43a8c86acafb31c8e2709baefa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8hpp.html#a9401e43a8c86acafb31c8e2709baefa1">SAMPLE_FREQ</a>&#160;&#160;&#160;48000</td></tr>
+<tr class="separator:a9401e43a8c86acafb31c8e2709baefa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a378181c29a641d58f55d647b5a9599f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8hpp.html#a378181c29a641d58f55d647b5a9599f2">ENUM</a>&#160;&#160;&#160;signed char</td></tr>
-<tr class="memdesc:a378181c29a641d58f55d647b5a9599f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations.  <a href="#a378181c29a641d58f55d647b5a9599f2">More...</a><br /></td></tr>
 <tr class="separator:a378181c29a641d58f55d647b5a9599f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -193,10 +204,66 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00018">18</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fe83ac76edc595f6b98cd4a4127aed5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. </p>
 <dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00013">13</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00014">14</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa44e6143be9e89f19be973956c22e134"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REC_COUNT&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00015">15</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1682c770d91c5d167b621a782be940d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAMPLE_COUNT&#160;&#160;&#160;262144</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00016">16</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9401e43a8c86acafb31c8e2709baefa1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAMPLE_FREQ&#160;&#160;&#160;48000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00017">17</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +278,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00015">15</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00020">20</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +293,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p>Defines a type for complex float32's. </p>
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00034">34</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00039">39</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +307,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00028">28</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00033">33</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +321,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00029">29</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00034">34</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +335,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00020">20</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00025">25</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +349,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00023">23</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00028">28</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +363,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00026">26</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00031">31</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +377,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00017">17</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00022">22</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +391,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00019">19</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00024">24</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -338,7 +405,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00022">22</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00027">27</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +419,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00025">25</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00030">30</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +433,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00016">16</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="definitions_8hpp_source.html#l00021">21</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
 </div>
@@ -376,7 +443,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="definitions_8hpp.html">definitions.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 31 2016 12:32:34 for My Project by
+    <li class="footer">Generated on Fri Apr 15 2016 02:50:06 for Andrew and Nick&#39;s Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

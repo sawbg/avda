@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['value',['../structMaximum.html#aa7e84cbf37b694670142670014366969',1,'Maximum']]]
+  ['noise',['noise',['../structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f',1,'DataParams']]]
 ];
