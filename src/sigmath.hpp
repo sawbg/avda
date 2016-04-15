@@ -249,7 +249,7 @@ namespace vaso {
 	void mag(cfloat32* orig, float32* newmags, uint32 size) {
 		//loop to run throught the length of array orig
 		for(uint32 n = 0; n < size; n++) {
-			newmags[n] = std::cabs(orig[n]);		//cabs should calculate the magnitude of complex array elements. saves to new array
+			newmags[n] = std::abs(orig[n]);		//cabs should calculate the magnitude of complex array elements. saves to new array
 		}
 	}
 
