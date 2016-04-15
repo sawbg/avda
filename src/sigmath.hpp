@@ -9,7 +9,6 @@
 #define sigmath_H
 
 #include <complex>
-
 #include "definitions.hpp"
 
 namespace vaso {
@@ -19,7 +18,7 @@ namespace vaso {
 	 * Ensures all elements in an array are positive. Note that this function
 	 * replaces array elements if necessary. It does not populate a new array.
 	 *
-	 * @param data the array whose elements must all be positive
+	 * @param#define fabs( z ) data the array whose elements must all be positive
 	 *
 	 * @param size the number of elements in the data array
 	 */
@@ -139,19 +138,50 @@ namespace vaso {
 	// DEFINITIONS
 
 	void absolute(float32* data, uint32 size) {
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = abs(data[i]);
+		}
 
 	}
 
 	float32 average(float32* data, uint32 size) {
+		float32 ave;
 
+		for(uint32 i = 0; i < size; i++) {
+			ave = ave + data[i];
+		}
+
+		ave = ave / size;
+		return ave;
 	}
 
 	DataParams average(DataParams* params, uint8 size) {
+		DataParams ave;
 
+		for(uint8 i = 0; i < size; i++) {
+			ave.freq += params[i].freq;	//freq is an attribute. this is how to add structure attributes
+			ave.noise += params[i].noise;
+		}
+
+		ave.freq /= size;
+		ave.noise /= size;
+		return ave;
 	}
 
 	void average(float32* data, float32* avg, uint8 count, uint32 size) {
 		// data is an array. Access like so: data[index]
+		//loop for the number of "columns" in the array
+		for(uint32 e = 0; e < size; e++) {
+			float32 c = 0;
+
+			//loop for the number of "rows" in the array (in case there are more than 3)
+			for(uint8 r = 0; r < count; r++) {
+				c = c + data [r][e];		//adds the values in each row for column at e
+			}
+
+			c = c/count;		//averages the values
+			avg[e] = c;		//saves averaged value into avg array
+		}
 	}
 
 	void decibels(float32* data, uint32 size) {
@@ -161,7 +191,11 @@ namespace vaso {
 	}
 
 	void diff(float32* data, uint32 size) {
+		data[0] = 0;
 
+		for(uint32 i = 1; i < size; i++) {
+			data[i] = data[i] - data[i-1];
+		}
 	}
 
 	void fft(cfloat32* data, uint32 size) {
@@ -213,10 +247,25 @@ namespace vaso {
 	}
 
 	void mag(cfloat32* orig, float32* newmags, uint32 size) {
-
+		//loop to run throught the length of array orig
+		for(uint32 n = 0; n < size; n++) {
+			newmags[n] = std::cabs(orig[n]);		//cabs should calculate the magnitude of complex array elements. saves to new array
+		}
 	}
 
 	Maximum max(float32* data, uint32 size) {
+		Maximum m;
+
+		//loop to run through the length of array data
+		for (uint32 i = 0; i < size; i++) {
+			//when value at data[i] is above max.value, sets max.value equal to data[i] and max.index equal to i
+			if (data[i] > m.value) {
+				m.value = data[i];
+				m.index = i;
+			}
+		}
+
+		return m;
 
 	}
 
