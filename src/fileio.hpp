@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @brief contains functions related to the file I/O use in this program
  */
@@ -7,12 +8,17 @@
 #define fileio_H
 
 #include <iostream>
-#include <string>
+#include <std::string>
 #include <fstream>
 
 #include "definitions.hpp"
 
 namespace vaso {
+	/**
+	 * First line of CSV data file, which declares columns.
+	 */
+	const std::string CSV_HEADER = "Time,Side,Frequency,Noise Level";
+
 	/**
 	 * Absolute path to the folder containing the patients' data
 	 */
@@ -29,17 +35,6 @@ namespace vaso {
 	}
 
 	/**
-	 * Finds the filename of the oldest (i.e., baseline) data is saved.
-	 *
-	 * @param dir the directory which contains all patient data
-	 *
-	 * @return the base (?) filename to which all baseline data was saved
-	 */
-	std::string InitialDataName(auto dir) {
-
-	}
-
-	/**
 	 * Prompts a user to enter a first, middle, and last name for a patients and
 	 * creates a file (if necessary) in which all of a patient's data can
 	 * be saved.
@@ -50,39 +45,55 @@ namespace vaso {
 	 * @return the file under which all patient data is saved
 	 */
 	std::string PatientName() {
-		using namespace std;
-
-		string fname = "";
-		string mname = "";
-		string lname = "";
-		string patfil = "";
-		string patientname = "";
+		std::string fname = "";
+		std::string mname = "";
+		std::string lname = "";
+		std::string patfil = "";
+		std::string patientname = "";
 		uint32 track1 = 0;
 		uint32 track2 = 0;
-		ofstream file;
+		std::ofstream file;
 
 		do {
-			cout << "Please enter the patients name." << endl;
-			cout << "First name: ";
+			std::cout << "Please enter the patients name." << std::endl;
+			std::cout << "First name: ";
 			getline(cin, fname);
-		        cout << "Middle name: ";
-		        getline(cin, mname);
-			cout << "Last name: ";
+			std::cout << "Middle name: ";
+			getline(cin, mname);
+			std::cout << "Last name: ";
 			getline(cin, lname);
 
-			patientname = PATIENT_PATH + lname + ", " + fname + " " + mname + ".csv";	//creates new string with path to patient file
-			cout << patientname << endl;	//prints out patientname. shows user the path to the patient file
-			cout << endl;
+			// creates new std::string with path to patient file
+			patientname = PATIENT_PATH + lname + ", " + fname
+				+ " " + mname + ".csv";
 
-			if (!ifstream(patientname)) { //compares patientname to existing files and lets user know if the file does not exist
-				do {		//do while statment to continue asking user about the file if their input is not acceptable
-					cout << "Patient file does not exist, would you like to create file or re-enter their name?" << endl;
-					cout << "  *Type 'create' and press enter key to create the patient file." << endl;
-					cout << "  *Type 'reenter' and press enter key to re-enter the patients name." << endl;
-					cout << endl;
+			// prints out patientname. shows user the path to the patient file
+			std::cout << patientname << std::endl << endl;
+
+			/*
+			 * Compares patientname to existing files and lets user know
+			 * if the file does not exist
+			 */
+			if (!ifstream(patientname)) {
+				/* 
+				 * do while statment to continue asking user about the file
+				 * if their input is not acceptable
+				 */ 
+				do {
+					std::cout << "Patient file does not exist, would you like "
+						"to create file or re-enter their name?" << std::endl;
+					std::cout << "  *Type 'create' and press enter key "
+						"to create the patient file." << std::endl;
+					std::cout << "  *Type 'reenter' and press enter key "
+						"to re-enter the patients name." << std::endl;
+					std::cout << std::endl;
 					getline (cin, patfil);
 
-					if(patfil == "create") {//patfil equals create, track1 and 2  will increase escaping both do while loops
+					/* 
+					 * patfil equals create, track1 and 2 will increase
+					 * escaping both do while loops
+					 */
+					if(patfil == "create") {
 						track1 = 1;
 						track2 = 1;
 						file.open(patientname);
@@ -90,18 +101,18 @@ namespace vaso {
 					}
 
 					else if(patfil == "reenter") {
-                               			track1 = 0;
+						track1 = 0;
 						track2 = 1;
 					}
 
 					else {
-						cout << endl;
-						cout << "Your input is not acceptable." << endl;
-						cout << endl;
+						std::cout << std::endl;
+						std::cout << "Your input is not acceptable." << std::endl;
+						std::cout << std::endl;
 					}
 				}while(track2 == 0);
 			}
-		}while (track1 = 0);
+		} while (track1 = 0);
 
 		return patientname;	//returns the path to the patient file
 	}
