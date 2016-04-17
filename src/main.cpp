@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @author Nicholas K. Nolan
  * @brief contains the main program
@@ -30,12 +31,16 @@ int main(int argc, char** argv) {
 	// TODO: Load all of patient's parameters
 
 	// Record doppler audio
-	float32 buffer[REC_COUNT][SAMPLE_COUNT];
+	float32* buffer[REC_COUNT];
+
+	for(uint8 i = 0; i < REC_COUNT; i++) {
+		buffer[i] = (float32*)malloc(SAMPLE_COUNT * sizeof(float32));
+	}
 	
 	for(uint8 i = 0; i < REC_COUNT; i++) {
 		// TODO: Prompt user to press ENTER to start recording
 
-		int retSeek = 0;//fseek(STDIN_FILENO, 0, SEEK_END);
+		int retSeek = fseek(STDIN_FILENO, 0, SEEK_END);
 		int retRead = read(STDIN_FILENO, &buffer[i], SAMPLE_COUNT);
 
 		if(retSeek != 0 || retRead < SAMPLE_COUNT) {
