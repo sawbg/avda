@@ -36,11 +36,11 @@ namespace vaso {
 	 * property of the aforementioned is protected and is neither misrepresented
 	 * nor claimed implicitly or explicitly by another individual. 
 	 *
-	 * @params data two-dimensional array (first dimension whole recordings,
+	 * @param data two-dimensional array (first dimension whole recordings,
 	 * second dimension samples in a recording) that will contain all recorded
 	 * audio
 	 *
-	 * @params REC_COUNT the number of recordings (left and right together) to be
+	 * @param REC_COUNT the number of recordings (left and right together) to be
 	 *  made
 	 *
 	 * @param SAMPLE_COUNT the number of samples in each recording. MUST be a
@@ -51,7 +51,7 @@ namespace vaso {
 	 * @return a map of the averaged left- and right-side parameters in
 	 * DataParams structures
 	 */
-	std::map<Side, DataParams> Process(float32 data[REC_COUNT][SAMPLE_COUNT]) {
+	std::map<Side, DataParams> Process(float32** data) {
 		// just in case SAMPLE_COUNT isn't a power of two
 		if((SAMPLE_COUNT & (SAMPLE_COUNT - 1) != 0) || SAMPLE_COUNT < 2) {
 			throw std::invalid_argument(
@@ -81,7 +81,7 @@ namespace vaso {
 			}
 
 			decibels(fdata[rCount], freqSize);
-			
+
 			/*
 			 * Run spectrum values through moving-average filter to smooth the
 			 * curve and make it easier to determine the derivative.
@@ -112,6 +112,64 @@ namespace vaso {
 		sideParams[Side::Right] = average(&tempParams[REC_COUNT / 2],
 				REC_COUNT / 2);
 		return sideParams;
+	}
+
+	DataParams process(float32* data, uint32 size, float32 samplingRate) {
+		// just in case SAMPLE_COUNT isn't a power of two
+		if((size & (size- 1) != 0) || size < 2) {
+			throw std::invalid_argument(
+					"The number of samples is not a power of two!");
+		}
+
+		// declare function-scoped variables
+		uint32 freqSize = size / 2;
+		cfloat32* cdata = (cfloat32*)std::malloc(size * sizeof(cfloat32));
+		float32* fdata = (float32*)std::malloc(size * sizeof(float32));
+
+		// convert data to complex numbers for fft()
+		for(uint32 i = 0; i < SAMPLE_COUNT; i++) {
+			cdata[i] = data[i];
+		}
+
+		// find frequency spectrum in relative decibels
+		fft(cdata, size);
+		mag(cdata, fdata, freqSize);
+		Maximum maximum = max(fdata, freqSize);
+
+		for(uint32 i = 0; i < freqSize; i++) {
+			fdata[i] /= maximum.value;
+		}
+
+		decibels(fdata, freqSize);
+
+		/*
+		 * Run spectrum values through moving-average filter to smooth the
+		 * curve and make it easier to determine the derivative.
+		 */
+		smooth(fdata, freqSize, 20);
+
+		/*
+		 * Find the derivative of the smoothed spectrum. Bote that both this
+		 * filter and the previous are necessary to the algorithm.
+		 */
+		diff(fdata, freqSize);
+		smooth(fdata, freqSize, 100);
+		absolute(fdata, freqSize);
+
+		// find the parameters of this specific recording
+		uint16 offset = 1000;
+		absolute(&fdata[offset], freqSize - offset);
+		uint32 index = max(&fdata[offset],
+				freqSize - offset).index;
+		DataParams params;
+		params.freq = index * (float)SAMPLE_FREQ / freqSize;
+		params.noise = average(&fdata[index + 2 * offset],
+				freqSize - 2 * offset);
+
+		free(cdata);
+		free(fdata);
+		return params;
+
 	}
 }
 
