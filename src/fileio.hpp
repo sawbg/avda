@@ -8,7 +8,7 @@
 #define fileio_H
 
 #include <iostream>
-#include <std::string>
+#include <string>
 #include <fstream>
 
 #include "definitions.hpp"
@@ -23,16 +23,6 @@ namespace vaso {
 	 * Absolute path to the folder containing the patients' data
 	 */
 	const std::string PATIENT_PATH = "/home/pi/patients/";
-
-	/**
-	 * Gets a data-based name to which  the file(s) created in a session to be
-	 * saved.
-	 *
-	 * @return a partial (?) filename for the current session
-	 */
-	std::string CurrentDataName() {
-
-	}
 
 	/**
 	 * Prompts a user to enter a first, middle, and last name for a patients and
@@ -52,31 +42,31 @@ namespace vaso {
 		std::string patientname = "";
 		uint32 track1 = 0;
 		uint32 track2 = 0;
-		std::ofstream file;
 
 		do {
 			std::cout << "Please enter the patients name." << std::endl;
 			std::cout << "First name: ";
-			getline(cin, fname);
+			std::cin >> fname;
 			std::cout << "Middle name: ";
-			getline(cin, mname);
+			std::cin >> mname;
 			std::cout << "Last name: ";
-			getline(cin, lname);
+			std::cin >> lname;
 
 			// creates new std::string with path to patient file
 			patientname = PATIENT_PATH + lname + ", " + fname
 				+ " " + mname + ".csv";
 
 			// prints out patientname. shows user the path to the patient file
-			std::cout << patientname << std::endl << endl;
+			std::cout << patientname << std::endl << std::endl;
+			std::ifstream file(patientname.c_str());
 
 			/*
 			 * Compares patientname to existing files and lets user know
-			 * if the file does not exist
+			 * if the file does not exist.
 			 */
-			if (!ifstream(patientname)) {
+			if (!file.good()) {
 				/* 
-				 * do while statment to continue asking user about the file
+				 * Do while statement to continue asking user about the file
 				 * if their input is not acceptable
 				 */ 
 				do {
@@ -87,7 +77,7 @@ namespace vaso {
 					std::cout << "  *Type 'reenter' and press enter key "
 						"to re-enter the patients name." << std::endl;
 					std::cout << std::endl;
-					getline (cin, patfil);
+					std::cin >> patfil;
 
 					/* 
 					 * patfil equals create, track1 and 2 will increase
@@ -100,11 +90,19 @@ namespace vaso {
 						file.close();
 					}
 
+					/*
+					*patfil equals renter, track1 will remain zero allowing
+					*user to reenter the patient name.
+					*/
 					else if(patfil == "reenter") {
 						track1 = 0;
 						track2 = 1;
 					}
 
+					/*
+					*The users input was neither create or reenter. User
+					*must enter patient name again.
+					*/
 					else {
 						std::cout << std::endl;
 						std::cout << "Your input is not acceptable." << std::endl;
@@ -126,8 +124,25 @@ namespace vaso {
 	 *
 	 * @return the patient parameters read
 	 */
-	DataParams ReadParams(auto filename) {
+	std::map<Side, DataParams> ReadParams(auto filename) {
+		DataParams par;
+		std::ifstream file(filename.c_str());
+		std::string line;
+		//if statement which uses ifstream function to open patient file (filename)
+		if(file.is_open()) {
+			std::getline(file, line);
+		}
 
+		else {
+			std::cout << "The patient file could not be opened." << std::endl;
+		}
+
+		std::map<Side, DataParams> myMap;
+		DataParams myParams;
+		myMap[Side::Left] = myParams;
+
+		std::par = line;
+		return par;
 	}
 
 	/**
@@ -141,3 +156,4 @@ namespace vaso {
 }
 
 #endif
+
