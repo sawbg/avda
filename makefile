@@ -15,6 +15,9 @@ docs:
 patient-name-test:
 	$(GCC) src/patient_name_test.cpp -o bin/patnametest
 
+process-test:
+	$(GCC) src/process_test.cpp -o bin/proctest
+
 sigmath-test:
 	$(GCC) src/sigmath_test.cpp -o bin/sigmathtest
 
