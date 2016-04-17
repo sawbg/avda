@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @author Nicholas K. Nolan
  * @brief contains the functions necessary to perform the mathematical
@@ -141,14 +142,13 @@ namespace vaso {
 		for(uint32 i = 0; i < size; i++) {
 			data[i] = abs(data[i]);
 		}
-
 	}
 
 	float32 average(float32* data, uint32 size) {
 		float32 ave;
 
 		for(uint32 i = 0; i < size; i++) {
-			ave = ave + data[i];
+			ave += data[i];
 		}
 
 		ave = ave / size;
@@ -159,7 +159,9 @@ namespace vaso {
 		DataParams ave;
 
 		for(uint8 i = 0; i < size; i++) {
-			ave.freq += params[i].freq;	//freq is an attribute. this is how to add structure attributes
+			//freq is an attribute. this is how to add structure attributes
+			ave.freq += params[i].freq;
+
 			ave.noise += params[i].noise;
 		}
 
@@ -168,18 +170,18 @@ namespace vaso {
 		return ave;
 	}
 
-	void average(float32* data, float32* avg, uint8 count, uint32 size) {
+	void average(float32** data, float32* avg, uint8 count, uint32 size) {
 		// data is an array. Access like so: data[index]
 		//loop for the number of "columns" in the array
 		for(uint32 e = 0; e < size; e++) {
 			float32 c = 0;
 
-			//loop for the number of "rows" in the array (in case there are more than 3)
-			for(uint8 r = 0; r < count; r++) {
-				c = c + data [r][e];		//adds the values in each row for column at e
+			//loop for the number of "rows" in the array (in case > 3)
+			for(uint32 r = 0; r < count; r++) {
+				c += data [r][e];		//adds values in each row for column e
 			}
 
-			c = c/count;		//averages the values
+			c = c / count;		//averages the values
 			avg[e] = c;		//saves averaged value into avg array
 		}
 	}
@@ -249,7 +251,11 @@ namespace vaso {
 	void mag(cfloat32* orig, float32* newmags, uint32 size) {
 		//loop to run throught the length of array orig
 		for(uint32 n = 0; n < size; n++) {
-			newmags[n] = std::abs(orig[n]);		//cabs should calculate the magnitude of complex array elements. saves to new array
+			/* 
+			 * abs should calculate the magnitude of complex array elements.
+			 * saves to new array
+			 */
+			newmags[n] = std::abs(orig[n]);		
 		}
 	}
 
@@ -258,7 +264,10 @@ namespace vaso {
 
 		//loop to run through the length of array data
 		for (uint32 i = 0; i < size; i++) {
-			//when value at data[i] is above max.value, sets max.value equal to data[i] and max.index equal to i
+			/* 
+			 * when value at data[i] is above max.value,
+			 * sets max.value equal to data[i] and max.index equal to i
+			 */
 			if (data[i] > m.value) {
 				m.value = data[i];
 				m.index = i;
@@ -266,7 +275,6 @@ namespace vaso {
 		}
 
 		return m;
-
 	}
 
 	void smooth(float32* data, uint32 size, uint16 order) {
