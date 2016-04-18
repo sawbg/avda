@@ -14,7 +14,7 @@
 #define ERROR -1
 #define REC_COUNT 6 
 #define SAMPLE_COUNT 262144
-#define SAMPLE_FREQ 48000
+#define SAMPLE_FREQ 44100
 #define ENUM signed char
 
 typedef unsigned char byte;
@@ -42,8 +42,8 @@ typedef std::complex<float32> cfloat32;
  * Contains the calculated results from processing the audio recordings.
  */
 typedef struct {
-	float32 freq;
-	float32 noise;
+	float32 freq = 0;
+	float32 noise = 0;
 } DataParams;
 
 /**
@@ -51,8 +51,8 @@ typedef struct {
  * array.
  */
 typedef struct {
-	float32 value;
-	uint32 index;
+	float32 value = 0;
+	uint32 index = 0;
 } Maximum;
 
 /**
