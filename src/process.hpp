@@ -116,7 +116,7 @@ namespace vaso {
 
 	DataParams process(float32* data, uint32 size, float32 samplingRate) {
 		// just in case SAMPLE_COUNT isn't a power of two
-		if((size & (size- 1) != 0) || size < 2) {
+		if((size & (size - 1) != 0) || size < 2) {
 			throw std::invalid_argument(
 					"The number of samples is not a power of two!");
 		}
@@ -124,13 +124,14 @@ namespace vaso {
 		// declare function-scoped variables
 		uint32 freqSize = size / 2;
 		cfloat32* cdata = (cfloat32*)std::malloc(size * sizeof(cfloat32));
-		float32* fdata = (float32*)std::malloc(size * sizeof(float32));
+		float32* fdata = (float32*)std::malloc(freqSize * sizeof(float32));
+		float32* origdata = (float32*)std::malloc(freqSize * sizeof(float32));
 
 		// convert data to complex numbers for fft()
-		for(uint32 i = 0; i < SAMPLE_COUNT; i++) {
+		for(uint32 i = 0; i < size; i++) {
 			cdata[i] = data[i];
 		}
-
+	
 		// find frequency spectrum in relative decibels
 		fft(cdata, size);
 		mag(cdata, fdata, freqSize);
@@ -141,6 +142,10 @@ namespace vaso {
 		}
 
 		decibels(fdata, freqSize);
+
+		for(uint32 i = 0; i < freqSize; i++) {
+			origdata[i] = fdata[i];
+		}
 
 		/*
 		 * Run spectrum values through moving-average filter to smooth the
@@ -159,12 +164,12 @@ namespace vaso {
 		// find the parameters of this specific recording
 		uint16 offset = 1000;
 		absolute(&fdata[offset], freqSize - offset);
-		uint32 index = max(&fdata[offset],
-				freqSize - offset).index;
+		maximum = max(&fdata[offset], freqSize - offset);
+		uint32 index = maximum.index + offset;
 		DataParams params;
-		params.freq = index * (float)SAMPLE_FREQ / freqSize;
-		params.noise = average(&fdata[index + 2 * offset],
-				freqSize - 2 * offset);
+		params.freq = index * (float)SAMPLE_FREQ / freqSize / 2;
+		params.noise = average(&origdata[index + offset],
+				freqSize - offset - index);
 
 		free(cdata);
 		free(fdata);
