@@ -19,7 +19,7 @@ namespace vaso {
 	 * Ensures all elements in an array are positive. Note that this function
 	 * replaces array elements if necessary. It does not populate a new array.
 	 *
-	 * @param#define fabs( z ) data the array whose elements must all be positive
+	 * @param data the array whose elements must all be positive
 	 *
 	 * @param size the number of elements in the data array
 	 */
@@ -140,7 +140,7 @@ namespace vaso {
 
 	void absolute(float32* data, uint32 size) {
 		for(uint32 i = 0; i < size; i++) {
-			data[i] = abs(data[i]);
+			data[i] = fabsf(data[i]);
 		}
 	}
 
@@ -193,10 +193,15 @@ namespace vaso {
 	}
 
 	void diff(float32* data, uint32 size) {
-		data[0] = 0;
+		float32 temp[size];
+		temp[0] = 0;
 
 		for(uint32 i = 1; i < size; i++) {
-			data[i] = data[i] - data[i-1];
+			temp[i] = data[i] - data[i-1];
+		}
+
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = temp[i];
 		}
 	}
 
@@ -217,8 +222,8 @@ namespace vaso {
 			for(uint32 l = 0; l < k; l++) {
 				for(uint32 a = l; a < size; a += n) {
 					uint32 b = a + k;
-					cfloat32 t = data[a] -data[b];
-					data[a] +=data[b];
+					cfloat32 t = data[a] - data[b];
+					data[a] += data[b];
 					data[b] = t * T;
 				}
 
@@ -242,7 +247,7 @@ namespace vaso {
 			if (b > a)
 			{
 				cfloat32 t = data[a];
-				data[a] =data[b];
+				data[a] = data[b];
 				data[b] = t;
 			}
 		}
@@ -289,6 +294,10 @@ namespace vaso {
 			}
 
 			temp[i] *= coeff;
+		}
+
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = temp[i];
 		}
 	}
 }
