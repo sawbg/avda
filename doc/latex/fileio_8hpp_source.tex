@@ -4,37 +4,127 @@
 
 \begin{DoxyCode}
 00001 
-00006 \textcolor{preprocessor}{#ifndef fileio\_H}
-00007 \textcolor{preprocessor}{#define fileio\_H}
-00008 
-00009 \textcolor{preprocessor}{#include <iostream>}
-00010 \textcolor{preprocessor}{#include <string>}
-00011 
-00012 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00007 \textcolor{preprocessor}{#ifndef fileio\_H}
+00008 \textcolor{preprocessor}{#define fileio\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <iostream>}
+00011 \textcolor{preprocessor}{#include <string>}
+00012 \textcolor{preprocessor}{#include <fstream>}
 00013 
-00014 \textcolor{keyword}{namespace }\hyperlink{namespacevaso}{vaso} \{
-\hypertarget{fileio_8hpp_source_l00018}{}\hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{00018}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
-00019 
-\hypertarget{fileio_8hpp_source_l00026}{}\hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{00026}     std::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{CurrentDataName}() \{
-00027 
-00028     \}
-00029 
-\hypertarget{fileio_8hpp_source_l00037}{}\hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{00037}     std::string \hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{InitialDataName}(\textcolor{keyword}{auto} dir) \{
-00038 
-00039     \}
-00040 
-\hypertarget{fileio_8hpp_source_l00051}{}\hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{00051}     std::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{PatientName}() \{
-00052 
-00053     \}
+00014 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00015 
+00016 \textcolor{keyword}{namespace }\hyperlink{namespacevaso}{vaso} \{
+\hypertarget{fileio_8hpp_source_l00020}{}\hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{00020}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{CSV\_HEADER} = \textcolor{stringliteral}{"Time,Side,Frequency,Noise Level"};
+00021 
+\hypertarget{fileio_8hpp_source_l00025}{}\hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{00025}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
+00026 
+\hypertarget{fileio_8hpp_source_l00037}{}\hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{00037}     std::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{PatientName}() \{
+00038         std::string fname = \textcolor{stringliteral}{""};
+00039         std::string mname = \textcolor{stringliteral}{""};
+00040         std::string lname = \textcolor{stringliteral}{""};
+00041         std::string patfil = \textcolor{stringliteral}{""};
+00042         std::string patientname = \textcolor{stringliteral}{""};
+00043         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track1 = 0;
+00044         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track2 = 0;
+00045 
+00046         \textcolor{keywordflow}{do} \{
+00047             std::cout << \textcolor{stringliteral}{"Please enter the patients name."} << std::endl;
+00048             std::cout << \textcolor{stringliteral}{"First name: "};
+00049             std::cin >> fname;
+00050             std::cout << \textcolor{stringliteral}{"Middle name: "};
+00051             std::cin >> mname;
+00052             std::cout << \textcolor{stringliteral}{"Last name: "};
+00053             std::cin >> lname;
 00054 
-\hypertarget{fileio_8hpp_source_l00064}{}\hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{00064}     \hyperlink{structDataParams}{DataParams} \hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{ReadParams}(\textcolor{keyword}{auto} filename) \{
-00065 
-00066     \}
-00067 
-\hypertarget{fileio_8hpp_source_l00073}{}\hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{00073}     std::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{WriteParams}(\hyperlink{structDataParams}{DataParams} params, \textcolor{keyword}{auto} filename) \{
-00074 
-00075     \}
-00076 \}
-00077 
-00078 \textcolor{preprocessor}{#endif}
+00055             \textcolor{comment}{// creates new std::string with path to patient file}
+00056             patientname = PATIENT\_PATH + lname + \textcolor{stringliteral}{", "} + fname
+00057                 + \textcolor{stringliteral}{" "} + mname + \textcolor{stringliteral}{".csv"};
+00058 
+00059             \textcolor{comment}{// prints out patientname. shows user the path to the patient file}
+00060             std::cout << patientname << std::endl << std::endl;
+00061             std::ifstream file(patientname.c\_str());
+00062 
+00063             \textcolor{comment}{/*}
+00064 \textcolor{comment}{             * Compares patientname to existing files and lets user know}
+00065 \textcolor{comment}{             * if the file does not exist.}
+00066 \textcolor{comment}{             */}
+00067             \textcolor{keywordflow}{if} (!file.good()) \{
+00068                 \textcolor{comment}{/* }
+00069 \textcolor{comment}{                 * Do while statement to continue asking user about the file}
+00070 \textcolor{comment}{                 * if their input is not acceptable}
+00071 \textcolor{comment}{                 */} 
+00072                 \textcolor{keywordflow}{do} \{
+00073                     std::cout << \textcolor{stringliteral}{"Patient file does not exist, would you like "}
+00074                         \textcolor{stringliteral}{"to create file or re-enter their name?"} << std::endl;
+00075                     std::cout << \textcolor{stringliteral}{"  *Type 'create' and press enter key "}
+00076                         \textcolor{stringliteral}{"to create the patient file."} << std::endl;
+00077                     std::cout << \textcolor{stringliteral}{"  *Type 'reenter' and press enter key "}
+00078                         \textcolor{stringliteral}{"to re-enter the patients name."} << std::endl;
+00079                     std::cout << std::endl;
+00080                     std::cin >> patfil;
+00081 
+00082                     \textcolor{comment}{/* }
+00083 \textcolor{comment}{                     * patfil equals create, track1 and 2 will increase}
+00084 \textcolor{comment}{                     * escaping both do while loops}
+00085 \textcolor{comment}{                     */}
+00086                     \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"create"}) \{
+00087                         track1 = 1;
+00088                         track2 = 1;
+00089                         file.open(patientname);
+00090                         file.close();
+00091                     \}
+00092 
+00093                     \textcolor{comment}{/*}
+00094 \textcolor{comment}{                    *patfil equals renter, track1 will remain zero allowing}
+00095 \textcolor{comment}{                    *user to reenter the patient name.}
+00096 \textcolor{comment}{                    */}
+00097                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"reenter"}) \{
+00098                         track1 = 0;
+00099                         track2 = 1;
+00100                     \}
+00101 
+00102                     \textcolor{comment}{/*}
+00103 \textcolor{comment}{                    *The users input was neither create or reenter. User}
+00104 \textcolor{comment}{                    *must enter patient name again.}
+00105 \textcolor{comment}{                    */}
+00106                     \textcolor{keywordflow}{else} \{
+00107                         std::cout << std::endl;
+00108                         std::cout << \textcolor{stringliteral}{"Your input is not acceptable."} << std::endl;
+00109                         std::cout << std::endl;
+00110                     \}
+00111                 \}\textcolor{keywordflow}{while}(track2 == 0);
+00112             \}
+00113         \} \textcolor{keywordflow}{while} (track1 = 0);
+00114 
+00115         \textcolor{keywordflow}{return} patientname; \textcolor{comment}{//returns the path to the patient file}
+00116     \}
+00117 
+\hypertarget{fileio_8hpp_source_l00127}{}\hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{00127}     std::map<Side, DataParams> \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(\textcolor{keyword}{auto} filename) \{
+00128         \hyperlink{structDataParams}{DataParams} par;
+00129         std::ifstream file(filename.c\_str());
+00130         std::string line;
+00131         \textcolor{comment}{//if statement which uses ifstream function to open patient file (filename)}
+00132         \textcolor{keywordflow}{if}(file.is\_open()) \{
+00133             std::getline(file, line);
+00134         \}
+00135 
+00136         \textcolor{keywordflow}{else} \{
+00137             std::cout << \textcolor{stringliteral}{"The patient file could not be opened."} << std::endl;
+00138         \}
+00139 
+00140         std::map<Side, DataParams> myMap;
+00141         \hyperlink{structDataParams}{DataParams} myParams;
+00142         myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Side::Left}] = myParams;
+00143 
+00144         std::par = line;
+00145         \textcolor{keywordflow}{return} par;
+00146     \}
+00147 
+\hypertarget{fileio_8hpp_source_l00153}{}\hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{00153}     std::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{WriteParams}(\hyperlink{structDataParams}{DataParams} params, \textcolor{keyword}{auto} filename) \{
+00154 
+00155     \}
+00156 \}
+00157 
+00158 \textcolor{preprocessor}{#endif}
+00159 
 \end{DoxyCode}

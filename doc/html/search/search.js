@@ -11,12 +11,12 @@ var indexSectionsWithContent =
   1: "dmt",
   2: "v",
   3: "dfmps",
-  4: "acdfimprsw",
+  4: "adfmprsw",
   5: "cdfinprsv",
   6: "bcfsu",
   7: "s",
   8: "lr",
-  9: "ers"
+  9: "cers"
 };
 
 var indexSectionNames =

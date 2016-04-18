@@ -1,4 +1,4 @@
-.TH "src/process.hpp" 3 "Fri Apr 15 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/process.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,13 +21,16 @@ src/process.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains functions related to the file I/O use in this program \fP"
+.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::map< Side, \fBDataParams\fP > \fBvaso::Process\fP (\fBfloat32\fP data[\fBREC_COUNT\fP][\fBSAMPLE_COUNT\fP])"
+.RI "std::map< Side, \fBDataParams\fP > \fBvaso::Process\fP (\fBfloat32\fP **data)"
+.br
+.ti -1c
+.RI "\fBDataParams\fP \fBvaso::process\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBfloat32\fP samplingRate)"
 .br
 .in -1c
 .SH "Author"

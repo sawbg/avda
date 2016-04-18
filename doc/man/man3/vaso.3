@@ -1,10 +1,10 @@
-.TH "vaso" 3 "Fri Apr 15 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "vaso" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 vaso \- 
 .PP
-contains functions related to the file I/O use in this program  
+contains function()s related to the program's threaded processing of audio data  
 
 .SH SYNOPSIS
 .br
@@ -20,22 +20,19 @@ contains functions related to the file I/O use in this program
 
 .in +1c
 .ti -1c
-.RI "std::string \fBCurrentDataName\fP ()"
-.br
-.ti -1c
-.RI "std::string \fBInitialDataName\fP (auto dir)"
-.br
-.ti -1c
 .RI "std::string \fBPatientName\fP ()"
 .br
 .ti -1c
-.RI "\fBDataParams\fP \fBReadParams\fP (auto filename)"
+.RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBReadParams\fP (auto filename)"
 .br
 .ti -1c
 .RI "std::string \fBWriteParams\fP (\fBDataParams\fP params, auto filename)"
 .br
 .ti -1c
-.RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBProcess\fP (\fBfloat32\fP data[\fBREC_COUNT\fP][\fBSAMPLE_COUNT\fP])"
+.RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBProcess\fP (\fBfloat32\fP **data)"
+.br
+.ti -1c
+.RI "\fBDataParams\fP \fBprocess\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBfloat32\fP samplingRate)"
 .br
 .ti -1c
 .RI "void \fBabsolute\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
@@ -68,6 +65,9 @@ contains functions related to the file I/O use in this program
 .RI "void \fBsmooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
 .br
 .ti -1c
+.RI "void \fBaverage\fP (\fBfloat32\fP **data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
+.br
+.ti -1c
 .RI "void \fBplay\fP (auto filename)"
 .br
 .in -1c
@@ -75,28 +75,23 @@ contains functions related to the file I/O use in this program
 
 .in +1c
 .ti -1c
+.RI "const std::string \fBCSV_HEADER\fP = 'Time,\fBSide\fP,Frequency,Noise Level'"
+.br
+.ti -1c
 .RI "const std::string \fBPATIENT_PATH\fP = '/home/pi/patients/'"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-contains functions related to the file I/O use in this program 
+contains function()s related to the program's threaded processing of audio data 
 
 contains the function(s) relating to sound
-.PP
-contains the functions necessary to perform the mathematical operations required by this program
-.PP
-contains function()s related to the program's threaded processing of audio data
 .PP
 This namespace contains all code related to this project\&.
 .PP
 \fBAuthor:\fP
 .RS 4
-Samuel Andrew Wisner, awisner94@gmail.com
-.PP
 Samuel Andrew Wisner, awisner94@gmail.com 
-.PP
-Nicholas K\&. Nolan 
 .RE
 .PP
 
@@ -145,7 +140,7 @@ the computed average
 .PP
 
 .PP
-Definition at line 145 of file sigmath\&.hpp\&.
+Definition at line 147 of file sigmath\&.hpp\&.
 .SS "\fBDataParams\fP vaso::average (\fBDataParams\fP *params, \fBuint8\fPsize)"
 Finds the averages of the elements of an array of \fBDataParams\fP\&.
 .PP
@@ -163,7 +158,7 @@ a \fBDataParams\fP structure containing the average values of the structure's el
 .PP
 
 .PP
-Definition at line 149 of file sigmath\&.hpp\&.
+Definition at line 158 of file sigmath\&.hpp\&.
 .SS "void vaso::average (\fBfloat32\fP *data, \fBfloat32\fP *avg, \fBuint8\fPcount, \fBuint32\fPsize)"
 Element-wise averaging along the first dimension of a two-dimensional array\&.
 .PP
@@ -179,19 +174,10 @@ Element-wise averaging along the first dimension of a two-dimensional array\&.
 .RE
 .PP
 
-.PP
-Definition at line 153 of file sigmath\&.hpp\&.
-.SS "std::string vaso::CurrentDataName ()"
-Gets a data-based name to which the file(s) created in a session to be saved\&.
-.PP
-\fBReturns:\fP
-.RS 4
-a partial (?) filename for the current session 
-.RE
-.PP
+.SS "void vaso::average (\fBfloat32\fP **data, \fBfloat32\fP *avg, \fBuint8\fPcount, \fBuint32\fPsize)"
 
 .PP
-Definition at line 26 of file fileio\&.hpp\&.
+Definition at line 173 of file sigmath\&.hpp\&.
 .SS "void vaso::decibels (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Converts an array of floats to 'power decibels', i\&.e\&., x[n] = 20*log10(x[n])\&. The decibel values are written to the same array that contained the values to be converted\&. In other words, this function should perform an in-place, element-wise conversion\&.
 .PP
@@ -204,7 +190,7 @@ Converts an array of floats to 'power decibels', i\&.e\&., x[n] = 20*log10(x[n])
 .PP
 
 .PP
-Definition at line 157 of file sigmath\&.hpp\&.
+Definition at line 189 of file sigmath\&.hpp\&.
 .SS "void vaso::diff (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Computes the left-handed first derivative of a discrete signal\&. The first element will be 0\&.
 .PP
@@ -217,7 +203,7 @@ Computes the left-handed first derivative of a discrete signal\&. The first elem
 .PP
 
 .PP
-Definition at line 163 of file sigmath\&.hpp\&.
+Definition at line 195 of file sigmath\&.hpp\&.
 .SS "void vaso::fft (\fBcfloat32\fP *data, \fBuint32\fPsize)"
 Replaces the values of an array of cfloat32's with the array's DFT using a decimation-in-frequency algorithm\&.
 .PP
@@ -232,23 +218,7 @@ This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transfo
 .PP
 
 .PP
-Definition at line 167 of file sigmath\&.hpp\&.
-.SS "std::string vaso::InitialDataName (autodir)"
-Finds the filename of the oldest (i\&.e\&., baseline) data is saved\&.
-.PP
-\fBParameters:\fP
-.RS 4
-\fIdir\fP the directory which contains all patient data
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-the base (?) filename to which all baseline data was saved 
-.RE
-.PP
-
-.PP
-Definition at line 37 of file fileio\&.hpp\&.
+Definition at line 208 of file sigmath\&.hpp\&.
 .SS "void vaso::mag (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fPsize)"
 Computes the magitude of an array of complex numbers\&.
 .PP
@@ -263,7 +233,7 @@ Computes the magitude of an array of complex numbers\&.
 .PP
 
 .PP
-Definition at line 215 of file sigmath\&.hpp\&.
+Definition at line 256 of file sigmath\&.hpp\&.
 .SS "\fBMaximum\fP vaso::max (\fBfloat32\fP *data, \fBuint32\fPsize)"
 Finds the maximum value in an array\&.
 .PP
@@ -281,20 +251,20 @@ the maximum value and its index in a \fBMaximum\fP structure
 .PP
 
 .PP
-Definition at line 219 of file sigmath\&.hpp\&.
+Definition at line 267 of file sigmath\&.hpp\&.
 .SS "std::string vaso::PatientName ()"
-Prompts a user to enter a first, middle, and last name for a patients and creates a directory (if necessary) in which all of a patient's data can be saved\&.
+Prompts a user to enter a first, middle, and last name for a patients and creates a file (if necessary) in which all of a patient's data can be saved\&.
 .PP
 Must warn a user if the patient folder does not already exist in order to prevent missaving data\&.
 .PP
 \fBReturns:\fP
 .RS 4
-the directory under which all patient data is saved 
+the file under which all patient data is saved 
 .RE
 .PP
 
 .PP
-Definition at line 51 of file fileio\&.hpp\&.
+Definition at line 37 of file fileio\&.hpp\&.
 .SS "void vaso::play (autofilename)"
 Plays a WAVE file in a loop in a non-blocking manner\&.
 .PP
@@ -306,17 +276,17 @@ Plays a WAVE file in a loop in a non-blocking manner\&.
 
 .PP
 Definition at line 19 of file sound\&.hpp\&.
-.SS "std::map<\fBSide\fP, \fBDataParams\fP> vaso::Process (\fBfloat32\fPdata[REC_COUNT][SAMPLE_COUNT])"
+.SS "std::map<\fBSide\fP, \fBDataParams\fP> vaso::Process (\fBfloat32\fP **data)"
 Processes the recorded audio\&. Meant to be run in a separate thread as the recordings are being made\&. This function assumes that the left-side recordings will be made first\&.
 .PP
 It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan\&. The 'algorithm' is defined as the use of 1) the frequency drop-off and/or 2) a noise value from the frequency band above the drop-off frequency in order to diagnose (with or without other factors and parameters) the presence of a vasospasm in a patient\&. By faculty members and/or students in the UAB ECE department using this algorithm, they agree that the presentation of their code or project that uses this algorithm by anyone directly or indirectly related to the code or project, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan\&. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan\&. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the aforementioned is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual\&.
 .PP
-data two-dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio
-.PP
-REC_COUNT the number of recordings (left and right together) to be made
-.PP
 \fBParameters:\fP
 .RS 4
+\fIdata\fP two-dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio
+.br
+\fIREC_COUNT\fP the number of recordings (left and right together) to be made
+.br
 \fISAMPLE_COUNT\fP the number of samples in each recording\&. MUST be a power of two\&.
 .br
 \fISAMPLE_FREQ\fP the sampling frequency in Hz or Samples/second
@@ -330,7 +300,11 @@ a map of the averaged left- and right-side parameters in \fBDataParams\fP struct
 
 .PP
 Definition at line 54 of file process\&.hpp\&.
-.SS "\fBDataParams\fP vaso::ReadParams (autofilename)"
+.SS "\fBDataParams\fP vaso::process (\fBfloat32\fP *data, \fBuint32\fPsize, \fBfloat32\fPsamplingRate)"
+
+.PP
+Definition at line 117 of file process\&.hpp\&.
+.SS "std::map<\fBSide\fP, \fBDataParams\fP> vaso::ReadParams (autofilename)"
 Reads the previously computated parameters found in the specified file\&.
 .PP
 \fBParameters:\fP
@@ -345,7 +319,7 @@ the patient parameters read
 .PP
 
 .PP
-Definition at line 64 of file fileio\&.hpp\&.
+Definition at line 127 of file fileio\&.hpp\&.
 .SS "void vaso::smooth (\fBfloat32\fP *data, \fBuint32\fPsize, \fBuint16\fPorder)"
 Applies an nth-order moving-average filter to a discrete signal\&.
 .PP
@@ -360,7 +334,7 @@ Applies an nth-order moving-average filter to a discrete signal\&.
 .PP
 
 .PP
-Definition at line 223 of file sigmath\&.hpp\&.
+Definition at line 285 of file sigmath\&.hpp\&.
 .SS "std::string vaso::WriteParams (\fBDataParams\fPparams, autofilename)"
 Writes the parameters to the specified file\&.
 .PP
@@ -371,13 +345,17 @@ Writes the parameters to the specified file\&.
 .PP
 
 .PP
-Definition at line 73 of file fileio\&.hpp\&.
+Definition at line 153 of file fileio\&.hpp\&.
 .SH "Variable Documentation"
 .PP 
+.SS "const std::string vaso::CSV_HEADER = 'Time,\fBSide\fP,Frequency,Noise Level'"
+First line of CSV data file, which declares columns\&. 
+.PP
+Definition at line 20 of file fileio\&.hpp\&.
 .SS "const std::string vaso::PATIENT_PATH = '/home/pi/patients/'"
 Absolute path to the folder containing the patients' data 
 .PP
-Definition at line 18 of file fileio\&.hpp\&.
+Definition at line 25 of file fileio\&.hpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

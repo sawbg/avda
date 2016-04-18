@@ -3,7 +3,7 @@
 }
 
 
-contains functions related to the file I/\+O use in this program  
+contains function()s related to the program's threaded processing of audio data  
 
 
 \subsection*{Enumerations}
@@ -16,17 +16,15 @@ enum \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side} \{ \hyper
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{Current\+Data\+Name} ()
-\item 
-std\+::string \hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{Initial\+Data\+Name} (auto dir)
-\item 
 std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{Patient\+Name} ()
 \item 
-\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{Read\+Params} (auto filename)
+std\+::map$<$ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{Read\+Params} (auto filename)
 \item 
 std\+::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, auto filename)
 \item 
-std\+::map$<$ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_a852067e19b0bcfebb4fa6674c7c8d67f}{Process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} data\mbox{[}\hyperlink{definitions_8hpp_aa44e6143be9e89f19be973956c22e134}{R\+E\+C\+\_\+\+C\+O\+U\+N\+T}\mbox{]}\mbox{[}\hyperlink{definitions_8hpp_a1682c770d91c5d167b621a782be940d4}{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T}\mbox{]})
+std\+::map$<$ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0}{Process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$$\ast$data)
+\item 
+\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespacevaso_a8136a2891983f7a41768330e018e3232}{process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} sampling\+Rate)
 \item 
 void \hyperlink{namespacevaso_a6ca90add966ce1773fc59a6883e6cd0c}{absolute} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
 \item 
@@ -48,32 +46,28 @@ void \hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{mag} (\hyperlin
 \item 
 void \hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{smooth} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order)
 \item 
+void \hyperlink{namespacevaso_a30b4bf3db78fd1aae6e10803944517ff}{average} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$$\ast$data, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$avg, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} count, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
+\item 
 void \hyperlink{namespacevaso_a7da499b9b1b5a492bea8ab8681e57c22}{play} (auto filename)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
+\item 
+const std\+::string \hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R} = \char`\"{}Time,\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side},Frequency,Noise Level\char`\"{}
 \item 
 const std\+::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H} = \char`\"{}/home/pi/patients/\char`\"{}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-contains functions related to the file I/\+O use in this program 
+contains function()s related to the program's threaded processing of audio data 
 
 contains the function(s) relating to sound
-
-contains the functions necessary to perform the mathematical operations required by this program
-
-contains function()s related to the program's threaded processing of audio data
 
 This namespace contains all code related to this project.
 
 \begin{DoxyAuthor}{Author}
-Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com}
-
 Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
-
-Nicholas K. Nolan 
 \end{DoxyAuthor}
 
 
@@ -152,7 +146,7 @@ the computed average
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00145}{145} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00147}{147} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -188,7 +182,7 @@ a \hyperlink{structDataParams}{Data\+Params} structure containing the average va
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00149}{149} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00158}{158} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 \hypertarget{namespacevaso_a9d0e5d69685ee494d286db6ece005156}{\index{vaso@{vaso}!average@{average}}
 \index{average@{average}!vaso@{vaso}}
@@ -213,25 +207,19 @@ Element-\/wise averaging along the first dimension of a two-\/dimensional array.
 {\em size} & the number of elements in the second dimension of data \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \hyperlink{sigmath_8hpp_source_l00153}{153} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
-
-\hypertarget{namespacevaso_abab641a332f2e834dfcdf294c0429426}{\index{vaso@{vaso}!Current\+Data\+Name@{Current\+Data\+Name}}
-\index{Current\+Data\+Name@{Current\+Data\+Name}!vaso@{vaso}}
-\subsubsection[{Current\+Data\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Current\+Data\+Name (
+\hypertarget{namespacevaso_a30b4bf3db78fd1aae6e10803944517ff}{\index{vaso@{vaso}!average@{average}}
+\index{average@{average}!vaso@{vaso}}
+\subsubsection[{average}]{\setlength{\rightskip}{0pt plus 5cm}void vaso\+::average (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf float32} $\ast$$\ast$}]{data, }
+\item[{{\bf float32} $\ast$}]{avg, }
+\item[{{\bf uint8}}]{count, }
+\item[{{\bf uint32}}]{size}
 \end{DoxyParamCaption}
-)}}\label{namespacevaso_abab641a332f2e834dfcdf294c0429426}
-Gets a data-\/based name to which the file(s) created in a session to be saved.
-
-\begin{DoxyReturn}{Returns}
-a partial (?) filename for the current session 
-\end{DoxyReturn}
+)}}\label{namespacevaso_a30b4bf3db78fd1aae6e10803944517ff}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00026}{26} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00173}{173} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 \hypertarget{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{\index{vaso@{vaso}!decibels@{decibels}}
 \index{decibels@{decibels}!vaso@{vaso}}
@@ -252,7 +240,7 @@ Converts an array of floats to \char`\"{}power decibels\char`\"{}, i.\+e., x\mbo
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00157}{157} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00189}{189} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -285,7 +273,7 @@ Computes the left-\/handed first derivative of a discrete signal. The first elem
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00163}{163} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00195}{195} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -320,7 +308,7 @@ This code is based on code from \href{http://rosettacode.org/wiki/Fast_Fourier_t
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00167}{167} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00208}{208} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -333,27 +321,6 @@ Here is the caller graph for this function\+:
 \end{center}
 \end{figure}
 
-
-\hypertarget{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{\index{vaso@{vaso}!Initial\+Data\+Name@{Initial\+Data\+Name}}
-\index{Initial\+Data\+Name@{Initial\+Data\+Name}!vaso@{vaso}}
-\subsubsection[{Initial\+Data\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string vaso\+::\+Initial\+Data\+Name (
-\begin{DoxyParamCaption}
-\item[{auto}]{dir}
-\end{DoxyParamCaption}
-)}}\label{namespacevaso_af8f45524d4770053c2b812ce33a7095f}
-Finds the filename of the oldest (i.\+e., baseline) data is saved.
-
-
-\begin{DoxyParams}{Parameters}
-{\em dir} & the directory which contains all patient data\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the base (?) filename to which all baseline data was saved 
-\end{DoxyReturn}
-
-
-Definition at line \hyperlink{fileio_8hpp_source_l00037}{37} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 \hypertarget{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{\index{vaso@{vaso}!mag@{mag}}
 \index{mag@{mag}!vaso@{vaso}}
@@ -377,7 +344,7 @@ Computes the magitude of an array of complex numbers.
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00215}{215} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00256}{256} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -413,7 +380,7 @@ the maximum value and its index in a \hyperlink{structMaximum}{Maximum} structur
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00219}{219} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00267}{267} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -434,16 +401,28 @@ Here is the caller graph for this function\+:
 {}
 \end{DoxyParamCaption}
 )}}\label{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}
-Prompts a user to enter a first, middle, and last name for a patients and creates a directory (if necessary) in which all of a patient's data can be saved.
+Prompts a user to enter a first, middle, and last name for a patients and creates a file (if necessary) in which all of a patient's data can be saved.
 
 Must warn a user if the patient folder does not already exist in order to prevent missaving data.
 
 \begin{DoxyReturn}{Returns}
-the directory under which all patient data is saved 
+the file under which all patient data is saved 
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00051}{51} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00037}{37} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{namespacevaso_a7da499b9b1b5a492bea8ab8681e57c22}{\index{vaso@{vaso}!play@{play}}
 \index{play@{play}!vaso@{vaso}}
@@ -463,23 +442,23 @@ Plays a W\+A\+V\+E file in a loop in a non-\/blocking manner.
 
 Definition at line \hyperlink{sound_8hpp_source_l00019}{19} of file \hyperlink{sound_8hpp_source}{sound.\+hpp}.
 
-\hypertarget{namespacevaso_a852067e19b0bcfebb4fa6674c7c8d67f}{\index{vaso@{vaso}!Process@{Process}}
+\hypertarget{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0}{\index{vaso@{vaso}!Process@{Process}}
 \index{Process@{Process}!vaso@{vaso}}
 \subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<${\bf Side}, {\bf Data\+Params}$>$ vaso\+::\+Process (
 \begin{DoxyParamCaption}
-\item[{{\bf float32}}]{data\mbox{[}\+R\+E\+C\+\_\+\+C\+O\+U\+N\+T\mbox{]}\mbox{[}\+S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T\mbox{]}}
+\item[{{\bf float32} $\ast$$\ast$}]{data}
 \end{DoxyParamCaption}
-)}}\label{namespacevaso_a852067e19b0bcfebb4fa6674c7c8d67f}
+)}}\label{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0}
 Processes the recorded audio. Meant to be run in a separate thread as the recordings are being made. This function assumes that the left-\/side recordings will be made first.
 
 It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan. The \char`\"{}algorithm\char`\"{} is defined as the use of 1) the frequency drop-\/off and/or 2) a noise value from the frequency band above the drop-\/off frequency in order to diagnose (with or without other factors and parameters) the presence of a vasospasm in a patient. By faculty members and/or students in the U\+A\+B E\+C\+E department using this algorithm, they agree that the presentation of their code or project that uses this algorithm by anyone directly or indirectly related to the code or project, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the aforementioned is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual.
 
-data two-\/dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio
-
-R\+E\+C\+\_\+\+C\+O\+U\+N\+T the number of recordings (left and right together) to be made
-
 
 \begin{DoxyParams}{Parameters}
+{\em data} & two-\/dimensional array (first dimension whole recordings, second dimension samples in a recording) that will contain all recorded audio\\
+\hline
+{\em R\+E\+C\+\_\+\+C\+O\+U\+N\+T} & the number of recordings (left and right together) to be made\\
+\hline
 {\em S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T} & the number of samples in each recording. M\+U\+S\+T be a power of two.\\
 \hline
 {\em S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q} & the sampling frequency in Hz or Samples/second\\
@@ -499,7 +478,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=276pt]{namespacevaso_a852067e19b0bcfebb4fa6674c7c8d67f_cgraph}
+\includegraphics[width=276pt]{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0_cgraph}
 \end{center}
 \end{figure}
 
@@ -511,18 +490,55 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=234pt]{namespacevaso_a852067e19b0bcfebb4fa6674c7c8d67f_icgraph}
+\includegraphics[width=234pt]{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{\index{vaso@{vaso}!Read\+Params@{Read\+Params}}
+\hypertarget{namespacevaso_a8136a2891983f7a41768330e018e3232}{\index{vaso@{vaso}!process@{process}}
+\index{process@{process}!vaso@{vaso}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\+Params} vaso\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf float32} $\ast$}]{data, }
+\item[{{\bf uint32}}]{size, }
+\item[{{\bf float32}}]{sampling\+Rate}
+\end{DoxyParamCaption}
+)}}\label{namespacevaso_a8136a2891983f7a41768330e018e3232}
+
+
+Definition at line \hyperlink{process_8hpp_source_l00117}{117} of file \hyperlink{process_8hpp_source}{process.\+hpp}.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{namespacevaso_a8136a2891983f7a41768330e018e3232_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{namespacevaso_a8136a2891983f7a41768330e018e3232_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{\index{vaso@{vaso}!Read\+Params@{Read\+Params}}
 \index{Read\+Params@{Read\+Params}!vaso@{vaso}}
-\subsubsection[{Read\+Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\+Params} vaso\+::\+Read\+Params (
+\subsubsection[{Read\+Params}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<${\bf Side}, {\bf Data\+Params}$>$ vaso\+::\+Read\+Params (
 \begin{DoxyParamCaption}
 \item[{auto}]{filename}
 \end{DoxyParamCaption}
-)}}\label{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}
+)}}\label{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}
 Reads the previously computated parameters found in the specified file.
 
 
@@ -535,7 +551,7 @@ the patient parameters read
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00064}{64} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00127}{127} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 \hypertarget{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{\index{vaso@{vaso}!smooth@{smooth}}
 \index{smooth@{smooth}!vaso@{vaso}}
@@ -559,7 +575,7 @@ Applies an nth-\/order moving-\/average filter to a discrete signal.
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{sigmath_8hpp_source_l00223}{223} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
+Definition at line \hyperlink{sigmath_8hpp_source_l00285}{285} of file \hyperlink{sigmath_8hpp_source}{sigmath.\+hpp}.
 
 
 
@@ -590,15 +606,22 @@ Writes the parameters to the specified file.
 \end{DoxyParams}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00073}{73} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00153}{153} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 
 
 \subsection{Variable Documentation}
+\hypertarget{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{\index{vaso@{vaso}!C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R@{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}}
+\index{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R@{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}!vaso@{vaso}}
+\subsubsection[{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string vaso\+::\+C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R = \char`\"{}Time,{\bf Side},Frequency,Noise Level\char`\"{}}}\label{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}
+First line of C\+S\+V data file, which declares columns. 
+
+Definition at line \hyperlink{fileio_8hpp_source_l00020}{20} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+
 \hypertarget{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{\index{vaso@{vaso}!P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}}
 \index{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}!vaso@{vaso}}
 \subsubsection[{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string vaso\+::\+P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H = \char`\"{}/home/pi/patients/\char`\"{}}}\label{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}
 Absolute path to the folder containing the patients' data 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00018}{18} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00025}{25} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 

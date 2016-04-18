@@ -1,8 +1,11 @@
-.TH "src/sigmath.hpp" 3 "Fri Apr 15 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/sigmath.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/sigmath.hpp \- 
+.PP
+contains the functions necessary to perform the mathematical operations required by this program  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -17,7 +20,7 @@ src/sigmath.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains functions related to the file I/O use in this program \fP"
+.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Functions"
 
@@ -52,7 +55,26 @@ src/sigmath.hpp \-
 .ti -1c
 .RI "void \fBvaso::smooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
 .br
+.ti -1c
+.RI "void \fBvaso::average\fP (\fBfloat32\fP **data, \fBfloat32\fP *avg, \fBuint8\fP count, \fBuint32\fP size)"
+.br
 .in -1c
+.SH "Detailed Description"
+.PP 
+contains the functions necessary to perform the mathematical operations required by this program 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.PP
+Nicholas K\&. Nolan 
+.RE
+.PP
+
+.PP
+Definition in file \fBsigmath\&.hpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

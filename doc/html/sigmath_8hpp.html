@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('sigmath_8hpp.html','');});
 <div class="title">sigmath.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>contains the functions necessary to perform the mathematical operations required by this program  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;complex&gt;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -122,7 +125,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="sigmath_8hpp__dep__incl.png" border="0" usemap="#src_2sigmath_8hppdep" alt=""/></div>
 <map name="src_2sigmath_8hppdep" id="src_2sigmath_8hppdep">
-<area shape="rect" id="node2" href="process_8hpp.html" title="src/process.hpp" alt="" coords="5,80,120,107"/><area shape="rect" id="node3" href="main_8cpp.html" title="src/main.cpp" alt="" coords="14,155,111,181"/></map>
+<area shape="rect" id="node2" href="process_8hpp.html" title="src/process.hpp" alt="" coords="250,80,365,107"/><area shape="rect" id="node3" href="main_8cpp.html" title="contains the main program " alt="" coords="5,155,103,181"/><area shape="rect" id="node4" href="patient__name__test_8cpp.html" title="src/patient_name_test.cpp" alt="" coords="127,155,303,181"/><area shape="rect" id="node5" href="process__test_8cpp.html" title="src/process_test.cpp" alt="" coords="327,155,471,181"/><area shape="rect" id="node6" href="sigmath__test_8cpp.html" title="src/sigmath_test.cpp" alt="" coords="495,155,639,181"/></map>
 </div>
 </div>
 <p><a href="sigmath_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -130,7 +133,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacevaso"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html">vaso</a></td></tr>
-<tr class="memdesc:namespacevaso"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains functions related to the file I/O use in this program <br /></td></tr>
+<tr class="memdesc:namespacevaso"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains function()s related to the program's threaded processing of audio data <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -155,14 +158,23 @@ Functions</h2></td></tr>
 <tr class="separator:a122846d728be312454a452d379915e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b7fc1a58199e2cac989f417a9faa1ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a5b7fc1a58199e2cac989f417a9faa1ce">vaso::smooth</a> (<a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *data, <a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> size, <a class="el" href="definitions_8hpp.html#a05f6b0ae8f6a6e135b0e290c25fe0e4e">uint16</a> order)</td></tr>
 <tr class="separator:a5b7fc1a58199e2cac989f417a9faa1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b4bf3db78fd1aae6e10803944517ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a30b4bf3db78fd1aae6e10803944517ff">vaso::average</a> (<a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> **data, <a class="el" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a> *avg, <a class="el" href="definitions_8hpp.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> count, <a class="el" href="definitions_8hpp.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> size)</td></tr>
+<tr class="separator:a30b4bf3db78fd1aae6e10803944517ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>contains the functions necessary to perform the mathematical operations required by this program </p>
+<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd>
+<dd>
+Nicholas K. Nolan </dd></dl>
+
+<p>Definition in file <a class="el" href="sigmath_8hpp_source.html">sigmath.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="sigmath_8hpp.html">sigmath.hpp</a></li>
-    <li class="footer">Generated on Fri Apr 15 2016 02:50:06 for Andrew and Nick&#39;s Project by
+    <li class="footer">Generated on Mon Apr 18 2016 22:27:19 for Andrew and Nick&#39;s Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

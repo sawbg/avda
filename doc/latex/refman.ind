@@ -3,7 +3,7 @@
   \item {absolute}
     \subitem {vaso}, \hyperpage{8}
   \item {average}
-    \subitem {vaso}, \hyperpage{8, 9}
+    \subitem {vaso}, \hyperpage{8--10}
 
   \indexspace
 
@@ -15,7 +15,7 @@
   \indexspace
 
   \item {fft}
-    \subitem {vaso}, \hyperpage{10}
+    \subitem {vaso}, \hyperpage{11}
 
   \indexspace
 
@@ -32,7 +32,7 @@
   \item {mag}
     \subitem {vaso}, \hyperpage{11}
   \item {max}
-    \subitem {vaso}, \hyperpage{11}
+    \subitem {vaso}, \hyperpage{12}
   \item {Maximum}, \hyperpage{17}
     \subitem {index}, \hyperpage{18}
     \subitem {value}, \hyperpage{18}
@@ -40,9 +40,11 @@
   \indexspace
 
   \item {play}
-    \subitem {vaso}, \hyperpage{12}
+    \subitem {vaso}, \hyperpage{13}
   \item {Process}
-    \subitem {vaso}, \hyperpage{12}
+    \subitem {vaso}, \hyperpage{13}
+  \item {process}
+    \subitem {vaso}, \hyperpage{14}
 
   \indexspace
 
@@ -54,7 +56,7 @@
   \item {Side}
     \subitem {vaso}, \hyperpage{8}
   \item {smooth}
-    \subitem {vaso}, \hyperpage{14}
+    \subitem {vaso}, \hyperpage{16}
 
   \indexspace
 
@@ -62,17 +64,18 @@
     \subitem {Maximum}, \hyperpage{18}
   \item {vaso}, \hyperpage{7}
     \subitem {absolute}, \hyperpage{8}
-    \subitem {average}, \hyperpage{8, 9}
+    \subitem {average}, \hyperpage{8--10}
     \subitem {decibels}, \hyperpage{10}
     \subitem {diff}, \hyperpage{10}
-    \subitem {fft}, \hyperpage{10}
+    \subitem {fft}, \hyperpage{11}
     \subitem {Left}, \hyperpage{8}
     \subitem {mag}, \hyperpage{11}
-    \subitem {max}, \hyperpage{11}
-    \subitem {play}, \hyperpage{12}
-    \subitem {Process}, \hyperpage{12}
+    \subitem {max}, \hyperpage{12}
+    \subitem {play}, \hyperpage{13}
+    \subitem {Process}, \hyperpage{13}
+    \subitem {process}, \hyperpage{14}
     \subitem {Right}, \hyperpage{8}
     \subitem {Side}, \hyperpage{8}
-    \subitem {smooth}, \hyperpage{14}
+    \subitem {smooth}, \hyperpage{16}
 
 \end{theindex}

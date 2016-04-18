@@ -1,7 +1,10 @@
 <map id="src/definitions.hpp" name="src/definitions.hpp">
-<area shape="rect" id="node2" href="$fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,155,101,181"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="90,229,187,256"/>
-<area shape="rect" id="node4" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="176,155,291,181"/>
-<area shape="rect" id="node5" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="227,80,341,107"/>
-<area shape="rect" id="node6" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="365,80,469,107"/>
+<area shape="rect" id="node2" href="$fileio_8hpp.html" title="contains functions related to the file I/O use in this program " alt="" coords="167,155,263,181"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="contains the main program " alt="" coords="5,229,103,256"/>
+<area shape="rect" id="node4" href="$patient__name__test_8cpp.html" title="src/patient_name_test.cpp" alt="" coords="127,229,303,256"/>
+<area shape="rect" id="node5" href="$sigmath__test_8cpp.html" title="src/sigmath_test.cpp" alt="" coords="327,229,471,256"/>
+<area shape="rect" id="node6" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="287,155,402,181"/>
+<area shape="rect" id="node7" href="$process__test_8cpp.html" title="src/process_test.cpp" alt="" coords="495,229,639,256"/>
+<area shape="rect" id="node8" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="287,80,402,107"/>
+<area shape="rect" id="node9" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="527,80,631,107"/>
 </map>

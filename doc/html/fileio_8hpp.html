@@ -109,22 +109,26 @@ $(document).ready(function(){initNavTree('fileio_8hpp.html','');});
 <div class="title">fileio.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>contains functions related to the file I/O use in this program  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fileio.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio_8hpp__incl.png" border="0" usemap="#src_2fileio_8hpp" alt=""/></div>
 <map name="src_2fileio_8hpp" id="src_2fileio_8hpp">
-<area shape="rect" id="node4" href="definitions_8hpp.html" title="definitions.hpp" alt="" coords="181,80,288,107"/></map>
+<area shape="rect" id="node5" href="definitions_8hpp.html" title="definitions.hpp" alt="" coords="272,80,379,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio_8hpp__dep__incl.png" border="0" usemap="#src_2fileio_8hppdep" alt=""/></div>
 <map name="src_2fileio_8hppdep" id="src_2fileio_8hppdep">
-<area shape="rect" id="node2" href="main_8cpp.html" title="src/main.cpp" alt="" coords="5,80,103,107"/></map>
+<area shape="rect" id="node2" href="main_8cpp.html" title="contains the main program " alt="" coords="5,80,103,107"/><area shape="rect" id="node3" href="patient__name__test_8cpp.html" title="src/patient_name_test.cpp" alt="" coords="127,80,303,107"/><area shape="rect" id="node4" href="sigmath__test_8cpp.html" title="src/sigmath_test.cpp" alt="" coords="327,80,471,107"/></map>
 </div>
 </div>
 <p><a href="fileio_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -132,34 +136,37 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacevaso"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html">vaso</a></td></tr>
-<tr class="memdesc:namespacevaso"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains functions related to the file I/O use in this program <br /></td></tr>
+<tr class="memdesc:namespacevaso"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains function()s related to the program's threaded processing of audio data <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abab641a332f2e834dfcdf294c0429426"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#abab641a332f2e834dfcdf294c0429426">vaso::CurrentDataName</a> ()</td></tr>
-<tr class="separator:abab641a332f2e834dfcdf294c0429426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f45524d4770053c2b812ce33a7095f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#af8f45524d4770053c2b812ce33a7095f">vaso::InitialDataName</a> (auto dir)</td></tr>
-<tr class="separator:af8f45524d4770053c2b812ce33a7095f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e264fa912f7ca3f50e7e412ba1582e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a21e264fa912f7ca3f50e7e412ba1582e">vaso::PatientName</a> ()</td></tr>
 <tr class="separator:a21e264fa912f7ca3f50e7e412ba1582e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1a23c617aae2e2c4af5e8016b4d03e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDataParams.html">DataParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a6f1a23c617aae2e2c4af5e8016b4d03e">vaso::ReadParams</a> (auto filename)</td></tr>
-<tr class="separator:a6f1a23c617aae2e2c4af5e8016b4d03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1435dcb9c37b3ccde589738b26c909"><td class="memItemLeft" align="right" valign="top">std::map&lt; Side, <a class="el" href="structDataParams.html">DataParams</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#afc1435dcb9c37b3ccde589738b26c909">vaso::ReadParams</a> (auto filename)</td></tr>
+<tr class="separator:afc1435dcb9c37b3ccde589738b26c909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#ad8543c0caabf3836b4a93a78e0d487d1">vaso::WriteParams</a> (<a class="el" href="structDataParams.html">DataParams</a> params, auto filename)</td></tr>
 <tr class="separator:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:ade7cbcaad3dc577b643b3eea4b4e8aa0"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#ade7cbcaad3dc577b643b3eea4b4e8aa0">vaso::CSV_HEADER</a> = &quot;Time,Side,Frequency,Noise Level&quot;</td></tr>
+<tr class="separator:ade7cbcaad3dc577b643b3eea4b4e8aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f49c8240a13e7d853912ad78d5f53c9"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9">vaso::PATIENT_PATH</a> = &quot;/home/pi/patients/&quot;</td></tr>
 <tr class="separator:a0f49c8240a13e7d853912ad78d5f53c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>contains functions related to the file I/O use in this program </p>
+<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
+
+<p>Definition in file <a class="el" href="fileio_8hpp_source.html">fileio.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fileio_8hpp.html">fileio.hpp</a></li>
-    <li class="footer">Generated on Fri Apr 15 2016 02:50:06 for Andrew and Nick&#39;s Project by
+    <li class="footer">Generated on Mon Apr 18 2016 22:27:19 for Andrew and Nick&#39;s Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

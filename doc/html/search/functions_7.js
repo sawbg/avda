@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readparams',['ReadParams',['../namespacevaso.html#a6f1a23c617aae2e2c4af5e8016b4d03e',1,'vaso']]]
+  ['writeparams',['WriteParams',['../namespacevaso.html#ad8543c0caabf3836b4a93a78e0d487d1',1,'vaso']]]
 ];

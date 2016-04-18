@@ -1,15 +1,21 @@
 \hypertarget{fileio_8hpp}{\section{src/fileio.hpp File Reference}
 \label{fileio_8hpp}\index{src/fileio.\+hpp@{src/fileio.\+hpp}}
 }
+
+
+contains functions related to the file I/\+O use in this program  
+
+
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
 {\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
 Include dependency graph for fileio.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=301pt]{fileio_8hpp__incl}
+\includegraphics[width=350pt]{fileio_8hpp__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -17,29 +23,39 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=153pt]{fileio_8hpp__dep__incl}
+\includegraphics[width=350pt]{fileio_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespacevaso}{vaso}
-\begin{DoxyCompactList}\small\item\em contains functions related to the file I/\+O use in this program \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em contains function()s related to the program's threaded processing of audio data \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{vaso\+::\+Current\+Data\+Name} ()
-\item 
-std\+::string \hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{vaso\+::\+Initial\+Data\+Name} (auto dir)
-\item 
 std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{vaso\+::\+Patient\+Name} ()
 \item 
-\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{vaso\+::\+Read\+Params} (auto filename)
+std\+::map$<$ Side, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{vaso\+::\+Read\+Params} (auto filename)
 \item 
 std\+::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{vaso\+::\+Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, auto filename)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+const std\+::string \hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{vaso\+::\+C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R} = \char`\"{}Time,Side,Frequency,Noise Level\char`\"{}
+\item 
 const std\+::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{vaso\+::\+P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H} = \char`\"{}/home/pi/patients/\char`\"{}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+contains functions related to the file I/\+O use in this program 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+

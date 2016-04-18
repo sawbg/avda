@@ -1,14 +1,19 @@
-.TH "src/fileio.hpp" 3 "Fri Apr 15 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/fileio.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/fileio.hpp \- 
+.PP
+contains functions related to the file I/O use in this program  
+
 .SH SYNOPSIS
 .br
 .PP
 \fC#include <iostream>\fP
 .br
 \fC#include <string>\fP
+.br
+\fC#include <fstream>\fP
 .br
 \fC#include 'definitions\&.hpp'\fP
 .br
@@ -19,22 +24,16 @@ src/fileio.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains functions related to the file I/O use in this program \fP"
+.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::string \fBvaso::CurrentDataName\fP ()"
-.br
-.ti -1c
-.RI "std::string \fBvaso::InitialDataName\fP (auto dir)"
-.br
-.ti -1c
 .RI "std::string \fBvaso::PatientName\fP ()"
 .br
 .ti -1c
-.RI "\fBDataParams\fP \fBvaso::ReadParams\fP (auto filename)"
+.RI "std::map< Side, \fBDataParams\fP > \fBvaso::ReadParams\fP (auto filename)"
 .br
 .ti -1c
 .RI "std::string \fBvaso::WriteParams\fP (\fBDataParams\fP params, auto filename)"
@@ -44,9 +43,26 @@ src/fileio.hpp \-
 
 .in +1c
 .ti -1c
+.RI "const std::string \fBvaso::CSV_HEADER\fP = 'Time,Side,Frequency,Noise Level'"
+.br
+.ti -1c
 .RI "const std::string \fBvaso::PATIENT_PATH\fP = '/home/pi/patients/'"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+contains functions related to the file I/O use in this program 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.RE
+.PP
+
+.PP
+Definition in file \fBfileio\&.hpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
