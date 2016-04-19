@@ -173,6 +173,7 @@ namespace vaso {
 
 		free(cdata);
 		free(fdata);
+
 		return params;
 
 	}
