@@ -1,7 +1,8 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
- * @brief contains function()s related to the program's threaded processing of
- * audio data
+ * @brief Contains functions related to the program's threaded processing of
+ * audio data.
  */
 
 #ifndef process_H
@@ -13,17 +14,16 @@
 #include "definitions.hpp"
 #include "sigmath.hpp"
 
-namespace vaso {	
+namespace avda {	
 	/**
-	 * FIX ME! Processes the recorded audio. Meant to be run in a separate thread as the
-	 * recordings are being made. This function assumes that the left-side
-	 * recordings will be made first.
+	 * Analyzes a single recording to determine the drop-off frequency and
+	 * average noiseband noise power.
 	 *
 	 * It should be noted that is algorithm is considered the intellectual
 	 * property of Andrew Wisner and Nicholas Nolan. The "algorithm" is defined
 	 * as the use of 1) the frequency drop-off and/or 2) a noise value from the 
 	 * frequency band above the drop-off frequency in order to diagnose (with or
-	 * without other factors and parameters) the presence of a vasospasm in a
+	 * without other factors and parameters) the presence of a avdaspasm in a
 	 * patient. By faculty members and/or students in the UAB ECE department
 	 * using this algorithm, they agree that the presentation of their code or
 	 * project that uses this algorithm by anyone directly or indirectly related
@@ -36,20 +36,14 @@ namespace vaso {
 	 * property of the aforementioned is protected and is neither misrepresented
 	 * nor claimed implicitly or explicitly by another individual. 
 	 *
-	 * @param data two-dimensional array (first dimension whole recordings,
-	 * second dimension samples in a recording) that will contain all recorded
-	 * audio
+	 * @param data array containing float32 samples of audio
 	 *
-	 * @param REC_COUNT the number of recordings (left and right together) to be
-	 *  made
+	 * @param size number of samples in each recording. MUST be a power of two.
 	 *
-	 * @param SAMPLE_COUNT the number of samples in each recording. MUST be a
-	 * power of two.
+	 * @param samplingRate the sampling frequency in Hz or Samples/second
 	 *
-	 * @param SAMPLE_FREQ the sampling frequency in Hz or Samples/second
-	 *
-	 * @return a map of the averaged left- and right-side parameters in
-	 * DataParams structures
+	 * @return cut-off frequency (Hz) and average noiseband noise power in
+	 * decibels
 	 */
 	DataParams process(float32* data, uint32 size, float32 samplingRate) {
 		if((size & (size - 1) != 0) || size < 2) {
@@ -102,6 +96,7 @@ namespace vaso {
 		absolute(&fdata[offset], freqSize - offset);
 		maximum = max(&fdata[offset], freqSize - offset);
 		uint32 index = maximum.index + offset;
+		
 		DataParams params;
 		params.freq = index * (float)SAMPLE_FREQ / freqSize / 2;
 		params.noise = average(&origdata[index + offset],
