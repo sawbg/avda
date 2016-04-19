@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @brief Contains declarations of system-independant (universal size) integers
  * and float types, shortened type names for some commonly used types, and
@@ -10,14 +11,11 @@
 
 #include <complex>
 #include <map>
+#include <string>
 
-#define ERROR -1
-#define DURATION
-#define REC_COUNT 6 
-#define SAMPLE_COUNT 131072 
-#define SAMPLE_FREQ 44100
-#define TEMP ".temp"
 #define ENUM signed char
+
+// Type definitions
 
 typedef unsigned char byte;
 typedef unsigned char uint8;
@@ -34,6 +32,45 @@ typedef signed long long sint64;
 
 typedef float float32;
 typedef double float64;
+
+// Constants
+
+/**
+ * 
+ */
+const uint8 DURATION = 6;
+
+/**
+ *
+ */
+const sint8 ERROR = -1;
+
+/**
+ * 
+ */
+const uint8 REC_COUNT = 6;
+
+/**
+ * 
+ */
+const uint32 SAMPLE_COUNT = 262144;
+
+/**
+ * 
+ */
+const uint16 SAMPLE_FREQ = 48000;
+
+/**
+ * 
+ */
+const std::string TEMP_FILE = ".temp";
+
+/**
+ *
+ */
+const uint32 BUFFER_SIZE = SAMPLE_COUNT * sizeof(float32);
+
+// Objective/structural type definitions
 
 /**
  * Defines a type for complex float32's.
