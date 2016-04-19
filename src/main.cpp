@@ -6,7 +6,9 @@
  */
 
 #include <array>
+#include <cstdio>
 #include <cstdlib>
+#include <fcntl.h>
 #include <iostream>
 #include <map>
 #include <pthread.h>
@@ -25,41 +27,48 @@ using namespace vaso;
  * of days.
  */
 int main(int argc, char** argv) {
-	// generate name for patient's file
-	string filename = PatientName();
+	const string recCommand = string("arecord -t raw -d ")
+		+ to_string(DURATION) + string(" -D plughw:1,0 -f FLOAT -q -r ")
+		 + to_string(SAMPLE_FREQ) + string(" ") + TEMP_FILE;
 	DataParams params[REC_COUNT];
 
-	// Record doppler audio
-	float32* buffer = (float32*)std::malloc(SAMPLE_COUNT * sizeof(float32));
+	string filename = "wizmack, sammy andy.csv";//PatientName();  // generate name for patient's file
 
+	// Recorded audio buffer
+	float32* buffer = (float32*)std::malloc(BUFFER_SIZE);
+
+	// Start recording
 	for(uint8 i = 0; i < REC_COUNT; i++) {
-		cout << "Press [ ENTER ] to begin recording for the "
+		cout << "Press [ ENTER ] to begin analysis for the "
 			<< (i < REC_COUNT / 2 ? "left" : "right") << " side, depth #"
 			<< (((i >= REC_COUNT / 2) ? (i - REC_COUNT / 2) : i) + 1)
-			<< endl;
+			<< "...";
+		fflush(stdin);
+		getchar();  // wait for ENTER to be pressed
+		cout << "Recording..." << endl;
 
-		system((string("arecord -t raw -d ") << DURATION
-				<< " -D plughw:1,0 -f FLOAT -r " << SAMPLE_RATE
-				<< " " << TEMP).c_str());
+		system(recCommand.c_str());
 		sleep(DURATION + 1);
 
-		int file = open(TEMP, O_RDONLY);
-		int retRead = read(file, &buffer, SAMPLE_COUNT * sizeof(float32));
+		int file = open(TEMP_FILE.c_str(), O_RDONLY);
+		int retRead = read(file, buffer, BUFFER_SIZE);
+		close(file);
+		remove(TEMP_FILE.c_str());
 
-		if(file != 0 || retRead < SAMPLE_COUNT) {
+		if(file < 0 || retRead < BUFFER_SIZE) {
 			cerr << "An error occurred reading the doppler audio! "
 				"The program will now exit." << endl;
 			return ERROR;
 		}
 
 		params[i] = process(buffer, SAMPLE_COUNT, SAMPLE_FREQ);
-		cout << "The recording is complete." << endl << endl;
+		cout << "The analysis is complete." << endl << endl;
 	}
 
 	free(buffer);
 	map<Side, DataParams> results;
 	results[Side::Left] = average(params, REC_COUNT / 2);
-	resutls[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
+	results[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
 
 	cout << "Analysis is complete." << endl << endl;
 
@@ -69,11 +78,11 @@ int main(int argc, char** argv) {
 		cout << "Drop-off frequency: " << (uint16)(results[side].freq + 0.5)
 			<< " Hz" << endl;
 		cout << "Average relative noiseband power: "
-			<< (uint16)(results[side].noise + 0.5) << " dB" << endl;
+			<< (sint16)(results[side].noise - 0.5) << " dB" << endl <<endl;
 	}
 
 	try {
-		DataParams baseParams = ReadParams(filename);
+		map<Side, DataParams> baseParams = ReadParams(filename);
 		// TODO: Print results & probable diagnosis
 
 	} catch(exception ex) {
