@@ -12,7 +12,7 @@
 #include <complex>
 #include "definitions.hpp"
 
-namespace vaso {
+namespace avda {
 	// PROTOTYPES
 
 	/**
@@ -47,24 +47,6 @@ namespace vaso {
 	 * structure's elements in the params array
 	 */
 	DataParams average(DataParams* params, uint8 size);
-
-	/**
-	 * Element-wise averaging along the first dimension of a two-dimensional
-	 * array.
-	 *
-	 * @param data the two-dimensional array containing [count] number of arrays
-	 * in the first dimension and [size] number of each elements in the second
-	 * dimension
-	 *
-	 * @param avg the array of size [size] containing the averaged values of
-	 * each element
-	 *
-	 * @param count the number of arrays in the first dimension of data and will
-	 * likely be a constant value of 3 in this program
-	 *
-	 * @param size the number of elements in the second dimension of data
-	 */
-	void average(float32* data, float32* avg, uint8 count, uint32 size);
 
 	/**
 	 * Converts an array of floats to "power decibels", i.e., x[n] =
@@ -167,22 +149,6 @@ namespace vaso {
 		ave.freq /= size;
 		ave.noise /= size;
 		return ave;
-	}
-
-	void average(float32** data, float32* avg, uint8 count, uint32 size) {
-		// data is an array. Access like so: data[index]
-		//loop for the number of "columns" in the array
-		for(uint32 e = 0; e < size; e++) {
-			float32 c = 0;
-
-			//loop for the number of "rows" in the array (in case > 3)
-			for(uint32 r = 0; r < count; r++) {
-				c += data [r][e];		//adds values in each row for column e
-			}
-
-			c = c / count;		//averages the values
-			avg[e] = c;		//saves averaged value into avg array
-		}
 	}
 
 	void decibels(float32* data, uint32 size) {
