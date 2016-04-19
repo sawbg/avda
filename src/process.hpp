@@ -15,7 +15,7 @@
 
 namespace vaso {	
 	/**
-	 * Processes the recorded audio. Meant to be run in a separate thread as the
+	 * FIX ME! Processes the recorded audio. Meant to be run in a separate thread as the
 	 * recordings are being made. This function assumes that the left-side
 	 * recordings will be made first.
 	 *
@@ -51,71 +51,7 @@ namespace vaso {
 	 * @return a map of the averaged left- and right-side parameters in
 	 * DataParams structures
 	 */
-	std::map<Side, DataParams> Process(float32** data) {
-		// just in case SAMPLE_COUNT isn't a power of two
-		if((SAMPLE_COUNT & (SAMPLE_COUNT - 1) != 0) || SAMPLE_COUNT < 2) {
-			throw std::invalid_argument(
-					"The number of samples is not a power of two!");
-		}
-
-		// declare function-scoped variables
-		uint32 freqSize = SAMPLE_COUNT / 2;
-		cfloat32 cdata[REC_COUNT][SAMPLE_COUNT];
-		float32 fdata[REC_COUNT][freqSize];
-		DataParams tempParams[REC_COUNT];
-		std::map<Side, DataParams> sideParams;
-
-		for(uint8 rCount = 0; rCount < REC_COUNT; rCount++) {
-			// convert data to complex numbers for fft()
-			for(uint32 i = 0; i < SAMPLE_COUNT; i++) {
-				cdata[rCount][i] = data[rCount][i];
-			}
-
-			// find frequency spectrum in relative decibels
-			fft(cdata[rCount], SAMPLE_COUNT);
-			mag(cdata[rCount], fdata[rCount], freqSize);
-			Maximum maximum = max(fdata[rCount], freqSize);
-
-			for(uint32 i = 0; i < freqSize; i++) {
-				fdata[rCount][i] /= maximum.value;
-			}
-
-			decibels(fdata[rCount], freqSize);
-
-			/*
-			 * Run spectrum values through moving-average filter to smooth the
-			 * curve and make it easier to determine the derivative.
-			 */
-			smooth(fdata[rCount], freqSize, 20);
-
-			/*
-			 * Find the derivative of the smoothed spectrum. Bote that both this
-			 * filter and the previous are necessary to the algorithm.
-			 */
-			diff(fdata[rCount], freqSize);
-			smooth(fdata[rCount], freqSize, 100);
-			absolute(fdata[rCount], freqSize);
-
-			// find the parameters of this specific recording
-			uint16 offset = 1000;
-			absolute(&fdata[rCount][offset],	freqSize - offset);
-			uint32 index = max(&fdata[rCount][offset],
-					freqSize - offset).index;
-			tempParams[rCount].freq = index * (float)SAMPLE_FREQ / freqSize;
-			tempParams[rCount].noise =
-				average(&fdata[rCount][index + 2 * offset],
-						freqSize - 2 * offset);
-		}
-
-		// calculate the parameters for each side to be returned
-		sideParams[Side::Left] = average(&tempParams[0], REC_COUNT / 2);
-		sideParams[Side::Right] = average(&tempParams[REC_COUNT / 2],
-				REC_COUNT / 2);
-		return sideParams;
-	}
-
 	DataParams process(float32* data, uint32 size, float32 samplingRate) {
-		// just in case SAMPLE_COUNT isn't a power of two
 		if((size & (size - 1) != 0) || size < 2) {
 			throw std::invalid_argument(
 					"The number of samples is not a power of two!");
