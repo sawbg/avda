@@ -1,20 +1,24 @@
-/**PatientName()
+/**
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
+ * @author Nicholas K. Nolan
  * @brief contains functions related to the file I/O use in this program
+ * @bug file is overly complicated and much more bug-prone
  */
 
 #ifndef fileio_H
 #define fileio_H
 
-#include <iostream>
-#include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
-#include "definitions.hpp"
+#include <string>
+#include <stdexcept>
 #include <time.h>
 
-namespace vaso {
+#include "definitions.hpp"
+
+namespace avda {
 	/**
 	 * First line of CSV data file, which declares columns.
 	 */
@@ -28,7 +32,8 @@ namespace vaso {
 	/**
 	 * Prompts a user to enter a first, middle, and last name for a patients and
 	 * creates a file (if necessary) in which all of a patient's data can
-	 * be saved.
+	 * be saved. A newly created file will contain the CSV header for the file's
+	 * data.
 	 *
 	 * Must warn a user if the patient folder does not already exist in order to
 	 * prevent missaving data.
@@ -59,7 +64,7 @@ namespace vaso {
 				+ " " + mname + ".csv";
 
 			// prints out patientname. shows user the path to the patient file
-			std::cout << patientname << std::endl << std::endl;
+			//std::cout << patientname << std::endl << std::endl;
 			std::ifstream file(patientname.c_str());
 
 			if (file.good()) {
@@ -100,18 +105,18 @@ namespace vaso {
 					}
 
 					/*
-					*patfil equals renter, track1 will remain zero allowing
-					*user to reenter the patient name.
-					*/
+					 *patfil equals renter, track1 will remain zero allowing
+					 *user to reenter the patient name.
+					 */
 					else if(patfil == "reenter") {
 						track1 = 0;
 						track2 = 1;
 					}
 
 					/*
-					*The users input was neither create or reenter. User
-					*must enter patient name again.
-					*/
+					 *The users input was neither create or reenter. User
+					 *must enter patient name again.
+					 */
 					else {
 						std::cout << std::endl;
 						std::cout << "Your input is not acceptable." << std::endl;
@@ -131,7 +136,7 @@ namespace vaso {
 	 * @param filename the absolute or relative path to the file containing the
 	 * patient data to read
 	 *
-	 * @return the patient parameters read
+	 * @return the patient parameters read for each side
 	 */
 	std::map<Side, DataParams> ReadParams(auto filename) {
 		std::map<Side, DataParams> myMap;
@@ -148,16 +153,22 @@ namespace vaso {
 		std::string lnoisestr;
 		std::string rfreqstr;
 		std::string rnoisestr;
-		uint32 lcnt;
-		uint32 rcnt;
+		uint32 lcnt = 0;
+		uint32 rcnt = 0;
 		float32 lfreqval;
 		float32 lnoiseval;
 		float32 rfreqval;
 		float32 rnoiseval;
 
-		//if statement which uses ifstream function to open patient file (filename)
+		/*
+		 * if statement which uses ifstream function to open patient file 
+		 * filename)
+		 */
 		if(file.is_open()) {
-			//While statement to find the first Left line and save to leftline as string.
+			/*
+			 * While statement to find the first Left line and save to 
+			 *leftline as string.
+			 */
 			while (getline(file, leftline)) {
 				if(leftline.find(leftsearch, 0) != std::string::npos) {
 					break;
@@ -165,14 +176,17 @@ namespace vaso {
 
 			}
 
-			//While statement to find first right line and save to rightline as string.
+			/*
+			 * While statement to find first right line and save to rightline
+			 * as string.
+			 */
 			while (getline(file,rightline)) {
 				if(rightline.find(rightsearch, 0) != std::string::npos) {
 					break;
 				}
 			}
 
-			//Code to break leftline and rightline into its parts
+			// Code to break leftline and rightline into its parts
 			std::stringstream lss(leftline);
 			std::stringstream rss(rightline);
 
@@ -200,7 +214,10 @@ namespace vaso {
 				}
 			}
 
-			//Statement to convert lfreq, lnoise, rfreq, and rnoise from strings to floats.
+			/*
+			 * Statement to convert lfreq, lnoise, rfreq, and rnoise from
+			 * strings to floats.
+			 * */
 			lfreqval = atof(lfreqstr.c_str());
 			lnoiseval = atof(lnoisestr.c_str());
 			rfreqval = atof(rfreqstr.c_str());
@@ -210,7 +227,7 @@ namespace vaso {
 		}
 
 		else {
-			std::cout << "The patient file could not be opened." << std::endl;
+			throw std::runtime_error("The patient file could not be opened.");
 		}
 
 		leftparams.freq = lfreqval;
@@ -225,36 +242,43 @@ namespace vaso {
 	}
 
 	/**
-	 * Writes the parameters to the specified file.
+	 * Writes (appends) the passed parameters to the specified file.
 	 *
-	 * @param params
+	 * @param myMap contains the parameters to be written
+	 *
+	 * @filename the patient CSV file's filename
 	 */
-	std::string WriteParams(std::map<Side, DataParams>, auto filename) {
-		std::ofstream file(filename.c_str());
-		time_t measurementtime;	//Gives pointer measurementtime a data type of time_t.
+	void WriteParams(std::map<Side, DataParams> myMap, auto filename) {
+		char temp[80];
+		std::ofstream file(filename.c_str(),
+				std::ofstream::out | std::ofstream::app);
+
+		//Gives pointer measurementtime a data type of time_t.
+		time_t measurementtime;
 		time(&measurementtime);	//Gets the current time.
-		std::map<Side, DataParams> myMap;	//Creating new instance of the map object.
+		strftime(temp, 80, "%c", localtime(&measurementtime));
+		std::string fTime = std::string(temp);
 
 		//if statement to print the Left side parameters to the patient file.
 		if(file.is_open()) {
-			file << std::string(ctime(&measurementtime)) + "," + "Left" + "," + std::to_string(myMap[Side::Left].freq) 
+			file << fTime + "," + "Left" + ","
+				+ std::to_string(myMap[Side::Left].freq) 
 				+ ", " + std::to_string(myMap[Side::Left].noise) << std::endl;
-			file.close();
 		}
 
 		//if statement to print the Right side parameters to the patient file.
 		if(file.is_open()) {
-			file << std::string(ctime(&measurementtime)) + "," + "Right" + "," + std::to_string(myMap[Side::Right].freq) 
+			file << fTime + "," + "Right" + ","
+				+ std::to_string(myMap[Side::Right].freq) 
 				+ ", " + std::to_string(myMap[Side::Right].noise) << std::endl;
-			file.close();
 		}
 
 		else {
 			std::cout << "Patient file can not be opened!" << std::endl;
 		}
+
+		file.close();
 	}
 }
 
 #endif
-
-
