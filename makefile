@@ -24,6 +24,9 @@ patient-name-test:
 process-test:
 	$(GCC) src/process_test.cpp -o bin/proctest
 
+read-params-test:
+	$(GCC) src/read_params_test.cpp -o bin/rptest
+
 sigmath-test:
 	$(GCC) src/sigmath_test.cpp -o bin/sigmathtest
 
