@@ -12,9 +12,11 @@
 #include <map>
 
 #define ERROR -1
+#define DURATION
 #define REC_COUNT 6 
-#define SAMPLE_COUNT 262144
+#define SAMPLE_COUNT 131072 
 #define SAMPLE_FREQ 44100
+#define TEMP ".temp"
 #define ENUM signed char
 
 typedef unsigned char byte;
