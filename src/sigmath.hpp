@@ -161,7 +161,6 @@ namespace vaso {
 		for(uint8 i = 0; i < size; i++) {
 			//freq is an attribute. this is how to add structure attributes
 			ave.freq += params[i].freq;
-
 			ave.noise += params[i].noise;
 		}
 
