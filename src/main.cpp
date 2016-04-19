@@ -21,40 +21,64 @@ using namespace std;
 using namespace vaso;
 
 /**
- * The main program for this progject. It will detect vasospasms over a period
+ * The main program for this project. It will detect vasospasms over a period
  * of days.
  */
 int main(int argc, char** argv) {
 	// generate name for patient's file
-	string filename = "";//PatientName();
-
-	// TODO: Load all of patient's parameters
+	string filename = PatientName();
+	DataParams params[REC_COUNT];
 
 	// Record doppler audio
-	float32* buffer[REC_COUNT];
+	float32* buffer = (float32*)std::malloc(SAMPLE_COUNT * sizeof(float32));
 
 	for(uint8 i = 0; i < REC_COUNT; i++) {
-		buffer[i] = (float32*)malloc(SAMPLE_COUNT * sizeof(float32));
-	}
-	
-	for(uint8 i = 0; i < REC_COUNT; i++) {
-		// TODO: Prompt user to press ENTER to start recording
+		cout << "Press [ ENTER ] to begin recording for the "
+			<< (i < REC_COUNT / 2 ? "left" : "right") << " side, depth #"
+			<< (((i >= REC_COUNT / 2) ? (i - REC_COUNT / 2) : i) + 1)
+			<< endl;
 
-		int retSeek = fseek(STDIN_FILENO, 0, SEEK_END);
-		int retRead = read(STDIN_FILENO, &buffer[i], SAMPLE_COUNT);
+		system((string("arecord -t raw -d ") << DURATION
+				<< " -D plughw:1,0 -f FLOAT -r " << SAMPLE_RATE
+				<< " " << TEMP).c_str());
+		sleep(DURATION + 1);
 
-		if(retSeek != 0 || retRead < SAMPLE_COUNT) {
+		int file = open(TEMP, O_RDONLY);
+		int retRead = read(file, &buffer, SAMPLE_COUNT * sizeof(float32));
+
+		if(file != 0 || retRead < SAMPLE_COUNT) {
 			cerr << "An error occurred reading the doppler audio! "
 				"The program will now exit." << endl;
 			return ERROR;
 		}
 
-		// TODO: Print message about recording stopped
+		params[i] = process(buffer, SAMPLE_COUNT, SAMPLE_FREQ);
+		cout << "The recording is complete." << endl << endl;
 	}
 
-	map<Side, DataParams> results = Process(buffer);
+	free(buffer);
+	map<Side, DataParams> results;
+	results[Side::Left] = average(params, REC_COUNT / 2);
+	resutls[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
 
-	// TODO: Print results & probable diagnosis
+	cout << "Analysis is complete." << endl << endl;
 
-	// TODO: Write all results to file
+	for(int i = 0; i < 2; i++) {
+		Side side = (Side)i;
+		cout << (side == Side::Left ? "[LEFT]" : "[RIGHT]") << endl;
+		cout << "Drop-off frequency: " << (uint16)(results[side].freq + 0.5)
+			<< " Hz" << endl;
+		cout << "Average relative noiseband power: "
+			<< (uint16)(results[side].noise + 0.5) << " dB" << endl;
+	}
+
+	try {
+		DataParams baseParams = ReadParams(filename);
+		// TODO: Print results & probable diagnosis
+
+	} catch(exception ex) {
+		
+		// TODO: Write all results to file
+	}
+	
 }
