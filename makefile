@@ -12,6 +12,9 @@ docs:
 	git commit -m "Updated documentation."
 	git push
 
+fileio-test:
+	$(GCC) src/fileio_test.cpp -o bin/fileiotest
+
 fseek-test:
 	$(GCC) src/fseek_test.cpp -o bin/fseektest
 
