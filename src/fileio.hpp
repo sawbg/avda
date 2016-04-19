@@ -94,7 +94,6 @@ namespace vaso {
 						track1 = 1;
 						track2 = 1;
 						track3 = 1;
-						createfile.open(patientname);
 						createfile << CSV_HEADER << std::endl;
 						createfile.flush();
 						createfile.close();
