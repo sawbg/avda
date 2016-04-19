@@ -1,5 +1,8 @@
 GCC = g++ -g -std=gnu++14
 
+avda:
+	$(GCC) src/main.cpp -o bin/avda
+
 count:
 	grep -r "src/" -e "Samuel Andrew Wisner" -l | xargs wc -l
 
@@ -15,9 +18,6 @@ docs:
 fileio-test:
 	$(GCC) src/fileio_test.cpp -o bin/fileiotest
 
-fseek-test:
-	$(GCC) src/fseek_test.cpp -o bin/fseektest
-
 patient-name-test:
 	$(GCC) src/patient_name_test.cpp -o bin/patnametest
 
@@ -27,9 +27,5 @@ process-test:
 read-params-test:
 	$(GCC) src/read_params_test.cpp -o bin/rptest
 
-sigmath-test:
-	$(GCC) src/sigmath_test.cpp -o bin/sigmathtest
-
-vaso:
-	$(GCC) src/main.cpp -o bin/vaso
-
+stdin-clear-test:
+	$(GCC) src/stdin_clear_test.cpp -o bin/cleartest
