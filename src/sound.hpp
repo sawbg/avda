@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @brief contains the function(s) relating to sound
  */
@@ -10,7 +11,7 @@
 
 #include "definitions.hpp"
 
-namespace vaso {
+namespace avda {
 	/**
 	 * Plays a WAVE file in a loop in a non-blocking manner.
 	 *
