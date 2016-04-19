@@ -1,22 +1,31 @@
 /**
-*@author Samuel Andrew Wisner
-*@author Nicholas K. Nolan
-*@brief
-*/
+ * @file
+ * @author Samuel Andrew Wisner
+ * @author Nicholas K. Nolan
+ * @brief Contains program that tests the functions in fileio.hpp.
+ */
 
-#include <iostream>
-#include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
+#include <string>
+#include <time.h>
+
 #include "definitions.hpp"
 #include "fileio.hpp"
 #include "process.hpp"
-#include <time.h>
 
 using namespace std;
-using namespace vaso;
+using namespace avda;
 
+/**
+ * Tests the functions in fileio.hpp.
+ */
 int main() {
-	map<Side, DataParams> laMap = ReadParams(PatientName());
-	cout <<  laMap[Side::Left].freq << endl;
+	string path = PATIENT_PATH + "wizmack, sammy andy.csv";
+	map<Side, DataParams> laMap = ReadParams(path);
+	cout <<  laMap[Side::Right].freq << endl;
+	cout << laMap[Side::Right].noise << endl;
+
+	WriteParams(laMap, path);
 }
