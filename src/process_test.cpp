@@ -2,7 +2,7 @@
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @author Nicholas K. Nolan
- * @brief 
+ * @brief Contains a program to test the process() function.
  */
 
 #include <cstdio>
@@ -18,13 +18,13 @@
 #define COUNT 131072
 
 using namespace std;
-using namespace vaso;
+using namespace avda;
 
 /**
- * 
+ * Tests the process() function from process.hpp.
  */
 int main(int argc, char** argv) {
-	int file = open("/home/pi/vaso/etc/audio/test.raw", O_RDONLY);
+	int file = open("/home/pi/avda/etc/audio/test.raw", O_RDONLY);
 
 	if(file < 0) {
 		cerr << "File unreadable!" << endl;

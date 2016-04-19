@@ -1,21 +1,18 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
- * @author Nicholas K. Nolan
- * @brief 
+ * @brief Contains a program test the PatientName() function.
  */
 
 #include <string>
 
-#include "definitions.hpp"
 #include "fileio.hpp"
-#include "process.hpp"
 
 using namespace std;
-using namespace vaso;
+using namespace avda;
 
 /**
- * 
- * 
+ * Tests the PatientName() function in fileio.hpp.
  */
 int main(int argc, char** argv) {
 	string filename = PatientName();
