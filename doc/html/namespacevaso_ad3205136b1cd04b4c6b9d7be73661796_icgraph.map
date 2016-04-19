@@ -1,6 +1,4 @@
 <map id="vaso::average" name="vaso::average">
-<area shape="rect" id="node2" href="$namespacevaso.html#a0a7aa548b31b50c92be5b08bcb1df9a0" title="vaso::Process" alt="" coords="157,5,264,32"/>
-<area shape="rect" id="node4" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="159,56,263,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="312,5,363,32"/>
-<area shape="rect" id="node5" href="$process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="312,56,363,83"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="309,5,360,32"/>
+<area shape="rect" id="node3" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="157,31,261,57"/>
 </map>

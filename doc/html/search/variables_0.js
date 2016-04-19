@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['counter',['counter',['../structThreadParams.html#aa23fd1fa0f6a8d38cb42d8ee852bc6a6',1,'ThreadParams']]],
-  ['csv_5fheader',['CSV_HEADER',['../namespacevaso.html#ade7cbcaad3dc577b643b3eea4b4e8aa0',1,'vaso']]]
+  ['buffer_5fsize',['BUFFER_SIZE',['../definitions_8hpp.html#aca681ed285767aaa2353bf3b42dd60ed',1,'definitions.hpp']]]
 ];

@@ -6,9 +6,12 @@
 contains functions related to the file I/\+O use in this program  
 
 
-{\ttfamily \#include $<$iostream$>$}\\*
-{\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
 Include dependency graph for fileio.\+hpp\+:
 \nopagebreak
@@ -30,7 +33,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespacevaso}{vaso}
-\begin{DoxyCompactList}\small\item\em contains function()s related to the program's threaded processing of audio data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,7 +41,7 @@ std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{vaso\+
 \item 
 std\+::map$<$ Side, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{vaso\+::\+Read\+Params} (auto filename)
 \item 
-std\+::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{vaso\+::\+Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, auto filename)
+void \hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{vaso\+::\+Write\+Params} (std\+::map$<$ Side, \hyperlink{structDataParams}{Data\+Params} $>$ my\+Map, auto filename)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -54,7 +57,11 @@ contains functions related to the file I/\+O use in this program
 
 \begin{DoxyAuthor}{Author}
 Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+
+Nicholas K. Nolan 
 \end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]file is overly complicated and much more bug-\/prone \end{DoxyRefDesc}
 
 
 Definition in file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.

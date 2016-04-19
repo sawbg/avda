@@ -1,14 +1,19 @@
-.TH "src/definitions.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/definitions.hpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/definitions.hpp \- 
+.PP
+Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations\&.  
+
 .SH SYNOPSIS
 .br
 .PP
 \fC#include <complex>\fP
 .br
 \fC#include <map>\fP
+.br
+\fC#include <string>\fP
 .br
 
 .SS "Classes"
@@ -20,9 +25,6 @@ src/definitions.hpp \-
 .ti -1c
 .RI "struct \fBMaximum\fP"
 .br
-.ti -1c
-.RI "struct \fBThreadParams\fP"
-.br
 .in -1c
 .SS "Namespaces"
 
@@ -30,24 +32,10 @@ src/definitions.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Macros"
 
 .in +1c
-.ti -1c
-.RI "#define \fBERROR\fP   -1"
-.br
-.RI "\fIContains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations\&. \fP"
-.ti -1c
-.RI "#define \fBREC_COUNT\fP   6"
-.br
-.ti -1c
-.RI "#define \fBSAMPLE_COUNT\fP   262144"
-.br
-.ti -1c
-.RI "#define \fBSAMPLE_FREQ\fP   44100"
-.br
 .ti -1c
 .RI "#define \fBENUM\fP   signed char"
 .br
@@ -99,16 +87,36 @@ src/definitions.hpp \-
 .RI "enum \fBvaso::Side\fP { \fBvaso::Side::Left\fP, \fBvaso::Side::Right\fP }"
 .br
 .in -1c
-.SH "Macro Definition Documentation"
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBuint8\fP \fBDURATION\fP = 6"
+.br
+.ti -1c
+.RI "const \fBsint8\fP \fBERROR\fP = -1"
+.br
+.ti -1c
+.RI "const \fBuint8\fP \fBREC_COUNT\fP = 6"
+.br
+.ti -1c
+.RI "const \fBuint32\fP \fBSAMPLE_COUNT\fP = 262144"
+.br
+.ti -1c
+.RI "const \fBuint16\fP \fBSAMPLE_FREQ\fP = 48000"
+.br
+.ti -1c
+.RI "const std::string \fBTEMP_FILE\fP = '\&.temp'"
+.br
+.ti -1c
+.RI "const \fBuint32\fP \fBBUFFER_SIZE\fP = \fBSAMPLE_COUNT\fP * sizeof(\fBfloat32\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
 .PP 
-.SS "#define ENUM   signed char"
-
-.PP
-Definition at line 18 of file definitions\&.hpp\&.
-.SS "#define ERROR   -1"
-
-.PP
 Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations\&. 
+
+
 .PP
 \fBAuthor:\fP
 .RS 4
@@ -117,19 +125,13 @@ Samuel Andrew Wisner, awisner94@gmail.com
 .PP
 
 .PP
-Definition at line 14 of file definitions\&.hpp\&.
-.SS "#define REC_COUNT   6"
-
-.PP
-Definition at line 15 of file definitions\&.hpp\&.
-.SS "#define SAMPLE_COUNT   262144"
+Definition in file \fBdefinitions\&.hpp\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ENUM   signed char"
 
 .PP
 Definition at line 16 of file definitions\&.hpp\&.
-.SS "#define SAMPLE_FREQ   44100"
-
-.PP
-Definition at line 17 of file definitions\&.hpp\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef unsigned char \fBbyte\fP"
@@ -137,9 +139,9 @@ Definition at line 17 of file definitions\&.hpp\&.
 .PP
 Definition at line 20 of file definitions\&.hpp\&.
 .SS "typedef std::complex<\fBfloat32\fP> \fBcfloat32\fP"
-Defines a type for complex float32's\&. 
+Complex float32's\&. 
 .PP
-Definition at line 39 of file definitions\&.hpp\&.
+Definition at line 81 of file definitions\&.hpp\&.
 .SS "typedef float \fBfloat32\fP"
 
 .PP
@@ -180,6 +182,36 @@ Definition at line 30 of file definitions\&.hpp\&.
 
 .PP
 Definition at line 21 of file definitions\&.hpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBuint32\fP BUFFER_SIZE = \fBSAMPLE_COUNT\fP * sizeof(\fBfloat32\fP)"
+Size of the sample buffer\&. 
+.PP
+Definition at line 73 of file definitions\&.hpp\&.
+.SS "const \fBuint8\fP DURATION = 6"
+Duration of recording in seconds\&. 
+.PP
+Definition at line 42 of file definitions\&.hpp\&.
+.SS "const \fBsint8\fP ERROR = -1"
+Error integer returned when the program must exit with an error\&. 
+.PP
+Definition at line 47 of file definitions\&.hpp\&.
+.SS "const \fBuint8\fP REC_COUNT = 6"
+Number of recordings (both left and right) to make\&. 
+.PP
+Definition at line 52 of file definitions\&.hpp\&.
+.SS "const \fBuint32\fP SAMPLE_COUNT = 262144"
+Number of samples to use in processing the recordings\&. Must be a power of two\&. SAMPLE_COUNT / SAMPLE_FREQ < DURATION must be true\&. 
+.PP
+Definition at line 58 of file definitions\&.hpp\&.
+.SS "const \fBuint16\fP SAMPLE_FREQ = 48000"
+Recording sampling rate in Hz (NOT kHz)\&. 
+.PP
+Definition at line 63 of file definitions\&.hpp\&.
+.SS "const std::string TEMP_FILE = '\&.temp'"
+Filename of the temporary recording file\&. 
+.PP
+Definition at line 68 of file definitions\&.hpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

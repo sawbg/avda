@@ -1,0 +1,80 @@
+\hypertarget{fileio__test_8cpp}{\section{src/fileio\+\_\+test.cpp File Reference}
+\label{fileio__test_8cpp}\index{src/fileio\+\_\+test.\+cpp@{src/fileio\+\_\+test.\+cpp}}
+}
+
+
+Contains program that tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}.  
+
+
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fileio.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}process.\+hpp\char`\"{}}\\*
+Include dependency graph for fileio\+\_\+test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fileio__test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains program that tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner 
+
+Nicholas K. Nolan 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{fileio__test_8cpp_source}{fileio\+\_\+test.\+cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{fileio\+\_\+test.\+cpp@{fileio\+\_\+test.\+cpp}!main@{main}}
+\index{main@{main}!fileio\+\_\+test.\+cpp@{fileio\+\_\+test.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}. 
+
+Definition at line \hyperlink{fileio__test_8cpp_source_l00024}{24} of file \hyperlink{fileio__test_8cpp_source}{fileio\+\_\+test.\+cpp}.
+
+
+\begin{DoxyCode}
+00024            \{
+00025     \textcolor{keywordtype}{string} path = \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
+00026     map<Side, DataParams> laMap = \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(path);
+00027     cout <<  laMap[Side::Right].freq << endl;
+00028     cout << laMap[Side::Right].noise << endl;
+00029 
+00030     \hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{WriteParams}(laMap, path);
+00031 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+
+

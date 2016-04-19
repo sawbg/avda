@@ -1,6 +1,4 @@
 <map id="vaso::max" name="vaso::max">
-<area shape="rect" id="node2" href="$namespacevaso.html#a0a7aa548b31b50c92be5b08bcb1df9a0" title="vaso::Process" alt="" coords="136,5,243,32"/>
-<area shape="rect" id="node4" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="137,56,241,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="291,5,341,32"/>
-<area shape="rect" id="node5" href="$process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="291,56,341,83"/>
+<area shape="rect" id="node2" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="136,5,240,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="288,5,339,32"/>
 </map>

@@ -1,7 +1,6 @@
 <map id="src/sigmath.hpp" name="src/sigmath.hpp">
-<area shape="rect" id="node2" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="250,80,365,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="contains the main program " alt="" coords="5,155,103,181"/>
-<area shape="rect" id="node4" href="$patient__name__test_8cpp.html" title="src/patient_name_test.cpp" alt="" coords="127,155,303,181"/>
-<area shape="rect" id="node5" href="$process__test_8cpp.html" title="src/process_test.cpp" alt="" coords="327,155,471,181"/>
-<area shape="rect" id="node6" href="$sigmath__test_8cpp.html" title="src/sigmath_test.cpp" alt="" coords="495,155,639,181"/>
+<area shape="rect" id="node2" href="$process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="147,80,261,107"/>
+<area shape="rect" id="node3" href="$fileio__test_8cpp.html" title="Contains program that tests the functions in fileio.hpp. " alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="contains the main program " alt="" coords="155,155,253,181"/>
+<area shape="rect" id="node5" href="$process__test_8cpp.html" title="Contains a program to test the process() function. " alt="" coords="277,155,421,181"/>
 </map>

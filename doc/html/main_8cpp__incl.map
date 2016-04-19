@@ -1,6 +1,6 @@
 <map id="src/main.cpp" name="src/main.cpp">
-<area shape="rect" id="node9" href="$definitions_8hpp.html" title="definitions.hpp" alt="" coords="661,229,768,256"/>
-<area shape="rect" id="node11" href="$fileio_8hpp.html" title="contains functions related to the file I/O use in this program " alt="" coords="512,80,587,107"/>
-<area shape="rect" id="node13" href="$process_8hpp.html" title="process.hpp" alt="" coords="611,80,704,107"/>
-<area shape="rect" id="node15" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="788,155,881,181"/>
+<area shape="rect" id="node11" href="$definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="344,229,451,256"/>
+<area shape="rect" id="node13" href="$fileio_8hpp.html" title="contains functions related to the file I/O use in this program " alt="" coords="691,80,765,107"/>
+<area shape="rect" id="node18" href="$process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="380,80,473,107"/>
+<area shape="rect" id="node19" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="260,155,353,181"/>
 </map>

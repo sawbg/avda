@@ -1,11 +1,13 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$namespacevaso.html#a0a7aa548b31b50c92be5b08bcb1df9a0" title="vaso::Process" alt="" coords="104,183,211,209"/>
-<area shape="rect" id="node3" href="$namespacevaso.html#af74f08a8afd7967b6c2b3c2b0e5fb1e9" title="vaso::fft" alt="" coords="277,5,347,32"/>
-<area shape="rect" id="node4" href="$namespacevaso.html#a5d355b5c326a852e2ce95c258450898c" title="vaso::mag" alt="" coords="271,56,353,83"/>
-<area shape="rect" id="node5" href="$namespacevaso.html#a122846d728be312454a452d379915e10" title="vaso::max" alt="" coords="271,107,353,133"/>
-<area shape="rect" id="node6" href="$namespacevaso.html#af9bb2211cf3478333dfc1873bf316263" title="vaso::decibels" alt="" coords="259,157,365,184"/>
-<area shape="rect" id="node7" href="$namespacevaso.html#a5b7fc1a58199e2cac989f417a9faa1ce" title="vaso::smooth" alt="" coords="261,208,363,235"/>
-<area shape="rect" id="node8" href="$namespacevaso.html#a7d108bce812e906d8b1810815774c7ea" title="vaso::diff" alt="" coords="274,259,350,285"/>
-<area shape="rect" id="node9" href="$namespacevaso.html#a6ca90add966ce1773fc59a6883e6cd0c" title="vaso::absolute" alt="" coords="259,309,365,336"/>
-<area shape="rect" id="node10" href="$namespacevaso.html#ad3205136b1cd04b4c6b9d7be73661796" title="vaso::average" alt="" coords="260,360,364,387"/>
+<area shape="rect" id="node2" href="$namespacevaso.html#a21e264fa912f7ca3f50e7e412ba1582e" title="vaso::PatientName" alt="" coords="104,157,239,184"/>
+<area shape="rect" id="node3" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="119,208,223,235"/>
+<area shape="rect" id="node11" href="$namespacevaso.html#ad3205136b1cd04b4c6b9d7be73661796" title="vaso::average" alt="" coords="288,360,392,387"/>
+<area shape="rect" id="node12" href="$namespacevaso.html#afc1435dcb9c37b3ccde589738b26c909" title="vaso::ReadParams" alt="" coords="104,309,239,336"/>
+<area shape="rect" id="node4" href="$namespacevaso.html#af74f08a8afd7967b6c2b3c2b0e5fb1e9" title="vaso::fft" alt="" coords="305,5,375,32"/>
+<area shape="rect" id="node5" href="$namespacevaso.html#a5d355b5c326a852e2ce95c258450898c" title="vaso::mag" alt="" coords="299,56,381,83"/>
+<area shape="rect" id="node6" href="$namespacevaso.html#a122846d728be312454a452d379915e10" title="vaso::max" alt="" coords="299,107,381,133"/>
+<area shape="rect" id="node7" href="$namespacevaso.html#af9bb2211cf3478333dfc1873bf316263" title="vaso::decibels" alt="" coords="287,157,393,184"/>
+<area shape="rect" id="node8" href="$namespacevaso.html#a5b7fc1a58199e2cac989f417a9faa1ce" title="vaso::smooth" alt="" coords="289,208,391,235"/>
+<area shape="rect" id="node9" href="$namespacevaso.html#a7d108bce812e906d8b1810815774c7ea" title="vaso::diff" alt="" coords="302,259,378,285"/>
+<area shape="rect" id="node10" href="$namespacevaso.html#a6ca90add966ce1773fc59a6883e6cd0c" title="vaso::absolute" alt="" coords="287,309,393,336"/>
 </map>

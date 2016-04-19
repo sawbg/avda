@@ -1,0 +1,31 @@
+\hypertarget{stdin__clear__test_8cpp_source}{\section{stdin\+\_\+clear\+\_\+test.\+cpp}
+\label{stdin__clear__test_8cpp_source}\index{src/stdin\+\_\+clear\+\_\+test.\+cpp@{src/stdin\+\_\+clear\+\_\+test.\+cpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00008 \textcolor{preprocessor}{#include <iostream>}
+00009 \textcolor{preprocessor}{#include <string>}
+00010 \textcolor{preprocessor}{#include <unistd.h>}
+00011 
+00012 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00013 
+\hypertarget{stdin__clear__test_8cpp_source_l00014}{}\hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{00014} \textcolor{preprocessor}{#define COUNT 80}
+00015 
+00016 \textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+00017 \textcolor{keyword}{using namespace }\hyperlink{namespacevaso}{vaso};
+00018 
+\hypertarget{stdin__clear__test_8cpp_source_l00022}{}\hyperlink{stdin__clear__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00022} \textcolor{keywordtype}{int} \hyperlink{stdin__clear__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{
+00023     \textcolor{keywordtype}{char} text1[\hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}];
+00024     \textcolor{keywordtype}{char} text2[\hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}];
+00025 
+00026     cout << \textcolor{stringliteral}{"Enter text to ignore: "};
+00027     cout.flush();
+00028     read(STDIN\_FILENO, &text1, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});
+00029     fflush(stdin);
+00030     cout << endl << \textcolor{stringliteral}{"Enter text to print: "};
+00031     cout.flush();
+00032     read(STDIN\_FILENO, &text2, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});
+00033     cout << endl << \textcolor{stringliteral}{"In buffer: "} << text2 << endl;
+00034 \}
+\end{DoxyCode}

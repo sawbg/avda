@@ -5,53 +5,85 @@
 \begin{DoxyCode}
 00001 
 00008 \textcolor{preprocessor}{#include <array>}
-00009 \textcolor{preprocessor}{#include <cstdlib>}
-00010 \textcolor{preprocessor}{#include <iostream>}
-00011 \textcolor{preprocessor}{#include <map>}
-00012 \textcolor{preprocessor}{#include <pthread.h>}
-00013 \textcolor{preprocessor}{#include <string>}
-00014 \textcolor{preprocessor}{#include <unistd.h>}
-00015 
-00016 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
-00017 \textcolor{preprocessor}{#include "\hyperlink{fileio_8hpp}{fileio.hpp}"}
-00018 \textcolor{preprocessor}{#include "\hyperlink{process_8hpp}{process.hpp}"}
-00019 
-00020 \textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
-00021 \textcolor{keyword}{using namespace }\hyperlink{namespacevaso}{vaso};
-00022 
-\hypertarget{main_8cpp_source_l00027}{}\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00027} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{
-00028     \textcolor{comment}{// generate name for patient's file}
-00029     \textcolor{keywordtype}{string} filename = \textcolor{stringliteral}{""};\textcolor{comment}{//PatientName();}
-00030 
-00031     \textcolor{comment}{// TODO: Load all of patient's parameters}
-00032 
-00033     \textcolor{comment}{// Record doppler audio}
-00034     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* buffer[\hyperlink{definitions_8hpp_aa44e6143be9e89f19be973956c22e134}{REC\_COUNT}];
-00035 
-00036     \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < \hyperlink{definitions_8hpp_aa44e6143be9e89f19be973956c22e134}{REC\_COUNT}; i++) \{
-00037         buffer[i] = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)malloc(\hyperlink{definitions_8hpp_a1682c770d91c5d167b621a782be940d4}{SAMPLE\_COUNT} * \textcolor{keyword}{sizeof}(
-      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
-00038     \}
-00039     
-00040     \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < \hyperlink{definitions_8hpp_aa44e6143be9e89f19be973956c22e134}{REC\_COUNT}; i++) \{
-00041         \textcolor{comment}{// TODO: Prompt user to press ENTER to start recording}
-00042 
-00043         \textcolor{keywordtype}{int} retSeek = fseek(STDIN\_FILENO, 0, SEEK\_END);
-00044         \textcolor{keywordtype}{int} retRead = read(STDIN\_FILENO, &buffer[i], \hyperlink{definitions_8hpp_a1682c770d91c5d167b621a782be940d4}{SAMPLE\_COUNT});
-00045 
-00046         \textcolor{keywordflow}{if}(retSeek != 0 || retRead < \hyperlink{definitions_8hpp_a1682c770d91c5d167b621a782be940d4}{SAMPLE\_COUNT}) \{
-00047             cerr << \textcolor{stringliteral}{"An error occurred reading the doppler audio! "}
-00048                 \textcolor{stringliteral}{"The program will now exit."} << endl;
-00049             \textcolor{keywordflow}{return} \hyperlink{definitions_8hpp_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR};
-00050         \}
-00051 
-00052         \textcolor{comment}{// TODO: Print message about recording stopped}
-00053     \}
-00054 
-00055     map<Side, DataParams> results = \hyperlink{namespacevaso_a0a7aa548b31b50c92be5b08bcb1df9a0}{Process}(buffer);
-00056 
-00057     \textcolor{comment}{// TODO: Print results & probable diagnosis}
-00058 
-00059     \textcolor{comment}{// TODO: Write all results to file}
-00060 \}
+00009 \textcolor{preprocessor}{#include <cstdio>}
+00010 \textcolor{preprocessor}{#include <cstdlib>}
+00011 \textcolor{preprocessor}{#include <fcntl.h>}
+00012 \textcolor{preprocessor}{#include <iostream>}
+00013 \textcolor{preprocessor}{#include <map>}
+00014 \textcolor{preprocessor}{#include <pthread.h>}
+00015 \textcolor{preprocessor}{#include <string>}
+00016 \textcolor{preprocessor}{#include <unistd.h>}
+00017 
+00018 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00019 \textcolor{preprocessor}{#include "\hyperlink{fileio_8hpp}{fileio.hpp}"}
+00020 \textcolor{preprocessor}{#include "\hyperlink{process_8hpp}{process.hpp}"}
+00021 
+00022 \textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+00023 \textcolor{keyword}{using namespace }\hyperlink{namespacevaso}{vaso};
+00024 
+\hypertarget{main_8cpp_source_l00029}{}\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00029} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{
+00030     \textcolor{keyword}{const} \textcolor{keywordtype}{string} recCommand = string(\textcolor{stringliteral}{"arecord -t raw -d "})
+00031         + to\_string(\hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{DURATION}) + string(\textcolor{stringliteral}{" -D plughw:1,0 -f FLOAT -q -r "})
+00032          + to\_string(\hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ}) + string(\textcolor{stringliteral}{" "}) + \hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{TEMP\_FILE};
+00033     \hyperlink{structDataParams}{DataParams} params[\hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{REC\_COUNT}];
+00034 
+00035     \textcolor{keywordtype}{string} filename = \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{PatientName}();  \textcolor{comment}{// generate name for patient's file}
+00036 
+00037     \textcolor{comment}{// Recorded audio buffer}
+00038     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* buffer = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)std::malloc(\hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{BUFFER\_SIZE});
+00039 
+00040     \textcolor{comment}{// Start recording}
+00041     \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < \hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{REC\_COUNT}; i++) \{
+00042         cout << \textcolor{stringliteral}{"Press [ ENTER ] to begin analysis for the "}
+00043             << (i < REC\_COUNT / 2 ? \textcolor{stringliteral}{"left"} : \textcolor{stringliteral}{"right"}) << \textcolor{stringliteral}{" side, depth #"}
+00044             << (((i >= REC\_COUNT / 2) ? (i - REC\_COUNT / 2) : i) + 1)
+00045             << \textcolor{stringliteral}{"..."};
+00046         fflush(stdin);
+00047         getchar();  \textcolor{comment}{// wait for ENTER to be pressed}
+00048         cout << \textcolor{stringliteral}{"Recording..."} << endl;
+00049 
+00050         system(recCommand.c\_str());
+00051         sleep(\hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{DURATION} + 1);
+00052 
+00053         \textcolor{keywordtype}{int} file = open(\hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{TEMP\_FILE}.c\_str(), O\_RDONLY);
+00054         \textcolor{keywordtype}{int} retRead = read(file, buffer, \hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{BUFFER\_SIZE});
+00055         close(file);
+00056         \textcolor{keyword}{remove}(\hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{TEMP\_FILE}.c\_str());
+00057 
+00058         \textcolor{keywordflow}{if}(file < 0 || retRead < \hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{BUFFER\_SIZE}) \{
+00059             cerr << \textcolor{stringliteral}{"An error occurred reading the doppler audio! "}
+00060                 \textcolor{stringliteral}{"The program will now exit."} << endl;
+00061             \textcolor{keywordflow}{return} \hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{ERROR};
+00062         \}
+00063 
+00064         params[i] = \hyperlink{namespacevaso_a8136a2891983f7a41768330e018e3232}{process}(buffer, \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{SAMPLE\_COUNT}, \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ});
+00065         cout << \textcolor{stringliteral}{"The analysis is complete."} << endl << endl;
+00066     \}
+00067 
+00068     free(buffer);
+00069     map<Side, DataParams> results;
+00070     results[Side::Left] = \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(params, REC\_COUNT / 2);
+00071     results[Side::Right] = \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(&params[REC\_COUNT / 2], REC\_COUNT / 2);
+00072 
+00073     cout << \textcolor{stringliteral}{"Analysis is complete."} << endl << endl;
+00074 
+00075     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{
+00076         \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side} side = (\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{Side})i;
+00077         cout << (side == Side::Left ? \textcolor{stringliteral}{"[LEFT]"} : \textcolor{stringliteral}{"[RIGHT]"}) << endl;
+00078         cout << \textcolor{stringliteral}{"Drop-off frequency: "} << (\hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16})(results[side].freq + 0.5)
+00079             << \textcolor{stringliteral}{" Hz"} << endl;
+00080         cout << \textcolor{stringliteral}{"Average relative noiseband power: "}
+00081             << (\hyperlink{definitions_8hpp_a74df79fde3c518e55b29ce6360a9c76e}{sint16})(results[side].noise - 0.5) << \textcolor{stringliteral}{" dB"} << endl <<endl;
+00082     \}
+00083 
+00084     \textcolor{keywordflow}{try} \{
+00085         map<Side, DataParams> baseParams = \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(filename);
+00086         \textcolor{comment}{// TODO: Print results & probable diagnosis}
+00087 
+00088     \} \textcolor{keywordflow}{catch}(exception ex) \{
+00089         
+00090         \textcolor{comment}{// TODO: Write all results to file}
+00091     \}
+00092     
+00093 \}
 \end{DoxyCode}

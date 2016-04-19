@@ -1,4 +1,4 @@
-.TH "src/fileio.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/fileio.hpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,11 +9,17 @@ contains functions related to the file I/O use in this program
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <fstream>\fP
+.br
 \fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
 .br
 \fC#include <string>\fP
 .br
-\fC#include <fstream>\fP
+\fC#include <stdexcept>\fP
+.br
+\fC#include <time\&.h>\fP
 .br
 \fC#include 'definitions\&.hpp'\fP
 .br
@@ -24,7 +30,6 @@ contains functions related to the file I/O use in this program
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Functions"
 
@@ -36,7 +41,7 @@ contains functions related to the file I/O use in this program
 .RI "std::map< Side, \fBDataParams\fP > \fBvaso::ReadParams\fP (auto filename)"
 .br
 .ti -1c
-.RI "std::string \fBvaso::WriteParams\fP (\fBDataParams\fP params, auto filename)"
+.RI "void \fBvaso::WriteParams\fP (std::map< Side, \fBDataParams\fP > myMap, auto filename)"
 .br
 .in -1c
 .SS "Variables"
@@ -58,6 +63,13 @@ contains functions related to the file I/O use in this program
 \fBAuthor:\fP
 .RS 4
 Samuel Andrew Wisner, awisner94@gmail.com 
+.PP
+Nicholas K\&. Nolan 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+file is overly complicated and much more bug-prone 
 .RE
 .PP
 

@@ -1,0 +1,28 @@
+\hypertarget{fileio__test_8cpp_source}{\section{fileio\+\_\+test.\+cpp}
+\label{fileio__test_8cpp_source}\index{src/fileio\+\_\+test.\+cpp@{src/fileio\+\_\+test.\+cpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00008 \textcolor{preprocessor}{#include <fstream>}
+00009 \textcolor{preprocessor}{#include <iostream>}
+00010 \textcolor{preprocessor}{#include <sstream>}
+00011 \textcolor{preprocessor}{#include <string>}
+00012 \textcolor{preprocessor}{#include <time.h>}
+00013 
+00014 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{fileio_8hpp}{fileio.hpp}"}
+00016 \textcolor{preprocessor}{#include "\hyperlink{process_8hpp}{process.hpp}"}
+00017 
+00018 \textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+00019 \textcolor{keyword}{using namespace }\hyperlink{namespacevaso}{vaso};
+00020 
+\hypertarget{fileio__test_8cpp_source_l00024}{}\hyperlink{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00024} \textcolor{keywordtype}{int} \hyperlink{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}() \{
+00025     \textcolor{keywordtype}{string} path = \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
+00026     map<Side, DataParams> laMap = \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(path);
+00027     cout <<  laMap[Side::Right].freq << endl;
+00028     cout << laMap[Side::Right].noise << endl;
+00029 
+00030     \hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{WriteParams}(laMap, path);
+00031 \}
+\end{DoxyCode}

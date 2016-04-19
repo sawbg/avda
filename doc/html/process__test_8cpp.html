@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -91,7 +92,7 @@ $(document).ready(function(){initNavTree('process__test_8cpp.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,6 +109,9 @@ $(document).ready(function(){initNavTree('process__test_8cpp.html','');});
 <div class="title">process_test.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains a program to test the <a class="el" href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">process()</a> function.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
@@ -121,7 +125,7 @@ Include dependency graph for process_test.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="process__test_8cpp__incl.png" border="0" usemap="#src_2process__test_8cpp" alt=""/></div>
 <map name="src_2process__test_8cpp" id="src_2process__test_8cpp">
-<area shape="rect" id="node8" href="definitions_8hpp.html" title="definitions.hpp" alt="" coords="475,229,582,256"/><area shape="rect" id="node11" href="process_8hpp.html" title="process.hpp" alt="" coords="522,80,615,107"/><area shape="rect" id="node13" href="sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="334,155,427,181"/></map>
+<area shape="rect" id="node8" href="definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="407,229,514,256"/><area shape="rect" id="node11" href="process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="477,80,570,107"/><area shape="rect" id="node13" href="sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="502,155,595,181"/></map>
 </div>
 </div>
 <p><a href="process__test_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -137,7 +141,8 @@ Functions</h2></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd>
+<div class="textblock"><p>Contains a program to test the <a class="el" href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">process()</a> function. </p>
+<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd>
 <dd>
 Nicholas K. Nolan </dd></dl>
 
@@ -181,9 +186,40 @@ Nicholas K. Nolan </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tests the <a class="el" href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">process()</a> function from <a class="el" href="process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. ">process.hpp</a>. </p>
 
 <p>Definition at line <a class="el" href="process__test_8cpp_source.html#l00026">26</a> of file <a class="el" href="process__test_8cpp_source.html">process_test.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> file = open(<span class="stringliteral">&quot;/home/pi/vaso/etc/audio/test.raw&quot;</span>, O_RDONLY);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span>(file &lt; 0) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;File unreadable!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a>* buffer = (<a class="code" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a>*)malloc(<a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a> * <span class="keyword">sizeof</span>(<a class="code" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a>));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> charRead = read(file, buffer, <a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a> * <span class="keyword">sizeof</span>(<a class="code" href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a>));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(charRead &lt; <a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a>) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Too few bytes read!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    close(file);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structDataParams.html">DataParams</a> params = <a class="code" href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">process</a>(buffer, <a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a>, <a class="code" href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    free(buffer);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Cutoff: &quot;</span> &lt;&lt; params.<a class="code" href="structDataParams.html#a12566e017407647bc8287d62554ad3fb">freq</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Noise: &quot;</span> &lt;&lt; params.<a class="code" href="structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f">noise</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="ttc" id="definitions_8hpp_html_a8ace559345ecba7978591ac2ef22aea4"><div class="ttname"><a href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a></div><div class="ttdeci">const uint16 SAMPLE_FREQ</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00063">definitions.hpp:63</a></div></div>
+<div class="ttc" id="definitions_8hpp_html_aacdc525d6f7bddb3ae95d5c311bd06a1"><div class="ttname"><a href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a></div><div class="ttdeci">float float32</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00033">definitions.hpp:33</a></div></div>
+<div class="ttc" id="structDataParams_html_a12566e017407647bc8287d62554ad3fb"><div class="ttname"><a href="structDataParams.html#a12566e017407647bc8287d62554ad3fb">DataParams::freq</a></div><div class="ttdeci">float32 freq</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00087">definitions.hpp:87</a></div></div>
+<div class="ttc" id="namespacevaso_html_a8136a2891983f7a41768330e018e3232"><div class="ttname"><a href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">vaso::process</a></div><div class="ttdeci">DataParams process(float32 *data, uint32 size, float32 samplingRate)</div><div class="ttdef"><b>Definition:</b> <a href="process_8hpp_source.html#l00048">process.hpp:48</a></div></div>
+<div class="ttc" id="process__test_8cpp_html_a698c124f1c293f98840449d6c5b9d984"><div class="ttname"><a href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a></div><div class="ttdeci">#define COUNT</div><div class="ttdef"><b>Definition:</b> <a href="process__test_8cpp_source.html#l00018">process_test.cpp:18</a></div></div>
+<div class="ttc" id="structDataParams_html"><div class="ttname"><a href="structDataParams.html">DataParams</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00086">definitions.hpp:86</a></div></div>
+<div class="ttc" id="structDataParams_html_a4efd1d2231c6fa7c878c9d5e1650738f"><div class="ttname"><a href="structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f">DataParams::noise</a></div><div class="ttdeci">float32 noise</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00088">definitions.hpp:88</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -201,7 +237,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="process__test_8cpp.html">process_test.cpp</a></li>
-    <li class="footer">Generated on Mon Apr 18 2016 22:27:19 for Andrew and Nick&#39;s Project by
+    <li class="footer">Generated on Tue Apr 19 2016 20:03:10 for Andrew and Nick&#39;s Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

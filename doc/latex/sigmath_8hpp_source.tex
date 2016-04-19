@@ -19,187 +19,166 @@
 00038 
 00049     \hyperlink{structDataParams}{DataParams} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{structDataParams}{DataParams}* params, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} size);
 00050 
-00067     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* avg, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} count, 
-      \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00068 
-00080     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{decibels}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00081 
-00090     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{diff}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00091 
-00103     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{fft}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00104 
-00114     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{mag}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* orig, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* newmags, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00115 
-00125     \hyperlink{structMaximum}{Maximum} \hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{max}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
-00126 
-00137     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{smooth}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order);
-00138 
-00139     \textcolor{comment}{// DEFINITIONS}
-00140 
-\hypertarget{sigmath_8hpp_source_l00141}{}\hyperlink{namespacevaso_a6ca90add966ce1773fc59a6883e6cd0c}{00141}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a6ca90add966ce1773fc59a6883e6cd0c}{absolute}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00142         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00143             data[i] = fabsf(data[i]);
-00144         \}
-00145     \}
-00146 
-\hypertarget{sigmath_8hpp_source_l00147}{}\hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{00147}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00148         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} ave;
-00149 
-00150         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00151             ave += data[i];
-00152         \}
+00062     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{decibels}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
+00063 
+00072     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{diff}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
+00073 
+00085     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{fft}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
+00086 
+00096     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{mag}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* orig, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* newmags, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
+00097 
+00107     \hyperlink{structMaximum}{Maximum} \hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{max}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size);
+00108 
+00119     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{smooth}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order);
+00120 
+00121     \textcolor{comment}{// DEFINITIONS}
+00122 
+\hypertarget{sigmath_8hpp_source_l00123}{}\hyperlink{namespacevaso_a6ca90add966ce1773fc59a6883e6cd0c}{00123}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a6ca90add966ce1773fc59a6883e6cd0c}{absolute}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00124         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00125             data[i] = fabsf(data[i]);
+00126         \}
+00127     \}
+00128 
+\hypertarget{sigmath_8hpp_source_l00129}{}\hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{00129}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00130         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} ave;
+00131 
+00132         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00133             ave += data[i];
+00134         \}
+00135 
+00136         ave = ave / size;
+00137         \textcolor{keywordflow}{return} ave;
+00138     \}
+00139 
+\hypertarget{sigmath_8hpp_source_l00140}{}\hyperlink{namespacevaso_a376413e791defec04a0faf329be1cbf4}{00140}     \hyperlink{structDataParams}{DataParams} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{structDataParams}{DataParams}* params, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} size) \{
+00141         \hyperlink{structDataParams}{DataParams} ave;
+00142 
+00143         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < size; i++) \{
+00144             \textcolor{comment}{//freq is an attribute. this is how to add structure attributes}
+00145             ave.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} += params[i].\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq};
+00146             ave.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} += params[i].\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise};
+00147         \}
+00148 
+00149         ave.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} /= size;
+00150         ave.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} /= size;
+00151         \textcolor{keywordflow}{return} ave;
+00152     \}
 00153 
-00154         ave = ave / size;
-00155         \textcolor{keywordflow}{return} ave;
-00156     \}
-00157 
-\hypertarget{sigmath_8hpp_source_l00158}{}\hyperlink{namespacevaso_a376413e791defec04a0faf329be1cbf4}{00158}     \hyperlink{structDataParams}{DataParams} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{structDataParams}{DataParams}* params, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} size) \{
-00159         \hyperlink{structDataParams}{DataParams} ave;
-00160 
-00161         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < size; i++) \{
-00162             \textcolor{comment}{//freq is an attribute. this is how to add structure attributes}
-00163             ave.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} += params[i].\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq};
-00164 
-00165             ave.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} += params[i].\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise};
+\hypertarget{sigmath_8hpp_source_l00154}{}\hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{00154}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{decibels}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00155         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00156             data[i] = 20 * log10(data[i]);
+00157         \}
+00158     \}
+00159 
+\hypertarget{sigmath_8hpp_source_l00160}{}\hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{00160}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{diff}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00161         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} temp[size];
+00162         temp[0] = 0;
+00163 
+00164         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 1; i < size; i++) \{
+00165             temp[i] = data[i] - data[i-1];
 00166         \}
 00167 
-00168         ave.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} /= size;
-00169         ave.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} /= size;
-00170         \textcolor{keywordflow}{return} ave;
+00168         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00169             data[i] = temp[i];
+00170         \}
 00171     \}
 00172 
-\hypertarget{sigmath_8hpp_source_l00173}{}\hyperlink{namespacevaso_a30b4bf3db78fd1aae6e10803944517ff}{00173}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_ad3205136b1cd04b4c6b9d7be73661796}{average}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}** data, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* avg, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} count, 
-      \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00174         \textcolor{comment}{// data is an array. Access like so: data[index]}
-00175         \textcolor{comment}{//loop for the number of "columns" in the array}
-00176         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} e = 0; e < size; e++) \{
-00177             \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} c = 0;
-00178 
-00179             \textcolor{comment}{//loop for the number of "rows" in the array (in case > 3)}
-00180             \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} r = 0; r < count; r++) \{
-00181                 c += data [r][e];       \textcolor{comment}{//adds values in each row for column e}
-00182             \}
-00183 
-00184             c = c / count;      \textcolor{comment}{//averages the values}
-00185             avg[e] = c;     \textcolor{comment}{//saves averaged value into avg array}
-00186         \}
-00187     \}
-00188 
-\hypertarget{sigmath_8hpp_source_l00189}{}\hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{00189}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af9bb2211cf3478333dfc1873bf316263}{decibels}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00190         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00191             data[i] = 20 * log10(data[i]);
-00192         \}
-00193     \}
+\hypertarget{sigmath_8hpp_source_l00173}{}\hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{00173}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{fft}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00174         \textcolor{comment}{// DFT}
+00175         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} k = size;
+00176         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} n;
+00177         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} thetaT = M\_PI / size;
+00178         \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} phiT(cos(thetaT), sin(thetaT));
+00179         \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} T;
+00180 
+00181         \textcolor{keywordflow}{while}(k > 1) \{
+00182             n = k;
+00183             k >>= 1;
+00184             phiT = phiT * phiT;
+00185             T = 1.0L;
+00186 
+00187             \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} l = 0; l < k; l++) \{
+00188                 \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} a = l; a < size; a += n) \{
+00189                     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} b = a + k;
+00190                     \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} t = data[a] - data[b];
+00191                     data[a] += data[b];
+00192                     data[b] = t * T;
+00193                 \}
 00194 
-\hypertarget{sigmath_8hpp_source_l00195}{}\hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{00195}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a7d108bce812e906d8b1810815774c7ea}{diff}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00196         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} temp[size];
-00197         temp[0] = 0;
+00195                 T *= phiT;
+00196             \}
+00197         \}
 00198 
-00199         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 1; i < size; i++) \{
-00200             temp[i] = data[i] - data[i-1];
-00201         \}
-00202 
-00203         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00204             data[i] = temp[i];
-00205         \}
-00206     \}
-00207 
-\hypertarget{sigmath_8hpp_source_l00208}{}\hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{00208}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_af74f08a8afd7967b6c2b3c2b0e5fb1e9}{fft}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00209         \textcolor{comment}{// DFT}
-00210         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} k = size;
-00211         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} n;
-00212         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} thetaT = M\_PI / size;
-00213         \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} phiT(cos(thetaT), sin(thetaT));
-00214         \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} T;
-00215 
-00216         \textcolor{keywordflow}{while}(k > 1) \{
-00217             n = k;
-00218             k >>= 1;
-00219             phiT = phiT * phiT;
-00220             T = 1.0L;
-00221 
-00222             \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} l = 0; l < k; l++) \{
-00223                 \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} a = l; a < size; a += n) \{
-00224                     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} b = a + k;
-00225                     \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} t = data[a] - data[b];
-00226                     data[a] += data[b];
-00227                     data[b] = t * T;
-00228                 \}
-00229 
-00230                 T *= phiT;
-00231             \}
-00232         \}
-00233 
-00234         \textcolor{comment}{// Decimate}
-00235         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} m = (\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32})log2(size);
-00236 
-00237         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} a = 0; a < size; a++) \{
-00238             \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} b = a;
-00239 
-00240             \textcolor{comment}{// Reverse bits}
-00241             b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-00242             b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-00243             b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-00244             b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-00245             b = ((b >> 16) | (b << 16)) >> (32 - m);
+00199         \textcolor{comment}{// Decimate}
+00200         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} m = (\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32})log2(size);
+00201 
+00202         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} a = 0; a < size; a++) \{
+00203             \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} b = a;
+00204 
+00205             \textcolor{comment}{// Reverse bits}
+00206             b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+00207             b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+00208             b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+00209             b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+00210             b = ((b >> 16) | (b << 16)) >> (32 - m);
+00211 
+00212             \textcolor{keywordflow}{if} (b > a)
+00213             \{
+00214                 \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} t = data[a];
+00215                 data[a] = data[b];
+00216                 data[b] = t;
+00217             \}
+00218         \}
+00219     \}
+00220 
+\hypertarget{sigmath_8hpp_source_l00221}{}\hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{00221}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{mag}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* orig, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* newmags, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00222         \textcolor{comment}{//loop to run throught the length of array orig}
+00223         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} n = 0; n < size; n++) \{
+00224             \textcolor{comment}{/* }
+00225 \textcolor{comment}{             * abs should calculate the magnitude of complex array elements.}
+00226 \textcolor{comment}{             * saves to new array}
+00227 \textcolor{comment}{             */}
+00228             newmags[n] = std::abs(orig[n]);     
+00229         \}
+00230     \}
+00231 
+\hypertarget{sigmath_8hpp_source_l00232}{}\hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{00232}     \hyperlink{structMaximum}{Maximum} \hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{max}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
+00233         \hyperlink{structMaximum}{Maximum} m;
+00234 
+00235         \textcolor{comment}{//loop to run through the length of array data}
+00236         \textcolor{keywordflow}{for} (\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00237             \textcolor{comment}{/* }
+00238 \textcolor{comment}{             * when value at data[i] is above max.value,}
+00239 \textcolor{comment}{             * sets max.value equal to data[i] and max.index equal to i}
+00240 \textcolor{comment}{             */}
+00241             \textcolor{keywordflow}{if} (data[i] > m.\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value}) \{
+00242                 m.\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value} = data[i];
+00243                 m.\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{index} = i;
+00244             \}
+00245         \}
 00246 
-00247             \textcolor{keywordflow}{if} (b > a)
-00248             \{
-00249                 \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32} t = data[a];
-00250                 data[a] = data[b];
-00251                 data[b] = t;
-00252             \}
-00253         \}
-00254     \}
-00255 
-\hypertarget{sigmath_8hpp_source_l00256}{}\hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{00256}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5d355b5c326a852e2ce95c258450898c}{mag}(\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* orig, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* newmags, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00257         \textcolor{comment}{//loop to run throught the length of array orig}
-00258         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} n = 0; n < size; n++) \{
-00259             \textcolor{comment}{/* }
-00260 \textcolor{comment}{             * abs should calculate the magnitude of complex array elements.}
-00261 \textcolor{comment}{             * saves to new array}
-00262 \textcolor{comment}{             */}
-00263             newmags[n] = std::abs(orig[n]);     
-00264         \}
-00265     \}
-00266 
-\hypertarget{sigmath_8hpp_source_l00267}{}\hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{00267}     \hyperlink{structMaximum}{Maximum} \hyperlink{namespacevaso_a122846d728be312454a452d379915e10}{max}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size) \{
-00268         \hyperlink{structMaximum}{Maximum} m;
+00247         \textcolor{keywordflow}{return} m;
+00248     \}
+00249 
+\hypertarget{sigmath_8hpp_source_l00250}{}\hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{00250}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{smooth}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order) \{
+00251         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} coeff = 1 / (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32})order;
+00252         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} temp[size];
+00253 
+00254         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00255             temp[i] = 0;
+00256 
+00257             \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} j = 0; j < order && j <= i; j++) \{
+00258                 temp[i] += data[i - j];
+00259             \}
+00260 
+00261             temp[i] *= coeff;
+00262         \}
+00263 
+00264         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00265             data[i] = temp[i];
+00266         \}
+00267     \}
+00268 \}
 00269 
-00270         \textcolor{comment}{//loop to run through the length of array data}
-00271         \textcolor{keywordflow}{for} (\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00272             \textcolor{comment}{/* }
-00273 \textcolor{comment}{             * when value at data[i] is above max.value,}
-00274 \textcolor{comment}{             * sets max.value equal to data[i] and max.index equal to i}
-00275 \textcolor{comment}{             */}
-00276             \textcolor{keywordflow}{if} (data[i] > m.\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value}) \{
-00277                 m.\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value} = data[i];
-00278                 m.\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{index} = i;
-00279             \}
-00280         \}
-00281 
-00282         \textcolor{keywordflow}{return} m;
-00283     \}
-00284 
-\hypertarget{sigmath_8hpp_source_l00285}{}\hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{00285}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_a5b7fc1a58199e2cac989f417a9faa1ce}{smooth}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order) \{
-00286         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} coeff = 1 / (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32})order;
-00287         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} temp[size];
-00288 
-00289         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00290             temp[i] = 0;
-00291 
-00292             \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} j = 0; j < order && j <= i; j++) \{
-00293                 temp[i] += data[i - j];
-00294             \}
-00295 
-00296             temp[i] *= coeff;
-00297         \}
-00298 
-00299         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
-00300             data[i] = temp[i];
-00301         \}
-00302     \}
-00303 \}
-00304 
-00305 \textcolor{preprocessor}{#endif}
+00270 \textcolor{preprocessor}{#endif}
 \end{DoxyCode}

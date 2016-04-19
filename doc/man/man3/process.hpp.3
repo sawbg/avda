@@ -1,8 +1,11 @@
-.TH "src/process.hpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/process.hpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/process.hpp \- 
+.PP
+Contains functions related to the program's threaded processing of audio data\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -21,18 +24,28 @@ src/process.hpp \-
 .ti -1c
 .RI " \fBvaso\fP"
 .br
-.RI "\fIcontains function()s related to the program's threaded processing of audio data \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::map< Side, \fBDataParams\fP > \fBvaso::Process\fP (\fBfloat32\fP **data)"
-.br
-.ti -1c
 .RI "\fBDataParams\fP \fBvaso::process\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBfloat32\fP samplingRate)"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Contains functions related to the program's threaded processing of audio data\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.RE
+.PP
+
+.PP
+Definition in file \fBprocess\&.hpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

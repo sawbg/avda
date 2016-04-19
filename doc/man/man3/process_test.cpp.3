@@ -1,8 +1,11 @@
-.TH "src/process_test.cpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/process_test.cpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/process_test.cpp \- 
+.PP
+Contains a program to test the \fBprocess()\fP function\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -39,6 +42,8 @@ src/process_test.cpp \-
 .in -1c
 .SH "Detailed Description"
 .PP 
+Contains a program to test the \fBprocess()\fP function\&. 
+
 
 .PP
 \fBAuthor:\fP
@@ -60,9 +65,35 @@ Definition at line 18 of file process_test\&.cpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "int main (intargc, char **argv)"
-
+Tests the \fBprocess()\fP function from \fBprocess\&.hpp\fP\&. 
 .PP
 Definition at line 26 of file process_test\&.cpp\&.
+.PP
+.nf
+26                                 {
+27     int file = open("/home/pi/vaso/etc/audio/test\&.raw", O_RDONLY);
+28 
+29     if(file < 0) {
+30         cerr << "File unreadable!" << endl;
+31         return -1;
+32     }
+33 
+34     float32* buffer = (float32*)malloc(COUNT * sizeof(float32));
+35     int charRead = read(file, buffer, COUNT * sizeof(float32));
+36 
+37     if(charRead < COUNT) {
+38         cerr << "Too few bytes read!" << endl;
+39         return -1;
+40     }
+41 
+42     close(file);
+43 
+44     DataParams params = process(buffer, COUNT, SAMPLE_FREQ);
+45     free(buffer);
+46     cout << "Cutoff: " << params\&.freq << endl;
+47     cout << "Noise: " << params\&.noise << endl;
+48 }
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

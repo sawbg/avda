@@ -1,4 +1,4 @@
 <map id="src/process.hpp" name="src/process.hpp">
-<area shape="rect" id="node4" href="$definitions_8hpp.html" title="definitions.hpp" alt="" coords="86,155,193,181"/>
-<area shape="rect" id="node6" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="181,80,274,107"/>
+<area shape="rect" id="node4" href="$definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="90,155,197,181"/>
+<area shape="rect" id="node7" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="185,80,278,107"/>
 </map>

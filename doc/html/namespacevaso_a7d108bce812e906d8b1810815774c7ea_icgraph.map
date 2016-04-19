@@ -1,6 +1,4 @@
 <map id="vaso::diff" name="vaso::diff">
-<area shape="rect" id="node2" href="$namespacevaso.html#a0a7aa548b31b50c92be5b08bcb1df9a0" title="vaso::Process" alt="" coords="129,5,236,32"/>
-<area shape="rect" id="node4" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="131,56,235,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="284,5,335,32"/>
-<area shape="rect" id="node5" href="$process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="284,56,335,83"/>
+<area shape="rect" id="node2" href="$namespacevaso.html#a8136a2891983f7a41768330e018e3232" title="vaso::process" alt="" coords="129,5,233,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="281,5,332,32"/>
 </map>

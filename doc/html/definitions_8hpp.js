@@ -2,12 +2,7 @@ var definitions_8hpp =
 [
     [ "DataParams", "structDataParams.html", "structDataParams" ],
     [ "Maximum", "structMaximum.html", "structMaximum" ],
-    [ "ThreadParams", "structThreadParams.html", "structThreadParams" ],
     [ "ENUM", "definitions_8hpp.html#a378181c29a641d58f55d647b5a9599f2", null ],
-    [ "ERROR", "definitions_8hpp.html#a8fe83ac76edc595f6b98cd4a4127aed5", null ],
-    [ "REC_COUNT", "definitions_8hpp.html#aa44e6143be9e89f19be973956c22e134", null ],
-    [ "SAMPLE_COUNT", "definitions_8hpp.html#a1682c770d91c5d167b621a782be940d4", null ],
-    [ "SAMPLE_FREQ", "definitions_8hpp.html#a9401e43a8c86acafb31c8e2709baefa1", null ],
     [ "byte", "definitions_8hpp.html#a0c8186d9b9b7880309c27230bbb5e69d", null ],
     [ "cfloat32", "definitions_8hpp.html#a960be6b6614c08090c16574dba10a421", null ],
     [ "float32", "definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1", null ],
@@ -23,5 +18,12 @@ var definitions_8hpp =
     [ "Side", "definitions_8hpp.html#a77c5d9704657d49d456f691ddd8abf7c", [
       [ "Left", "definitions_8hpp.html#a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff", null ],
       [ "Right", "definitions_8hpp.html#a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c", null ]
-    ] ]
+    ] ],
+    [ "BUFFER_SIZE", "definitions_8hpp.html#aca681ed285767aaa2353bf3b42dd60ed", null ],
+    [ "DURATION", "definitions_8hpp.html#ada7a88c013312e76596a2000cc8277fb", null ],
+    [ "ERROR", "definitions_8hpp.html#a876fcacb67d51738e846a3312dc08fbb", null ],
+    [ "REC_COUNT", "definitions_8hpp.html#a2fd18fd694a2918f7d73eba821fd10b2", null ],
+    [ "SAMPLE_COUNT", "definitions_8hpp.html#ad3af99f5e7cbf2af51be580e91faa934", null ],
+    [ "SAMPLE_FREQ", "definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4", null ],
+    [ "TEMP_FILE", "definitions_8hpp.html#a88f32e97c41b89ff0705d0a0b8566b41", null ]
 ];

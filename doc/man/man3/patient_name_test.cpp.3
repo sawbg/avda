@@ -1,18 +1,17 @@
-.TH "src/patient_name_test.cpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/patient_name_test.cpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/patient_name_test.cpp \- 
+.PP
+Contains a program to test the \fBPatientName()\fP function\&.  
+
 .SH SYNOPSIS
 .br
 .PP
 \fC#include <string>\fP
 .br
-\fC#include 'definitions\&.hpp'\fP
-.br
 \fC#include 'fileio\&.hpp'\fP
-.br
-\fC#include 'process\&.hpp'\fP
 .br
 
 .SS "Functions"
@@ -22,12 +21,33 @@ src/patient_name_test.cpp \-
 .RI "int \fBmain\fP (int argc, char **argv)"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Contains a program to test the \fBPatientName()\fP function\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.RE
+.PP
+
+.PP
+Definition in file \fBpatient_name_test\&.cpp\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "int main (intargc, char **argv)"
-
+Tests the \fBPatientName()\fP function from \fBfileio\&.hpp\fP\&. 
 .PP
-Definition at line 20 of file patient_name_test\&.cpp\&.
+Definition at line 17 of file patient_name_test\&.cpp\&.
+.PP
+.nf
+17                                 {
+18     string filename = PatientName();
+19     cout << filename;
+20 }
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.

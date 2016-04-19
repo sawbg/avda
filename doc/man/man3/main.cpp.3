@@ -1,4 +1,4 @@
-.TH "src/main.cpp" 3 "Mon Apr 18 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/main.cpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,7 +11,11 @@ contains the main program
 .PP
 \fC#include <array>\fP
 .br
+\fC#include <cstdio>\fP
+.br
 \fC#include <cstdlib>\fP
+.br
+\fC#include <fcntl\&.h>\fP
 .br
 \fC#include <iostream>\fP
 .br
@@ -56,9 +60,77 @@ Definition in file \fBmain\&.cpp\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "int main (intargc, char **argv)"
-The main program for this progject\&. It will detect vasospasms over a period of days\&. 
+The main program for this project\&. It will detect vasospasms over a period of days\&. 
 .PP
-Definition at line 27 of file main\&.cpp\&.
+Definition at line 29 of file main\&.cpp\&.
+.PP
+.nf
+29                                 {
+30     const string recCommand = string("arecord -t raw -d ")
+31         + to_string(DURATION) + string(" -D plughw:1,0 -f FLOAT -q -r ")
+32          + to_string(SAMPLE_FREQ) + string(" ") + TEMP_FILE;
+33     DataParams params[REC_COUNT];
+34 
+35     string filename = PatientName();  // generate name for patient's file
+36 
+37     // Recorded audio buffer
+38     float32* buffer = (float32*)std::malloc(BUFFER_SIZE);
+39 
+40     // Start recording
+41     for(uint8 i = 0; i < REC_COUNT; i++) {
+42         cout << "Press [ ENTER ] to begin analysis for the "
+43             << (i < REC_COUNT / 2 ? "left" : "right") << " side, depth #"
+44             << (((i >= REC_COUNT / 2) ? (i - REC_COUNT / 2) : i) + 1)
+45             << "\&.\&.\&.";
+46         fflush(stdin);
+47         getchar();  // wait for ENTER to be pressed
+48         cout << "Recording\&.\&.\&." << endl;
+49 
+50         system(recCommand\&.c_str());
+51         sleep(DURATION + 1);
+52 
+53         int file = open(TEMP_FILE\&.c_str(), O_RDONLY);
+54         int retRead = read(file, buffer, BUFFER_SIZE);
+55         close(file);
+56         remove(TEMP_FILE\&.c_str());
+57 
+58         if(file < 0 || retRead < BUFFER_SIZE) {
+59             cerr << "An error occurred reading the doppler audio! "
+60                 "The program will now exit\&." << endl;
+61             return ERROR;
+62         }
+63 
+64         params[i] = process(buffer, SAMPLE_COUNT, SAMPLE_FREQ);
+65         cout << "The analysis is complete\&." << endl << endl;
+66     }
+67 
+68     free(buffer);
+69     map<Side, DataParams> results;
+70     results[Side::Left] = average(params, REC_COUNT / 2);
+71     results[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
+72 
+73     cout << "Analysis is complete\&." << endl << endl;
+74 
+75     for(int i = 0; i < 2; i++) {
+76         Side side = (Side)i;
+77         cout << (side == Side::Left ? "[LEFT]" : "[RIGHT]") << endl;
+78         cout << "Drop-off frequency: " << (uint16)(results[side]\&.freq + 0\&.5)
+79             << " Hz" << endl;
+80         cout << "Average relative noiseband power: "
+81             << (sint16)(results[side]\&.noise - 0\&.5) << " dB" << endl <<endl;
+82     }
+83 
+84     try {
+85         map<Side, DataParams> baseParams = ReadParams(filename);
+86         // TODO: Print results & probable diagnosis
+87 
+88     } catch(exception ex) {
+89         
+90         // TODO: Write all results to file
+91     }
+92     
+93 }
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
