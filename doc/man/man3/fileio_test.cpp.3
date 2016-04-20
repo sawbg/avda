@@ -4,7 +4,7 @@
 .SH NAME
 src/fileio_test.cpp \- 
 .PP
-Contains program that tests the functions in \fBfileio\&.hpp\fP\&.  
+Contains program that tests some functions in \fBfileio\&.hpp\fP\&.  
 
 .SH SYNOPSIS
 .br
@@ -35,15 +35,13 @@ Contains program that tests the functions in \fBfileio\&.hpp\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Contains program that tests the functions in \fBfileio\&.hpp\fP\&. 
+Contains program that tests some functions in \fBfileio\&.hpp\fP\&. 
 
 
 .PP
 \fBAuthor:\fP
 .RS 4
 Samuel Andrew Wisner 
-.PP
-Nicholas K\&. Nolan 
 .RE
 .PP
 
@@ -54,17 +52,17 @@ Definition in file \fBfileio_test\&.cpp\fP\&.
 .SS "int main ()"
 Tests the functions in \fBfileio\&.hpp\fP\&. 
 .PP
-Definition at line 24 of file fileio_test\&.cpp\&.
+Definition at line 23 of file fileio_test\&.cpp\&.
 .PP
 .nf
-24            {
-25     string path = PATIENT_PATH + "wizmack, sammy andy\&.csv";
-26     map<Side, DataParams> laMap = ReadParams(path);
-27     cout <<  laMap[Side::Right]\&.freq << endl;
-28     cout << laMap[Side::Right]\&.noise << endl;
-29 
-30     WriteParams(laMap, path);
-31 }
+23            {
+24     string path = PATIENT_PATH + "wizmack, sammy andy\&.csv";
+25     map<Side, DataParams> laMap = ReadParams(path);
+26     cout <<  laMap[Side::Right]\&.freq << endl;
+27     cout << laMap[Side::Right]\&.noise << endl;
+28 
+29     WriteParams(laMap, path);
+30 }
 .fi
 .SH "Author"
 .PP 

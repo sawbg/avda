@@ -34,49 +34,55 @@
 00036 
 00037 \textcolor{comment}{// Constants}
 00038 
-\hypertarget{definitions_8hpp_source_l00043}{}\hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{00043} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{DET\_THRESH} = 5000;
-00044 
-\hypertarget{definitions_8hpp_source_l00048}{}\hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{00048} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{DURATION} = 6;
+\hypertarget{definitions_8hpp_source_l00042}{}\hyperlink{definitions_8hpp_ac686b5c4edb9968dade15aad6e58bdca}{00042} \textcolor{keyword}{const} std::string \hyperlink{definitions_8hpp_ac686b5c4edb9968dade15aad6e58bdca}{CSV\_HEADER} = \textcolor{stringliteral}{"Time,Side,Frequency,Noise Level"};
+00043 
+\hypertarget{definitions_8hpp_source_l00048}{}\hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{00048} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{DET\_THRESH} = 5000;
 00049 
-\hypertarget{definitions_8hpp_source_l00053}{}\hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{00053} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1a6408291ee3cfd0760a61ac64084154}{sint8} \hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{ERROR} = -1;
+\hypertarget{definitions_8hpp_source_l00053}{}\hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{00053} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{DURATION} = 6;
 00054 
-\hypertarget{definitions_8hpp_source_l00058}{}\hyperlink{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{00058} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{MAX\_DROP\_FREQ} = 7000;
+\hypertarget{definitions_8hpp_source_l00058}{}\hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{00058} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1a6408291ee3cfd0760a61ac64084154}{sint8} \hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{ERROR} = -1;
 00059 
-\hypertarget{definitions_8hpp_source_l00063}{}\hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{00063} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{REC\_COUNT} = 6;
+\hypertarget{definitions_8hpp_source_l00063}{}\hyperlink{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{00063} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{MAX\_DROP\_FREQ} = 7000;
 00064 
-\hypertarget{definitions_8hpp_source_l00069}{}\hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{00069} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{SAMPLE\_COUNT} = 131072;\textcolor{comment}{//262144;}
-00070 
-\hypertarget{definitions_8hpp_source_l00074}{}\hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{00074} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ} = 24000;
-00075 
-\hypertarget{definitions_8hpp_source_l00079}{}\hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{00079} \textcolor{keyword}{const} std::string \hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{TEMP\_FILE} = \textcolor{stringliteral}{".temp"};
+\hypertarget{definitions_8hpp_source_l00068}{}\hyperlink{definitions_8hpp_a5736990e7ea949fc1971afa00e421f16}{00068} \textcolor{keyword}{const} std::string \hyperlink{definitions_8hpp_a5736990e7ea949fc1971afa00e421f16}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
+00069 
+\hypertarget{definitions_8hpp_source_l00073}{}\hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{00073} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{REC\_COUNT} = 6;
+00074 
+\hypertarget{definitions_8hpp_source_l00079}{}\hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{00079} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{SAMPLE\_COUNT} = 131072;\textcolor{comment}{//262144;}
 00080 
-\hypertarget{definitions_8hpp_source_l00084}{}\hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{00084} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{BUFFER\_SIZE} = \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{SAMPLE\_COUNT} * \textcolor{keyword}{sizeof}(
-      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32});
+\hypertarget{definitions_8hpp_source_l00084}{}\hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{00084} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ} = 24000;
 00085 
-00086 
-00087 \textcolor{comment}{// Objective/structural type definitions}
-00088 
-\hypertarget{definitions_8hpp_source_l00092}{}\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{00092} \textcolor{keyword}{typedef} std::complex<float32> \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32};
-00093 
-\hypertarget{definitions_8hpp_source_l00097}{}\hyperlink{structDataParams}{00097} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
-\hypertarget{definitions_8hpp_source_l00098}{}\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{00098}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} freq = 0;
-\hypertarget{definitions_8hpp_source_l00099}{}\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{00099}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} noise = 0;
-00100 \} \hyperlink{structDataParams}{DataParams};
-00101 
-\hypertarget{definitions_8hpp_source_l00106}{}\hyperlink{structMaximum}{00106} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
-\hypertarget{definitions_8hpp_source_l00107}{}\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{00107}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} value = 0;
-\hypertarget{definitions_8hpp_source_l00108}{}\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{00108}     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} index = 0;
-00109 \} \hyperlink{structMaximum}{Maximum};
-00110 
-00111 
-00112 \textcolor{comment}{// Enumerations}
-00113 
-\hypertarget{definitions_8hpp_source_l00117}{}\hyperlink{namespaceavda}{00117} \textcolor{keyword}{namespace }\hyperlink{namespaceavda}{avda} \{
-\hypertarget{definitions_8hpp_source_l00121}{}\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{00121}     \textcolor{keyword}{enum class} \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side} \{ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Left}, \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Right} \};
-00122 \}
-00123 
-00124 
-00125 \textcolor{comment}{// Doxygen documentation for other files.}
-00126 
-00147 \textcolor{preprocessor}{#endif}
+\hypertarget{definitions_8hpp_source_l00089}{}\hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{00089} \textcolor{keyword}{const} std::string \hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{TEMP\_FILE} = \textcolor{stringliteral}{".temp"};
+00090 
+\hypertarget{definitions_8hpp_source_l00094}{}\hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{00094} \textcolor{keyword}{const} \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}{BUFFER\_SIZE} = \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{SAMPLE\_COUNT} * \textcolor{keyword}{sizeof}(
+      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32});
+00095 
+00096 
+00097 \textcolor{comment}{// Objective/structural type definitions}
+00098 
+\hypertarget{definitions_8hpp_source_l00102}{}\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{00102} \textcolor{keyword}{typedef} std::complex<float32> \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32};
+00103 
+\hypertarget{definitions_8hpp_source_l00107}{}\hyperlink{structDataParams}{00107} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{definitions_8hpp_source_l00111}{}\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{00111}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} freq = 0;
+00112     
+\hypertarget{definitions_8hpp_source_l00116}{}\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{00116}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} noise = 0;
+00117 \} \hyperlink{structDataParams}{DataParams};
+00118 
+\hypertarget{definitions_8hpp_source_l00123}{}\hyperlink{structMaximum}{00123} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{
+\hypertarget{definitions_8hpp_source_l00127}{}\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{00127}     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} value = 0;
+00128     
+\hypertarget{definitions_8hpp_source_l00132}{}\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{00132}     \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} index = 0;
+00133 \} \hyperlink{structMaximum}{Maximum};
+00134 
+00135 
+00136 \textcolor{comment}{// Enumerations}
+00137 
+\hypertarget{definitions_8hpp_source_l00141}{}\hyperlink{namespaceavda}{00141} \textcolor{keyword}{namespace }\hyperlink{namespaceavda}{avda} \{
+\hypertarget{definitions_8hpp_source_l00145}{}\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{00145}     \textcolor{keyword}{enum class} \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side} \{ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Left}, \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Right} \};
+00146 \}
+00147 
+00148 
+00149 \textcolor{comment}{// Doxygen documentation for other files.}
+00150 
+00171 \textcolor{preprocessor}{#endif}
 \end{DoxyCode}

@@ -1,79 +1,76 @@
 \begin{theindex}
 
   \item {absolute}
-    \subitem {avda}, \hyperpage{20}
-  \item {avda}, \hyperpage{19}
-    \subitem {absolute}, \hyperpage{20}
-    \subitem {average}, \hyperpage{20, 21}
-    \subitem {decibels}, \hyperpage{21}
-    \subitem {diff}, \hyperpage{22}
-    \subitem {fft}, \hyperpage{22}
-    \subitem {Left}, \hyperpage{20}
-    \subitem {mag}, \hyperpage{23}
-    \subitem {max}, \hyperpage{25}
-    \subitem {play}, \hyperpage{27}
-    \subitem {process}, \hyperpage{27}
-    \subitem {Right}, \hyperpage{20}
-    \subitem {Side}, \hyperpage{19}
-    \subitem {smooth}, \hyperpage{32}
+    \subitem {avda}, \hyperpage{12}
+  \item {avda}, \hyperpage{11}
+    \subitem {absolute}, \hyperpage{12}
+    \subitem {average}, \hyperpage{12, 13}
+    \subitem {decibels}, \hyperpage{13}
+    \subitem {diff}, \hyperpage{14}
+    \subitem {fft}, \hyperpage{14}
+    \subitem {Left}, \hyperpage{11}
+    \subitem {mag}, \hyperpage{15}
+    \subitem {max}, \hyperpage{16}
+    \subitem {process}, \hyperpage{18}
+    \subitem {Right}, \hyperpage{11}
+    \subitem {Side}, \hyperpage{11}
+    \subitem {smooth}, \hyperpage{22}
   \item {average}
-    \subitem {avda}, \hyperpage{20, 21}
+    \subitem {avda}, \hyperpage{12, 13}
 
   \indexspace
 
   \item {decibels}
-    \subitem {avda}, \hyperpage{21}
+    \subitem {avda}, \hyperpage{13}
   \item {diff}
-    \subitem {avda}, \hyperpage{22}
+    \subitem {avda}, \hyperpage{14}
 
   \indexspace
 
   \item {fft}
-    \subitem {avda}, \hyperpage{22}
+    \subitem {avda}, \hyperpage{14}
 
   \indexspace
 
   \item {index}
-    \subitem {Maximum}, \hyperpage{36}
+    \subitem {Maximum}, \hyperpage{26}
 
   \indexspace
 
   \item {Left}
-    \subitem {avda}, \hyperpage{20}
+    \subitem {avda}, \hyperpage{11}
 
   \indexspace
 
   \item {mag}
-    \subitem {avda}, \hyperpage{23}
-  \item {makefile}, \hyperpage{38}
+    \subitem {avda}, \hyperpage{15}
+  \item {makefile}, \hyperpage{28}
   \item {max}
-    \subitem {avda}, \hyperpage{25}
-  \item {Maximum}, \hyperpage{35}
-    \subitem {index}, \hyperpage{36}
-    \subitem {value}, \hyperpage{36}
+    \subitem {avda}, \hyperpage{16}
+  \item {Maximum}, \hyperpage{25}
+    \subitem {index}, \hyperpage{26}
+    \subitem {value}, \hyperpage{26}
 
   \indexspace
 
-  \item {play}
-    \subitem {avda}, \hyperpage{27}
   \item {process}
-    \subitem {avda}, \hyperpage{27}
+    \subitem {avda}, \hyperpage{18}
 
   \indexspace
 
   \item {Right}
-    \subitem {avda}, \hyperpage{20}
+    \subitem {avda}, \hyperpage{11}
 
   \indexspace
 
   \item {Side}
-    \subitem {avda}, \hyperpage{19}
+    \subitem {avda}, \hyperpage{11}
   \item {smooth}
-    \subitem {avda}, \hyperpage{32}
+    \subitem {avda}, \hyperpage{22}
 
   \indexspace
 
   \item {value}
-    \subitem {Maximum}, \hyperpage{36}
+    \subitem {Maximum}, \hyperpage{26}
 
 \end{theindex}

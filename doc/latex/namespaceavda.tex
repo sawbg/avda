@@ -15,7 +15,7 @@ std\+::string \hyperlink{namespaceavda_ae20728e7e8ae50bf2f74849e538841ea}{Patien
 \item 
 std\+::map$<$ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{Read\+Params} (auto filename)
 \item 
-void \hyperlink{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{Write\+Params} (std\+::map$<$ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ my\+Map, auto filename)
+void \hyperlink{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec}{Write\+Params} (std\+::map$<$ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side}, \hyperlink{structDataParams}{Data\+Params} $>$ params, auto filename)
 \item 
 \hyperlink{structDataParams}{Data\+Params} \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} sampling\+Rate)
 \item 
@@ -36,15 +36,6 @@ void \hyperlink{namespaceavda_a213bd6384fc9a330e4db2cecdbcd73ee}{mag} (\hyperlin
 \hyperlink{structMaximum}{Maximum} \hyperlink{namespaceavda_aa82021c3ee552773c060b1a39caf8aaa}{max} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size)
 \item 
 void \hyperlink{namespaceavda_a22583ba7f11b69c955b13155bf9a739d}{smooth} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} order)
-\item 
-void \hyperlink{namespaceavda_a34f661f9a357bb68b0aa3662cc821e4d}{play} (auto filename)
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const std\+::string \hyperlink{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R} = \char`\"{}Time,\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side},Frequency,Noise Level\char`\"{}
-\item 
-const std\+::string \hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H} = \char`\"{}/home/pi/patients/\char`\"{}
 \end{DoxyCompactItemize}
 
 
@@ -66,11 +57,11 @@ Side of the head to which a recording pertains. \begin{Desc}
 \end{Desc}
 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00121}{121} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00145}{145} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 
 \begin{DoxyCode}
-00121 \{ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Left}, \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Right} \};
+00145 \{ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Left}, \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Right} \};
 \end{DoxyCode}
 
 
@@ -87,9 +78,9 @@ Ensures all elements in an array are positive. Note that this function replaces 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array whose elements must all be positive\\
+{\em data} & array whose elements must all be positive\\
 \hline
-{\em size} & the number of elements in the data array \\
+{\em size} & number of elements in the data array \\
 \hline
 \end{DoxyParams}
 
@@ -128,13 +119,13 @@ Takes the average of all elements in an array
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array from which to compute the average\\
+{\em data} & array from which to compute the average\\
 \hline
-{\em size} & the number of elements in the data array\\
+{\em size} & number of elements in the data array\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the computed average 
+computed average 
 \end{DoxyReturn}
 
 
@@ -177,13 +168,13 @@ Finds the averages of the elements of an array of \hyperlink{structDataParams}{D
 
 
 \begin{DoxyParams}{Parameters}
-{\em params} & the \hyperlink{structDataParams}{Data\+Params} array\\
+{\em params} & \hyperlink{structDataParams}{Data\+Params} array\\
 \hline
-{\em size} & the number of elements in the \hyperlink{structDataParams}{Data\+Params} array\\
+{\em size} & number of elements in the \hyperlink{structDataParams}{Data\+Params} array\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-a \hyperlink{structDataParams}{Data\+Params} structure containing the average values of the structure's elements in the params array 
+\hyperlink{structDataParams}{Data\+Params} structure containing the average values of the structure's elements in the params array 
 \end{DoxyReturn}
 
 
@@ -217,9 +208,9 @@ Converts an array of floats to \char`\"{}power decibels\char`\"{}, i.\+e., x\mbo
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array of values to be converted as well as the location where the converted values will be written\\
+{\em data} & array of values to be converted as well as the location where the converted values will be written\\
 \hline
-{\em size} & the number of elements in the data array \\
+{\em size} & number of elements in the data array \\
 \hline
 \end{DoxyParams}
 
@@ -258,9 +249,9 @@ Computes the left-\/handed first derivative of a discrete signal. The first elem
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & an array containing the discrete signal data\\
+{\em data} & array containing the discrete signal data array\\
 \hline
-{\em size} & the number of elements in data \\
+{\em size} & number of elements in data \\
 \hline
 \end{DoxyParams}
 
@@ -308,9 +299,9 @@ This code is based on code from \href{http://rosettacode.org/wiki/Fast_Fourier_t
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array whose values should be replaced with its D\+F\+T\\
+{\em data} & array whose values should be replaced with its D\+F\+T\\
 \hline
-{\em size} & the number of elements in the data array \\
+{\em size} & number of elements in the data array \\
 \hline
 \end{DoxyParams}
 
@@ -392,11 +383,11 @@ Computes the magitude of an array of complex numbers.
 
 
 \begin{DoxyParams}{Parameters}
-{\em orig} & the array of complex numbers\\
+{\em orig} & array of complex numbers\\
 \hline
-{\em newmags} & an array to which the magitudes are to be written\\
+{\em newmags} & array to which the (real) magitudes are to be written\\
 \hline
-{\em size} & the number of elements in orig and newmags \\
+{\em size} & number of elements in orig and newmags \\
 \hline
 \end{DoxyParams}
 
@@ -440,13 +431,13 @@ Finds the maximum value in an array.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array whose maximum value is to be found\\
+{\em data} & array whose maximum value is to be found\\
 \hline
-{\em uint32} & size the number of elements in the data array\\
+{\em size} & number of elements in the data array\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the maximum value and its index in a \hyperlink{structMaximum}{Maximum} structure 
+maximum value and its index 
 \end{DoxyReturn}
 
 
@@ -491,107 +482,107 @@ Here is the caller graph for this function\+:
 {}
 \end{DoxyParamCaption}
 )}}\label{namespaceavda_ae20728e7e8ae50bf2f74849e538841ea}
-Prompts a user to enter a first, middle, and last name for a patients and creates a file (if necessary) in which all of a patient's data can be saved. A newly created file will contain the C\+S\+V header for the file's data.
+Prompts a user to enter a first, middle, and last name for a patient and creates a file (if necessary) in which all of the patient's data parameters can be saved. A newly created file will contain the C\+S\+V header for the file's data.
 
-Must warn a user if the patient folder does not already exist in order to prevent missaving data.
+Must warn a user if the patient file does not already exist in order to prevent missaving data.
 
 \begin{DoxyReturn}{Returns}
 the file under which all patient data is saved 
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00043}{43} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00033}{33} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 
 \begin{DoxyCode}
-00043                             \{
-00044         std::string fname = \textcolor{stringliteral}{""};
-00045         std::string mname = \textcolor{stringliteral}{""};
-00046         std::string lname = \textcolor{stringliteral}{""};
-00047         std::string patfil = \textcolor{stringliteral}{""};
-00048         std::string patientname = \textcolor{stringliteral}{""};
-00049         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track1 = 0;
-00050         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track2 = 0;
-00051         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track3 = 0;
-00052 
-00053         \textcolor{keywordflow}{do} \{
-00054             std::cout << \textcolor{stringliteral}{"Please enter the patients name."} << std::endl;
-00055             std::cout << \textcolor{stringliteral}{"First name: "};
-00056             std::cin >> fname;
-00057             std::cout << \textcolor{stringliteral}{"Middle name: "};
-00058             std::cin >> mname;
-00059             std::cout << \textcolor{stringliteral}{"Last name: "};
-00060             std::cin >> lname;
-00061 
-00062             \textcolor{comment}{// creates new std::string with path to patient file}
-00063             patientname = \hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{PATIENT\_PATH} + lname + \textcolor{stringliteral}{", "} + fname
-00064                 + \textcolor{stringliteral}{" "} + mname + \textcolor{stringliteral}{".csv"};
-00065 
-00066             \textcolor{comment}{// prints out patientname. shows user the path to the patient file}
-00067             \textcolor{comment}{//std::cout << patientname << std::endl << std::endl;}
-00068             std::ifstream file(patientname.c\_str());
-00069 
-00070             \textcolor{keywordflow}{if} (file.good()) \{
-00071                 track1 = 1;
-00072             \}
-00073 
-00074             \textcolor{comment}{/*}
-00075 \textcolor{comment}{             * Compares patientname to existing files and lets user know}
-00076 \textcolor{comment}{             * if the file does not exist.}
-00077 \textcolor{comment}{             */}
-00078             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!file.good()) \{
-00079                 \textcolor{comment}{/* }
-00080 \textcolor{comment}{                 * Do while statement to continue asking user about the file}
-00081 \textcolor{comment}{                 * if their input is not acceptable}
-00082 \textcolor{comment}{                 */} 
-00083                 \textcolor{keywordflow}{do} \{
-00084                     std::cout << \textcolor{stringliteral}{"Patient file does not exist, would you like "}
-00085                         \textcolor{stringliteral}{"to create file or re-enter their name?"} << std::endl;
-00086                     std::cout << \textcolor{stringliteral}{"  *Type 'create' and press enter key "}
-00087                         \textcolor{stringliteral}{"to create the patient file."} << std::endl;
-00088                     std::cout << \textcolor{stringliteral}{"  *Type 'reenter' and press enter key "}
-00089                         \textcolor{stringliteral}{"to re-enter the patients name."} << std::endl;
-00090                     std::cout << std::endl;
-00091                     std::cin >> patfil;
-00092 
-00093                     \textcolor{comment}{/* }
-00094 \textcolor{comment}{                     * patfil equals create, track1 and 2 will increase}
-00095 \textcolor{comment}{                     * escaping both do while loops}
-00096 \textcolor{comment}{                     */}
-00097                     \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"create"}) \{
-00098                         std::ofstream createfile(patientname.c\_str());
-00099                         track1 = 1;
-00100                         track2 = 1;
-00101                         track3 = 1;
-00102                         createfile << \hyperlink{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}{CSV\_HEADER} << std::endl;
-00103                         createfile.flush();
-00104                         createfile.close();
-00105                     \}
-00106 
-00107                     \textcolor{comment}{/*}
-00108 \textcolor{comment}{                     *patfil equals renter, track1 will remain zero allowing}
-00109 \textcolor{comment}{                     *user to reenter the patient name.}
-00110 \textcolor{comment}{                     */}
-00111                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"reenter"}) \{
-00112                         track1 = 0;
-00113                         track2 = 1;
+00033                             \{
+00034         std::string fname = \textcolor{stringliteral}{""};
+00035         std::string mname = \textcolor{stringliteral}{""};
+00036         std::string lname = \textcolor{stringliteral}{""};
+00037         std::string patfil = \textcolor{stringliteral}{""};
+00038         std::string patientname = \textcolor{stringliteral}{""};
+00039         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track1 = 0;
+00040         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track2 = 0;
+00041         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} track3 = 0;
+00042 
+00043         \textcolor{keywordflow}{do} \{
+00044             std::cout << \textcolor{stringliteral}{"Please enter the patients name."} << std::endl;
+00045             std::cout << \textcolor{stringliteral}{"First name: "};
+00046             std::cin >> fname;
+00047             std::cout << \textcolor{stringliteral}{"Middle name: "};
+00048             std::cin >> mname;
+00049             std::cout << \textcolor{stringliteral}{"Last name: "};
+00050             std::cin >> lname;
+00051 
+00052             \textcolor{comment}{// creates new std::string with path to patient file}
+00053             patientname = \hyperlink{definitions_8hpp_a5736990e7ea949fc1971afa00e421f16}{PATIENT\_PATH} + lname + \textcolor{stringliteral}{", "} + fname
+00054                 + \textcolor{stringliteral}{" "} + mname + \textcolor{stringliteral}{".csv"};
+00055 
+00056             \textcolor{comment}{// prints out patientname. shows user the path to the patient file}
+00057             \textcolor{comment}{//std::cout << patientname << std::endl << std::endl;}
+00058             std::ifstream file(patientname.c\_str());
+00059 
+00060             \textcolor{keywordflow}{if} (file.good()) \{
+00061                 track1 = 1;
+00062             \}
+00063 
+00064             \textcolor{comment}{/*}
+00065 \textcolor{comment}{             * Compares patientname to existing files and lets user know}
+00066 \textcolor{comment}{             * if the file does not exist.}
+00067 \textcolor{comment}{             */}
+00068             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!file.good()) \{
+00069                 \textcolor{comment}{/* }
+00070 \textcolor{comment}{                 * Do while statement to continue asking user about the file}
+00071 \textcolor{comment}{                 * if their input is not acceptable}
+00072 \textcolor{comment}{                 */} 
+00073                 \textcolor{keywordflow}{do} \{
+00074                     std::cout << \textcolor{stringliteral}{"Patient file does not exist, would you like "}
+00075                         \textcolor{stringliteral}{"to create file or re-enter their name?"} << std::endl;
+00076                     std::cout << \textcolor{stringliteral}{"  *Type 'create' and press enter key "}
+00077                         \textcolor{stringliteral}{"to create the patient file."} << std::endl;
+00078                     std::cout << \textcolor{stringliteral}{"  *Type 'reenter' and press enter key "}
+00079                         \textcolor{stringliteral}{"to re-enter the patients name."} << std::endl;
+00080                     std::cout << std::endl;
+00081                     std::cin >> patfil;
+00082 
+00083                     \textcolor{comment}{/* }
+00084 \textcolor{comment}{                     * patfil equals create, track1 and 2 will increase}
+00085 \textcolor{comment}{                     * escaping both do while loops}
+00086 \textcolor{comment}{                     */}
+00087                     \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"create"}) \{
+00088                         std::ofstream createfile(patientname.c\_str());
+00089                         track1 = 1;
+00090                         track2 = 1;
+00091                         track3 = 1;
+00092                         createfile << \hyperlink{definitions_8hpp_ac686b5c4edb9968dade15aad6e58bdca}{CSV\_HEADER} << std::endl;
+00093                         createfile.flush();
+00094                         createfile.close();
+00095                     \}
+00096 
+00097                     \textcolor{comment}{/*}
+00098 \textcolor{comment}{                     *patfil equals renter, track1 will remain zero allowing}
+00099 \textcolor{comment}{                     *user to reenter the patient name.}
+00100 \textcolor{comment}{                     */}
+00101                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(patfil == \textcolor{stringliteral}{"reenter"}) \{
+00102                         track1 = 0;
+00103                         track2 = 1;
+00104                     \}
+00105 
+00106                     \textcolor{comment}{/*}
+00107 \textcolor{comment}{                     *The users input was neither create or reenter. User}
+00108 \textcolor{comment}{                     *must enter patient name again.}
+00109 \textcolor{comment}{                     */}
+00110                     \textcolor{keywordflow}{else} \{
+00111                         std::cout << std::endl;
+00112                         std::cout << \textcolor{stringliteral}{"Your input is not acceptable."} << std::endl;
+00113                         std::cout << std::endl;
 00114                     \}
-00115 
-00116                     \textcolor{comment}{/*}
-00117 \textcolor{comment}{                     *The users input was neither create or reenter. User}
-00118 \textcolor{comment}{                     *must enter patient name again.}
-00119 \textcolor{comment}{                     */}
-00120                     \textcolor{keywordflow}{else} \{
-00121                         std::cout << std::endl;
-00122                         std::cout << \textcolor{stringliteral}{"Your input is not acceptable."} << std::endl;
-00123                         std::cout << std::endl;
-00124                     \}
-00125                 \}\textcolor{keywordflow}{while}(track2 == 0);
-00126             \}
-00127         \} \textcolor{keywordflow}{while} (track1 == 0);
-00128 
-00129         \textcolor{keywordflow}{return} patientname; \textcolor{comment}{//returns the path to the patient file}
-00130     \}
+00115                 \}\textcolor{keywordflow}{while}(track2 == 0);
+00116             \}
+00117         \} \textcolor{keywordflow}{while} (track1 == 0);
+00118 
+00119         \textcolor{keywordflow}{return} patientname; \textcolor{comment}{//returns the path to the patient file}
+00120     \}
 \end{DoxyCode}
 
 
@@ -605,30 +596,6 @@ Here is the caller graph for this function\+:
 \end{figure}
 
 
-\hypertarget{namespaceavda_a34f661f9a357bb68b0aa3662cc821e4d}{\index{avda@{avda}!play@{play}}
-\index{play@{play}!avda@{avda}}
-\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void avda\+::play (
-\begin{DoxyParamCaption}
-\item[{auto}]{filename}
-\end{DoxyParamCaption}
-)}}\label{namespaceavda_a34f661f9a357bb68b0aa3662cc821e4d}
-Plays a W\+A\+V\+E file in a loop in a non-\/blocking manner.
-
-
-\begin{DoxyParams}{Parameters}
-{\em filename} & the absolute or relative path to the W\+A\+V\+E file \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \hyperlink{sound_8hpp_source_l00020}{20} of file \hyperlink{sound_8hpp_source}{sound.\+hpp}.
-
-
-\begin{DoxyCode}
-00020                              \{
-00021 
-00022     \}
-\end{DoxyCode}
 \hypertarget{namespaceavda_a5196cce27286d08ca144a460caee7839}{\index{avda@{avda}!process@{process}}
 \index{process@{process}!avda@{avda}}
 \subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\+Params} avda\+::process (
@@ -640,7 +607,7 @@ Definition at line \hyperlink{sound_8hpp_source_l00020}{20} of file \hyperlink{s
 )}}\label{namespaceavda_a5196cce27286d08ca144a460caee7839}
 Analyzes a single recording to determine the drop-\/off frequency and average noiseband noise power.
 
-It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan. The \char`\"{}algorithm\char`\"{} is defined as the use of 1) the frequency drop-\/off and/or 2) a noise value from the frequency band above the drop-\/off frequency in order to diagnose (with or without other factors and parameters) the presence of a avdaspasm in a patient. By faculty members and/or students in the U\+A\+B E\+C\+E department using this algorithm, they agree that the presentation of their code or project that uses this algorithm by anyone directly or indirectly related to the code or project, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the aforementioned is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual.
+It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan. The \char`\"{}algorithm\char`\"{} is defined as the use of 1) the frequency drop-\/off and/or 2) a noise value from the frequency band above the drop-\/off frequency in order to diagnose (with or without other factors and parameters) the presence of a avdaspasm in a patient. By faculty members and/or students in the U\+A\+B E\+C\+E department using this algorithm, they agree that the presentation of their code or project that uses this algorithm, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the algorithm's creators is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual.
 
 
 \begin{DoxyParams}{Parameters}
@@ -648,7 +615,7 @@ It should be noted that is algorithm is considered the intellectual property of 
 \hline
 {\em size} & number of samples in each recording. M\+U\+S\+T be a power of two.\\
 \hline
-{\em sampling\+Rate} & the sampling frequency in Hz or Samples/second\\
+{\em sampling\+Rate} & sampling frequency in Hz or Samples/second\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -758,124 +725,124 @@ Here is the caller graph for this function\+:
 \item[{auto}]{filename}
 \end{DoxyParamCaption}
 )}}\label{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}
-Reads the previously computated parameters found in the specified file.
+Reads the previously computed parameters found in the specified file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & the absolute or relative path to the file containing the patient data to read\\
+{\em filename} & absolute or relative path to the file containing the patient data to read\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the patient parameters read for each side 
+patient parameters read for each side 
 \end{DoxyReturn}
 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00141}{141} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00131}{131} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 
 \begin{DoxyCode}
-00141                                                        \{
-00142         std::map<Side, DataParams> myMap;
-00143         \hyperlink{structDataParams}{DataParams} leftparams;
-00144         \hyperlink{structDataParams}{DataParams} rightparams;
-00145 
-00146         std::ifstream file(filename.c\_str());
-00147         std::string leftline;
-00148         std::string rightline;
-00149         std::string leftsearch = \textcolor{stringliteral}{"Left"};
-00150         std::string rightsearch = \textcolor{stringliteral}{"Right"};
-00151         std::string paramstring;
-00152         std::string lfreqstr;
-00153         std::string lnoisestr;
-00154         std::string rfreqstr;
-00155         std::string rnoisestr;
-00156         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} lcnt = 0;
-00157         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} rcnt = 0;
-00158         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} lfreqval;
-00159         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} lnoiseval;
-00160         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} rfreqval;
-00161         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} rnoiseval;
-00162 
-00163         \textcolor{comment}{/*}
-00164 \textcolor{comment}{         * if statement which uses ifstream function to open patient file }
-00165 \textcolor{comment}{         * filename)}
-00166 \textcolor{comment}{         */}
-00167         \textcolor{keywordflow}{if}(file.is\_open()) \{
-00168             \textcolor{comment}{/*}
-00169 \textcolor{comment}{             * While statement to find the first Left line and save to }
-00170 \textcolor{comment}{             *leftline as string.}
-00171 \textcolor{comment}{             */}
-00172             \textcolor{keywordflow}{while} (getline(file, leftline)) \{
-00173                 \textcolor{keywordflow}{if}(leftline.find(leftsearch, 0) != std::string::npos) \{
-00174                     \textcolor{keywordflow}{break};
-00175                 \}
-00176 
+00131                                                        \{
+00132         std::map<Side, DataParams> params;
+00133         \hyperlink{structDataParams}{DataParams} leftparams;
+00134         \hyperlink{structDataParams}{DataParams} rightparams;
+00135 
+00136         std::ifstream file(filename.c\_str());
+00137         std::string leftline;
+00138         std::string rightline;
+00139         std::string leftsearch = \textcolor{stringliteral}{"Left"};
+00140         std::string rightsearch = \textcolor{stringliteral}{"Right"};
+00141         std::string paramstring;
+00142         std::string lfreqstr;
+00143         std::string lnoisestr;
+00144         std::string rfreqstr;
+00145         std::string rnoisestr;
+00146         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} lcnt = 0;
+00147         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} rcnt = 0;
+00148         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} lfreqval;
+00149         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} lnoiseval;
+00150         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} rfreqval;
+00151         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} rnoiseval;
+00152 
+00153         \textcolor{comment}{/*}
+00154 \textcolor{comment}{         * if statement which uses ifstream function to open patient file }
+00155 \textcolor{comment}{         * filename)}
+00156 \textcolor{comment}{         */}
+00157         \textcolor{keywordflow}{if}(file.is\_open()) \{
+00158             \textcolor{comment}{/*}
+00159 \textcolor{comment}{             * While statement to find the first Left line and save to }
+00160 \textcolor{comment}{             *leftline as string.}
+00161 \textcolor{comment}{             */}
+00162             \textcolor{keywordflow}{while} (getline(file, leftline)) \{
+00163                 \textcolor{keywordflow}{if}(leftline.find(leftsearch, 0) != std::string::npos) \{
+00164                     \textcolor{keywordflow}{break};
+00165                 \}
+00166 
+00167             \}
+00168 
+00169             \textcolor{comment}{/*}
+00170 \textcolor{comment}{             * While statement to find first right line and save to rightline}
+00171 \textcolor{comment}{             * as string.}
+00172 \textcolor{comment}{             */}
+00173             \textcolor{keywordflow}{while} (getline(file,rightline)) \{
+00174                 \textcolor{keywordflow}{if}(rightline.find(rightsearch, 0) != std::string::npos) \{
+00175                     \textcolor{keywordflow}{break};
+00176                 \}
 00177             \}
 00178 
-00179             \textcolor{comment}{/*}
-00180 \textcolor{comment}{             * While statement to find first right line and save to rightline}
-00181 \textcolor{comment}{             * as string.}
-00182 \textcolor{comment}{             */}
-00183             \textcolor{keywordflow}{while} (getline(file,rightline)) \{
-00184                 \textcolor{keywordflow}{if}(rightline.find(rightsearch, 0) != std::string::npos) \{
-00185                     \textcolor{keywordflow}{break};
-00186                 \}
-00187             \}
-00188 
-00189             \textcolor{comment}{// Code to break leftline and rightline into its parts}
-00190             std::stringstream lss(leftline);
-00191             std::stringstream rss(rightline);
-00192 
-00193             \textcolor{keywordflow}{while}(getline(lss,paramstring, \textcolor{charliteral}{','})) \{
-00194                 lcnt++;
-00195 
-00196                 \textcolor{keywordflow}{if}(lcnt == 3) \{
-00197                     lfreqstr = paramstring;
-00198                 \}
-00199 
-00200                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(lcnt == 4) \{
-00201                     lnoisestr = paramstring;
-00202                 \}
-00203             \}
-00204 
-00205             \textcolor{keywordflow}{while}(getline(rss,paramstring, \textcolor{charliteral}{','})) \{
-00206                 rcnt++;
-00207 
-00208                 \textcolor{keywordflow}{if}(rcnt == 3) \{
-00209                     rfreqstr = paramstring;
-00210                 \}
-00211 
-00212                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rcnt == 4) \{
-00213                     rnoisestr = paramstring;
-00214                 \}
-00215             \}
-00216 
-00217             \textcolor{comment}{/*}
-00218 \textcolor{comment}{             * Statement to convert lfreq, lnoise, rfreq, and rnoise from}
-00219 \textcolor{comment}{             * strings to floats.}
-00220 \textcolor{comment}{             * */}
-00221             lfreqval = atof(lfreqstr.c\_str());
-00222             lnoiseval = atof(lnoisestr.c\_str());
-00223             rfreqval = atof(rfreqstr.c\_str());
-00224             rnoiseval = atof(rnoisestr.c\_str());
-00225 
-00226             file.close();
-00227         \}
-00228 
-00229         \textcolor{keywordflow}{else} \{
-00230             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"The patient file could not be opened."});
-00231         \}
-00232 
-00233         leftparams.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = lfreqval;
-00234         leftparams.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = lnoiseval;
-00235         rightparams.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = rfreqval;
-00236         rightparams.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = rnoiseval;
-00237 
-00238         myMap[Side::Left] = leftparams;
-00239         myMap[Side::Right] = rightparams;
-00240 
-00241         \textcolor{keywordflow}{return} myMap;
-00242     \}
+00179             \textcolor{comment}{// Code to break leftline and rightline into its parts}
+00180             std::stringstream lss(leftline);
+00181             std::stringstream rss(rightline);
+00182 
+00183             \textcolor{keywordflow}{while}(getline(lss,paramstring, \textcolor{charliteral}{','})) \{
+00184                 lcnt++;
+00185 
+00186                 \textcolor{keywordflow}{if}(lcnt == 3) \{
+00187                     lfreqstr = paramstring;
+00188                 \}
+00189 
+00190                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(lcnt == 4) \{
+00191                     lnoisestr = paramstring;
+00192                 \}
+00193             \}
+00194 
+00195             \textcolor{keywordflow}{while}(getline(rss,paramstring, \textcolor{charliteral}{','})) \{
+00196                 rcnt++;
+00197 
+00198                 \textcolor{keywordflow}{if}(rcnt == 3) \{
+00199                     rfreqstr = paramstring;
+00200                 \}
+00201 
+00202                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rcnt == 4) \{
+00203                     rnoisestr = paramstring;
+00204                 \}
+00205             \}
+00206 
+00207             \textcolor{comment}{/*}
+00208 \textcolor{comment}{             * Statement to convert lfreq, lnoise, rfreq, and rnoise from}
+00209 \textcolor{comment}{             * strings to floats.}
+00210 \textcolor{comment}{             * */}
+00211             lfreqval = atof(lfreqstr.c\_str());
+00212             lnoiseval = atof(lnoisestr.c\_str());
+00213             rfreqval = atof(rfreqstr.c\_str());
+00214             rnoiseval = atof(rnoisestr.c\_str());
+00215 
+00216             file.close();
+00217         \}
+00218 
+00219         \textcolor{keywordflow}{else} \{
+00220             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"The patient file could not be opened."});
+00221         \}
+00222 
+00223         leftparams.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = lfreqval;
+00224         leftparams.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = lnoiseval;
+00225         rightparams.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = rfreqval;
+00226         rightparams.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = rnoiseval;
+00227 
+00228         params[Side::Left] = leftparams;
+00229         params[Side::Right] = rightparams;
+00230 
+00231         \textcolor{keywordflow}{return} params;
+00232     \}
 \end{DoxyCode}
 
 
@@ -902,11 +869,11 @@ Applies an nth-\/order moving-\/average filter to a discrete signal.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & the array containing the signal to which the filter should be applied\\
+{\em data} & array containing the signal to which the filter should be applied\\
 \hline
-{\em size} & the number of elements in the data array\\
+{\em size} & number of elements in the data array\\
 \hline
-{\em order} & the order of the filter \\
+{\em order} & order of the filter \\
 \hline
 \end{DoxyParams}
 
@@ -946,58 +913,58 @@ Here is the caller graph for this function\+:
 \end{figure}
 
 
-\hypertarget{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{\index{avda@{avda}!Write\+Params@{Write\+Params}}
+\hypertarget{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec}{\index{avda@{avda}!Write\+Params@{Write\+Params}}
 \index{Write\+Params@{Write\+Params}!avda@{avda}}
 \subsubsection[{Write\+Params}]{\setlength{\rightskip}{0pt plus 5cm}void avda\+::\+Write\+Params (
 \begin{DoxyParamCaption}
-\item[{std\+::map$<$ Side, {\bf Data\+Params} $>$}]{my\+Map, }
+\item[{std\+::map$<$ Side, {\bf Data\+Params} $>$}]{params, }
 \item[{auto}]{filename}
 \end{DoxyParamCaption}
-)}}\label{namespaceavda_aba04a08b41833ced32ec803d55a63bee}
+)}}\label{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec}
 Writes (appends) the passed parameters to the specified file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em my\+Map} & contains the parameters to be written\\
+{\em params} & parameters to be written\\
 \hline
 \end{DoxyParams}
 the patient C\+S\+V file's filename 
 
-Definition at line \hyperlink{fileio_8hpp_source_l00251}{251} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+Definition at line \hyperlink{fileio_8hpp_source_l00241}{241} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 
 
 \begin{DoxyCode}
-00251                                                                     \{
-00252         \textcolor{keywordtype}{char} temp[80];
-00253         std::ofstream file(filename.c\_str(),
-00254                 std::ofstream::out | std::ofstream::app);
-00255 
-00256         \textcolor{comment}{//Gives pointer measurementtime a data type of time\_t.}
-00257         time\_t measurementtime;
-00258         time(&measurementtime); \textcolor{comment}{//Gets the current time.}
-00259         strftime(temp, 80, \textcolor{stringliteral}{"%c"}, localtime(&measurementtime));
-00260         std::string fTime = std::string(temp);
-00261 
-00262         \textcolor{comment}{//if statement to print the Left side parameters to the patient file.}
-00263         \textcolor{keywordflow}{if}(file.is\_open()) \{
-00264             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Left"} + \textcolor{stringliteral}{","}
-00265                 + std::to\_string(myMap[Side::Left].freq) 
-00266                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[Side::Left].noise) << std::endl;
-00267         \}
-00268 
-00269         \textcolor{comment}{//if statement to print the Right side parameters to the patient file.}
-00270         \textcolor{keywordflow}{if}(file.is\_open()) \{
-00271             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Right"} + \textcolor{stringliteral}{","}
-00272                 + std::to\_string(myMap[Side::Right].freq) 
-00273                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[Side::Right].noise) << std::endl;
-00274         \}
-00275 
-00276         \textcolor{keywordflow}{else} \{
-00277             std::cout << \textcolor{stringliteral}{"Patient file can not be opened!"} << std::endl;
-00278         \}
-00279 
-00280         file.close();
-00281     \}
+00241                                                                      \{
+00242         \textcolor{keywordtype}{char} temp[80];
+00243         std::ofstream file(filename.c\_str(),
+00244                 std::ofstream::out | std::ofstream::app);
+00245 
+00246         \textcolor{comment}{//Gives pointer measurementtime a data type of time\_t.}
+00247         time\_t measurementtime;
+00248         time(&measurementtime); \textcolor{comment}{//Gets the current time.}
+00249         strftime(temp, 80, \textcolor{stringliteral}{"%c"}, localtime(&measurementtime));
+00250         std::string fTime = std::string(temp);
+00251 
+00252         \textcolor{comment}{//if statement to print the Left side parameters to the patient file.}
+00253         \textcolor{keywordflow}{if}(file.is\_open()) \{
+00254             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Left"} + \textcolor{stringliteral}{","}
+00255                 + std::to\_string(params[Side::Left].freq) 
+00256                 + \textcolor{stringliteral}{", "} + std::to\_string(params[Side::Left].noise) << std::endl;
+00257         \}
+00258 
+00259         \textcolor{comment}{//if statement to print the Right side parameters to the patient file.}
+00260         \textcolor{keywordflow}{if}(file.is\_open()) \{
+00261             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Right"} + \textcolor{stringliteral}{","}
+00262                 + std::to\_string(params[Side::Right].freq) 
+00263                 + \textcolor{stringliteral}{", "} + std::to\_string(params[Side::Right].noise) << std::endl;
+00264         \}
+00265 
+00266         \textcolor{keywordflow}{else} \{
+00267             std::cout << \textcolor{stringliteral}{"Patient file can not be opened!"} << std::endl;
+00268         \}
+00269 
+00270         file.close();
+00271     \}
 \end{DoxyCode}
 
 
@@ -1006,25 +973,8 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=255pt]{namespaceavda_aba04a08b41833ced32ec803d55a63bee_icgraph}
+\includegraphics[width=255pt]{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgraph}
 \end{center}
 \end{figure}
 
-
-
-
-\subsection{Variable Documentation}
-\hypertarget{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}{\index{avda@{avda}!C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R@{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}}
-\index{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R@{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}!avda@{avda}}
-\subsubsection[{C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string avda\+::\+C\+S\+V\+\_\+\+H\+E\+A\+D\+E\+R = \char`\"{}Time,{\bf Side},Frequency,Noise Level\char`\"{}}}\label{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}
-First line of C\+S\+V data file, which declares columns. 
-
-Definition at line \hyperlink{fileio_8hpp_source_l00025}{25} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
-
-\hypertarget{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{\index{avda@{avda}!P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}}
-\index{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H@{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}!avda@{avda}}
-\subsubsection[{P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string avda\+::\+P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H = \char`\"{}/home/pi/patients/\char`\"{}}}\label{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}
-Absolute path to the folder containing the patients' data 
-
-Definition at line \hyperlink{fileio_8hpp_source_l00030}{30} of file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
 

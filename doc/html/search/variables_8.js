@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['patient_5fpath',['PATIENT_PATH',['../namespaceavda.html#a8ee73ec0cb55d4a13e89949764dce89d',1,'avda']]]
+  ['patient_5fpath',['PATIENT_PATH',['../definitions_8hpp.html#a5736990e7ea949fc1971afa00e421f16',1,'definitions.hpp']]]
 ];

@@ -4,7 +4,7 @@
 .SH NAME
 src/fileio.hpp \- 
 .PP
-contains functions related to the file I/O use in this program  
+Contains functions related to file I/O use in this program\&.  
 
 .SH SYNOPSIS
 .br
@@ -41,22 +41,12 @@ contains functions related to the file I/O use in this program
 .RI "std::map< Side, \fBDataParams\fP > \fBavda::ReadParams\fP (auto filename)"
 .br
 .ti -1c
-.RI "void \fBavda::WriteParams\fP (std::map< Side, \fBDataParams\fP > myMap, auto filename)"
-.br
-.in -1c
-.SS "Variables"
-
-.in +1c
-.ti -1c
-.RI "const std::string \fBavda::CSV_HEADER\fP = 'Time,Side,Frequency,Noise Level'"
-.br
-.ti -1c
-.RI "const std::string \fBavda::PATIENT_PATH\fP = '/home/pi/patients/'"
+.RI "void \fBavda::WriteParams\fP (std::map< Side, \fBDataParams\fP > params, auto filename)"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-contains functions related to the file I/O use in this program 
+Contains functions related to file I/O use in this program\&. 
 
 
 .PP
@@ -69,7 +59,7 @@ Nicholas K\&. Nolan
 .PP
 \fBBug\fP
 .RS 4
-file is overly complicated and much more bug-prone 
+file is overly complicated and much more bug-prone than necessary 
 .RE
 .PP
 

@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('fileio__test_8cpp.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Contains program that tests the functions in <a class="el" href="fileio_8hpp.html" title="contains functions related to the file I/O use in this program ">fileio.hpp</a>.  
+<p>Contains program that tests some functions in <a class="el" href="fileio_8hpp.html" title="Contains functions related to file I/O use in this program. ">fileio.hpp</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -124,7 +124,7 @@ Include dependency graph for fileio_test.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio__test_8cpp__incl.png" border="0" usemap="#src_2fileio__test_8cpp" alt=""/></div>
 <map name="src_2fileio__test_8cpp" id="src_2fileio__test_8cpp">
-<area shape="rect" id="node7" href="definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="601,229,707,256"/><area shape="rect" id="node10" href="fileio_8hpp.html" title="contains functions related to the file I/O use in this program " alt="" coords="286,80,361,107"/><area shape="rect" id="node12" href="process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="647,80,741,107"/><area shape="rect" id="node13" href="sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="698,155,791,181"/></map>
+<area shape="rect" id="node7" href="definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="601,229,707,256"/><area shape="rect" id="node10" href="fileio_8hpp.html" title="Contains functions related to file I/O use in this program. " alt="" coords="286,80,361,107"/><area shape="rect" id="node12" href="process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="647,80,741,107"/><area shape="rect" id="node13" href="sigmath_8hpp.html" title="Contains the functions necessary to perform the mathematical operations required by this program..." alt="" coords="698,155,791,181"/></map>
 </div>
 </div>
 <p><a href="fileio__test_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -135,10 +135,8 @@ Functions</h2></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains program that tests the functions in <a class="el" href="fileio_8hpp.html" title="contains functions related to the file I/O use in this program ">fileio.hpp</a>. </p>
-<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner </dd>
-<dd>
-Nicholas K. Nolan </dd></dl>
+<div class="textblock"><p>Contains program that tests some functions in <a class="el" href="fileio_8hpp.html" title="Contains functions related to file I/O use in this program. ">fileio.hpp</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner </dd></dl>
 
 <p>Definition in file <a class="el" href="fileio__test_8cpp_source.html">fileio_test.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -154,27 +152,27 @@ Nicholas K. Nolan </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Tests the functions in <a class="el" href="fileio_8hpp.html" title="contains functions related to the file I/O use in this program ">fileio.hpp</a>. </p>
+<p>Tests the functions in <a class="el" href="fileio_8hpp.html" title="Contains functions related to file I/O use in this program. ">fileio.hpp</a>. </p>
 
-<p>Definition at line <a class="el" href="fileio__test_8cpp_source.html#l00024">24</a> of file <a class="el" href="fileio__test_8cpp_source.html">fileio_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;           {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">string</span> path = <a class="code" href="namespaceavda.html#a8ee73ec0cb55d4a13e89949764dce89d">PATIENT_PATH</a> + <span class="stringliteral">&quot;wizmack, sammy andy.csv&quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    map&lt;Side, DataParams&gt; laMap = <a class="code" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">ReadParams</a>(path);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cout &lt;&lt;  laMap[Side::Right].freq &lt;&lt; endl;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cout &lt;&lt; laMap[Side::Right].noise &lt;&lt; endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="namespaceavda.html#aba04a08b41833ced32ec803d55a63bee">WriteParams</a>(laMap, path);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="ttc" id="namespaceavda_html_a8ee73ec0cb55d4a13e89949764dce89d"><div class="ttname"><a href="namespaceavda.html#a8ee73ec0cb55d4a13e89949764dce89d">avda::PATIENT_PATH</a></div><div class="ttdeci">const std::string PATIENT_PATH</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00030">fileio.hpp:30</a></div></div>
-<div class="ttc" id="namespaceavda_html_aba04a08b41833ced32ec803d55a63bee"><div class="ttname"><a href="namespaceavda.html#aba04a08b41833ced32ec803d55a63bee">avda::WriteParams</a></div><div class="ttdeci">void WriteParams(std::map&lt; Side, DataParams &gt; myMap, auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00251">fileio.hpp:251</a></div></div>
-<div class="ttc" id="namespaceavda_html_a46dc980b65ddfc24749ce25c1290e158"><div class="ttname"><a href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">avda::ReadParams</a></div><div class="ttdeci">std::map&lt; Side, DataParams &gt; ReadParams(auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00141">fileio.hpp:141</a></div></div>
+<p>Definition at line <a class="el" href="fileio__test_8cpp_source.html#l00023">23</a> of file <a class="el" href="fileio__test_8cpp_source.html">fileio_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;           {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">string</span> path = <a class="code" href="definitions_8hpp.html#a5736990e7ea949fc1971afa00e421f16">PATIENT_PATH</a> + <span class="stringliteral">&quot;wizmack, sammy andy.csv&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    map&lt;Side, DataParams&gt; laMap = <a class="code" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">ReadParams</a>(path);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    cout &lt;&lt;  laMap[Side::Right].freq &lt;&lt; endl;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cout &lt;&lt; laMap[Side::Right].noise &lt;&lt; endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="namespaceavda.html#a1e3f5a0eb4ee9a7010d57dc38bd8dfec">WriteParams</a>(laMap, path);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="ttc" id="definitions_8hpp_html_a5736990e7ea949fc1971afa00e421f16"><div class="ttname"><a href="definitions_8hpp.html#a5736990e7ea949fc1971afa00e421f16">PATIENT_PATH</a></div><div class="ttdeci">const std::string PATIENT_PATH</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00068">definitions.hpp:68</a></div></div>
+<div class="ttc" id="namespaceavda_html_a46dc980b65ddfc24749ce25c1290e158"><div class="ttname"><a href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">avda::ReadParams</a></div><div class="ttdeci">std::map&lt; Side, DataParams &gt; ReadParams(auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00131">fileio.hpp:131</a></div></div>
+<div class="ttc" id="namespaceavda_html_a1e3f5a0eb4ee9a7010d57dc38bd8dfec"><div class="ttname"><a href="namespaceavda.html#a1e3f5a0eb4ee9a7010d57dc38bd8dfec">avda::WriteParams</a></div><div class="ttdeci">void WriteParams(std::map&lt; Side, DataParams &gt; params, auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00241">fileio.hpp:241</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" id="node2" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158" title="avda::ReadParams" alt="" coords="104,5,239,32"/><area shape="rect" id="node3" href="namespaceavda.html#aba04a08b41833ced32ec803d55a63bee" title="avda::WriteParams" alt="" coords="104,56,239,83"/></map>
+<area shape="rect" id="node2" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158" title="avda::ReadParams" alt="" coords="104,5,239,32"/><area shape="rect" id="node3" href="namespaceavda.html#a1e3f5a0eb4ee9a7010d57dc38bd8dfec" title="avda::WriteParams" alt="" coords="104,56,239,83"/></map>
 </div>
 </p>
 
@@ -186,7 +184,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fileio__test_8cpp.html">fileio_test.cpp</a></li>
-    <li class="footer">Generated on Wed Apr 20 2016 00:56:09 for The Automatic Vasospasm Detection Application by
+    <li class="footer">Generated on Wed Apr 20 2016 01:25:19 for The Automatic Vasospasm Detection Application by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

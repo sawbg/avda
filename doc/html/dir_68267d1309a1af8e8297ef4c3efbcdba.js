@@ -7,8 +7,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "patient_name_test.cpp", "patient__name__test_8cpp.html", "patient__name__test_8cpp" ],
     [ "process.hpp", "process_8hpp.html", "process_8hpp" ],
     [ "process_test.cpp", "process__test_8cpp.html", "process__test_8cpp" ],
-    [ "read_params_test.cpp", "read__params__test_8cpp.html", "read__params__test_8cpp" ],
     [ "sigmath.hpp", "sigmath_8hpp.html", "sigmath_8hpp" ],
-    [ "sound.hpp", "sound_8hpp.html", "sound_8hpp" ],
     [ "stdin_clear_test.cpp", "stdin__clear__test_8cpp.html", "stdin__clear__test_8cpp" ]
 ];

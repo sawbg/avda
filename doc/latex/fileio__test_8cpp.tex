@@ -3,7 +3,7 @@
 }
 
 
-Contains program that tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}.  
+Contains program that tests some functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}.  
 
 
 {\ttfamily \#include $<$fstream$>$}\\*
@@ -30,12 +30,10 @@ int \hyperlink{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
 
 
 \subsection{Detailed Description}
-Contains program that tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}. 
+Contains program that tests some functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}. 
 
 \begin{DoxyAuthor}{Author}
 Samuel Andrew Wisner 
-
-Nicholas K. Nolan 
 \end{DoxyAuthor}
 
 
@@ -53,18 +51,18 @@ Definition in file \hyperlink{fileio__test_8cpp_source}{fileio\+\_\+test.\+cpp}.
 )}}\label{fileio__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
 Tests the functions in \hyperlink{fileio_8hpp}{fileio.\+hpp}. 
 
-Definition at line \hyperlink{fileio__test_8cpp_source_l00024}{24} of file \hyperlink{fileio__test_8cpp_source}{fileio\+\_\+test.\+cpp}.
+Definition at line \hyperlink{fileio__test_8cpp_source_l00023}{23} of file \hyperlink{fileio__test_8cpp_source}{fileio\+\_\+test.\+cpp}.
 
 
 \begin{DoxyCode}
-00024            \{
-00025     \textcolor{keywordtype}{string} path = \hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
-00026     map<Side, DataParams> laMap = \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{ReadParams}(path);
-00027     cout <<  laMap[Side::Right].freq << endl;
-00028     cout << laMap[Side::Right].noise << endl;
-00029 
-00030     \hyperlink{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{WriteParams}(laMap, path);
-00031 \}
+00023            \{
+00024     \textcolor{keywordtype}{string} path = \hyperlink{definitions_8hpp_a5736990e7ea949fc1971afa00e421f16}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
+00025     map<Side, DataParams> laMap = \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{ReadParams}(path);
+00026     cout <<  laMap[Side::Right].freq << endl;
+00027     cout << laMap[Side::Right].noise << endl;
+00028 
+00029     \hyperlink{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec}{WriteParams}(laMap, path);
+00030 \}
 \end{DoxyCode}
 
 

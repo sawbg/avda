@@ -23,7 +23,7 @@ avda \-
 .RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBReadParams\fP (auto filename)"
 .br
 .ti -1c
-.RI "void \fBWriteParams\fP (std::map< \fBSide\fP, \fBDataParams\fP > myMap, auto filename)"
+.RI "void \fBWriteParams\fP (std::map< \fBSide\fP, \fBDataParams\fP > params, auto filename)"
 .br
 .ti -1c
 .RI "\fBDataParams\fP \fBprocess\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBfloat32\fP samplingRate)"
@@ -55,19 +55,6 @@ avda \-
 .ti -1c
 .RI "void \fBsmooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
 .br
-.ti -1c
-.RI "void \fBplay\fP (auto filename)"
-.br
-.in -1c
-.SS "Variables"
-
-.in +1c
-.ti -1c
-.RI "const std::string \fBCSV_HEADER\fP = 'Time,\fBSide\fP,Frequency,Noise Level'"
-.br
-.ti -1c
-.RI "const std::string \fBPATIENT_PATH\fP = '/home/pi/patients/'"
-.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -84,10 +71,10 @@ Side of the head to which a recording pertains\&.
 .TP
 \fB\fIRight \fP\fP
 .PP
-Definition at line 121 of file definitions\&.hpp\&.
+Definition at line 145 of file definitions\&.hpp\&.
 .PP
 .nf
-121 { Left, Right };
+145 { Left, Right };
 .fi
 .SH "Function Documentation"
 .PP 
@@ -96,9 +83,9 @@ Ensures all elements in an array are positive\&. Note that this function replace
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array whose elements must all be positive
+\fIdata\fP array whose elements must all be positive
 .br
-\fIsize\fP the number of elements in the data array 
+\fIsize\fP number of elements in the data array 
 .RE
 .PP
 
@@ -117,14 +104,14 @@ Takes the average of all elements in an array
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array from which to compute the average
+\fIdata\fP array from which to compute the average
 .br
-\fIsize\fP the number of elements in the data array
+\fIsize\fP number of elements in the data array
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-the computed average 
+computed average 
 .RE
 .PP
 
@@ -148,14 +135,14 @@ Finds the averages of the elements of an array of \fBDataParams\fP\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIparams\fP the \fBDataParams\fP array
+\fIparams\fP \fBDataParams\fP array
 .br
-\fIsize\fP the number of elements in the \fBDataParams\fP array
+\fIsize\fP number of elements in the \fBDataParams\fP array
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-a \fBDataParams\fP structure containing the average values of the structure's elements in the params array 
+\fBDataParams\fP structure containing the average values of the structure's elements in the params array 
 .RE
 .PP
 
@@ -182,9 +169,9 @@ Converts an array of floats to 'power decibels', i\&.e\&., x[n] = 20*log10(x[n])
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array of values to be converted as well as the location where the converted values will be written
+\fIdata\fP array of values to be converted as well as the location where the converted values will be written
 .br
-\fIsize\fP the number of elements in the data array 
+\fIsize\fP number of elements in the data array 
 .RE
 .PP
 
@@ -203,9 +190,9 @@ Computes the left-handed first derivative of a discrete signal\&. The first elem
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP an array containing the discrete signal data
+\fIdata\fP array containing the discrete signal data array
 .br
-\fIsize\fP the number of elements in data 
+\fIsize\fP number of elements in data 
 .RE
 .PP
 
@@ -233,9 +220,9 @@ This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transfo
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array whose values should be replaced with its DFT
+\fIdata\fP array whose values should be replaced with its DFT
 .br
-\fIsize\fP the number of elements in the data array 
+\fIsize\fP number of elements in the data array 
 .RE
 .PP
 
@@ -296,11 +283,11 @@ Computes the magitude of an array of complex numbers\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIorig\fP the array of complex numbers
+\fIorig\fP array of complex numbers
 .br
-\fInewmags\fP an array to which the magitudes are to be written
+\fInewmags\fP array to which the (real) magitudes are to be written
 .br
-\fIsize\fP the number of elements in orig and newmags 
+\fIsize\fP number of elements in orig and newmags 
 .RE
 .PP
 
@@ -324,14 +311,14 @@ Finds the maximum value in an array\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array whose maximum value is to be found
+\fIdata\fP array whose maximum value is to be found
 .br
-\fIuint32\fP size the number of elements in the data array
+\fIsize\fP number of elements in the data array
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-the maximum value and its index in a \fBMaximum\fP structure 
+maximum value and its index 
 .RE
 .PP
 
@@ -358,9 +345,9 @@ Definition at line 232 of file sigmath\&.hpp\&.
 248     }
 .fi
 .SS "std::string avda::PatientName ()"
-Prompts a user to enter a first, middle, and last name for a patients and creates a file (if necessary) in which all of a patient's data can be saved\&. A newly created file will contain the CSV header for the file's data\&.
+Prompts a user to enter a first, middle, and last name for a patient and creates a file (if necessary) in which all of the patient's data parameters can be saved\&. A newly created file will contain the CSV header for the file's data\&.
 .PP
-Must warn a user if the patient folder does not already exist in order to prevent missaving data\&.
+Must warn a user if the patient file does not already exist in order to prevent missaving data\&.
 .PP
 \fBReturns:\fP
 .RS 4
@@ -369,119 +356,102 @@ the file under which all patient data is saved
 .PP
 
 .PP
-Definition at line 43 of file fileio\&.hpp\&.
+Definition at line 33 of file fileio\&.hpp\&.
 .PP
 .nf
-43                             {
-44         std::string fname = "";
-45         std::string mname = "";
-46         std::string lname = "";
-47         std::string patfil = "";
-48         std::string patientname = "";
-49         uint32 track1 = 0;
-50         uint32 track2 = 0;
-51         uint32 track3 = 0;
-52 
-53         do {
-54             std::cout << "Please enter the patients name\&." << std::endl;
-55             std::cout << "First name: ";
-56             std::cin >> fname;
-57             std::cout << "Middle name: ";
-58             std::cin >> mname;
-59             std::cout << "Last name: ";
-60             std::cin >> lname;
-61 
-62             // creates new std::string with path to patient file
-63             patientname = PATIENT_PATH + lname + ", " + fname
-64                 + " " + mname + "\&.csv";
-65 
-66             // prints out patientname\&. shows user the path to the patient file
-67             //std::cout << patientname << std::endl << std::endl;
-68             std::ifstream file(patientname\&.c_str());
-69 
-70             if (file\&.good()) {
-71                 track1 = 1;
-72             }
-73 
-74             /*
-75              * Compares patientname to existing files and lets user know
-76              * if the file does not exist\&.
-77              */
-78             else if (!file\&.good()) {
-79                 /* 
-80                  * Do while statement to continue asking user about the file
-81                  * if their input is not acceptable
-82                  */ 
-83                 do {
-84                     std::cout << "Patient file does not exist, would you like "
-85                         "to create file or re-enter their name?" << std::endl;
-86                     std::cout << "  *Type 'create' and press enter key "
-87                         "to create the patient file\&." << std::endl;
-88                     std::cout << "  *Type 'reenter' and press enter key "
-89                         "to re-enter the patients name\&." << std::endl;
-90                     std::cout << std::endl;
-91                     std::cin >> patfil;
-92 
-93                     /* 
-94                      * patfil equals create, track1 and 2 will increase
-95                      * escaping both do while loops
-96                      */
-97                     if(patfil == "create") {
-98                         std::ofstream createfile(patientname\&.c_str());
-99                         track1 = 1;
-100                         track2 = 1;
-101                         track3 = 1;
-102                         createfile << CSV_HEADER << std::endl;
-103                         createfile\&.flush();
-104                         createfile\&.close();
-105                     }
-106 
-107                     /*
-108                      *patfil equals renter, track1 will remain zero allowing
-109                      *user to reenter the patient name\&.
-110                      */
-111                     else if(patfil == "reenter") {
-112                         track1 = 0;
-113                         track2 = 1;
+33                             {
+34         std::string fname = "";
+35         std::string mname = "";
+36         std::string lname = "";
+37         std::string patfil = "";
+38         std::string patientname = "";
+39         uint32 track1 = 0;
+40         uint32 track2 = 0;
+41         uint32 track3 = 0;
+42 
+43         do {
+44             std::cout << "Please enter the patients name\&." << std::endl;
+45             std::cout << "First name: ";
+46             std::cin >> fname;
+47             std::cout << "Middle name: ";
+48             std::cin >> mname;
+49             std::cout << "Last name: ";
+50             std::cin >> lname;
+51 
+52             // creates new std::string with path to patient file
+53             patientname = PATIENT_PATH + lname + ", " + fname
+54                 + " " + mname + "\&.csv";
+55 
+56             // prints out patientname\&. shows user the path to the patient file
+57             //std::cout << patientname << std::endl << std::endl;
+58             std::ifstream file(patientname\&.c_str());
+59 
+60             if (file\&.good()) {
+61                 track1 = 1;
+62             }
+63 
+64             /*
+65              * Compares patientname to existing files and lets user know
+66              * if the file does not exist\&.
+67              */
+68             else if (!file\&.good()) {
+69                 /* 
+70                  * Do while statement to continue asking user about the file
+71                  * if their input is not acceptable
+72                  */ 
+73                 do {
+74                     std::cout << "Patient file does not exist, would you like "
+75                         "to create file or re-enter their name?" << std::endl;
+76                     std::cout << "  *Type 'create' and press enter key "
+77                         "to create the patient file\&." << std::endl;
+78                     std::cout << "  *Type 'reenter' and press enter key "
+79                         "to re-enter the patients name\&." << std::endl;
+80                     std::cout << std::endl;
+81                     std::cin >> patfil;
+82 
+83                     /* 
+84                      * patfil equals create, track1 and 2 will increase
+85                      * escaping both do while loops
+86                      */
+87                     if(patfil == "create") {
+88                         std::ofstream createfile(patientname\&.c_str());
+89                         track1 = 1;
+90                         track2 = 1;
+91                         track3 = 1;
+92                         createfile << CSV_HEADER << std::endl;
+93                         createfile\&.flush();
+94                         createfile\&.close();
+95                     }
+96 
+97                     /*
+98                      *patfil equals renter, track1 will remain zero allowing
+99                      *user to reenter the patient name\&.
+100                      */
+101                     else if(patfil == "reenter") {
+102                         track1 = 0;
+103                         track2 = 1;
+104                     }
+105 
+106                     /*
+107                      *The users input was neither create or reenter\&. User
+108                      *must enter patient name again\&.
+109                      */
+110                     else {
+111                         std::cout << std::endl;
+112                         std::cout << "Your input is not acceptable\&." << std::endl;
+113                         std::cout << std::endl;
 114                     }
-115 
-116                     /*
-117                      *The users input was neither create or reenter\&. User
-118                      *must enter patient name again\&.
-119                      */
-120                     else {
-121                         std::cout << std::endl;
-122                         std::cout << "Your input is not acceptable\&." << std::endl;
-123                         std::cout << std::endl;
-124                     }
-125                 }while(track2 == 0);
-126             }
-127         } while (track1 == 0);
-128 
-129         return patientname; //returns the path to the patient file
-130     }
-.fi
-.SS "void avda::play (autofilename)"
-Plays a WAVE file in a loop in a non-blocking manner\&.
-.PP
-\fBParameters:\fP
-.RS 4
-\fIfilename\fP the absolute or relative path to the WAVE file 
-.RE
-.PP
-
-.PP
-Definition at line 20 of file sound\&.hpp\&.
-.PP
-.nf
-20                              {
-21 
-22     }
+115                 }while(track2 == 0);
+116             }
+117         } while (track1 == 0);
+118 
+119         return patientname; //returns the path to the patient file
+120     }
 .fi
 .SS "\fBDataParams\fP avda::process (\fBfloat32\fP *data, \fBuint32\fPsize, \fBfloat32\fPsamplingRate)"
 Analyzes a single recording to determine the drop-off frequency and average noiseband noise power\&.
 .PP
-It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan\&. The 'algorithm' is defined as the use of 1) the frequency drop-off and/or 2) a noise value from the frequency band above the drop-off frequency in order to diagnose (with or without other factors and parameters) the presence of a avdaspasm in a patient\&. By faculty members and/or students in the UAB ECE department using this algorithm, they agree that the presentation of their code or project that uses this algorithm by anyone directly or indirectly related to the code or project, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan\&. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan\&. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the aforementioned is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual\&.
+It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan\&. The 'algorithm' is defined as the use of 1) the frequency drop-off and/or 2) a noise value from the frequency band above the drop-off frequency in order to diagnose (with or without other factors and parameters) the presence of a avdaspasm in a patient\&. By faculty members and/or students in the UAB ECE department using this algorithm, they agree that the presentation of their code or project that uses this algorithm, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan\&. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan\&. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the algorithm's creators is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual\&.
 .PP
 \fBParameters:\fP
 .RS 4
@@ -489,7 +459,7 @@ It should be noted that is algorithm is considered the intellectual property of 
 .br
 \fIsize\fP number of samples in each recording\&. MUST be a power of two\&.
 .br
-\fIsamplingRate\fP the sampling frequency in Hz or Samples/second
+\fIsamplingRate\fP sampling frequency in Hz or Samples/second
 .RE
 .PP
 \fBReturns:\fP
@@ -567,136 +537,136 @@ Definition at line 48 of file process\&.hpp\&.
 110     }
 .fi
 .SS "std::map<\fBSide\fP, \fBDataParams\fP> avda::ReadParams (autofilename)"
-Reads the previously computated parameters found in the specified file\&.
+Reads the previously computed parameters found in the specified file\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIfilename\fP the absolute or relative path to the file containing the patient data to read
+\fIfilename\fP absolute or relative path to the file containing the patient data to read
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-the patient parameters read for each side 
+patient parameters read for each side 
 .RE
 .PP
 
 .PP
-Definition at line 141 of file fileio\&.hpp\&.
+Definition at line 131 of file fileio\&.hpp\&.
 .PP
 .nf
-141                                                        {
-142         std::map<Side, DataParams> myMap;
-143         DataParams leftparams;
-144         DataParams rightparams;
-145 
-146         std::ifstream file(filename\&.c_str());
-147         std::string leftline;
-148         std::string rightline;
-149         std::string leftsearch = "Left";
-150         std::string rightsearch = "Right";
-151         std::string paramstring;
-152         std::string lfreqstr;
-153         std::string lnoisestr;
-154         std::string rfreqstr;
-155         std::string rnoisestr;
-156         uint32 lcnt = 0;
-157         uint32 rcnt = 0;
-158         float32 lfreqval;
-159         float32 lnoiseval;
-160         float32 rfreqval;
-161         float32 rnoiseval;
-162 
-163         /*
-164          * if statement which uses ifstream function to open patient file 
-165          * filename)
-166          */
-167         if(file\&.is_open()) {
-168             /*
-169              * While statement to find the first Left line and save to 
-170              *leftline as string\&.
-171              */
-172             while (getline(file, leftline)) {
-173                 if(leftline\&.find(leftsearch, 0) != std::string::npos) {
-174                     break;
-175                 }
-176 
+131                                                        {
+132         std::map<Side, DataParams> params;
+133         DataParams leftparams;
+134         DataParams rightparams;
+135 
+136         std::ifstream file(filename\&.c_str());
+137         std::string leftline;
+138         std::string rightline;
+139         std::string leftsearch = "Left";
+140         std::string rightsearch = "Right";
+141         std::string paramstring;
+142         std::string lfreqstr;
+143         std::string lnoisestr;
+144         std::string rfreqstr;
+145         std::string rnoisestr;
+146         uint32 lcnt = 0;
+147         uint32 rcnt = 0;
+148         float32 lfreqval;
+149         float32 lnoiseval;
+150         float32 rfreqval;
+151         float32 rnoiseval;
+152 
+153         /*
+154          * if statement which uses ifstream function to open patient file 
+155          * filename)
+156          */
+157         if(file\&.is_open()) {
+158             /*
+159              * While statement to find the first Left line and save to 
+160              *leftline as string\&.
+161              */
+162             while (getline(file, leftline)) {
+163                 if(leftline\&.find(leftsearch, 0) != std::string::npos) {
+164                     break;
+165                 }
+166 
+167             }
+168 
+169             /*
+170              * While statement to find first right line and save to rightline
+171              * as string\&.
+172              */
+173             while (getline(file,rightline)) {
+174                 if(rightline\&.find(rightsearch, 0) != std::string::npos) {
+175                     break;
+176                 }
 177             }
 178 
-179             /*
-180              * While statement to find first right line and save to rightline
-181              * as string\&.
-182              */
-183             while (getline(file,rightline)) {
-184                 if(rightline\&.find(rightsearch, 0) != std::string::npos) {
-185                     break;
-186                 }
-187             }
-188 
-189             // Code to break leftline and rightline into its parts
-190             std::stringstream lss(leftline);
-191             std::stringstream rss(rightline);
-192 
-193             while(getline(lss,paramstring, ',')) {
-194                 lcnt++;
-195 
-196                 if(lcnt == 3) {
-197                     lfreqstr = paramstring;
-198                 }
-199 
-200                 else if(lcnt == 4) {
-201                     lnoisestr = paramstring;
-202                 }
-203             }
-204 
-205             while(getline(rss,paramstring, ',')) {
-206                 rcnt++;
-207 
-208                 if(rcnt == 3) {
-209                     rfreqstr = paramstring;
-210                 }
-211 
-212                 else if(rcnt == 4) {
-213                     rnoisestr = paramstring;
-214                 }
-215             }
-216 
-217             /*
-218              * Statement to convert lfreq, lnoise, rfreq, and rnoise from
-219              * strings to floats\&.
-220              * */
-221             lfreqval = atof(lfreqstr\&.c_str());
-222             lnoiseval = atof(lnoisestr\&.c_str());
-223             rfreqval = atof(rfreqstr\&.c_str());
-224             rnoiseval = atof(rnoisestr\&.c_str());
-225 
-226             file\&.close();
-227         }
-228 
-229         else {
-230             throw std::runtime_error("The patient file could not be opened\&.");
-231         }
-232 
-233         leftparams\&.freq = lfreqval;
-234         leftparams\&.noise = lnoiseval;
-235         rightparams\&.freq = rfreqval;
-236         rightparams\&.noise = rnoiseval;
-237 
-238         myMap[Side::Left] = leftparams;
-239         myMap[Side::Right] = rightparams;
-240 
-241         return myMap;
-242     }
+179             // Code to break leftline and rightline into its parts
+180             std::stringstream lss(leftline);
+181             std::stringstream rss(rightline);
+182 
+183             while(getline(lss,paramstring, ',')) {
+184                 lcnt++;
+185 
+186                 if(lcnt == 3) {
+187                     lfreqstr = paramstring;
+188                 }
+189 
+190                 else if(lcnt == 4) {
+191                     lnoisestr = paramstring;
+192                 }
+193             }
+194 
+195             while(getline(rss,paramstring, ',')) {
+196                 rcnt++;
+197 
+198                 if(rcnt == 3) {
+199                     rfreqstr = paramstring;
+200                 }
+201 
+202                 else if(rcnt == 4) {
+203                     rnoisestr = paramstring;
+204                 }
+205             }
+206 
+207             /*
+208              * Statement to convert lfreq, lnoise, rfreq, and rnoise from
+209              * strings to floats\&.
+210              * */
+211             lfreqval = atof(lfreqstr\&.c_str());
+212             lnoiseval = atof(lnoisestr\&.c_str());
+213             rfreqval = atof(rfreqstr\&.c_str());
+214             rnoiseval = atof(rnoisestr\&.c_str());
+215 
+216             file\&.close();
+217         }
+218 
+219         else {
+220             throw std::runtime_error("The patient file could not be opened\&.");
+221         }
+222 
+223         leftparams\&.freq = lfreqval;
+224         leftparams\&.noise = lnoiseval;
+225         rightparams\&.freq = rfreqval;
+226         rightparams\&.noise = rnoiseval;
+227 
+228         params[Side::Left] = leftparams;
+229         params[Side::Right] = rightparams;
+230 
+231         return params;
+232     }
 .fi
 .SS "void avda::smooth (\fBfloat32\fP *data, \fBuint32\fPsize, \fBuint16\fPorder)"
 Applies an nth-order moving-average filter to a discrete signal\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIdata\fP the array containing the signal to which the filter should be applied
+\fIdata\fP array containing the signal to which the filter should be applied
 .br
-\fIsize\fP the number of elements in the data array
+\fIsize\fP number of elements in the data array
 .br
-\fIorder\fP the order of the filter 
+\fIorder\fP order of the filter 
 .RE
 .PP
 
@@ -723,61 +693,51 @@ Definition at line 250 of file sigmath\&.hpp\&.
 266         }
 267     }
 .fi
-.SS "void avda::WriteParams (std::map< Side, \fBDataParams\fP >myMap, autofilename)"
+.SS "void avda::WriteParams (std::map< Side, \fBDataParams\fP >params, autofilename)"
 Writes (appends) the passed parameters to the specified file\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fImyMap\fP contains the parameters to be written
+\fIparams\fP parameters to be written
 .RE
 .PP
 the patient CSV file's filename 
 .PP
-Definition at line 251 of file fileio\&.hpp\&.
+Definition at line 241 of file fileio\&.hpp\&.
 .PP
 .nf
-251                                                                     {
-252         char temp[80];
-253         std::ofstream file(filename\&.c_str(),
-254                 std::ofstream::out | std::ofstream::app);
-255 
-256         //Gives pointer measurementtime a data type of time_t\&.
-257         time_t measurementtime;
-258         time(&measurementtime); //Gets the current time\&.
-259         strftime(temp, 80, "%c", localtime(&measurementtime));
-260         std::string fTime = std::string(temp);
-261 
-262         //if statement to print the Left side parameters to the patient file\&.
-263         if(file\&.is_open()) {
-264             file << fTime + "," + "Left" + ","
-265                 + std::to_string(myMap[Side::Left]\&.freq) 
-266                 + ", " + std::to_string(myMap[Side::Left]\&.noise) << std::endl;
-267         }
-268 
-269         //if statement to print the Right side parameters to the patient file\&.
-270         if(file\&.is_open()) {
-271             file << fTime + "," + "Right" + ","
-272                 + std::to_string(myMap[Side::Right]\&.freq) 
-273                 + ", " + std::to_string(myMap[Side::Right]\&.noise) << std::endl;
-274         }
-275 
-276         else {
-277             std::cout << "Patient file can not be opened!" << std::endl;
-278         }
-279 
-280         file\&.close();
-281     }
+241                                                                      {
+242         char temp[80];
+243         std::ofstream file(filename\&.c_str(),
+244                 std::ofstream::out | std::ofstream::app);
+245 
+246         //Gives pointer measurementtime a data type of time_t\&.
+247         time_t measurementtime;
+248         time(&measurementtime); //Gets the current time\&.
+249         strftime(temp, 80, "%c", localtime(&measurementtime));
+250         std::string fTime = std::string(temp);
+251 
+252         //if statement to print the Left side parameters to the patient file\&.
+253         if(file\&.is_open()) {
+254             file << fTime + "," + "Left" + ","
+255                 + std::to_string(params[Side::Left]\&.freq) 
+256                 + ", " + std::to_string(params[Side::Left]\&.noise) << std::endl;
+257         }
+258 
+259         //if statement to print the Right side parameters to the patient file\&.
+260         if(file\&.is_open()) {
+261             file << fTime + "," + "Right" + ","
+262                 + std::to_string(params[Side::Right]\&.freq) 
+263                 + ", " + std::to_string(params[Side::Right]\&.noise) << std::endl;
+264         }
+265 
+266         else {
+267             std::cout << "Patient file can not be opened!" << std::endl;
+268         }
+269 
+270         file\&.close();
+271     }
 .fi
-.SH "Variable Documentation"
-.PP 
-.SS "const std::string avda::CSV_HEADER = 'Time,\fBSide\fP,Frequency,Noise Level'"
-First line of CSV data file, which declares columns\&. 
-.PP
-Definition at line 25 of file fileio\&.hpp\&.
-.SS "const std::string avda::PATIENT_PATH = '/home/pi/patients/'"
-Absolute path to the folder containing the patients' data 
-.PP
-Definition at line 30 of file fileio\&.hpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

@@ -49,8 +49,6 @@ Contains a program to test the \fBprocess()\fP function\&.
 \fBAuthor:\fP
 .RS 4
 Samuel Andrew Wisner, awisner94@gmail.com 
-.PP
-Nicholas K\&. Nolan 
 .RE
 .PP
 
@@ -61,38 +59,38 @@ Definition in file \fBprocess_test\&.cpp\fP\&.
 .SS "#define COUNT   131072"
 
 .PP
-Definition at line 18 of file process_test\&.cpp\&.
+Definition at line 17 of file process_test\&.cpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "int main (intargc, char **argv)"
 Tests the \fBprocess()\fP function from \fBprocess\&.hpp\fP\&. 
 .PP
-Definition at line 26 of file process_test\&.cpp\&.
+Definition at line 25 of file process_test\&.cpp\&.
 .PP
 .nf
-26                                 {
-27     int file = open("/home/pi/avda/etc/audio/test\&.raw", O_RDONLY);
-28 
-29     if(file < 0) {
-30         cerr << "File unreadable!" << endl;
-31         return -1;
-32     }
-33 
-34     float32* buffer = (float32*)malloc(COUNT * sizeof(float32));
-35     int charRead = read(file, buffer, COUNT * sizeof(float32));
-36 
-37     if(charRead < COUNT) {
-38         cerr << "Too few bytes read!" << endl;
-39         return -1;
-40     }
-41 
-42     close(file);
-43 
-44     DataParams params = process(buffer, COUNT, SAMPLE_FREQ);
-45     free(buffer);
-46     cout << "Cutoff: " << params\&.freq << endl;
-47     cout << "Noise: " << params\&.noise << endl;
-48 }
+25                                 {
+26     int file = open("/home/pi/avda/etc/audio/test\&.raw", O_RDONLY);
+27 
+28     if(file < 0) {
+29         cerr << "File unreadable!" << endl;
+30         return -1;
+31     }
+32 
+33     float32* buffer = (float32*)malloc(COUNT * sizeof(float32));
+34     int charRead = read(file, buffer, COUNT * sizeof(float32));
+35 
+36     if(charRead < COUNT) {
+37         cerr << "Too few bytes read!" << endl;
+38         return -1;
+39     }
+40 
+41     close(file);
+42 
+43     DataParams params = process(buffer, COUNT, SAMPLE_FREQ);
+44     free(buffer);
+45     cout << "Cutoff: " << params\&.freq << endl;
+46     cout << "Noise: " << params\&.noise << endl;
+47 }
 .fi
 .SH "Author"
 .PP 

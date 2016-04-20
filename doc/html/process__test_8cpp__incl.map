@@ -1,5 +1,5 @@
 <map id="src/process_test.cpp" name="src/process_test.cpp">
 <area shape="rect" id="node8" href="$definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="407,229,514,256"/>
 <area shape="rect" id="node11" href="$process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="477,80,570,107"/>
-<area shape="rect" id="node13" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="502,155,595,181"/>
+<area shape="rect" id="node13" href="$sigmath_8hpp.html" title="Contains the functions necessary to perform the mathematical operations required by this program..." alt="" coords="502,155,595,181"/>
 </map>

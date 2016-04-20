@@ -20,10 +20,12 @@ var definitions_8hpp =
       [ "Right", "definitions_8hpp.html#af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c", null ]
     ] ],
     [ "BUFFER_SIZE", "definitions_8hpp.html#aca681ed285767aaa2353bf3b42dd60ed", null ],
+    [ "CSV_HEADER", "definitions_8hpp.html#ac686b5c4edb9968dade15aad6e58bdca", null ],
     [ "DET_THRESH", "definitions_8hpp.html#aa15adfcc96559f1b86210d217edd3afc", null ],
     [ "DURATION", "definitions_8hpp.html#ada7a88c013312e76596a2000cc8277fb", null ],
     [ "ERROR", "definitions_8hpp.html#a876fcacb67d51738e846a3312dc08fbb", null ],
     [ "MAX_DROP_FREQ", "definitions_8hpp.html#ab506614aee9be52f401d8d573a8d172c", null ],
+    [ "PATIENT_PATH", "definitions_8hpp.html#a5736990e7ea949fc1971afa00e421f16", null ],
     [ "REC_COUNT", "definitions_8hpp.html#a2fd18fd694a2918f7d73eba821fd10b2", null ],
     [ "SAMPLE_COUNT", "definitions_8hpp.html#ad3af99f5e7cbf2af51be580e91faa934", null ],
     [ "SAMPLE_FREQ", "definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4", null ],

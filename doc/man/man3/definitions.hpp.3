@@ -91,6 +91,9 @@ Contains declarations of system-independant (universal size) integers and float 
 
 .in +1c
 .ti -1c
+.RI "const std::string \fBCSV_HEADER\fP = 'Time,Side,Frequency,Noise Level'"
+.br
+.ti -1c
 .RI "const \fBuint16\fP \fBDET_THRESH\fP = 5000"
 .br
 .ti -1c
@@ -101,6 +104,9 @@ Contains declarations of system-independant (universal size) integers and float 
 .br
 .ti -1c
 .RI "const \fBuint16\fP \fBMAX_DROP_FREQ\fP = 7000"
+.br
+.ti -1c
+.RI "const std::string \fBPATIENT_PATH\fP = '/home/pi/patients/'"
 .br
 .ti -1c
 .RI "const \fBuint8\fP \fBREC_COUNT\fP = 6"
@@ -147,7 +153,7 @@ Definition at line 20 of file definitions\&.hpp\&.
 .SS "typedef std::complex<\fBfloat32\fP> \fBcfloat32\fP"
 Complex float32's\&. 
 .PP
-Definition at line 92 of file definitions\&.hpp\&.
+Definition at line 102 of file definitions\&.hpp\&.
 .SS "typedef float \fBfloat32\fP"
 
 .PP
@@ -193,39 +199,47 @@ Definition at line 21 of file definitions\&.hpp\&.
 .SS "const \fBuint32\fP BUFFER_SIZE = \fBSAMPLE_COUNT\fP * sizeof(\fBfloat32\fP)"
 Size of the sample buffer\&. 
 .PP
-Definition at line 84 of file definitions\&.hpp\&.
+Definition at line 94 of file definitions\&.hpp\&.
+.SS "const std::string CSV_HEADER = 'Time,Side,Frequency,Noise Level'"
+First line of CSV data file declaring column names\&. 
+.PP
+Definition at line 42 of file definitions\&.hpp\&.
 .SS "const \fBuint16\fP DET_THRESH = 5000"
 Threshold for the differential-parameters product to be considered indicative of a vasospasm\&. 
 .PP
-Definition at line 43 of file definitions\&.hpp\&.
+Definition at line 48 of file definitions\&.hpp\&.
 .SS "const \fBuint8\fP DURATION = 6"
 Duration of recording in seconds\&. 
 .PP
-Definition at line 48 of file definitions\&.hpp\&.
+Definition at line 53 of file definitions\&.hpp\&.
 .SS "const \fBsint8\fP ERROR = -1"
 Error integer returned when the program must exit with an error\&. 
 .PP
-Definition at line 53 of file definitions\&.hpp\&.
+Definition at line 58 of file definitions\&.hpp\&.
 .SS "const \fBuint16\fP MAX_DROP_FREQ = 7000"
 \fBMaximum\fP drop-off frequency considered valid\&. 
 .PP
-Definition at line 58 of file definitions\&.hpp\&.
+Definition at line 63 of file definitions\&.hpp\&.
+.SS "const std::string PATIENT_PATH = '/home/pi/patients/'"
+Absolute path to the folder containing the patients files 
+.PP
+Definition at line 68 of file definitions\&.hpp\&.
 .SS "const \fBuint8\fP REC_COUNT = 6"
 Number of recordings (both left and right) to make\&. 
 .PP
-Definition at line 63 of file definitions\&.hpp\&.
+Definition at line 73 of file definitions\&.hpp\&.
 .SS "const \fBuint32\fP SAMPLE_COUNT = 131072"
 Number of samples to use in processing the recordings\&. Must be a power of two\&. SAMPLE_COUNT / SAMPLE_FREQ < DURATION must be true\&. 
 .PP
-Definition at line 69 of file definitions\&.hpp\&.
+Definition at line 79 of file definitions\&.hpp\&.
 .SS "const \fBuint16\fP SAMPLE_FREQ = 24000"
 Recording sampling rate in Hz (NOT kHz)\&. 
 .PP
-Definition at line 74 of file definitions\&.hpp\&.
+Definition at line 84 of file definitions\&.hpp\&.
 .SS "const std::string TEMP_FILE = '\&.temp'"
 Filename of the temporary recording file\&. 
 .PP
-Definition at line 79 of file definitions\&.hpp\&.
+Definition at line 89 of file definitions\&.hpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.
