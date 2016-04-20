@@ -1,4 +1,4 @@
-# vasospasm-detector
+# The Automatic Vasospasm Detection Application
 
 ## Introduction
 The Automatic Vasospasm Detection Application (or Algorithm, depending on the
