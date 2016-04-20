@@ -114,4 +114,4 @@
 \contentsline {subsection}{\numberline {8.23.3}Function Documentation}{56}{subsection.8.23.3}
 \contentsline {subsubsection}{\numberline {8.23.3.1}main}{56}{subsubsection.8.23.3.1}
 \contentsline {section}{\numberline {8.24}stdin\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}clear\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}test.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}cpp}{57}{section.8.24}
-\contentsline {chapter}{Index}{58}{section*.28}
+\contentsline {chapter}{Index}{58}{section*.29}
