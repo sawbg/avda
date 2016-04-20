@@ -107,8 +107,8 @@ int main(int argc, char** argv) {
 
 		for(uint8 i = 0; i < 2; i++) {
 			Side side = (Side)i;
-			float comp = (results[side].freq - baseParams[side].freq) 
-				* (baseParams[side].noise - results[side].noise);
+			float comp = fabs(results[side].freq - baseParams[side].freq) 
+				* fabs(baseParams[side].noise - results[side].noise);
 			comparison[side] = comp > DET_THRESH;
 		}
 
