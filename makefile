@@ -24,8 +24,5 @@ patient-name-test:
 process-test:
 	$(GCC) src/process_test.cpp -o bin/proctest
 
-read-params-test:
-	$(GCC) src/read_params_test.cpp -o bin/rptest
-
 stdin-clear-test:
 	$(GCC) src/stdin_clear_test.cpp -o bin/cleartest
