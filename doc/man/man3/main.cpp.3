@@ -148,8 +148,8 @@ Definition at line 30 of file main\&.cpp\&.
 107 
 108         for(uint8 i = 0; i < 2; i++) {
 109             Side side = (Side)i;
-110             float comp = (results[side]\&.freq - baseParams[side]\&.freq) 
-111                 * (baseParams[side]\&.noise - results[side]\&.noise);
+110             float comp = fabs(results[side]\&.freq - baseParams[side]\&.freq) 
+111                 * fabs(baseParams[side]\&.noise - results[side]\&.noise);
 112             comparison[side] = comp > DET_THRESH;
 113         }
 114 

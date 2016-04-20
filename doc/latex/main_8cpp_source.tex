@@ -102,8 +102,8 @@
 00107 
 00108         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} i = 0; i < 2; i++) \{
 00109             \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side} side = (\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{Side})i;
-00110             \textcolor{keywordtype}{float} comp = (results[side].freq - baseParams[side].freq) 
-00111                 * (baseParams[side].noise - results[side].noise);
+00110             \textcolor{keywordtype}{float} comp = fabs(results[side].freq - baseParams[side].freq) 
+00111                 * fabs(baseParams[side].noise - results[side].noise);
 00112             comparison[side] = comp > \hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{DET\_THRESH};
 00113         \}
 00114 

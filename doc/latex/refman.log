@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.2)  20 APR 2016 01:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.2)  20 APR 2016 04:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,10 +1302,10 @@ type pdf)
 
 <use namespaceavda_a5196cce27286d08ca144a460caee7839_cgraph.pdf>
 Package pdftex.def Info: namespaceavda_a5196cce27286d08ca144a460caee7839_cgraph
-.pdf used on input line 704.
+.pdf used on input line 703.
 (pdftex.def)             Requested size: 274.0pt x 366.03183pt.
 
-Underfull \vbox (badness 3525) has occurred while \output is active []
+Underfull \vbox (badness 7238) has occurred while \output is active []
 
  [19]
 <namespaceavda_a5196cce27286d08ca144a460caee7839_icgraph.pdf, id=1015, 232.87pt
@@ -1315,7 +1315,7 @@ File: namespaceavda_a5196cce27286d08ca144a460caee7839_icgraph.pdf Graphic file
 
 <use namespaceavda_a5196cce27286d08ca144a460caee7839_icgraph.pdf>
 Package pdftex.def Info: namespaceavda_a5196cce27286d08ca144a460caee7839_icgrap
-h.pdf used on input line 716.
+h.pdf used on input line 715.
 (pdftex.def)             Requested size: 232.0pt x 100.00409pt.
  [20 <./namespaceavda_a5196cce27286d08ca144a460caee7839_cgraph.pdf> <./namespac
 eavda_a5196cce27286d08ca144a460caee7839_icgraph.pdf
@@ -1324,7 +1324,7 @@ pdfTeX warning: pdflatex (file ./namespaceavda_a5196cce27286d08ca144a460caee783
 9_icgraph.pdf): PDF inclusion: multiple pdfs with page group included in a sing
 le page
 >]
-Underfull \hbox (badness 10000) detected at line 735
+Underfull \hbox (badness 10000) detected at line 734
 [][][]
  []
 
@@ -1336,7 +1336,7 @@ File: namespaceavda_a46dc980b65ddfc24749ce25c1290e158_icgraph.pdf Graphic file
 
 <use namespaceavda_a46dc980b65ddfc24749ce25c1290e158_icgraph.pdf>
 Package pdftex.def Info: namespaceavda_a46dc980b65ddfc24749ce25c1290e158_icgrap
-h.pdf used on input line 854.
+h.pdf used on input line 853.
 (pdftex.def)             Requested size: 255.0pt x 99.9995pt.
 
 <namespaceavda_a22583ba7f11b69c955b13155bf9a739d_icgraph.pdf, id=1060, 345.29pt
@@ -1346,7 +1346,7 @@ File: namespaceavda_a22583ba7f11b69c955b13155bf9a739d_icgraph.pdf Graphic file
 
 <use namespaceavda_a22583ba7f11b69c955b13155bf9a739d_icgraph.pdf>
 Package pdftex.def Info: namespaceavda_a22583ba7f11b69c955b13155bf9a739d_icgrap
-h.pdf used on input line 911.
+h.pdf used on input line 910.
 (pdftex.def)             Requested size: 344.0pt x 100.00102pt.
  [22 <./namespaceavda_a46dc980b65ddfc24749ce25c1290e158_icgraph.pdf>]
 <namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgraph.pdf, id=1074, 255.9562
@@ -1356,7 +1356,7 @@ File: namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgraph.pdf Graphic file
 
 <use namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgraph.pdf>
 Package pdftex.def Info: namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgrap
-h.pdf used on input line 976.
+h.pdf used on input line 975.
 (pdftex.def)             Requested size: 255.0pt x 99.9995pt.
 ) [23 <./namespaceavda_a22583ba7f11b69c955b13155bf9a739d_icgraph.pdf> <./namesp
 aceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec_icgraph.pdf
@@ -1659,7 +1659,7 @@ hvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (64 pages, 323139 bytes).
+Output written on refman.pdf (64 pages, 323235 bytes).
 PDF statistics:
  2217 PDF objects out of 2487 (max. 8388607)
  2059 compressed objects within 21 object streams

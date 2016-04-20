@@ -204,8 +204,8 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="definitions_8hpp.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> i = 0; i &lt; 2; i++) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <a class="code" href="namespaceavda.html#af723e82f0d3d45fda6fdc01f6a492786">Side</a> side = (<a class="code" href="namespaceavda.html#af723e82f0d3d45fda6fdc01f6a492786">Side</a>)i;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordtype">float</span> comp = (results[side].freq - baseParams[side].freq) </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                * (baseParams[side].noise - results[side].noise);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordtype">float</span> comp = fabs(results[side].freq - baseParams[side].freq) </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                * fabs(baseParams[side].noise - results[side].noise);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            comparison[side] = comp &gt; <a class="code" href="definitions_8hpp.html#aa15adfcc96559f1b86210d217edd3afc">DET_THRESH</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Wed Apr 20 2016 01:25:19 for The Automatic Vasospasm Detection Application by
+    <li class="footer">Generated on Wed Apr 20 2016 04:24:02 for The Automatic Vasospasm Detection Application by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
