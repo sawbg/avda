@@ -377,76 +377,79 @@ Definition at line 33 of file fileio\&.hpp\&.
 48             std::cin >> mname;
 49             std::cout << "Last name: ";
 50             std::cin >> lname;
-51 
-52             // creates new std::string with path to patient file
-53             patientname = PATIENT_PATH + lname + ", " + fname
-54                 + " " + mname + "\&.csv";
-55 
-56             // prints out patientname\&. shows user the path to the patient file
-57             //std::cout << patientname << std::endl << std::endl;
-58             std::ifstream file(patientname\&.c_str());
-59 
-60             if (file\&.good()) {
-61                 track1 = 1;
-62             }
-63 
-64             /*
-65              * Compares patientname to existing files and lets user know
-66              * if the file does not exist\&.
-67              */
-68             else if (!file\&.good()) {
-69                 /* 
-70                  * Do while statement to continue asking user about the file
-71                  * if their input is not acceptable
-72                  */ 
-73                 do {
-74                     std::cout << "Patient file does not exist, would you like "
-75                         "to create file or re-enter their name?" << std::endl;
-76                     std::cout << "  *Type 'create' and press enter key "
-77                         "to create the patient file\&." << std::endl;
-78                     std::cout << "  *Type 'reenter' and press enter key "
-79                         "to re-enter the patients name\&." << std::endl;
-80                     std::cout << std::endl;
-81                     std::cin >> patfil;
-82 
-83                     /* 
-84                      * patfil equals create, track1 and 2 will increase
-85                      * escaping both do while loops
-86                      */
-87                     if(patfil == "create") {
-88                         std::ofstream createfile(patientname\&.c_str());
-89                         track1 = 1;
-90                         track2 = 1;
-91                         track3 = 1;
-92                         createfile << CSV_HEADER << std::endl;
-93                         createfile\&.flush();
-94                         createfile\&.close();
-95                     }
-96 
-97                     /*
-98                      *patfil equals renter, track1 will remain zero allowing
-99                      *user to reenter the patient name\&.
-100                      */
-101                     else if(patfil == "reenter") {
-102                         track1 = 0;
-103                         track2 = 1;
-104                     }
-105 
-106                     /*
-107                      *The users input was neither create or reenter\&. User
-108                      *must enter patient name again\&.
-109                      */
-110                     else {
-111                         std::cout << std::endl;
-112                         std::cout << "Your input is not acceptable\&." << std::endl;
+51             std::cout << std::endl;
+52 
+53             // creates new std::string with path to patient file
+54             patientname = PATIENT_PATH + lname + ", " + fname
+55                 + " " + mname + "\&.csv";
+56 
+57             // prints out patientname\&. shows user the path to the patient file
+58             //std::cout << patientname << std::endl << std::endl;
+59             std::ifstream file(patientname\&.c_str());
+60 
+61             if (file\&.good()) {
+62                 track1 = 1;
+63             }
+64 
+65             /*
+66              * Compares patientname to existing files and lets user know
+67              * if the file does not exist\&.
+68              */
+69             else if (!file\&.good()) {
+70                 /* 
+71                  * Do while statement to continue asking user about the file
+72                  * if their input is not acceptable
+73                  */ 
+74                 do {
+75                     std::cout << "Patient file does not exist, would you like "
+76                         "to create file or re-enter their name?" << std::endl;
+77                     std::cout << "  *Type 'create' and press enter key "
+78                         "to create the patient file\&." << std::endl;
+79                     std::cout << "  *Type 'reenter' and press enter key "
+80                         "to re-enter the patients name\&." << std::endl;
+81                     std::cout << std::endl;
+82                     std::cin >> patfil;
+83 
+84                     /* 
+85                      * patfil equals create, track1 and 2 will increase
+86                      * escaping both do while loops
+87                      */
+88                     if(patfil == "create") {
+89                         std::ofstream createfile(patientname\&.c_str());
+90                         track1 = 1;
+91                         track2 = 1;
+92                         track3 = 1;
+93                         createfile << CSV_HEADER << std::endl;
+94                         createfile\&.flush();
+95                         createfile\&.close();
+96                         std::cout << std::endl;
+97                     }
+98 
+99                     /*
+100                      *patfil equals renter, track1 will remain zero allowing
+101                      *user to reenter the patient name\&.
+102                      */
+103                     else if(patfil == "reenter") {
+104                         track1 = 0;
+105                         track2 = 1;
+106                     }
+107 
+108                     /*
+109                      *The users input was neither create or reenter\&. User
+110                      *must enter patient name again\&.
+111                      */
+112                     else {
 113                         std::cout << std::endl;
-114                     }
-115                 }while(track2 == 0);
-116             }
-117         } while (track1 == 0);
-118 
-119         return patientname; //returns the path to the patient file
-120     }
+114                         std::cout << "Your input is not acceptable\&." << std::endl;
+115                         std::cout << std::endl;
+116                     }
+117                 } while(track2 == 0);
+118             }
+119         } while (track1 == 0);
+120 
+121         getchar();  // removes that pesky newline character from stdin buffer
+122         return patientname; //returns the path to the patient file
+123     }
 .fi
 .SS "\fBDataParams\fP avda::process (\fBfloat32\fP *data, \fBuint32\fPsize, \fBfloat32\fPsamplingRate)"
 Analyzes a single recording to determine the drop-off frequency and average noiseband noise power\&.
@@ -550,111 +553,111 @@ patient parameters read for each side
 .PP
 
 .PP
-Definition at line 131 of file fileio\&.hpp\&.
+Definition at line 134 of file fileio\&.hpp\&.
 .PP
 .nf
-131                                                        {
-132         std::map<Side, DataParams> params;
-133         DataParams leftparams;
-134         DataParams rightparams;
-135 
-136         std::ifstream file(filename\&.c_str());
-137         std::string leftline;
-138         std::string rightline;
-139         std::string leftsearch = "Left";
-140         std::string rightsearch = "Right";
-141         std::string paramstring;
-142         std::string lfreqstr;
-143         std::string lnoisestr;
-144         std::string rfreqstr;
-145         std::string rnoisestr;
-146         uint32 lcnt = 0;
-147         uint32 rcnt = 0;
-148         float32 lfreqval;
-149         float32 lnoiseval;
-150         float32 rfreqval;
-151         float32 rnoiseval;
-152 
-153         /*
-154          * if statement which uses ifstream function to open patient file 
-155          * filename)
-156          */
-157         if(file\&.is_open()) {
-158             /*
-159              * While statement to find the first Left line and save to 
-160              *leftline as string\&.
-161              */
-162             while (getline(file, leftline)) {
-163                 if(leftline\&.find(leftsearch, 0) != std::string::npos) {
-164                     break;
-165                 }
-166 
-167             }
-168 
-169             /*
-170              * While statement to find first right line and save to rightline
-171              * as string\&.
-172              */
-173             while (getline(file,rightline)) {
-174                 if(rightline\&.find(rightsearch, 0) != std::string::npos) {
-175                     break;
-176                 }
-177             }
-178 
-179             // Code to break leftline and rightline into its parts
-180             std::stringstream lss(leftline);
-181             std::stringstream rss(rightline);
-182 
-183             while(getline(lss,paramstring, ',')) {
-184                 lcnt++;
+134                                                        {
+135         std::map<Side, DataParams> params;
+136         DataParams leftparams;
+137         DataParams rightparams;
+138 
+139         std::ifstream file(filename\&.c_str());
+140         std::string leftline;
+141         std::string rightline;
+142         std::string leftsearch = "Left";
+143         std::string rightsearch = "Right";
+144         std::string paramstring;
+145         std::string lfreqstr;
+146         std::string lnoisestr;
+147         std::string rfreqstr;
+148         std::string rnoisestr;
+149         uint32 lcnt = 0;
+150         uint32 rcnt = 0;
+151         float32 lfreqval;
+152         float32 lnoiseval;
+153         float32 rfreqval;
+154         float32 rnoiseval;
+155 
+156         /*
+157          * if statement which uses ifstream function to open patient file 
+158          * filename)
+159          */
+160         if(file\&.is_open()) {
+161             /*
+162              * While statement to find the first Left line and save to 
+163              *leftline as string\&.
+164              */
+165             while (getline(file, leftline)) {
+166                 if(leftline\&.find(leftsearch, 0) != std::string::npos) {
+167                     break;
+168                 }
+169 
+170             }
+171 
+172             /*
+173              * While statement to find first right line and save to rightline
+174              * as string\&.
+175              */
+176             while (getline(file,rightline)) {
+177                 if(rightline\&.find(rightsearch, 0) != std::string::npos) {
+178                     break;
+179                 }
+180             }
+181 
+182             // Code to break leftline and rightline into its parts
+183             std::stringstream lss(leftline);
+184             std::stringstream rss(rightline);
 185 
-186                 if(lcnt == 3) {
-187                     lfreqstr = paramstring;
-188                 }
-189 
-190                 else if(lcnt == 4) {
-191                     lnoisestr = paramstring;
-192                 }
-193             }
-194 
-195             while(getline(rss,paramstring, ',')) {
-196                 rcnt++;
+186             while(getline(lss,paramstring, ',')) {
+187                 lcnt++;
+188 
+189                 if(lcnt == 3) {
+190                     lfreqstr = paramstring;
+191                 }
+192 
+193                 else if(lcnt == 4) {
+194                     lnoisestr = paramstring;
+195                 }
+196             }
 197 
-198                 if(rcnt == 3) {
-199                     rfreqstr = paramstring;
-200                 }
-201 
-202                 else if(rcnt == 4) {
-203                     rnoisestr = paramstring;
-204                 }
-205             }
-206 
-207             /*
-208              * Statement to convert lfreq, lnoise, rfreq, and rnoise from
-209              * strings to floats\&.
-210              * */
-211             lfreqval = atof(lfreqstr\&.c_str());
-212             lnoiseval = atof(lnoisestr\&.c_str());
-213             rfreqval = atof(rfreqstr\&.c_str());
-214             rnoiseval = atof(rnoisestr\&.c_str());
-215 
-216             file\&.close();
-217         }
+198             while(getline(rss,paramstring, ',')) {
+199                 rcnt++;
+200 
+201                 if(rcnt == 3) {
+202                     rfreqstr = paramstring;
+203                 }
+204 
+205                 else if(rcnt == 4) {
+206                     rnoisestr = paramstring;
+207                 }
+208             }
+209 
+210             /*
+211              * Statement to convert lfreq, lnoise, rfreq, and rnoise from
+212              * strings to floats\&.
+213              * */
+214             lfreqval = atof(lfreqstr\&.c_str());
+215             lnoiseval = atof(lnoisestr\&.c_str());
+216             rfreqval = atof(rfreqstr\&.c_str());
+217             rnoiseval = atof(rnoisestr\&.c_str());
 218 
-219         else {
-220             throw std::runtime_error("The patient file could not be opened\&.");
-221         }
-222 
-223         leftparams\&.freq = lfreqval;
-224         leftparams\&.noise = lnoiseval;
-225         rightparams\&.freq = rfreqval;
-226         rightparams\&.noise = rnoiseval;
-227 
-228         params[Side::Left] = leftparams;
-229         params[Side::Right] = rightparams;
+219             file\&.close();
+220         }
+221 
+222         else {
+223             throw std::runtime_error("The patient file could not be opened\&.");
+224         }
+225 
+226         leftparams\&.freq = lfreqval;
+227         leftparams\&.noise = lnoiseval;
+228         rightparams\&.freq = rfreqval;
+229         rightparams\&.noise = rnoiseval;
 230 
-231         return params;
-232     }
+231         params[Side::Left] = leftparams;
+232         params[Side::Right] = rightparams;
+233 
+234         return params;
+235     }
 .fi
 .SS "void avda::smooth (\fBfloat32\fP *data, \fBuint32\fPsize, \fBuint16\fPorder)"
 Applies an nth-order moving-average filter to a discrete signal\&.
@@ -702,40 +705,40 @@ Writes (appends) the passed parameters to the specified file\&.
 .PP
 the patient CSV file's filename 
 .PP
-Definition at line 241 of file fileio\&.hpp\&.
+Definition at line 244 of file fileio\&.hpp\&.
 .PP
 .nf
-241                                                                      {
-242         char temp[80];
-243         std::ofstream file(filename\&.c_str(),
-244                 std::ofstream::out | std::ofstream::app);
-245 
-246         //Gives pointer measurementtime a data type of time_t\&.
-247         time_t measurementtime;
-248         time(&measurementtime); //Gets the current time\&.
-249         strftime(temp, 80, "%c", localtime(&measurementtime));
-250         std::string fTime = std::string(temp);
-251 
-252         //if statement to print the Left side parameters to the patient file\&.
-253         if(file\&.is_open()) {
-254             file << fTime + "," + "Left" + ","
-255                 + std::to_string(params[Side::Left]\&.freq) 
-256                 + ", " + std::to_string(params[Side::Left]\&.noise) << std::endl;
-257         }
-258 
-259         //if statement to print the Right side parameters to the patient file\&.
-260         if(file\&.is_open()) {
-261             file << fTime + "," + "Right" + ","
-262                 + std::to_string(params[Side::Right]\&.freq) 
-263                 + ", " + std::to_string(params[Side::Right]\&.noise) << std::endl;
-264         }
-265 
-266         else {
-267             std::cout << "Patient file can not be opened!" << std::endl;
-268         }
-269 
-270         file\&.close();
-271     }
+244                                                                      {
+245         char temp[80];
+246         std::ofstream file(filename\&.c_str(),
+247                 std::ofstream::out | std::ofstream::app);
+248 
+249         //Gives pointer measurementtime a data type of time_t\&.
+250         time_t measurementtime;
+251         time(&measurementtime); //Gets the current time\&.
+252         strftime(temp, 80, "%c", localtime(&measurementtime));
+253         std::string fTime = std::string(temp);
+254 
+255         //if statement to print the Left side parameters to the patient file\&.
+256         if(file\&.is_open()) {
+257             file << fTime + "," + "Left" + ","
+258                 + std::to_string(params[Side::Left]\&.freq) 
+259                 + ", " + std::to_string(params[Side::Left]\&.noise) << std::endl;
+260         }
+261 
+262         //if statement to print the Right side parameters to the patient file\&.
+263         if(file\&.is_open()) {
+264             file << fTime + "," + "Right" + ","
+265                 + std::to_string(params[Side::Right]\&.freq) 
+266                 + ", " + std::to_string(params[Side::Right]\&.noise) << std::endl;
+267         }
+268 
+269         else {
+270             std::cout << "Patient file can not be opened!" << std::endl;
+271         }
+272 
+273         file\&.close();
+274     }
 .fi
 .SH "Author"
 .PP 

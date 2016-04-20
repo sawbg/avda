@@ -7,6 +7,6 @@ bug \- Bug List
 .IP "\fBFile \fBfileio\&.hpp\fP \fP" 1c
 file is overly complicated and much more bug-prone than necessary  
 .IP "\fBFile \fBmain\&.cpp\fP \fP" 1c
-extra newline character inserted into stdin buffer after \fBPatientName()\fP is run 
+Errant keystrokes (especially [ENTER]) can cause the next recording(s) to begin rather than waiting for the user to press [ENTER]\&. stdin must be flushed somehow in between recordings\&. 
 .PP
 
