@@ -1,7 +1,7 @@
 /**
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
- * @brief contains the function(s) relating to sound
+ * @brief Contains the function(s) relating to sound.
  */
 
 #ifndef sound_H
