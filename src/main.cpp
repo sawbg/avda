@@ -2,8 +2,9 @@
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @brief Contains the main program.
- * @bug extra newline character inserted into stdin buffer after PatientName()
- * is run
+ * @bug Errant keystrokes (especially [ENTER]) can cause the next recording(s)
+ * to begin rather than waiting for the user to press [ENTER]. stdin must be
+ * flushed somehow in between recordings.
  */
 
 #include <array>
@@ -98,13 +99,14 @@ int main(int argc, char** argv) {
 	}
 
 	free(buffer);  // free buffer to prevent memory leak
-	WriteParams(results, filename);
 
 	// examine likelihood of avdaspasm
-	try {
-		map<Side, DataParams> baseParams = ReadParams(filename);
-		map<Side, bool> comparison;
+	map<Side, DataParams> baseParams = ReadParams(filename);
+	map<Side, bool> comparison;
 
+	if(baseParams[Side::Left].freq != 0 && baseParams[Side::Left].noise != 0
+			&& baseParams[Side::Right].freq != 0
+			&& baseParams[Side::Right].noise != 0) {
 		for(uint8 i = 0; i < 2; i++) {
 			Side side = (Side)i;
 			float comp = fabs(results[side].freq - baseParams[side].freq) 
@@ -123,10 +125,12 @@ int main(int argc, char** argv) {
 		} else {
 			which = "Neither";
 		}
-
+		
 		cout << which << " side seems to show evidence of a vasospasm." << endl;
-	} catch(runtime_error ex) {
+	} else {
 		cout << "These values will be stored as the baseline parameters to "
 			"which all future parameters are compared." << endl;
 	}
+
+	WriteParams(results, filename);
 }

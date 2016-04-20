@@ -48,6 +48,7 @@ namespace avda {
 			std::cin >> mname;
 			std::cout << "Last name: ";
 			std::cin >> lname;
+			std::cout << std::endl;
 
 			// creates new std::string with path to patient file
 			patientname = PATIENT_PATH + lname + ", " + fname
@@ -92,6 +93,7 @@ namespace avda {
 						createfile << CSV_HEADER << std::endl;
 						createfile.flush();
 						createfile.close();
+						std::cout << std::endl;
 					}
 
 					/*
@@ -112,10 +114,11 @@ namespace avda {
 						std::cout << "Your input is not acceptable." << std::endl;
 						std::cout << std::endl;
 					}
-				}while(track2 == 0);
+				} while(track2 == 0);
 			}
 		} while (track1 == 0);
 
+		getchar();  // removes that pesky newline character from stdin buffer
 		return patientname;	//returns the path to the patient file
 	}
 
