@@ -1,7 +1,6 @@
 /**
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
- * @author Nicholas K. Nolan
  * @brief Contains the main program.
  * @bug extra newline character inserted into stdin buffer after PatientName()
  * is run

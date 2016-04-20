@@ -1,7 +1,6 @@
 /**
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
- * @author Nicholas K. Nolan
  * @brief Contains a program to test the process() function.
  */
 

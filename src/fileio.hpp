@@ -2,8 +2,8 @@
  * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @author Nicholas K. Nolan
- * @brief contains functions related to the file I/O use in this program
- * @bug file is overly complicated and much more bug-prone
+ * @brief Contains functions related to file I/O use in this program.
+ * @bug file is overly complicated and much more bug-prone than necessary
  */
 
 #ifndef fileio_H
@@ -20,22 +20,12 @@
 
 namespace avda {
 	/**
-	 * First line of CSV data file, which declares columns.
-	 */
-	const std::string CSV_HEADER = "Time,Side,Frequency,Noise Level";
-
-	/**
-	 * Absolute path to the folder containing the patients' data
-	 */
-	const std::string PATIENT_PATH = "/home/pi/patients/";
-
-	/**
-	 * Prompts a user to enter a first, middle, and last name for a patients and
-	 * creates a file (if necessary) in which all of a patient's data can
-	 * be saved. A newly created file will contain the CSV header for the file's
-	 * data.
+	 * Prompts a user to enter a first, middle, and last name for a patient and
+	 * creates a file (if necessary) in which all of the patient's data
+	 * parameters can be saved. A newly created file will contain the CSV header
+	 *  for the file's data.
 	 *
-	 * Must warn a user if the patient folder does not already exist in order to
+	 * Must warn a user if the patient file does not already exist in order to
 	 * prevent missaving data.
 	 *
 	 * @return the file under which all patient data is saved
@@ -130,16 +120,16 @@ namespace avda {
 	}
 
 	/**
-	 * Reads the previously computated parameters found in the specified
+	 * Reads the previously computed parameters found in the specified
 	 * file.
 	 *
-	 * @param filename the absolute or relative path to the file containing the
+	 * @param filename absolute or relative path to the file containing the
 	 * patient data to read
 	 *
-	 * @return the patient parameters read for each side
+	 * @return patient parameters read for each side
 	 */
 	std::map<Side, DataParams> ReadParams(auto filename) {
-		std::map<Side, DataParams> myMap;
+		std::map<Side, DataParams> params;
 		DataParams leftparams;
 		DataParams rightparams;
 
@@ -235,20 +225,20 @@ namespace avda {
 		rightparams.freq = rfreqval;
 		rightparams.noise = rnoiseval;
 
-		myMap[Side::Left] = leftparams;
-		myMap[Side::Right] = rightparams;
+		params[Side::Left] = leftparams;
+		params[Side::Right] = rightparams;
 
-		return myMap;
+		return params;
 	}
 
 	/**
 	 * Writes (appends) the passed parameters to the specified file.
 	 *
-	 * @param myMap contains the parameters to be written
+	 * @param params parameters to be written
 	 *
 	 * @filename the patient CSV file's filename
 	 */
-	void WriteParams(std::map<Side, DataParams> myMap, auto filename) {
+	void WriteParams(std::map<Side, DataParams> params, auto filename) {
 		char temp[80];
 		std::ofstream file(filename.c_str(),
 				std::ofstream::out | std::ofstream::app);
@@ -262,15 +252,15 @@ namespace avda {
 		//if statement to print the Left side parameters to the patient file.
 		if(file.is_open()) {
 			file << fTime + "," + "Left" + ","
-				+ std::to_string(myMap[Side::Left].freq) 
-				+ ", " + std::to_string(myMap[Side::Left].noise) << std::endl;
+				+ std::to_string(params[Side::Left].freq) 
+				+ ", " + std::to_string(params[Side::Left].noise) << std::endl;
 		}
 
 		//if statement to print the Right side parameters to the patient file.
 		if(file.is_open()) {
 			file << fTime + "," + "Right" + ","
-				+ std::to_string(myMap[Side::Right].freq) 
-				+ ", " + std::to_string(myMap[Side::Right].noise) << std::endl;
+				+ std::to_string(params[Side::Right].freq) 
+				+ ", " + std::to_string(params[Side::Right].noise) << std::endl;
 		}
 
 		else {

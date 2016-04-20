@@ -37,8 +37,13 @@ typedef double float64;
 // Constants
 
 /**
- * Threshold for the differential-parameters product to be considered indicative
- * of a vasospasm.
+ * First line of CSV data file declaring column names.
+ */
+const std::string CSV_HEADER = "Time,Side,Frequency,Noise Level";
+
+/**
+ * Threshold for the differential-parameters product to be considered
+ * indicative of a vasospasm.
  */
 const uint16 DET_THRESH = 5000;
 
@@ -56,6 +61,11 @@ const sint8 ERROR = -1;
  * Maximum drop-off frequency considered valid.
  */
 const uint16 MAX_DROP_FREQ = 7000;
+
+/**
+ * Absolute path to the folder containing the patients files
+ */
+const std::string PATIENT_PATH = "/home/pi/patients/";
 
 /**
  * Number of recordings (both left and right) to make.
@@ -95,7 +105,14 @@ typedef std::complex<float32> cfloat32;
  * Calculated results from processing the audio recordings.
  */
 typedef struct {
+	/**
+	 * Cut-off frequency.
+	 */
 	float32 freq = 0;
+	
+	/**
+	 * Mean relative noiseband power.
+	 */
 	float32 noise = 0;
 } DataParams;
 
@@ -104,7 +121,14 @@ typedef struct {
  * array.
  */
 typedef struct {
+	/**
+	 * Value.
+	 */
 	float32 value = 0;
+	
+	/**
+	 * Value's index in array.
+	 */
 	uint32 index = 0;
 } Maximum;
 

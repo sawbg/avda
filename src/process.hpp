@@ -26,21 +26,21 @@ namespace avda {
 	 * without other factors and parameters) the presence of a avdaspasm in a
 	 * patient. By faculty members and/or students in the UAB ECE department
 	 * using this algorithm, they agree that the presentation of their code or
-	 * project that uses this algorithm by anyone directly or indirectly related
-	 * to the code or project, whether verbally or in writing, will reference
-	 * the development of the initial algorithm by Andrew Wisner and Nicholas
-	 * Nolan. Furthermore, a failure to meet this stipulation will warrant
-	 * appropriate action by Andrew Wisner and/or Nicholas Nolan. It should be
-	 * understood that the purpose of this stipulation is not to protect
-	 * prioprietary rights; rather, it is to help ensure that the intellectual
-	 * property of the aforementioned is protected and is neither misrepresented
-	 * nor claimed implicitly or explicitly by another individual. 
+	 * project that uses this algorithm, whether verbally or in writing, will 
+	 * reference the development of the initial algorithm by Andrew Wisner and
+	 * Nicholas Nolan. Furthermore, a failure to meet this stipulation will
+	 * warrant appropriate action by Andrew Wisner and/or Nicholas Nolan. It
+	 * should be understood that the purpose of this stipulation is not to
+	 * protect prioprietary rights; rather, it is to help ensure that the
+	 * intellectual property of the algorithm's creators is protected and is
+	 * neither misrepresented nor claimed implicitly or explicitly by another
+	 * individual.
 	 *
 	 * @param data array containing float32 samples of audio
 	 *
 	 * @param size number of samples in each recording. MUST be a power of two.
 	 *
-	 * @param samplingRate the sampling frequency in Hz or Samples/second
+	 * @param samplingRate sampling frequency in Hz or Samples/second
 	 *
 	 * @return cut-off frequency (Hz) and average noiseband noise power in
 	 * decibels

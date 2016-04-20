@@ -1,8 +1,7 @@
 /**
  * @file
  * @author Samuel Andrew Wisner
- * @author Nicholas K. Nolan
- * @brief Contains program that tests the functions in fileio.hpp.
+ * @brief Contains program that tests some functions in fileio.hpp.
  */
 
 #include <fstream>
