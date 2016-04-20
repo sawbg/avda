@@ -1,0 +1,81 @@
+.TH "src/stdin_clear_test.cpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/stdin_clear_test.cpp \- 
+.PP
+Contains a program to test clearing the stdin buffer\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'definitions\&.hpp'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCOUNT\fP   80"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains a program to test clearing the stdin buffer\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.PP
+Nicholas K\&. Nolan 
+.RE
+.PP
+
+.PP
+Definition in file \fBstdin_clear_test\&.cpp\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define COUNT   80"
+
+.PP
+Definition at line 14 of file stdin_clear_test\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (intargc, char **argv)"
+Tests the ability to clear the stdin buffer\&. 
+.PP
+Definition at line 22 of file stdin_clear_test\&.cpp\&.
+.PP
+.nf
+22                                 {
+23     char text1[COUNT];
+24     char text2[COUNT];
+25 
+26     cout << "Enter text to ignore: ";
+27     cout\&.flush();
+28     read(STDIN_FILENO, &text1, COUNT);
+29 //  fflush(stdin);
+30     cout << endl << "Enter text to print: ";
+31     cout\&.flush();
+32     read(STDIN_FILENO, &text2, COUNT);
+33     cout << endl << "In buffer: " << text2 << endl;
+34 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

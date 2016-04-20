@@ -1,0 +1,69 @@
+.TH "src/fileio_test.cpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/fileio_test.cpp \- 
+.PP
+Contains program that tests some functions in \fBfileio\&.hpp\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fstream>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'definitions\&.hpp'\fP
+.br
+\fC#include 'fileio\&.hpp'\fP
+.br
+\fC#include 'process\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains program that tests some functions in \fBfileio\&.hpp\fP\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner 
+.RE
+.PP
+
+.PP
+Definition in file \fBfileio_test\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+Tests the functions in \fBfileio\&.hpp\fP\&. 
+.PP
+Definition at line 23 of file fileio_test\&.cpp\&.
+.PP
+.nf
+23            {
+24     string path = PATIENT_PATH + "wizmack, sammy andy\&.csv";
+25     map<Side, DataParams> laMap = ReadParams(path);
+26     cout <<  laMap[Side::Right]\&.freq << endl;
+27     cout << laMap[Side::Right]\&.noise << endl;
+28 
+29     WriteParams(laMap, path);
+30 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

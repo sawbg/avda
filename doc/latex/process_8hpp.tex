@@ -1,6 +1,11 @@
 \hypertarget{process_8hpp}{\section{src/process.hpp File Reference}
 \label{process_8hpp}\index{src/process.\+hpp@{src/process.\+hpp}}
 }
+
+
+Contains functions related to the program's threaded processing of audio data.  
+
+
 {\ttfamily \#include $<$map$>$}\\*
 {\ttfamily \#include $<$stdexcept$>$}\\*
 {\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
@@ -10,16 +15,36 @@ Include dependency graph for process.\+hpp\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=319pt]{process_8hpp__incl}
+\includegraphics[width=285pt]{process_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespacevaso}{vaso}
-\begin{DoxyCompactList}\small\item\em contains functions related to the file I/\+O use in this program \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceavda}{avda}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::map$<$ \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespacevaso_a36b6d07f6078968ee9fef13e8d48b151}{vaso\+::\+Process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} rec\+Count, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} sample\+Count, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} sample\+Freq, \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} $\ast$counter)
+\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{avda\+::process} (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} $\ast$data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} sampling\+Rate)
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains functions related to the program's threaded processing of audio data. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{process_8hpp_source}{process.\+hpp}.
+

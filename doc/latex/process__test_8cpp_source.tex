@@ -1,0 +1,45 @@
+\hypertarget{process__test_8cpp_source}{\section{process\+\_\+test.\+cpp}
+\label{process__test_8cpp_source}\index{src/process\+\_\+test.\+cpp@{src/process\+\_\+test.\+cpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include <cstdio>}
+00008 \textcolor{preprocessor}{#include <cstdlib>}
+00009 \textcolor{preprocessor}{#include <fcntl.h>}
+00010 \textcolor{preprocessor}{#include <iostream>}
+00011 \textcolor{preprocessor}{#include <string>}
+00012 \textcolor{preprocessor}{#include <unistd.h>}
+00013 
+00014 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{process_8hpp}{process.hpp}"}
+00016 
+\hypertarget{process__test_8cpp_source_l00017}{}\hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{00017} \textcolor{preprocessor}{#define COUNT 131072}
+00018 
+00019 \textcolor{keyword}{using namespace }\hyperlink{namespacestd}{std};
+00020 \textcolor{keyword}{using namespace }\hyperlink{namespaceavda}{avda};
+00021 
+\hypertarget{process__test_8cpp_source_l00025}{}\hyperlink{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00025} \textcolor{keywordtype}{int} \hyperlink{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{
+00026     \textcolor{keywordtype}{int} file = open(\textcolor{stringliteral}{"/home/pi/avda/etc/audio/test.raw"}, O\_RDONLY);
+00027 
+00028     \textcolor{keywordflow}{if}(file < 0) \{
+00029         cerr << \textcolor{stringliteral}{"File unreadable!"} << endl;
+00030         \textcolor{keywordflow}{return} -1;
+00031     \}
+00032 
+00033     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* buffer = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)malloc(\hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT} * \textcolor{keyword}{sizeof}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00034     \textcolor{keywordtype}{int} charRead = read(file, buffer, \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT} * \textcolor{keyword}{sizeof}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00035 
+00036     \textcolor{keywordflow}{if}(charRead < \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}) \{
+00037         cerr << \textcolor{stringliteral}{"Too few bytes read!"} << endl;
+00038         \textcolor{keywordflow}{return} -1;
+00039     \}
+00040 
+00041     close(file);
+00042 
+00043     \hyperlink{structDataParams}{DataParams} params = \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process}(buffer, \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}, \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ});
+00044     free(buffer);
+00045     cout << \textcolor{stringliteral}{"Cutoff: "} << params.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} << endl;
+00046     cout << \textcolor{stringliteral}{"Noise: "} << params.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} << endl;
+00047 \}
+\end{DoxyCode}

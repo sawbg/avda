@@ -1,0 +1,743 @@
+.TH "avda" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+avda \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSide\fP { \fBSide::Left\fP, \fBSide::Right\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBPatientName\fP ()"
+.br
+.ti -1c
+.RI "std::map< \fBSide\fP, \fBDataParams\fP > \fBReadParams\fP (auto filename)"
+.br
+.ti -1c
+.RI "void \fBWriteParams\fP (std::map< \fBSide\fP, \fBDataParams\fP > params, auto filename)"
+.br
+.ti -1c
+.RI "\fBDataParams\fP \fBprocess\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBfloat32\fP samplingRate)"
+.br
+.ti -1c
+.RI "void \fBabsolute\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "\fBfloat32\fP \fBaverage\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "\fBDataParams\fP \fBaverage\fP (\fBDataParams\fP *params, \fBuint8\fP size)"
+.br
+.ti -1c
+.RI "void \fBdecibels\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBdiff\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBfft\fP (\fBcfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBmag\fP (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "\fBMaximum\fP \fBmax\fP (\fBfloat32\fP *data, \fBuint32\fP size)"
+.br
+.ti -1c
+.RI "void \fBsmooth\fP (\fBfloat32\fP *data, \fBuint32\fP size, \fBuint16\fP order)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This namespace contains all code related to this project\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBavda::Side\fP\fC [strong]\fP"
+Side of the head to which a recording pertains\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILeft \fP\fP
+.TP
+\fB\fIRight \fP\fP
+.PP
+Definition at line 145 of file definitions\&.hpp\&.
+.PP
+.nf
+145 { Left, Right };
+.fi
+.SH "Function Documentation"
+.PP 
+.SS "void avda::absolute (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Ensures all elements in an array are positive\&. Note that this function replaces array elements if necessary\&. It does not populate a new array\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array whose elements must all be positive
+.br
+\fIsize\fP number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file sigmath\&.hpp\&.
+.PP
+.nf
+123                                               {
+124         for(uint32 i = 0; i < size; i++) {
+125             data[i] = fabsf(data[i]);
+126         }
+127     }
+.fi
+.SS "\fBfloat32\fP avda::average (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Takes the average of all elements in an array
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array from which to compute the average
+.br
+\fIsize\fP number of elements in the data array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+computed average 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file sigmath\&.hpp\&.
+.PP
+.nf
+129                                                 {
+130         float32 ave;
+131 
+132         for(uint32 i = 0; i < size; i++) {
+133             ave += data[i];
+134         }
+135 
+136         ave = ave / size;
+137         return ave;
+138     }
+.fi
+.SS "\fBDataParams\fP avda::average (\fBDataParams\fP *params, \fBuint8\fPsize)"
+Finds the averages of the elements of an array of \fBDataParams\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparams\fP \fBDataParams\fP array
+.br
+\fIsize\fP number of elements in the \fBDataParams\fP array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDataParams\fP structure containing the average values of the structure's elements in the params array 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file sigmath\&.hpp\&.
+.PP
+.nf
+140                                                        {
+141         DataParams ave;
+142 
+143         for(uint8 i = 0; i < size; i++) {
+144             //freq is an attribute\&. this is how to add structure attributes
+145             ave\&.freq += params[i]\&.freq;
+146             ave\&.noise += params[i]\&.noise;
+147         }
+148 
+149         ave\&.freq /= size;
+150         ave\&.noise /= size;
+151         return ave;
+152     }
+.fi
+.SS "void avda::decibels (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Converts an array of floats to 'power decibels', i\&.e\&., x[n] = 20*log10(x[n])\&. The decibel values are written to the same array that contained the values to be converted\&. In other words, this function should perform an in-place, element-wise conversion\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array of values to be converted as well as the location where the converted values will be written
+.br
+\fIsize\fP number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file sigmath\&.hpp\&.
+.PP
+.nf
+154                                               {
+155         for(uint32 i = 0; i < size; i++) {
+156             data[i] = 20 * log10(data[i]);
+157         }
+158     }
+.fi
+.SS "void avda::diff (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Computes the left-handed first derivative of a discrete signal\&. The first element will be 0\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array containing the discrete signal data array
+.br
+\fIsize\fP number of elements in data 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file sigmath\&.hpp\&.
+.PP
+.nf
+160                                           {
+161         float32 temp[size];
+162         temp[0] = 0;
+163 
+164         for(uint32 i = 1; i < size; i++) {
+165             temp[i] = data[i] - data[i-1];
+166         }
+167 
+168         for(uint32 i = 0; i < size; i++) {
+169             data[i] = temp[i];
+170         }
+171     }
+.fi
+.SS "void avda::fft (\fBcfloat32\fP *data, \fBuint32\fPsize)"
+Replaces the values of an array of cfloat32's with the array's DFT using a decimation-in-frequency algorithm\&.
+.PP
+This code is based on code from http://rosettacode.org/wiki/Fast_Fourier_transform#C.2B.2B\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array whose values should be replaced with its DFT
+.br
+\fIsize\fP number of elements in the data array 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file sigmath\&.hpp\&.
+.PP
+.nf
+173                                           {
+174         // DFT
+175         uint32 k = size;
+176         uint32 n;
+177         float32 thetaT = M_PI / size;
+178         cfloat32 phiT(cos(thetaT), sin(thetaT));
+179         cfloat32 T;
+180 
+181         while(k > 1) {
+182             n = k;
+183             k >>= 1;
+184             phiT = phiT * phiT;
+185             T = 1\&.0L;
+186 
+187             for(uint32 l = 0; l < k; l++) {
+188                 for(uint32 a = l; a < size; a += n) {
+189                     uint32 b = a + k;
+190                     cfloat32 t = data[a] - data[b];
+191                     data[a] += data[b];
+192                     data[b] = t * T;
+193                 }
+194 
+195                 T *= phiT;
+196             }
+197         }
+198 
+199         // Decimate
+200         uint32 m = (uint32)log2(size);
+201 
+202         for(uint32 a = 0; a < size; a++) {
+203             uint32 b = a;
+204 
+205             // Reverse bits
+206             b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+207             b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+208             b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+209             b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+210             b = ((b >> 16) | (b << 16)) >> (32 - m);
+211 
+212             if (b > a)
+213             {
+214                 cfloat32 t = data[a];
+215                 data[a] = data[b];
+216                 data[b] = t;
+217             }
+218         }
+219     }
+.fi
+.SS "void avda::mag (\fBcfloat32\fP *orig, \fBfloat32\fP *newmags, \fBuint32\fPsize)"
+Computes the magitude of an array of complex numbers\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIorig\fP array of complex numbers
+.br
+\fInewmags\fP array to which the (real) magitudes are to be written
+.br
+\fIsize\fP number of elements in orig and newmags 
+.RE
+.PP
+
+.PP
+Definition at line 221 of file sigmath\&.hpp\&.
+.PP
+.nf
+221                                                             {
+222         //loop to run throught the length of array orig
+223         for(uint32 n = 0; n < size; n++) {
+224             /* 
+225              * abs should calculate the magnitude of complex array elements\&.
+226              * saves to new array
+227              */
+228             newmags[n] = std::abs(orig[n]);     
+229         }
+230     }
+.fi
+.SS "\fBMaximum\fP avda::max (\fBfloat32\fP *data, \fBuint32\fPsize)"
+Finds the maximum value in an array\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array whose maximum value is to be found
+.br
+\fIsize\fP number of elements in the data array
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+maximum value and its index 
+.RE
+.PP
+
+.PP
+Definition at line 232 of file sigmath\&.hpp\&.
+.PP
+.nf
+232                                             {
+233         Maximum m;
+234 
+235         //loop to run through the length of array data
+236         for (uint32 i = 0; i < size; i++) {
+237             /* 
+238              * when value at data[i] is above max\&.value,
+239              * sets max\&.value equal to data[i] and max\&.index equal to i
+240              */
+241             if (data[i] > m\&.value) {
+242                 m\&.value = data[i];
+243                 m\&.index = i;
+244             }
+245         }
+246 
+247         return m;
+248     }
+.fi
+.SS "std::string avda::PatientName ()"
+Prompts a user to enter a first, middle, and last name for a patient and creates a file (if necessary) in which all of the patient's data parameters can be saved\&. A newly created file will contain the CSV header for the file's data\&.
+.PP
+Must warn a user if the patient file does not already exist in order to prevent missaving data\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the file under which all patient data is saved 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file fileio\&.hpp\&.
+.PP
+.nf
+33                             {
+34         std::string fname = "";
+35         std::string mname = "";
+36         std::string lname = "";
+37         std::string patfil = "";
+38         std::string patientname = "";
+39         uint32 track1 = 0;
+40         uint32 track2 = 0;
+41         uint32 track3 = 0;
+42 
+43         do {
+44             std::cout << "Please enter the patients name\&." << std::endl;
+45             std::cout << "First name: ";
+46             std::cin >> fname;
+47             std::cout << "Middle name: ";
+48             std::cin >> mname;
+49             std::cout << "Last name: ";
+50             std::cin >> lname;
+51 
+52             // creates new std::string with path to patient file
+53             patientname = PATIENT_PATH + lname + ", " + fname
+54                 + " " + mname + "\&.csv";
+55 
+56             // prints out patientname\&. shows user the path to the patient file
+57             //std::cout << patientname << std::endl << std::endl;
+58             std::ifstream file(patientname\&.c_str());
+59 
+60             if (file\&.good()) {
+61                 track1 = 1;
+62             }
+63 
+64             /*
+65              * Compares patientname to existing files and lets user know
+66              * if the file does not exist\&.
+67              */
+68             else if (!file\&.good()) {
+69                 /* 
+70                  * Do while statement to continue asking user about the file
+71                  * if their input is not acceptable
+72                  */ 
+73                 do {
+74                     std::cout << "Patient file does not exist, would you like "
+75                         "to create file or re-enter their name?" << std::endl;
+76                     std::cout << "  *Type 'create' and press enter key "
+77                         "to create the patient file\&." << std::endl;
+78                     std::cout << "  *Type 'reenter' and press enter key "
+79                         "to re-enter the patients name\&." << std::endl;
+80                     std::cout << std::endl;
+81                     std::cin >> patfil;
+82 
+83                     /* 
+84                      * patfil equals create, track1 and 2 will increase
+85                      * escaping both do while loops
+86                      */
+87                     if(patfil == "create") {
+88                         std::ofstream createfile(patientname\&.c_str());
+89                         track1 = 1;
+90                         track2 = 1;
+91                         track3 = 1;
+92                         createfile << CSV_HEADER << std::endl;
+93                         createfile\&.flush();
+94                         createfile\&.close();
+95                     }
+96 
+97                     /*
+98                      *patfil equals renter, track1 will remain zero allowing
+99                      *user to reenter the patient name\&.
+100                      */
+101                     else if(patfil == "reenter") {
+102                         track1 = 0;
+103                         track2 = 1;
+104                     }
+105 
+106                     /*
+107                      *The users input was neither create or reenter\&. User
+108                      *must enter patient name again\&.
+109                      */
+110                     else {
+111                         std::cout << std::endl;
+112                         std::cout << "Your input is not acceptable\&." << std::endl;
+113                         std::cout << std::endl;
+114                     }
+115                 }while(track2 == 0);
+116             }
+117         } while (track1 == 0);
+118 
+119         return patientname; //returns the path to the patient file
+120     }
+.fi
+.SS "\fBDataParams\fP avda::process (\fBfloat32\fP *data, \fBuint32\fPsize, \fBfloat32\fPsamplingRate)"
+Analyzes a single recording to determine the drop-off frequency and average noiseband noise power\&.
+.PP
+It should be noted that is algorithm is considered the intellectual property of Andrew Wisner and Nicholas Nolan\&. The 'algorithm' is defined as the use of 1) the frequency drop-off and/or 2) a noise value from the frequency band above the drop-off frequency in order to diagnose (with or without other factors and parameters) the presence of a avdaspasm in a patient\&. By faculty members and/or students in the UAB ECE department using this algorithm, they agree that the presentation of their code or project that uses this algorithm, whether verbally or in writing, will reference the development of the initial algorithm by Andrew Wisner and Nicholas Nolan\&. Furthermore, a failure to meet this stipulation will warrant appropriate action by Andrew Wisner and/or Nicholas Nolan\&. It should be understood that the purpose of this stipulation is not to protect prioprietary rights; rather, it is to help ensure that the intellectual property of the algorithm's creators is protected and is neither misrepresented nor claimed implicitly or explicitly by another individual\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array containing float32 samples of audio
+.br
+\fIsize\fP number of samples in each recording\&. MUST be a power of two\&.
+.br
+\fIsamplingRate\fP sampling frequency in Hz or Samples/second
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+cut-off frequency (Hz) and average noiseband noise power in decibels 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file process\&.hpp\&.
+.PP
+.nf
+48                                                                          {
+49         if((size & (size - 1) != 0) || size < 2) {
+50             throw std::invalid_argument(
+51                     "The number of samples is not a power of two!");
+52         }
+53 
+54         // declare function-scoped variables
+55         uint32 freqSize = size / 2;
+56         cfloat32* cdata = (cfloat32*)std::malloc(size * sizeof(cfloat32));
+57         float32* fdata = (float32*)std::malloc(freqSize * sizeof(float32));
+58         float32* origdata = (float32*)std::malloc(freqSize * sizeof(float32));
+59 
+60         // convert data to complex numbers for fft()
+61         for(uint32 i = 0; i < size; i++) {
+62             cdata[i] = data[i];
+63         }
+64     
+65         // find frequency spectrum in relative decibels
+66         fft(cdata, size);
+67         mag(cdata, fdata, freqSize);
+68         Maximum maximum = max(fdata, freqSize);
+69 
+70         for(uint32 i = 0; i < freqSize; i++) {
+71             fdata[i] /= maximum\&.value;
+72         }
+73 
+74         decibels(fdata, freqSize);
+75 
+76         for(uint32 i = 0; i < freqSize; i++) {
+77             origdata[i] = fdata[i];
+78         }
+79 
+80         /*
+81          * Run spectrum values through moving-average filter to smooth the
+82          * curve and make it easier to determine the derivative\&.
+83          */
+84         smooth(fdata, freqSize, 20);
+85 
+86         /*
+87          * Find the derivative of the smoothed spectrum\&. Bote that both this
+88          * filter and the previous are necessary to the algorithm\&.
+89          */
+90         diff(fdata, freqSize);
+91         smooth(fdata, freqSize, 100);
+92         absolute(fdata, freqSize);
+93 
+94         // find the parameters of this specific recording
+95         uint16 offset = 1000;
+96         absolute(&fdata[offset], freqSize - offset);
+97         maximum = max(&fdata[offset], freqSize - offset);
+98         uint32 index = maximum\&.index + offset;
+99         
+100         DataParams params;
+101         params\&.freq = index * (float)SAMPLE_FREQ / freqSize / 2;
+102         params\&.noise = average(&origdata[index + offset],
+103                 freqSize - offset - index);
+104 
+105         free(cdata);
+106         free(fdata);
+107 
+108         return params;
+109 
+110     }
+.fi
+.SS "std::map<\fBSide\fP, \fBDataParams\fP> avda::ReadParams (autofilename)"
+Reads the previously computed parameters found in the specified file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP absolute or relative path to the file containing the patient data to read
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+patient parameters read for each side 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file fileio\&.hpp\&.
+.PP
+.nf
+131                                                        {
+132         std::map<Side, DataParams> params;
+133         DataParams leftparams;
+134         DataParams rightparams;
+135 
+136         std::ifstream file(filename\&.c_str());
+137         std::string leftline;
+138         std::string rightline;
+139         std::string leftsearch = "Left";
+140         std::string rightsearch = "Right";
+141         std::string paramstring;
+142         std::string lfreqstr;
+143         std::string lnoisestr;
+144         std::string rfreqstr;
+145         std::string rnoisestr;
+146         uint32 lcnt = 0;
+147         uint32 rcnt = 0;
+148         float32 lfreqval;
+149         float32 lnoiseval;
+150         float32 rfreqval;
+151         float32 rnoiseval;
+152 
+153         /*
+154          * if statement which uses ifstream function to open patient file 
+155          * filename)
+156          */
+157         if(file\&.is_open()) {
+158             /*
+159              * While statement to find the first Left line and save to 
+160              *leftline as string\&.
+161              */
+162             while (getline(file, leftline)) {
+163                 if(leftline\&.find(leftsearch, 0) != std::string::npos) {
+164                     break;
+165                 }
+166 
+167             }
+168 
+169             /*
+170              * While statement to find first right line and save to rightline
+171              * as string\&.
+172              */
+173             while (getline(file,rightline)) {
+174                 if(rightline\&.find(rightsearch, 0) != std::string::npos) {
+175                     break;
+176                 }
+177             }
+178 
+179             // Code to break leftline and rightline into its parts
+180             std::stringstream lss(leftline);
+181             std::stringstream rss(rightline);
+182 
+183             while(getline(lss,paramstring, ',')) {
+184                 lcnt++;
+185 
+186                 if(lcnt == 3) {
+187                     lfreqstr = paramstring;
+188                 }
+189 
+190                 else if(lcnt == 4) {
+191                     lnoisestr = paramstring;
+192                 }
+193             }
+194 
+195             while(getline(rss,paramstring, ',')) {
+196                 rcnt++;
+197 
+198                 if(rcnt == 3) {
+199                     rfreqstr = paramstring;
+200                 }
+201 
+202                 else if(rcnt == 4) {
+203                     rnoisestr = paramstring;
+204                 }
+205             }
+206 
+207             /*
+208              * Statement to convert lfreq, lnoise, rfreq, and rnoise from
+209              * strings to floats\&.
+210              * */
+211             lfreqval = atof(lfreqstr\&.c_str());
+212             lnoiseval = atof(lnoisestr\&.c_str());
+213             rfreqval = atof(rfreqstr\&.c_str());
+214             rnoiseval = atof(rnoisestr\&.c_str());
+215 
+216             file\&.close();
+217         }
+218 
+219         else {
+220             throw std::runtime_error("The patient file could not be opened\&.");
+221         }
+222 
+223         leftparams\&.freq = lfreqval;
+224         leftparams\&.noise = lnoiseval;
+225         rightparams\&.freq = rfreqval;
+226         rightparams\&.noise = rnoiseval;
+227 
+228         params[Side::Left] = leftparams;
+229         params[Side::Right] = rightparams;
+230 
+231         return params;
+232     }
+.fi
+.SS "void avda::smooth (\fBfloat32\fP *data, \fBuint32\fPsize, \fBuint16\fPorder)"
+Applies an nth-order moving-average filter to a discrete signal\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP array containing the signal to which the filter should be applied
+.br
+\fIsize\fP number of elements in the data array
+.br
+\fIorder\fP order of the filter 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file sigmath\&.hpp\&.
+.PP
+.nf
+250                                                           {
+251         float32 coeff = 1 / (float32)order;
+252         float32 temp[size];
+253 
+254         for(uint32 i = 0; i < size; i++) {
+255             temp[i] = 0;
+256 
+257             for(uint16 j = 0; j < order && j <= i; j++) {
+258                 temp[i] += data[i - j];
+259             }
+260 
+261             temp[i] *= coeff;
+262         }
+263 
+264         for(uint32 i = 0; i < size; i++) {
+265             data[i] = temp[i];
+266         }
+267     }
+.fi
+.SS "void avda::WriteParams (std::map< Side, \fBDataParams\fP >params, autofilename)"
+Writes (appends) the passed parameters to the specified file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparams\fP parameters to be written
+.RE
+.PP
+the patient CSV file's filename 
+.PP
+Definition at line 241 of file fileio\&.hpp\&.
+.PP
+.nf
+241                                                                      {
+242         char temp[80];
+243         std::ofstream file(filename\&.c_str(),
+244                 std::ofstream::out | std::ofstream::app);
+245 
+246         //Gives pointer measurementtime a data type of time_t\&.
+247         time_t measurementtime;
+248         time(&measurementtime); //Gets the current time\&.
+249         strftime(temp, 80, "%c", localtime(&measurementtime));
+250         std::string fTime = std::string(temp);
+251 
+252         //if statement to print the Left side parameters to the patient file\&.
+253         if(file\&.is_open()) {
+254             file << fTime + "," + "Left" + ","
+255                 + std::to_string(params[Side::Left]\&.freq) 
+256                 + ", " + std::to_string(params[Side::Left]\&.noise) << std::endl;
+257         }
+258 
+259         //if statement to print the Right side parameters to the patient file\&.
+260         if(file\&.is_open()) {
+261             file << fTime + "," + "Right" + ","
+262                 + std::to_string(params[Side::Right]\&.freq) 
+263                 + ", " + std::to_string(params[Side::Right]\&.noise) << std::endl;
+264         }
+265 
+266         else {
+267             std::cout << "Patient file can not be opened!" << std::endl;
+268         }
+269 
+270         file\&.close();
+271     }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

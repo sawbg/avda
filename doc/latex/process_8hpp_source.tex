@@ -1,0 +1,87 @@
+\hypertarget{process_8hpp_source}{\section{process.\+hpp}
+\label{process_8hpp_source}\index{src/process.\+hpp@{src/process.\+hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00008 \textcolor{preprocessor}{#ifndef process\_H}
+00009 \textcolor{preprocessor}{#define process\_H}
+00010 
+00011 \textcolor{preprocessor}{#include <map>}
+00012 \textcolor{preprocessor}{#include <stdexcept>}
+00013 
+00014 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{sigmath_8hpp}{sigmath.hpp}"}
+00016 
+00017 \textcolor{keyword}{namespace }\hyperlink{namespaceavda}{avda} \{    
+\hypertarget{process_8hpp_source_l00048}{}\hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{00048}     \hyperlink{structDataParams}{DataParams} \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* data, \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} size, 
+      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32} samplingRate) \{
+00049         \textcolor{keywordflow}{if}((size & (size - 1) != 0) || size < 2) \{
+00050             \textcolor{keywordflow}{throw} std::invalid\_argument(
+00051                     \textcolor{stringliteral}{"The number of samples is not a power of two!"});
+00052         \}
+00053 
+00054         \textcolor{comment}{// declare function-scoped variables}
+00055         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} freqSize = size / 2;
+00056         \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}* cdata = (\hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}*)std::malloc(size * \textcolor{keyword}{sizeof}(
+      \hyperlink{definitions_8hpp_a960be6b6614c08090c16574dba10a421}{cfloat32}));
+00057         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* fdata = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)std::malloc(freqSize * \textcolor{keyword}{sizeof}(
+      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00058         \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* origdata = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)std::malloc(freqSize * \textcolor{keyword}{sizeof}(
+      \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00059 
+00060         \textcolor{comment}{// convert data to complex numbers for fft()}
+00061         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < size; i++) \{
+00062             cdata[i] = data[i];
+00063         \}
+00064     
+00065         \textcolor{comment}{// find frequency spectrum in relative decibels}
+00066         \hyperlink{namespaceavda_a33a1102422421212ac6b9387c896e864}{fft}(cdata, size);
+00067         \hyperlink{namespaceavda_a213bd6384fc9a330e4db2cecdbcd73ee}{mag}(cdata, fdata, freqSize);
+00068         \hyperlink{structMaximum}{Maximum} maximum = \hyperlink{namespaceavda_aa82021c3ee552773c060b1a39caf8aaa}{max}(fdata, freqSize);
+00069 
+00070         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < freqSize; i++) \{
+00071             fdata[i] /= maximum.\hyperlink{structMaximum_aa7e84cbf37b694670142670014366969}{value};
+00072         \}
+00073 
+00074         \hyperlink{namespaceavda_a9c0b7f832eace3cbc9c5dddea2ecc9d5}{decibels}(fdata, freqSize);
+00075 
+00076         \textcolor{keywordflow}{for}(\hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} i = 0; i < freqSize; i++) \{
+00077             origdata[i] = fdata[i];
+00078         \}
+00079 
+00080         \textcolor{comment}{/*}
+00081 \textcolor{comment}{         * Run spectrum values through moving-average filter to smooth the}
+00082 \textcolor{comment}{         * curve and make it easier to determine the derivative.}
+00083 \textcolor{comment}{         */}
+00084         \hyperlink{namespaceavda_a22583ba7f11b69c955b13155bf9a739d}{smooth}(fdata, freqSize, 20);
+00085 
+00086         \textcolor{comment}{/*}
+00087 \textcolor{comment}{         * Find the derivative of the smoothed spectrum. Bote that both this}
+00088 \textcolor{comment}{         * filter and the previous are necessary to the algorithm.}
+00089 \textcolor{comment}{         */}
+00090         \hyperlink{namespaceavda_a3e9b92cfa9d76c4c363e8ed8a4c1a2ce}{diff}(fdata, freqSize);
+00091         \hyperlink{namespaceavda_a22583ba7f11b69c955b13155bf9a739d}{smooth}(fdata, freqSize, 100);
+00092         \hyperlink{namespaceavda_aa771d0ed99fc4954c643ea71e91905bf}{absolute}(fdata, freqSize);
+00093 
+00094         \textcolor{comment}{// find the parameters of this specific recording}
+00095         \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} offset = 1000;
+00096         \hyperlink{namespaceavda_aa771d0ed99fc4954c643ea71e91905bf}{absolute}(&fdata[offset], freqSize - offset);
+00097         maximum = \hyperlink{namespaceavda_aa82021c3ee552773c060b1a39caf8aaa}{max}(&fdata[offset], freqSize - offset);
+00098         \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} index = maximum.\hyperlink{structMaximum_a2e6aef03795cd285fe542d0861c6e3b5}{index} + offset;
+00099         
+00100         \hyperlink{structDataParams}{DataParams} params;
+00101         params.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = index * (float)\hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ} / freqSize / 2;
+00102         params.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = \hyperlink{namespaceavda_a2a830f24a59aa2538ea82f6e000cce61}{average}(&origdata[index + offset],
+00103                 freqSize - offset - index);
+00104 
+00105         free(cdata);
+00106         free(fdata);
+00107 
+00108         \textcolor{keywordflow}{return} params;
+00109 
+00110     \}
+00111 \}
+00112 
+00113 \textcolor{preprocessor}{#endif}
+\end{DoxyCode}

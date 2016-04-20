@@ -1,4 +1,5 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @brief Contains declarations of system-independant (universal size) integers
  * and float types, shortened type names for some commonly used types, and
@@ -10,9 +11,11 @@
 
 #include <complex>
 #include <map>
+#include <string>
 
-#define ERROR -1
 #define ENUM signed char
+
+// Type definitions
 
 typedef unsigned char byte;
 typedef unsigned char uint8;
@@ -30,49 +33,139 @@ typedef signed long long sint64;
 typedef float float32;
 typedef double float64;
 
+
+// Constants
+
 /**
- * Defines a type for complex float32's.
+ * First line of CSV data file declaring column names.
+ */
+const std::string CSV_HEADER = "Time,Side,Frequency,Noise Level";
+
+/**
+ * Threshold for the differential-parameters product to be considered
+ * indicative of a vasospasm.
+ */
+const uint16 DET_THRESH = 5000;
+
+/**
+ * Duration of recording in seconds.
+ */
+const uint8 DURATION = 6;
+
+/**
+ * Error integer returned when the program must exit with an error.
+ */
+const sint8 ERROR = -1;
+
+/**
+ * Maximum drop-off frequency considered valid.
+ */
+const uint16 MAX_DROP_FREQ = 7000;
+
+/**
+ * Absolute path to the folder containing the patients files
+ */
+const std::string PATIENT_PATH = "/home/pi/patients/";
+
+/**
+ * Number of recordings (both left and right) to make.
+ */
+const uint8 REC_COUNT = 6;
+
+/**
+ * Number of samples to use in processing the recordings. Must be a power of
+ * two. SAMPLE_COUNT / SAMPLE_FREQ < DURATION must be true.
+ */
+const uint32 SAMPLE_COUNT = 131072;//262144;
+
+/**
+ * Recording sampling rate in Hz (NOT kHz).
+ */
+const uint16 SAMPLE_FREQ = 24000;
+
+/**
+ * Filename of the temporary recording file.
+ */
+const std::string TEMP_FILE = ".temp";
+
+/**
+ * Size of the sample buffer.
+ */
+const uint32 BUFFER_SIZE = SAMPLE_COUNT * sizeof(float32);
+
+
+// Objective/structural type definitions
+
+/**
+ * Complex float32's.
  */
 typedef std::complex<float32> cfloat32;
 
 /**
- * Contains the calculated results from processing the audio recordings.
+ * Calculated results from processing the audio recordings.
  */
 typedef struct {
-	float32 freq;
-	float32 noise;
+	/**
+	 * Cut-off frequency.
+	 */
+	float32 freq = 0;
+	
+	/**
+	 * Mean relative noiseband power.
+	 */
+	float32 noise = 0;
 } DataParams;
 
 /**
- * Contains the maximum value found in an array and the value's index in that
+ * Maximum value found in an array and the value's index in that
  * array.
  */
 typedef struct {
-	float32 value;
-	uint32 index;
+	/**
+	 * Value.
+	 */
+	float32 value = 0;
+	
+	/**
+	 * Value's index in array.
+	 */
+	uint32 index = 0;
 } Maximum;
+
+
+// Enumerations
 
 /**
  * This namespace contains all code related to this project.
  */
-namespace vaso {
+namespace avda {
 	/**
-	 * The side of the head to which a recording pertains.
+	 * Side of the head to which a recording pertains.
 	 */
 	enum class Side { Left, Right };
 }
 
+
+// Doxygen documentation for other files.
+
 /**
- * Contains the information needed by the thread that executes the Process()
- * function.
+ * @file makefile
+ * @author Samuel Andrew Wisner, awisner94@gmail.com
+ * @brief Contains recipes for building the test applications, the main
+ * application, and the documentation.
  */
-typedef struct {
-	float32** data;
-	uint8 recCount;
-	uint32 sampleCount;
-	uint32 sampleFreq;
-	uint8* counter;
-	std::map<vaso::Side, DataParams> results;
-} ThreadParams;
+
+/**
+ * @file README.md
+ * @author Samuel Andrew Wisner, awisner94@gmail.com
+ * @brief Contains the readme text as markdown, which also doubles as the main
+ * page.
+ */
+
+/**
+ * @file doxygen.config
+ * @author Samnuel Andrew Wisner, awisner94@gmail.com
+ * @brief Contains Doxygen configuration settings.
+ */
 
 #endif

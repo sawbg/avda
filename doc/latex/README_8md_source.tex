@@ -1,0 +1,52 @@
+\hypertarget{README_8md_source}{\section{R\+E\+A\+D\+M\+E.\+md}
+}
+
+\begin{DoxyCode}
+00001 # vasospasm-detector
+00002 
+00003 ## Introduction
+00004 The Automatic Vasospasm Detection Application (or Algorithm, depending on the
+00005 usage), AVDA, is an application to objectively detect the presence of vasospasms
+00006 based on comparisons of parameters extracted from transcranial doppler audio.
+00007 
+00008 ## Setup
+00009 AVDA is intended to be compiled on machines running Linux, though it could
+00010 likely be adapter for other environments. It must be downloaded from GitHub.com
+00011 and compiled locally. To do this, navigate to the directory in which AVDA should
+00012 be placed, then execute the following commands
+00013 
+00014    git clone https://github.com/sawbg/avda
+00015    cd avda
+00016    make
+00017 
+00018 Sucessfully cloning, compilation, and execution of AVDA requires up-to-date
+00019 versions of the following executables:
+00020 
+00021 * git
+00022 * make
+00023 * gcc (4.9)
+00024 * arecord
+00025 
+00026 ## FAQ
+00027 
+00028 * **Why was this project developed?** This project was developed as a course 
+00029 project by two gradute students at the University of Alabama at Birmingham
+00030 School of Engineering, Nicholas Nolan and Andrew Wisner.
+00031 
+00032 * **Is AVDA an active project?** Though it is not planned to develop AVDA
+00033 further in the near future, it is hoped that the algorithm discovered and
+00034 implemented can be used and built upon by researchers to fully automate the
+00035 detection of vasospasms.
+00036 
+00037 * **AVDA is returning unusually low or high parameters. Why might this be?** In
+00038   development, this occured when the mic-in volume was set too high. It is
+00039 likely in this senario that clipping is happening or that the signal (or a
+00040 strong enough signal) has no been received.
+00041 
+00042 * **How will AVDA be affected by the machine uprising?** The University
+00043   supercomputer, Cheaha, has assured us that AVDA will not be needed after the
+00044 uprising occures.
+00045 
+00046 * **What about more specific questions?** Questions relating to AVDA not
+00047 covered in this FAQ may be sent to the AVDA team via awisner94@gmail.com.
+\end{DoxyCode}

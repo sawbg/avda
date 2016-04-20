@@ -1,3 +1,5 @@
 <map id="src/fileio.hpp" name="src/fileio.hpp">
-<area shape="rect" id="node2" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node2" href="$fileio__test_8cpp.html" title="Contains program that tests some functions in fileio.hpp. " alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Contains the main program. " alt="" coords="155,80,253,107"/>
+<area shape="rect" id="node4" href="$patient__name__test_8cpp.html" title="Contains a program to test the PatientName() function. " alt="" coords="277,80,453,107"/>
 </map>

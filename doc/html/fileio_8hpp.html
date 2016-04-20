@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: src/fileio.hpp File Reference</title>
+<title>The Automatic Vasospasm Detection Application: src/fileio.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">The Automatic Vasospasm Detection Application
    </div>
   </td>
  </tr>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -91,7 +92,7 @@ $(document).ready(function(){initNavTree('fileio_8hpp.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,63 +104,67 @@ $(document).ready(function(){initNavTree('fileio_8hpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fileio.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+
+<p>Contains functions related to file I/O use in this program.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fileio.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio_8hpp__incl.png" border="0" usemap="#src_2fileio_8hpp" alt=""/></div>
 <map name="src_2fileio_8hpp" id="src_2fileio_8hpp">
-<area shape="rect" id="node4" href="definitions_8hpp.html" title="definitions.hpp" alt="" coords="181,80,288,107"/></map>
+<area shape="rect" id="node8" href="definitions_8hpp.html" title="Contains declarations of system&#45;independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. " alt="" coords="523,80,629,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileio_8hpp__dep__incl.png" border="0" usemap="#src_2fileio_8hppdep" alt=""/></div>
 <map name="src_2fileio_8hppdep" id="src_2fileio_8hppdep">
-<area shape="rect" id="node2" href="main_8cpp.html" title="src/main.cpp" alt="" coords="5,80,103,107"/></map>
+<area shape="rect" id="node2" href="fileio__test_8cpp.html" title="Contains program that tests some functions in fileio.hpp. " alt="" coords="5,80,131,107"/><area shape="rect" id="node3" href="main_8cpp.html" title="Contains the main program. " alt="" coords="155,80,253,107"/><area shape="rect" id="node4" href="patient__name__test_8cpp.html" title="Contains a program to test the PatientName() function. " alt="" coords="277,80,453,107"/></map>
 </div>
 </div>
 <p><a href="fileio_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacevaso"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html">vaso</a></td></tr>
-<tr class="memdesc:namespacevaso"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains functions related to the file I/O use in this program <br /></td></tr>
+<tr class="memitem:namespaceavda"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceavda.html">avda</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abab641a332f2e834dfcdf294c0429426"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#abab641a332f2e834dfcdf294c0429426">vaso::CurrentDataName</a> ()</td></tr>
-<tr class="separator:abab641a332f2e834dfcdf294c0429426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f45524d4770053c2b812ce33a7095f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#af8f45524d4770053c2b812ce33a7095f">vaso::InitialDataName</a> (auto dir)</td></tr>
-<tr class="separator:af8f45524d4770053c2b812ce33a7095f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e264fa912f7ca3f50e7e412ba1582e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a21e264fa912f7ca3f50e7e412ba1582e">vaso::PatientName</a> ()</td></tr>
-<tr class="separator:a21e264fa912f7ca3f50e7e412ba1582e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1a23c617aae2e2c4af5e8016b4d03e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDataParams.html">DataParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a6f1a23c617aae2e2c4af5e8016b4d03e">vaso::ReadParams</a> (auto filename)</td></tr>
-<tr class="separator:a6f1a23c617aae2e2c4af5e8016b4d03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#ad8543c0caabf3836b4a93a78e0d487d1">vaso::WriteParams</a> (<a class="el" href="structDataParams.html">DataParams</a> params, auto filename)</td></tr>
-<tr class="separator:ad8543c0caabf3836b4a93a78e0d487d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a0f49c8240a13e7d853912ad78d5f53c9"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9">vaso::PATIENT_PATH</a> = &quot;/home/pi/patients/&quot;</td></tr>
-<tr class="separator:a0f49c8240a13e7d853912ad78d5f53c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20728e7e8ae50bf2f74849e538841ea"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceavda.html#ae20728e7e8ae50bf2f74849e538841ea">avda::PatientName</a> ()</td></tr>
+<tr class="separator:ae20728e7e8ae50bf2f74849e538841ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46dc980b65ddfc24749ce25c1290e158"><td class="memItemLeft" align="right" valign="top">std::map&lt; Side, <a class="el" href="structDataParams.html">DataParams</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">avda::ReadParams</a> (auto filename)</td></tr>
+<tr class="separator:a46dc980b65ddfc24749ce25c1290e158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3f5a0eb4ee9a7010d57dc38bd8dfec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceavda.html#a1e3f5a0eb4ee9a7010d57dc38bd8dfec">avda::WriteParams</a> (std::map&lt; Side, <a class="el" href="structDataParams.html">DataParams</a> &gt; params, auto filename)</td></tr>
+<tr class="separator:a1e3f5a0eb4ee9a7010d57dc38bd8dfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains functions related to file I/O use in this program. </p>
+<dl class="section author"><dt>Author</dt><dd>Samuel Andrew Wisner, <a href="#" onclick="location.href='mai'+'lto:'+'awi'+'sn'+'er9'+'4@'+'gma'+'il'+'.co'+'m'; return false;">awisn<span style="display: none;">.nosp@m.</span>er94<span style="display: none;">.nosp@m.</span>@gmai<span style="display: none;">.nosp@m.</span>l.co<span style="display: none;">.nosp@m.</span>m</a> </dd>
+<dd>
+Nicholas K. Nolan </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>file is overly complicated and much more bug-prone than necessary </dd></dl>
+
+<p>Definition in file <a class="el" href="fileio_8hpp_source.html">fileio.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fileio_8hpp.html">fileio.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 31 2016 12:32:34 for My Project by
+    <li class="footer">Generated on Wed Apr 20 2016 01:25:19 for The Automatic Vasospasm Detection Application by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

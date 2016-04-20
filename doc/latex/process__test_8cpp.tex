@@ -1,0 +1,109 @@
+\hypertarget{process__test_8cpp}{\section{src/process\+\_\+test.cpp File Reference}
+\label{process__test_8cpp}\index{src/process\+\_\+test.\+cpp@{src/process\+\_\+test.\+cpp}}
+}
+
+
+Contains a program to test the \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process()} function.  
+
+
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}process.\+hpp\char`\"{}}\\*
+Include dependency graph for process\+\_\+test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{C\+O\+U\+N\+T}~131072
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains a program to test the \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process()} function. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{process__test_8cpp_source}{process\+\_\+test.\+cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{\index{process\+\_\+test.\+cpp@{process\+\_\+test.\+cpp}!C\+O\+U\+N\+T@{C\+O\+U\+N\+T}}
+\index{C\+O\+U\+N\+T@{C\+O\+U\+N\+T}!process\+\_\+test.\+cpp@{process\+\_\+test.\+cpp}}
+\subsubsection[{C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+U\+N\+T~131072}}\label{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}
+
+
+Definition at line \hyperlink{process__test_8cpp_source_l00017}{17} of file \hyperlink{process__test_8cpp_source}{process\+\_\+test.\+cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{process\+\_\+test.\+cpp@{process\+\_\+test.\+cpp}!main@{main}}
+\index{main@{main}!process\+\_\+test.\+cpp@{process\+\_\+test.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+Tests the \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process()} function from \hyperlink{process_8hpp}{process.\+hpp}. 
+
+Definition at line \hyperlink{process__test_8cpp_source_l00025}{25} of file \hyperlink{process__test_8cpp_source}{process\+\_\+test.\+cpp}.
+
+
+\begin{DoxyCode}
+00025                                 \{
+00026     \textcolor{keywordtype}{int} file = open(\textcolor{stringliteral}{"/home/pi/avda/etc/audio/test.raw"}, O\_RDONLY);
+00027 
+00028     \textcolor{keywordflow}{if}(file < 0) \{
+00029         cerr << \textcolor{stringliteral}{"File unreadable!"} << endl;
+00030         \textcolor{keywordflow}{return} -1;
+00031     \}
+00032 
+00033     \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}* buffer = (\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}*)malloc(\hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT} * \textcolor{keyword}{sizeof}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00034     \textcolor{keywordtype}{int} charRead = read(file, buffer, \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT} * \textcolor{keyword}{sizeof}(\hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}));
+00035 
+00036     \textcolor{keywordflow}{if}(charRead < \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}) \{
+00037         cerr << \textcolor{stringliteral}{"Too few bytes read!"} << endl;
+00038         \textcolor{keywordflow}{return} -1;
+00039     \}
+00040 
+00041     close(file);
+00042 
+00043     \hyperlink{structDataParams}{DataParams} params = \hyperlink{namespaceavda_a5196cce27286d08ca144a460caee7839}{process}(buffer, \hyperlink{process__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}, \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{SAMPLE\_FREQ});
+00044     free(buffer);
+00045     cout << \textcolor{stringliteral}{"Cutoff: "} << params.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} << endl;
+00046     cout << \textcolor{stringliteral}{"Noise: "} << params.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} << endl;
+00047 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{process__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+

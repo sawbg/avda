@@ -1,70 +1,52 @@
 /**
+ * @file
  * @author Samuel Andrew Wisner, awisner94@gmail.com
  * @author Nicholas K. Nolan
- * @brief contains the functions necessary to perform the mathematical
- * operations required by this program
+ * @brief Contains the functions necessary to perform the mathematical
+ * operations required by this program.
  * */
 
 #ifndef sigmath_H
 #define sigmath_H
 
 #include <complex>
-
 #include "definitions.hpp"
 
-namespace vaso {
+namespace avda {
 	// PROTOTYPES
 
 	/**
 	 * Ensures all elements in an array are positive. Note that this function
 	 * replaces array elements if necessary. It does not populate a new array.
 	 *
-	 * @param data the array whose elements must all be positive
+	 * @param data array whose elements must all be positive
 	 *
-	 * @param size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 */
 	void absolute(float32* data, uint32 size);
 
 	/**
 	 * Takes the average of all elements in an array
 	 *
-	 * @param data the array from which to compute the average
+	 * @param data array from which to compute the average
 	 *
-	 * @param size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 *
-	 * @return the computed average
+	 * @return computed average
 	 */
 	float32 average(float32* data, uint32 size);
 
 	/**
 	 * Finds the averages of the elements of an array of DataParams.
 	 *
-	 * @param params the DataParams array
+	 * @param params DataParams array
 	 *
-	 * @param size the number of elements in the DataParams array
+	 * @param size number of elements in the DataParams array
 	 *
-	 * @return a DataParams structure containing the average values of the
+	 * @return DataParams structure containing the average values of the
 	 * structure's elements in the params array
 	 */
 	DataParams average(DataParams* params, uint8 size);
-
-	/**
-	 * Element-wise averaging along the first dimension of a two-dimensional
-	 * array.
-	 *
-	 * @param data the two-dimensional array containing [count] number of arrays
-	 * in the first dimension and [size] number of each elements in the second
-	 * dimension
-	 *
-	 * @param avg the array of size [size] containing the averaged values of
-	 * each element
-	 *
-	 * @param count the number of arrays in the first dimension of data and will
-	 * likely be a constant value of 3 in this program
-	 *
-	 * @param size the number of elements in the second dimension of data
-	 */
-	void average(float32* data, float32* avg, uint8 count, uint32 size);
 
 	/**
 	 * Converts an array of floats to "power decibels", i.e., x[n] =
@@ -72,10 +54,10 @@ namespace vaso {
 	 * contained the values to be converted. In other words, this function
 	 * should perform an in-place, element-wise conversion.
 	 *
-	 * @param data the array of values to be converted as well as the location
+	 * @param data array of values to be converted as well as the location
 	 * where the converted values will be written
 	 *
-	 * @param size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 */
 	void decibels(float32* data, uint32 size);
 
@@ -83,9 +65,9 @@ namespace vaso {
 	 * Computes the left-handed first derivative of a discrete signal. The first
 	 * element will be 0.
 	 *
-	 * @param data an array containing the discrete signal data
+	 * @param data array containing the discrete signal data array
 	 *
-	 * @param size the number of elements in data
+	 * @param size number of elements in data
 	 */
 	void diff(float32* data, uint32 size);
 
@@ -96,62 +78,77 @@ namespace vaso {
 	 * This code is based on code from
 	 * http://rosettacode.org/wiki/Fast_Fourier_transform#C.2B.2B.
 	 *
-	 * @param data the array whose values should be replaced with its DFT
+	 * @param data array whose values should be replaced with its DFT
 	 *
-	 * @param size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 */
 	void fft(cfloat32* data, uint32 size);
 
 	/**
 	 * Computes the magitude of an array of complex numbers.
 	 *
-	 * @param orig the array of complex numbers
+	 * @param orig array of complex numbers
 	 *
-	 * @param newmags an array to which the magitudes are to be written
+	 * @param newmags array to which the (real) magitudes are to be written
 	 *
-	 * @param size the number of elements in orig and newmags
+	 * @param size number of elements in orig and newmags
 	 */
 	void mag(cfloat32* orig, float32* newmags, uint32 size);
 
 	/**
 	 * Finds the maximum value in an array.
 	 *
-	 * @param data the array whose maximum value is to be found
+	 * @param data array whose maximum value is to be found
 	 *
-	 * @param uint32 size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 *
-	 * @return the maximum value and its index in a Maximum structure
+	 * @return maximum value and its index
 	 */
 	Maximum max(float32* data, uint32 size);
 
 	/**
 	 * Applies an nth-order moving-average filter to a discrete signal.
 	 *
-	 * @param data the array containing the signal to which the filter should be
+	 * @param data array containing the signal to which the filter should be
 	 * applied
 	 *
-	 * @param size the number of elements in the data array
+	 * @param size number of elements in the data array
 	 *
-	 * @param order the order of the filter
+	 * @param order order of the filter
 	 */
 	void smooth(float32* data, uint32 size, uint16 order);
 
 	// DEFINITIONS
 
 	void absolute(float32* data, uint32 size) {
-
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = fabsf(data[i]);
+		}
 	}
 
 	float32 average(float32* data, uint32 size) {
+		float32 ave;
 
+		for(uint32 i = 0; i < size; i++) {
+			ave += data[i];
+		}
+
+		ave = ave / size;
+		return ave;
 	}
 
 	DataParams average(DataParams* params, uint8 size) {
+		DataParams ave;
 
-	}
+		for(uint8 i = 0; i < size; i++) {
+			//freq is an attribute. this is how to add structure attributes
+			ave.freq += params[i].freq;
+			ave.noise += params[i].noise;
+		}
 
-	void average(float32* data, float32* avg, uint8 count, uint32 size) {
-		// data is an array. Access like so: data[index]
+		ave.freq /= size;
+		ave.noise /= size;
+		return ave;
 	}
 
 	void decibels(float32* data, uint32 size) {
@@ -161,7 +158,16 @@ namespace vaso {
 	}
 
 	void diff(float32* data, uint32 size) {
+		float32 temp[size];
+		temp[0] = 0;
 
+		for(uint32 i = 1; i < size; i++) {
+			temp[i] = data[i] - data[i-1];
+		}
+
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = temp[i];
+		}
 	}
 
 	void fft(cfloat32* data, uint32 size) {
@@ -181,8 +187,8 @@ namespace vaso {
 			for(uint32 l = 0; l < k; l++) {
 				for(uint32 a = l; a < size; a += n) {
 					uint32 b = a + k;
-					cfloat32 t = data[a] -data[b];
-					data[a] +=data[b];
+					cfloat32 t = data[a] - data[b];
+					data[a] += data[b];
 					data[b] = t * T;
 				}
 
@@ -206,18 +212,39 @@ namespace vaso {
 			if (b > a)
 			{
 				cfloat32 t = data[a];
-				data[a] =data[b];
+				data[a] = data[b];
 				data[b] = t;
 			}
 		}
 	}
 
 	void mag(cfloat32* orig, float32* newmags, uint32 size) {
-
+		//loop to run throught the length of array orig
+		for(uint32 n = 0; n < size; n++) {
+			/* 
+			 * abs should calculate the magnitude of complex array elements.
+			 * saves to new array
+			 */
+			newmags[n] = std::abs(orig[n]);		
+		}
 	}
 
 	Maximum max(float32* data, uint32 size) {
+		Maximum m;
 
+		//loop to run through the length of array data
+		for (uint32 i = 0; i < size; i++) {
+			/* 
+			 * when value at data[i] is above max.value,
+			 * sets max.value equal to data[i] and max.index equal to i
+			 */
+			if (data[i] > m.value) {
+				m.value = data[i];
+				m.index = i;
+			}
+		}
+
+		return m;
 	}
 
 	void smooth(float32* data, uint32 size, uint16 order) {
@@ -232,6 +259,10 @@ namespace vaso {
 			}
 
 			temp[i] *= coeff;
+		}
+
+		for(uint32 i = 0; i < size; i++) {
+			data[i] = temp[i];
 		}
 	}
 }

@@ -1,7 +1,10 @@
 <map id="src/definitions.hpp" name="src/definitions.hpp">
-<area shape="rect" id="node2" href="$fileio_8hpp.html" title="src/fileio.hpp" alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="134,155,231,181"/>
-<area shape="rect" id="node4" href="$sigmath_8hpp.html" title="src/sigmath.hpp" alt="" coords="304,80,419,107"/>
-<area shape="rect" id="node5" href="$process_8hpp.html" title="src/process.hpp" alt="" coords="351,155,465,181"/>
-<area shape="rect" id="node6" href="$sound_8hpp.html" title="src/sound.hpp" alt="" coords="176,80,280,107"/>
+<area shape="rect" id="node2" href="$fileio_8hpp.html" title="Contains functions related to file I/O use in this program. " alt="" coords="176,155,272,181"/>
+<area shape="rect" id="node3" href="$fileio__test_8cpp.html" title="Contains program that tests some functions in fileio.hpp. " alt="" coords="5,229,131,256"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Contains the main program. " alt="" coords="355,229,453,256"/>
+<area shape="rect" id="node6" href="$process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="347,155,461,181"/>
+<area shape="rect" id="node7" href="$process__test_8cpp.html" title="Contains a program to test the process() function. " alt="" coords="477,229,621,256"/>
+<area shape="rect" id="node8" href="$sigmath_8hpp.html" title="Contains the functions necessary to perform the mathematical operations required by this program..." alt="" coords="397,80,512,107"/>
+<area shape="rect" id="node9" href="$stdin__clear__test_8cpp.html" title="Contains a program to test clearing the stdin buffer. " alt="" coords="587,80,749,107"/>
+<area shape="rect" id="node5" href="$patient__name__test_8cpp.html" title="Contains a program to test the PatientName() function. " alt="" coords="155,229,331,256"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freq',['freq',['../structDataParams.html#a12566e017407647bc8287d62554ad3fb',1,'DataParams']]]
+  ['buffer_5fsize',['BUFFER_SIZE',['../definitions_8hpp.html#aca681ed285767aaa2353bf3b42dd60ed',1,'definitions.hpp']]]
 ];

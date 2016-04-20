@@ -1,0 +1,97 @@
+.TH "src/process_test.cpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/process_test.cpp \- 
+.PP
+Contains a program to test the \fBprocess()\fP function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'definitions\&.hpp'\fP
+.br
+\fC#include 'process\&.hpp'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCOUNT\fP   131072"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains a program to test the \fBprocess()\fP function\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.RE
+.PP
+
+.PP
+Definition in file \fBprocess_test\&.cpp\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define COUNT   131072"
+
+.PP
+Definition at line 17 of file process_test\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (intargc, char **argv)"
+Tests the \fBprocess()\fP function from \fBprocess\&.hpp\fP\&. 
+.PP
+Definition at line 25 of file process_test\&.cpp\&.
+.PP
+.nf
+25                                 {
+26     int file = open("/home/pi/avda/etc/audio/test\&.raw", O_RDONLY);
+27 
+28     if(file < 0) {
+29         cerr << "File unreadable!" << endl;
+30         return -1;
+31     }
+32 
+33     float32* buffer = (float32*)malloc(COUNT * sizeof(float32));
+34     int charRead = read(file, buffer, COUNT * sizeof(float32));
+35 
+36     if(charRead < COUNT) {
+37         cerr << "Too few bytes read!" << endl;
+38         return -1;
+39     }
+40 
+41     close(file);
+42 
+43     DataParams params = process(buffer, COUNT, SAMPLE_FREQ);
+44     free(buffer);
+45     cout << "Cutoff: " << params\&.freq << endl;
+46     cout << "Noise: " << params\&.noise << endl;
+47 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

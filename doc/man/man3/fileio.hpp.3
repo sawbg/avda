@@ -1,14 +1,25 @@
-.TH "src/fileio.hpp" 3 "Thu Mar 31 2016" "My Project" \" -*- nroff -*-
+.TH "src/fileio.hpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/fileio.hpp \- 
+.PP
+Contains functions related to file I/O use in this program\&.  
+
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <fstream>\fP
+.br
 \fC#include <iostream>\fP
 .br
+\fC#include <sstream>\fP
+.br
 \fC#include <string>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include <time\&.h>\fP
 .br
 \fC#include 'definitions\&.hpp'\fP
 .br
@@ -17,36 +28,43 @@ src/fileio.hpp \-
 
 .in +1c
 .ti -1c
-.RI " \fBvaso\fP"
+.RI " \fBavda\fP"
 .br
-.RI "\fIcontains functions related to the file I/O use in this program \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::string \fBvaso::CurrentDataName\fP ()"
+.RI "std::string \fBavda::PatientName\fP ()"
 .br
 .ti -1c
-.RI "std::string \fBvaso::InitialDataName\fP (auto dir)"
+.RI "std::map< Side, \fBDataParams\fP > \fBavda::ReadParams\fP (auto filename)"
 .br
 .ti -1c
-.RI "std::string \fBvaso::PatientName\fP ()"
-.br
-.ti -1c
-.RI "\fBDataParams\fP \fBvaso::ReadParams\fP (auto filename)"
-.br
-.ti -1c
-.RI "std::string \fBvaso::WriteParams\fP (\fBDataParams\fP params, auto filename)"
+.RI "void \fBavda::WriteParams\fP (std::map< Side, \fBDataParams\fP > params, auto filename)"
 .br
 .in -1c
-.SS "Variables"
+.SH "Detailed Description"
+.PP 
+Contains functions related to file I/O use in this program\&. 
 
-.in +1c
-.ti -1c
-.RI "const std::string \fBvaso::PATIENT_PATH\fP = '/home/pi/patients/'"
-.br
-.in -1c
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Samuel Andrew Wisner, awisner94@gmail.com 
+.PP
+Nicholas K\&. Nolan 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+file is overly complicated and much more bug-prone than necessary 
+.RE
+.PP
+
+.PP
+Definition in file \fBfileio\&.hpp\fP\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for My Project from the source code\&.
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

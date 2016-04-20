@@ -1,5 +1,8 @@
 GCC = g++ -g -std=gnu++14
 
+avda:
+	$(GCC) src/main.cpp -o bin/avda
+
 count:
 	grep -r "src/" -e "Samuel Andrew Wisner" -l | xargs wc -l
 
@@ -12,6 +15,14 @@ docs:
 	git commit -m "Updated documentation."
 	git push
 
-vaso:
-	$(GCC) src/main.cpp -o bin/vaso -lpthread
+fileio-test:
+	$(GCC) src/fileio_test.cpp -o bin/fileiotest
 
+patient-name-test:
+	$(GCC) src/patient_name_test.cpp -o bin/patnametest
+
+process-test:
+	$(GCC) src/process_test.cpp -o bin/proctest
+
+stdin-clear-test:
+	$(GCC) src/stdin_clear_test.cpp -o bin/cleartest

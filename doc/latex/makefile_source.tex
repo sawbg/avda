@@ -1,0 +1,33 @@
+\hypertarget{makefile_source}{\section{makefile}
+}
+
+\begin{DoxyCode}
+00001 GCC = g++ -g -std=gnu++14
+00002 
+00003 avda:
+00004    $(GCC) src/main.cpp -o bin/avda
+00005 
+00006 count:
+00007    grep -r "src/" -e "Samuel Andrew Wisner" -l | xargs wc -l
+00008 
+00009 docs:
+00010    rm -r doc/
+00011    doxygen etc/doxygen.config
+00012    cd doc/latex; make pdf;
+00013    git reset
+00014    git add doc/.
+00015    git commit -m "Updated documentation."
+00016    git push
+00017 
+00018 fileio-test:
+00019    $(GCC) src/fileio\_test.cpp -o bin/fileiotest
+00020 
+00021 patient-name-test:
+00022    $(GCC) src/patient\_name\_test.cpp -o bin/patnametest
+00023 
+00024 process-test:
+00025    $(GCC) src/process\_test.cpp -o bin/proctest
+00026 
+00027 stdin-clear-test:
+00028    $(GCC) src/stdin\_clear\_test.cpp -o bin/cleartest
+\end{DoxyCode}

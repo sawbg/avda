@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['patient_5fpath',['PATIENT_PATH',['../namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9',1,'vaso']]]
+  ['error',['ERROR',['../definitions_8hpp.html#a876fcacb67d51738e846a3312dc08fbb',1,'definitions.hpp']]]
 ];

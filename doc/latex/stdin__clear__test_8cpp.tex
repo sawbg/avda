@@ -1,0 +1,85 @@
+\hypertarget{stdin__clear__test_8cpp}{\section{src/stdin\+\_\+clear\+\_\+test.cpp File Reference}
+\label{stdin__clear__test_8cpp}\index{src/stdin\+\_\+clear\+\_\+test.\+cpp@{src/stdin\+\_\+clear\+\_\+test.\+cpp}}
+}
+
+
+Contains a program to test clearing the stdin buffer.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
+Include dependency graph for stdin\+\_\+clear\+\_\+test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{stdin__clear__test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{C\+O\+U\+N\+T}~80
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{stdin__clear__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains a program to test clearing the stdin buffer. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+
+Nicholas K. Nolan 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{stdin__clear__test_8cpp_source}{stdin\+\_\+clear\+\_\+test.\+cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{\index{stdin\+\_\+clear\+\_\+test.\+cpp@{stdin\+\_\+clear\+\_\+test.\+cpp}!C\+O\+U\+N\+T@{C\+O\+U\+N\+T}}
+\index{C\+O\+U\+N\+T@{C\+O\+U\+N\+T}!stdin\+\_\+clear\+\_\+test.\+cpp@{stdin\+\_\+clear\+\_\+test.\+cpp}}
+\subsubsection[{C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+U\+N\+T~80}}\label{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}
+
+
+Definition at line \hyperlink{stdin__clear__test_8cpp_source_l00014}{14} of file \hyperlink{stdin__clear__test_8cpp_source}{stdin\+\_\+clear\+\_\+test.\+cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{stdin__clear__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{stdin\+\_\+clear\+\_\+test.\+cpp@{stdin\+\_\+clear\+\_\+test.\+cpp}!main@{main}}
+\index{main@{main}!stdin\+\_\+clear\+\_\+test.\+cpp@{stdin\+\_\+clear\+\_\+test.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{stdin__clear__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+Tests the ability to clear the stdin buffer. 
+
+Definition at line \hyperlink{stdin__clear__test_8cpp_source_l00022}{22} of file \hyperlink{stdin__clear__test_8cpp_source}{stdin\+\_\+clear\+\_\+test.\+cpp}.
+
+
+\begin{DoxyCode}
+00022                                 \{
+00023     \textcolor{keywordtype}{char} text1[\hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}];
+00024     \textcolor{keywordtype}{char} text2[\hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT}];
+00025 
+00026     cout << \textcolor{stringliteral}{"Enter text to ignore: "};
+00027     cout.flush();
+00028     read(STDIN\_FILENO, &text1, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});
+00029 \textcolor{comment}{//  fflush(stdin);}
+00030     cout << endl << \textcolor{stringliteral}{"Enter text to print: "};
+00031     cout.flush();
+00032     read(STDIN\_FILENO, &text2, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});
+00033     cout << endl << \textcolor{stringliteral}{"In buffer: "} << text2 << endl;
+00034 \}
+\end{DoxyCode}

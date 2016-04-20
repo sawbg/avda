@@ -1,15 +1,24 @@
 \hypertarget{fileio_8hpp}{\section{src/fileio.hpp File Reference}
 \label{fileio_8hpp}\index{src/fileio.\+hpp@{src/fileio.\+hpp}}
 }
+
+
+Contains functions related to file I/\+O use in this program.  
+
+
+{\ttfamily \#include $<$fstream$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}definitions.\+hpp\char`\"{}}\\*
 Include dependency graph for fileio.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=292pt]{fileio_8hpp__incl}
+\includegraphics[width=350pt]{fileio_8hpp__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -17,29 +26,36 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=153pt]{fileio_8hpp__dep__incl}
+\includegraphics[width=350pt]{fileio_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespacevaso}{vaso}
-\begin{DoxyCompactList}\small\item\em contains functions related to the file I/\+O use in this program \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceavda}{avda}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{namespacevaso_abab641a332f2e834dfcdf294c0429426}{vaso\+::\+Current\+Data\+Name} ()
+std\+::string \hyperlink{namespaceavda_ae20728e7e8ae50bf2f74849e538841ea}{avda\+::\+Patient\+Name} ()
 \item 
-std\+::string \hyperlink{namespacevaso_af8f45524d4770053c2b812ce33a7095f}{vaso\+::\+Initial\+Data\+Name} (auto dir)
+std\+::map$<$ Side, \hyperlink{structDataParams}{Data\+Params} $>$ \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{avda\+::\+Read\+Params} (auto filename)
 \item 
-std\+::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{vaso\+::\+Patient\+Name} ()
-\item 
-\hyperlink{structDataParams}{Data\+Params} \hyperlink{namespacevaso_a6f1a23c617aae2e2c4af5e8016b4d03e}{vaso\+::\+Read\+Params} (auto filename)
-\item 
-std\+::string \hyperlink{namespacevaso_ad8543c0caabf3836b4a93a78e0d487d1}{vaso\+::\+Write\+Params} (\hyperlink{structDataParams}{Data\+Params} params, auto filename)
+void \hyperlink{namespaceavda_a1e3f5a0eb4ee9a7010d57dc38bd8dfec}{avda\+::\+Write\+Params} (std\+::map$<$ Side, \hyperlink{structDataParams}{Data\+Params} $>$ params, auto filename)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const std\+::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{vaso\+::\+P\+A\+T\+I\+E\+N\+T\+\_\+\+P\+A\+T\+H} = \char`\"{}/home/pi/patients/\char`\"{}
-\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains functions related to file I/\+O use in this program. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Andrew Wisner, \href{mailto:awisner94@gmail.com}{\tt awisner94@gmail.\+com} 
+
+Nicholas K. Nolan 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]file is overly complicated and much more bug-\/prone than necessary \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{fileio_8hpp_source}{fileio.\+hpp}.
+
