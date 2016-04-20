@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['temp_5ffile',['TEMP_FILE',['../definitions_8hpp.html#a88f32e97c41b89ff0705d0a0b8566b41',1,'definitions.hpp']]]
+  ['sample_5fcount',['SAMPLE_COUNT',['../definitions_8hpp.html#ad3af99f5e7cbf2af51be580e91faa934',1,'definitions.hpp']]],
+  ['sample_5ffreq',['SAMPLE_FREQ',['../definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4',1,'definitions.hpp']]]
 ];

@@ -1,4 +1,4 @@
-.TH "src/definitions.hpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/definitions.hpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,7 +30,7 @@ Contains declarations of system-independant (universal size) integers and float 
 
 .in +1c
 .ti -1c
-.RI " \fBvaso\fP"
+.RI " \fBavda\fP"
 .br
 .in -1c
 .SS "Macros"
@@ -84,12 +84,15 @@ Contains declarations of system-independant (universal size) integers and float 
 
 .in +1c
 .ti -1c
-.RI "enum \fBvaso::Side\fP { \fBvaso::Side::Left\fP, \fBvaso::Side::Right\fP }"
+.RI "enum \fBavda::Side\fP { \fBavda::Side::Left\fP, \fBavda::Side::Right\fP }"
 .br
 .in -1c
 .SS "Variables"
 
 .in +1c
+.ti -1c
+.RI "const \fBuint16\fP \fBDET_THRESH\fP = 5000"
+.br
 .ti -1c
 .RI "const \fBuint8\fP \fBDURATION\fP = 6"
 .br
@@ -97,13 +100,16 @@ Contains declarations of system-independant (universal size) integers and float 
 .RI "const \fBsint8\fP \fBERROR\fP = -1"
 .br
 .ti -1c
+.RI "const \fBuint16\fP \fBMAX_DROP_FREQ\fP = 7000"
+.br
+.ti -1c
 .RI "const \fBuint8\fP \fBREC_COUNT\fP = 6"
 .br
 .ti -1c
-.RI "const \fBuint32\fP \fBSAMPLE_COUNT\fP = 262144"
+.RI "const \fBuint32\fP \fBSAMPLE_COUNT\fP = 131072"
 .br
 .ti -1c
-.RI "const \fBuint16\fP \fBSAMPLE_FREQ\fP = 48000"
+.RI "const \fBuint16\fP \fBSAMPLE_FREQ\fP = 24000"
 .br
 .ti -1c
 .RI "const std::string \fBTEMP_FILE\fP = '\&.temp'"
@@ -141,7 +147,7 @@ Definition at line 20 of file definitions\&.hpp\&.
 .SS "typedef std::complex<\fBfloat32\fP> \fBcfloat32\fP"
 Complex float32's\&. 
 .PP
-Definition at line 81 of file definitions\&.hpp\&.
+Definition at line 92 of file definitions\&.hpp\&.
 .SS "typedef float \fBfloat32\fP"
 
 .PP
@@ -187,31 +193,39 @@ Definition at line 21 of file definitions\&.hpp\&.
 .SS "const \fBuint32\fP BUFFER_SIZE = \fBSAMPLE_COUNT\fP * sizeof(\fBfloat32\fP)"
 Size of the sample buffer\&. 
 .PP
-Definition at line 73 of file definitions\&.hpp\&.
+Definition at line 84 of file definitions\&.hpp\&.
+.SS "const \fBuint16\fP DET_THRESH = 5000"
+Threshold for the differential-parameters product to be considered indicative of a vasospasm\&. 
+.PP
+Definition at line 43 of file definitions\&.hpp\&.
 .SS "const \fBuint8\fP DURATION = 6"
 Duration of recording in seconds\&. 
 .PP
-Definition at line 42 of file definitions\&.hpp\&.
+Definition at line 48 of file definitions\&.hpp\&.
 .SS "const \fBsint8\fP ERROR = -1"
 Error integer returned when the program must exit with an error\&. 
 .PP
-Definition at line 47 of file definitions\&.hpp\&.
+Definition at line 53 of file definitions\&.hpp\&.
+.SS "const \fBuint16\fP MAX_DROP_FREQ = 7000"
+\fBMaximum\fP drop-off frequency considered valid\&. 
+.PP
+Definition at line 58 of file definitions\&.hpp\&.
 .SS "const \fBuint8\fP REC_COUNT = 6"
 Number of recordings (both left and right) to make\&. 
 .PP
-Definition at line 52 of file definitions\&.hpp\&.
-.SS "const \fBuint32\fP SAMPLE_COUNT = 262144"
+Definition at line 63 of file definitions\&.hpp\&.
+.SS "const \fBuint32\fP SAMPLE_COUNT = 131072"
 Number of samples to use in processing the recordings\&. Must be a power of two\&. SAMPLE_COUNT / SAMPLE_FREQ < DURATION must be true\&. 
 .PP
-Definition at line 58 of file definitions\&.hpp\&.
-.SS "const \fBuint16\fP SAMPLE_FREQ = 48000"
+Definition at line 69 of file definitions\&.hpp\&.
+.SS "const \fBuint16\fP SAMPLE_FREQ = 24000"
 Recording sampling rate in Hz (NOT kHz)\&. 
 .PP
-Definition at line 63 of file definitions\&.hpp\&.
+Definition at line 74 of file definitions\&.hpp\&.
 .SS "const std::string TEMP_FILE = '\&.temp'"
 Filename of the temporary recording file\&. 
 .PP
-Definition at line 68 of file definitions\&.hpp\&.
+Definition at line 79 of file definitions\&.hpp\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

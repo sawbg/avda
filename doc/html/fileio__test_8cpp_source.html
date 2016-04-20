@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Andrew and Nick&#39;s Project: src/fileio_test.cpp Source File</title>
+<title>The Automatic Vasospasm Detection Application: src/fileio_test.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Andrew and Nick&#39;s Project
+   <div id="projectname">The Automatic Vasospasm Detection Application
    </div>
   </td>
  </tr>
@@ -118,24 +118,24 @@ $(document).ready(function(){initNavTree('fileio__test_8cpp_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="process_8hpp.html">process.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacevaso.html">vaso</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceavda.html">avda</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="fileio__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   24</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="fileio__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">string</span> path = <a class="code" href="namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9">PATIENT_PATH</a> + <span class="stringliteral">&quot;wizmack, sammy andy.csv&quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    map&lt;Side, DataParams&gt; laMap = <a class="code" href="namespacevaso.html#afc1435dcb9c37b3ccde589738b26c909">ReadParams</a>(path);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">string</span> path = <a class="code" href="namespaceavda.html#a8ee73ec0cb55d4a13e89949764dce89d">PATIENT_PATH</a> + <span class="stringliteral">&quot;wizmack, sammy andy.csv&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    map&lt;Side, DataParams&gt; laMap = <a class="code" href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">ReadParams</a>(path);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cout &lt;&lt;  laMap[Side::Right].freq &lt;&lt; endl;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cout &lt;&lt; laMap[Side::Right].noise &lt;&lt; endl;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="namespacevaso.html#ac272f5c7d73f350442d4657ef0258021">WriteParams</a>(laMap, path);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="namespaceavda.html#aba04a08b41833ced32ec803d55a63bee">WriteParams</a>(laMap, path);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="ttc" id="definitions_8hpp_html"><div class="ttname"><a href="definitions_8hpp.html">definitions.hpp</a></div><div class="ttdoc">Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. </div></div>
 <div class="ttc" id="fileio_8hpp_html"><div class="ttname"><a href="fileio_8hpp.html">fileio.hpp</a></div><div class="ttdoc">contains functions related to the file I/O use in this program </div></div>
+<div class="ttc" id="namespaceavda_html"><div class="ttname"><a href="namespaceavda.html">avda</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00117">definitions.hpp:117</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="fileio__test_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="fileio__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="fileio__test_8cpp_source.html#l00024">fileio_test.cpp:24</a></div></div>
-<div class="ttc" id="namespacevaso_html"><div class="ttname"><a href="namespacevaso.html">vaso</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00106">definitions.hpp:106</a></div></div>
-<div class="ttc" id="namespacevaso_html_afc1435dcb9c37b3ccde589738b26c909"><div class="ttname"><a href="namespacevaso.html#afc1435dcb9c37b3ccde589738b26c909">vaso::ReadParams</a></div><div class="ttdeci">std::map&lt; Side, DataParams &gt; ReadParams(auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00141">fileio.hpp:141</a></div></div>
-<div class="ttc" id="namespacevaso_html_ac272f5c7d73f350442d4657ef0258021"><div class="ttname"><a href="namespacevaso.html#ac272f5c7d73f350442d4657ef0258021">vaso::WriteParams</a></div><div class="ttdeci">void WriteParams(std::map&lt; Side, DataParams &gt; myMap, auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00251">fileio.hpp:251</a></div></div>
-<div class="ttc" id="namespacevaso_html_a0f49c8240a13e7d853912ad78d5f53c9"><div class="ttname"><a href="namespacevaso.html#a0f49c8240a13e7d853912ad78d5f53c9">vaso::PATIENT_PATH</a></div><div class="ttdeci">const std::string PATIENT_PATH</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00030">fileio.hpp:30</a></div></div>
+<div class="ttc" id="namespaceavda_html_a8ee73ec0cb55d4a13e89949764dce89d"><div class="ttname"><a href="namespaceavda.html#a8ee73ec0cb55d4a13e89949764dce89d">avda::PATIENT_PATH</a></div><div class="ttdeci">const std::string PATIENT_PATH</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00030">fileio.hpp:30</a></div></div>
+<div class="ttc" id="namespaceavda_html_aba04a08b41833ced32ec803d55a63bee"><div class="ttname"><a href="namespaceavda.html#aba04a08b41833ced32ec803d55a63bee">avda::WriteParams</a></div><div class="ttdeci">void WriteParams(std::map&lt; Side, DataParams &gt; myMap, auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00251">fileio.hpp:251</a></div></div>
+<div class="ttc" id="namespaceavda_html_a46dc980b65ddfc24749ce25c1290e158"><div class="ttname"><a href="namespaceavda.html#a46dc980b65ddfc24749ce25c1290e158">avda::ReadParams</a></div><div class="ttdeci">std::map&lt; Side, DataParams &gt; ReadParams(auto filename)</div><div class="ttdef"><b>Definition:</b> <a href="fileio_8hpp_source.html#l00141">fileio.hpp:141</a></div></div>
 <div class="ttc" id="process_8hpp_html"><div class="ttname"><a href="process_8hpp.html">process.hpp</a></div><div class="ttdoc">Contains functions related to the program&#39;s threaded processing of audio data. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('fileio__test_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fileio__test_8cpp.html">fileio_test.cpp</a></li>
-    <li class="footer">Generated on Tue Apr 19 2016 20:03:09 for Andrew and Nick&#39;s Project by
+    <li class="footer">Generated on Wed Apr 20 2016 00:56:09 for The Automatic Vasospasm Detection Application by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

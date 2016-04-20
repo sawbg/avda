@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fft',['fft',['../namespacevaso.html#af74f08a8afd7967b6c2b3c2b0e5fb1e9',1,'vaso']]],
+  ['fft',['fft',['../namespaceavda.html#a33a1102422421212ac6b9387c896e864',1,'avda']]],
   ['fileio_2ehpp',['fileio.hpp',['../fileio_8hpp.html',1,'']]],
   ['fileio_5ftest_2ecpp',['fileio_test.cpp',['../fileio__test_8cpp.html',1,'']]],
   ['float32',['float32',['../definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1',1,'definitions.hpp']]],

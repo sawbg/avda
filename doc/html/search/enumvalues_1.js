@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right',['Right',['../namespacevaso.html#a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c',1,'vaso']]]
+  ['right',['Right',['../namespaceavda.html#af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c',1,'avda']]]
 ];

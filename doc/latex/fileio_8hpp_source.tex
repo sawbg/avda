@@ -16,12 +16,12 @@
 00018 
 00019 \textcolor{preprocessor}{#include "\hyperlink{definitions_8hpp}{definitions.hpp}"}
 00020 
-00021 \textcolor{keyword}{namespace }\hyperlink{namespacevaso}{vaso} \{
-\hypertarget{fileio_8hpp_source_l00025}{}\hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{00025}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_ade7cbcaad3dc577b643b3eea4b4e8aa0}{CSV\_HEADER} = \textcolor{stringliteral}{"Time,Side,Frequency,Noise Level"};
+00021 \textcolor{keyword}{namespace }\hyperlink{namespaceavda}{avda} \{
+\hypertarget{fileio_8hpp_source_l00025}{}\hyperlink{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}{00025}     \textcolor{keyword}{const} std::string \hyperlink{namespaceavda_ac568a0872c2c176d874b8b12f67f43ea}{CSV\_HEADER} = \textcolor{stringliteral}{"Time,Side,Frequency,Noise Level"};
 00026 
-\hypertarget{fileio_8hpp_source_l00030}{}\hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{00030}     \textcolor{keyword}{const} std::string \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
+\hypertarget{fileio_8hpp_source_l00030}{}\hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{00030}     \textcolor{keyword}{const} std::string \hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{PATIENT\_PATH} = \textcolor{stringliteral}{"/home/pi/patients/"};
 00031 
-\hypertarget{fileio_8hpp_source_l00043}{}\hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{00043}     std::string \hyperlink{namespacevaso_a21e264fa912f7ca3f50e7e412ba1582e}{PatientName}() \{
+\hypertarget{fileio_8hpp_source_l00043}{}\hyperlink{namespaceavda_ae20728e7e8ae50bf2f74849e538841ea}{00043}     std::string \hyperlink{namespaceavda_ae20728e7e8ae50bf2f74849e538841ea}{PatientName}() \{
 00044         std::string fname = \textcolor{stringliteral}{""};
 00045         std::string mname = \textcolor{stringliteral}{""};
 00046         std::string lname = \textcolor{stringliteral}{""};
@@ -45,7 +45,7 @@
 00064                 + \textcolor{stringliteral}{" "} + mname + \textcolor{stringliteral}{".csv"};
 00065 
 00066             \textcolor{comment}{// prints out patientname. shows user the path to the patient file}
-00067             std::cout << patientname << std::endl << std::endl;
+00067             \textcolor{comment}{//std::cout << patientname << std::endl << std::endl;}
 00068             std::ifstream file(patientname.c\_str());
 00069 
 00070             \textcolor{keywordflow}{if} (file.good()) \{
@@ -110,7 +110,7 @@
 00129         \textcolor{keywordflow}{return} patientname; \textcolor{comment}{//returns the path to the patient file}
 00130     \}
 00131 
-\hypertarget{fileio_8hpp_source_l00141}{}\hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{00141}     std::map<Side, DataParams> \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(\textcolor{keyword}{auto} filename) \{
+\hypertarget{fileio_8hpp_source_l00141}{}\hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{00141}     std::map<Side, DataParams> \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{ReadParams}(\textcolor{keyword}{auto} filename) \{
 00142         std::map<Side, DataParams> myMap;
 00143         \hyperlink{structDataParams}{DataParams} leftparams;
 00144         \hyperlink{structDataParams}{DataParams} rightparams;
@@ -207,13 +207,13 @@
 00235         rightparams.\hyperlink{structDataParams_a12566e017407647bc8287d62554ad3fb}{freq} = rfreqval;
 00236         rightparams.\hyperlink{structDataParams_a4efd1d2231c6fa7c878c9d5e1650738f}{noise} = rnoiseval;
 00237 
-00238         myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Side::Left}] = leftparams;
-00239         myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Side::Right}] = rightparams;
+00238         myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Side::Left}] = leftparams;
+00239         myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Side::Right}] = rightparams;
 00240 
 00241         \textcolor{keywordflow}{return} myMap;
 00242     \}
 00243 
-\hypertarget{fileio_8hpp_source_l00251}{}\hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{00251}     \textcolor{keywordtype}{void} \hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{WriteParams}(std::map<Side, DataParams> myMap, \textcolor{keyword}{auto} filename) \{
+\hypertarget{fileio_8hpp_source_l00251}{}\hyperlink{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{00251}     \textcolor{keywordtype}{void} \hyperlink{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{WriteParams}(std::map<Side, DataParams> myMap, \textcolor{keyword}{auto} filename) \{
 00252         \textcolor{keywordtype}{char} temp[80];
 00253         std::ofstream file(filename.c\_str(),
 00254                 std::ofstream::out | std::ofstream::app);
@@ -227,15 +227,15 @@
 00262         \textcolor{comment}{//if statement to print the Left side parameters to the patient file.}
 00263         \textcolor{keywordflow}{if}(file.is\_open()) \{
 00264             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Left"} + \textcolor{stringliteral}{","}
-00265                 + std::to\_string(myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Side::Left}].freq) 
-00266                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{Side::Left}].noise) << std::endl;
+00265                 + std::to\_string(myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Side::Left}].freq) 
+00266                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{Side::Left}].noise) << std::endl;
 00267         \}
 00268 
 00269         \textcolor{comment}{//if statement to print the Right side parameters to the patient file.}
 00270         \textcolor{keywordflow}{if}(file.is\_open()) \{
 00271             file << fTime + \textcolor{stringliteral}{","} + \textcolor{stringliteral}{"Right"} + \textcolor{stringliteral}{","}
-00272                 + std::to\_string(myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Side::Right}].freq) 
-00273                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{Side::Right}].noise) << std::endl;
+00272                 + std::to\_string(myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Side::Right}].freq) 
+00273                 + \textcolor{stringliteral}{", "} + std::to\_string(myMap[\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{Side::Right}].noise) << std::endl;
 00274         \}
 00275 
 00276         \textcolor{keywordflow}{else} \{

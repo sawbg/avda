@@ -1,4 +1,4 @@
-.TH "src/fileio.hpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/fileio.hpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,30 +28,30 @@ contains functions related to the file I/O use in this program
 
 .in +1c
 .ti -1c
-.RI " \fBvaso\fP"
+.RI " \fBavda\fP"
 .br
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::string \fBvaso::PatientName\fP ()"
+.RI "std::string \fBavda::PatientName\fP ()"
 .br
 .ti -1c
-.RI "std::map< Side, \fBDataParams\fP > \fBvaso::ReadParams\fP (auto filename)"
+.RI "std::map< Side, \fBDataParams\fP > \fBavda::ReadParams\fP (auto filename)"
 .br
 .ti -1c
-.RI "void \fBvaso::WriteParams\fP (std::map< Side, \fBDataParams\fP > myMap, auto filename)"
+.RI "void \fBavda::WriteParams\fP (std::map< Side, \fBDataParams\fP > myMap, auto filename)"
 .br
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "const std::string \fBvaso::CSV_HEADER\fP = 'Time,Side,Frequency,Noise Level'"
+.RI "const std::string \fBavda::CSV_HEADER\fP = 'Time,Side,Frequency,Noise Level'"
 .br
 .ti -1c
-.RI "const std::string \fBvaso::PATIENT_PATH\fP = '/home/pi/patients/'"
+.RI "const std::string \fBavda::PATIENT_PATH\fP = '/home/pi/patients/'"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -77,4 +77,4 @@ file is overly complicated and much more bug-prone
 Definition in file \fBfileio\&.hpp\fP\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

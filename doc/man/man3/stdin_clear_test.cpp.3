@@ -1,4 +1,4 @@
-.TH "src/stdin_clear_test.cpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/stdin_clear_test.cpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -69,7 +69,7 @@ Definition at line 22 of file stdin_clear_test\&.cpp\&.
 26     cout << "Enter text to ignore: ";
 27     cout\&.flush();
 28     read(STDIN_FILENO, &text1, COUNT);
-29     fflush(stdin);
+29 //  fflush(stdin);
 30     cout << endl << "Enter text to print: ";
 31     cout\&.flush();
 32     read(STDIN_FILENO, &text2, COUNT);
@@ -78,4 +78,4 @@ Definition at line 22 of file stdin_clear_test\&.cpp\&.
 .fi
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

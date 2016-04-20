@@ -1,0 +1,730 @@
+\hypertarget{README_8md_source}{\section{R\+E\+A\+D\+M\+E.\+md}
+}
+
+\begin{DoxyCode}
+00001 # vasospasm-detector
+00002 
+00003 ## Introduction
+00004 The Automatic Vasospasm Detection Application (or Algorithm, depending on the
+00005 usage), AVDA, is an application to objectively detect the presence of vasospasms
+00006 based on comparisons of parameters extracted from transcranial doppler audio.
+00007 
+00008 ## Setup
+00009 AVDA is intended to be compiled on machines running Linux, though it could
+00010 likely be adapter for other environments. It must be downloaded from GitHub.com
+00011 and compiled locally. To do this, navigate to the directory in which AVDA should
+00012 be placed, then execute the following commands
+00013 
+00014    git clone https://github.com/sawbg/avda
+00015    cd avda
+00016    make
+00017 
+00018 Sucessfully cloning, compilation, and execution of AVDA requires up-to-date
+00019 versions of the following executables:
+00020 
+00021 * git
+00022 * make
+00023 * gcc (4.9)
+00024 * arecord
+00025 
+00026 ## FAQ
+00027 
+00028 * **Why was this project developed?** This project was developed as a course 
+00029 project by two gradute students at the University of Alabama at Birmingham
+00030 School of Engineering, Nicholas Nolan and Andrew Wisner.
+00031 
+00032 * **Is AVDA an active project?** Though it is not planned to develop AVDA
+00033 further in the near future, it is hoped that the algorithm discovered and
+00034 implemented can be used and built upon by researchers to fully automate the
+00035 detection of vasospasms.
+00036 
+00037 * **AVDA is returning unusually low or high parameters. Why might this be?** In
+00038   development, this occured when the mic-in volume was set too high. It is
+00039 likely in this senario that clipping is happening or that the signal (or a
+00040 strong enough signal) has no been received.
+00041 
+00042 * **How will AVDA be affected by the machine uprising?** The University
+00043   supercomputer, Cheaha, has assured us that AVDA will not be needed after the
+00044 uprising occures.
+00045 
+00046 * **What about more specific questions?** Questions relating to AVDA not
+00047 covered in this FAQ may be sent to the AVDA team via awisner94@gmail.com.
+00048 
+00049 ## License
+00050 
+00051                     GNU GENERAL PUBLIC LICENSE
+00052                        Version 3, 29 June 2007
+00053 
+00054  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+00055  Everyone is permitted to copy and distribute verbatim copies
+00056  of this license document, but changing it is not allowed.
+00057 
+00058                             Preamble
+00059 
+00060   The GNU General Public License is a free, copyleft license for
+00061 software and other kinds of works.
+00062 
+00063   The licenses for most software and other practical works are designed
+00064 to take away your freedom to share and change the works.  By contrast,
+00065 the GNU General Public License is intended to guarantee your freedom to
+00066 share and change all versions of a program--to make sure it remains free
+00067 software for all its users.  We, the Free Software Foundation, use the
+00068 GNU General Public License for most of our software; it applies also to
+00069 any other work released this way by its authors.  You can apply it to
+00070 your programs, too.
+00071 
+00072   When we speak of free software, we are referring to freedom, not
+00073 price.  Our General Public Licenses are designed to make sure that you
+00074 have the freedom to distribute copies of free software (and charge for
+00075 them if you wish), that you receive source code or can get it if you
+00076 want it, that you can change the software or use pieces of it in new
+00077 free programs, and that you know you can do these things.
+00078 
+00079   To protect your rights, we need to prevent others from denying you
+00080 these rights or asking you to surrender the rights.  Therefore, you have
+00081 certain responsibilities if you distribute copies of the software, or if
+00082 you modify it: responsibilities to respect the freedom of others.
+00083 
+00084   For example, if you distribute copies of such a program, whether
+00085 gratis or for a fee, you must pass on to the recipients the same
+00086 freedoms that you received.  You must make sure that they, too, receive
+00087 or can get the source code.  And you must show them these terms so they
+00088 know their rights.
+00089 
+00090   Developers that use the GNU GPL protect your rights with two steps:
+00091 (1) assert copyright on the software, and (2) offer you this License
+00092 giving you legal permission to copy, distribute and/or modify it.
+00093 
+00094   For the developers' and authors' protection, the GPL clearly explains
+00095 that there is no warranty for this free software.  For both users' and
+00096 authors' sake, the GPL requires that modified versions be marked as
+00097 changed, so that their problems will not be attributed erroneously to
+00098 authors of previous versions.
+00099 
+00100   Some devices are designed to deny users access to install or run
+00101 modified versions of the software inside them, although the manufacturer
+00102 can do so.  This is fundamentally incompatible with the aim of
+00103 protecting users' freedom to change the software.  The systematic
+00104 pattern of such abuse occurs in the area of products for individuals to
+00105 use, which is precisely where it is most unacceptable.  Therefore, we
+00106 have designed this version of the GPL to prohibit the practice for those
+00107 products.  If such problems arise substantially in other domains, we
+00108 stand ready to extend this provision to those domains in future versions
+00109 of the GPL, as needed to protect the freedom of users.
+00110 
+00111   Finally, every program is threatened constantly by software patents.
+00112 States should not allow patents to restrict development and use of
+00113 software on general-purpose computers, but in those that do, we wish to
+00114 avoid the special danger that patents applied to a free program could
+00115 make it effectively proprietary.  To prevent this, the GPL assures that
+00116 patents cannot be used to render the program non-free.
+00117 
+00118   The precise terms and conditions for copying, distribution and
+00119 modification follow.
+00120 
+00121                        TERMS AND CONDITIONS
+00122 
+00123   0. Definitions.
+00124 
+00125   "This License" refers to version 3 of the GNU General Public License.
+00126 
+00127   "Copyright" also means copyright-like laws that apply to other kinds of
+00128 works, such as semiconductor masks.
+00129 
+00130   "The Program" refers to any copyrightable work licensed under this
+00131 License.  Each licensee is addressed as "you".  "Licensees" and
+00132 "recipients" may be individuals or organizations.
+00133 
+00134   To "modify" a work means to copy from or adapt all or part of the work
+00135 in a fashion requiring copyright permission, other than the making of an
+00136 exact copy.  The resulting work is called a "modified version" of the
+00137 earlier work or a work "based on" the earlier work.
+00138 
+00139   A "covered work" means either the unmodified Program or a work based
+00140 on the Program.
+00141 
+00142   To "propagate" a work means to do anything with it that, without
+00143 permission, would make you directly or secondarily liable for
+00144 infringement under applicable copyright law, except executing it on a
+00145 computer or modifying a private copy.  Propagation includes copying,
+00146 distribution (with or without modification), making available to the
+00147 public, and in some countries other activities as well.
+00148 
+00149   To "convey" a work means any kind of propagation that enables other
+00150 parties to make or receive copies.  Mere interaction with a user through
+00151 a computer network, with no transfer of a copy, is not conveying.
+00152 
+00153   An interactive user interface displays "Appropriate Legal Notices"
+00154 to the extent that it includes a convenient and prominently visible
+00155 feature that (1) displays an appropriate copyright notice, and (2)
+00156 tells the user that there is no warranty for the work (except to the
+00157 extent that warranties are provided), that licensees may convey the
+00158 work under this License, and how to view a copy of this License.  If
+00159 the interface presents a list of user commands or options, such as a
+00160 menu, a prominent item in the list meets this criterion.
+00161 
+00162   1. Source Code.
+00163 
+00164   The "source code" for a work means the preferred form of the work
+00165 for making modifications to it.  "Object code" means any non-source
+00166 form of a work.
+00167 
+00168   A "Standard Interface" means an interface that either is an official
+00169 standard defined by a recognized standards body, or, in the case of
+00170 interfaces specified for a particular programming language, one that
+00171 is widely used among developers working in that language.
+00172 
+00173   The "System Libraries" of an executable work include anything, other
+00174 than the work as a whole, that (a) is included in the normal form of
+00175 packaging a Major Component, but which is not part of that Major
+00176 Component, and (b) serves only to enable use of the work with that
+00177 Major Component, or to implement a Standard Interface for which an
+00178 implementation is available to the public in source code form.  A
+00179 "Major Component", in this context, means a major essential component
+00180 (kernel, window system, and so on) of the specific operating system
+00181 (if any) on which the executable work runs, or a compiler used to
+00182 produce the work, or an object code interpreter used to run it.
+00183 
+00184   The "Corresponding Source" for a work in object code form means all
+00185 the source code needed to generate, install, and (for an executable
+00186 work) run the object code and to modify the work, including scripts to
+00187 control those activities.  However, it does not include the work's
+00188 System Libraries, or general-purpose tools or generally available free
+00189 programs which are used unmodified in performing those activities but
+00190 which are not part of the work.  For example, Corresponding Source
+00191 includes interface definition files associated with source files for
+00192 the work, and the source code for shared libraries and dynamically
+00193 linked subprograms that the work is specifically designed to require,
+00194 such as by intimate data communication or control flow between those
+00195 subprograms and other parts of the work.
+00196 
+00197   The Corresponding Source need not include anything that users
+00198 can regenerate automatically from other parts of the Corresponding
+00199 Source.
+00200 
+00201   The Corresponding Source for a work in source code form is that
+00202 same work.
+00203 
+00204   2. Basic Permissions.
+00205 
+00206   All rights granted under this License are granted for the term of
+00207 copyright on the Program, and are irrevocable provided the stated
+00208 conditions are met.  This License explicitly affirms your unlimited
+00209 permission to run the unmodified Program.  The output from running a
+00210 covered work is covered by this License only if the output, given its
+00211 content, constitutes a covered work.  This License acknowledges your
+00212 rights of fair use or other equivalent, as provided by copyright law.
+00213 
+00214   You may make, run and propagate covered works that you do not
+00215 convey, without conditions so long as your license otherwise remains
+00216 in force.  You may convey covered works to others for the sole purpose
+00217 of having them make modifications exclusively for you, or provide you
+00218 with facilities for running those works, provided that you comply with
+00219 the terms of this License in conveying all material for which you do
+00220 not control copyright.  Those thus making or running the covered works
+00221 for you must do so exclusively on your behalf, under your direction
+00222 and control, on terms that prohibit them from making any copies of
+00223 your copyrighted material outside their relationship with you.
+00224 
+00225   Conveying under any other circumstances is permitted solely under
+00226 the conditions stated below.  Sublicensing is not allowed; section 10
+00227 makes it unnecessary.
+00228 
+00229   3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+00230 
+00231   No covered work shall be deemed part of an effective technological
+00232 measure under any applicable law fulfilling obligations under article
+00233 11 of the WIPO copyright treaty adopted on 20 December 1996, or
+00234 similar laws prohibiting or restricting circumvention of such
+00235 measures.
+00236 
+00237   When you convey a covered work, you waive any legal power to forbid
+00238 circumvention of technological measures to the extent such circumvention
+00239 is effected by exercising rights under this License with respect to
+00240 the covered work, and you disclaim any intention to limit operation or
+00241 modification of the work as a means of enforcing, against the work's
+00242 users, your or third parties' legal rights to forbid circumvention of
+00243 technological measures.
+00244 
+00245   4. Conveying Verbatim Copies.
+00246 
+00247   You may convey verbatim copies of the Program's source code as you
+00248 receive it, in any medium, provided that you conspicuously and
+00249 appropriately publish on each copy an appropriate copyright notice;
+00250 keep intact all notices stating that this License and any
+00251 non-permissive terms added in accord with section 7 apply to the code;
+00252 keep intact all notices of the absence of any warranty; and give all
+00253 recipients a copy of this License along with the Program.
+00254 
+00255   You may charge any price or no price for each copy that you convey,
+00256 and you may offer support or warranty protection for a fee.
+00257 
+00258   5. Conveying Modified Source Versions.
+00259 
+00260   You may convey a work based on the Program, or the modifications to
+00261 produce it from the Program, in the form of source code under the
+00262 terms of section 4, provided that you also meet all of these conditions:
+00263 
+00264     a) The work must carry prominent notices stating that you modified
+00265     it, and giving a relevant date.
+00266 
+00267     b) The work must carry prominent notices stating that it is
+00268     released under this License and any conditions added under section
+00269     7.  This requirement modifies the requirement in section 4 to
+00270     "keep intact all notices".
+00271 
+00272     c) You must license the entire work, as a whole, under this
+00273     License to anyone who comes into possession of a copy.  This
+00274     License will therefore apply, along with any applicable section 7
+00275     additional terms, to the whole of the work, and all its parts,
+00276     regardless of how they are packaged.  This License gives no
+00277     permission to license the work in any other way, but it does not
+00278     invalidate such permission if you have separately received it.
+00279 
+00280     d) If the work has interactive user interfaces, each must display
+00281     Appropriate Legal Notices; however, if the Program has interactive
+00282     interfaces that do not display Appropriate Legal Notices, your
+00283     work need not make them do so.
+00284 
+00285   A compilation of a covered work with other separate and independent
+00286 works, which are not by their nature extensions of the covered work,
+00287 and which are not combined with it such as to form a larger program,
+00288 in or on a volume of a storage or distribution medium, is called an
+00289 "aggregate" if the compilation and its resulting copyright are not
+00290 used to limit the access or legal rights of the compilation's users
+00291 beyond what the individual works permit.  Inclusion of a covered work
+00292 in an aggregate does not cause this License to apply to the other
+00293 parts of the aggregate.
+00294 
+00295   6. Conveying Non-Source Forms.
+00296 
+00297   You may convey a covered work in object code form under the terms
+00298 of sections 4 and 5, provided that you also convey the
+00299 machine-readable Corresponding Source under the terms of this License,
+00300 in one of these ways:
+00301 
+00302     a) Convey the object code in, or embodied in, a physical product
+00303     (including a physical distribution medium), accompanied by the
+00304     Corresponding Source fixed on a durable physical medium
+00305     customarily used for software interchange.
+00306 
+00307     b) Convey the object code in, or embodied in, a physical product
+00308     (including a physical distribution medium), accompanied by a
+00309     written offer, valid for at least three years and valid for as
+00310     long as you offer spare parts or customer support for that product
+00311     model, to give anyone who possesses the object code either (1) a
+00312     copy of the Corresponding Source for all the software in the
+00313     product that is covered by this License, on a durable physical
+00314     medium customarily used for software interchange, for a price no
+00315     more than your reasonable cost of physically performing this
+00316     conveying of source, or (2) access to copy the
+00317     Corresponding Source from a network server at no charge.
+00318 
+00319     c) Convey individual copies of the object code with a copy of the
+00320     written offer to provide the Corresponding Source.  This
+00321     alternative is allowed only occasionally and noncommercially, and
+00322     only if you received the object code with such an offer, in accord
+00323     with subsection 6b.
+00324 
+00325     d) Convey the object code by offering access from a designated
+00326     place (gratis or for a charge), and offer equivalent access to the
+00327     Corresponding Source in the same way through the same place at no
+00328     further charge.  You need not require recipients to copy the
+00329     Corresponding Source along with the object code.  If the place to
+00330     copy the object code is a network server, the Corresponding Source
+00331     may be on a different server (operated by you or a third party)
+00332     that supports equivalent copying facilities, provided you maintain
+00333     clear directions next to the object code saying where to find the
+00334     Corresponding Source.  Regardless of what server hosts the
+00335     Corresponding Source, you remain obligated to ensure that it is
+00336     available for as long as needed to satisfy these requirements.
+00337 
+00338     e) Convey the object code using peer-to-peer transmission, provided
+00339     you inform other peers where the object code and Corresponding
+00340     Source of the work are being offered to the general public at no
+00341     charge under subsection 6d.
+00342 
+00343   A separable portion of the object code, whose source code is excluded
+00344 from the Corresponding Source as a System Library, need not be
+00345 included in conveying the object code work.
+00346 
+00347   A "User Product" is either (1) a "consumer product", which means any
+00348 tangible personal property which is normally used for personal, family,
+00349 or household purposes, or (2) anything designed or sold for incorporation
+00350 into a dwelling.  In determining whether a product is a consumer product,
+00351 doubtful cases shall be resolved in favor of coverage.  For a particular
+00352 product received by a particular user, "normally used" refers to a
+00353 typical or common use of that class of product, regardless of the status
+00354 of the particular user or of the way in which the particular user
+00355 actually uses, or expects or is expected to use, the product.  A product
+00356 is a consumer product regardless of whether the product has substantial
+00357 commercial, industrial or non-consumer uses, unless such uses represent
+00358 the only significant mode of use of the product.
+00359 
+00360   "Installation Information" for a User Product means any methods,
+00361 procedures, authorization keys, or other information required to install
+00362 and execute modified versions of a covered work in that User Product from
+00363 a modified version of its Corresponding Source.  The information must
+00364 suffice to ensure that the continued functioning of the modified object
+00365 code is in no case prevented or interfered with solely because
+00366 modification has been made.
+00367 
+00368   If you convey an object code work under this section in, or with, or
+00369 specifically for use in, a User Product, and the conveying occurs as
+00370 part of a transaction in which the right of possession and use of the
+00371 User Product is transferred to the recipient in perpetuity or for a
+00372 fixed term (regardless of how the transaction is characterized), the
+00373 Corresponding Source conveyed under this section must be accompanied
+00374 by the Installation Information.  But this requirement does not apply
+00375 if neither you nor any third party retains the ability to install
+00376 modified object code on the User Product (for example, the work has
+00377 been installed in ROM).
+00378 
+00379   The requirement to provide Installation Information does not include a
+00380 requirement to continue to provide support service, warranty, or updates
+00381 for a work that has been modified or installed by the recipient, or for
+00382 the User Product in which it has been modified or installed.  Access to a
+00383 network may be denied when the modification itself materially and
+00384 adversely affects the operation of the network or violates the rules and
+00385 protocols for communication across the network.
+00386 
+00387   Corresponding Source conveyed, and Installation Information provided,
+00388 in accord with this section must be in a format that is publicly
+00389 documented (and with an implementation available to the public in
+00390 source code form), and must require no special password or key for
+00391 unpacking, reading or copying.
+00392 
+00393   7. Additional Terms.
+00394 
+00395   "Additional permissions" are terms that supplement the terms of this
+00396 License by making exceptions from one or more of its conditions.
+00397 Additional permissions that are applicable to the entire Program shall
+00398 be treated as though they were included in this License, to the extent
+00399 that they are valid under applicable law.  If additional permissions
+00400 apply only to part of the Program, that part may be used separately
+00401 under those permissions, but the entire Program remains governed by
+00402 this License without regard to the additional permissions.
+00403 
+00404   When you convey a copy of a covered work, you may at your option
+00405 remove any additional permissions from that copy, or from any part of
+00406 it.  (Additional permissions may be written to require their own
+00407 removal in certain cases when you modify the work.)  You may place
+00408 additional permissions on material, added by you to a covered work,
+00409 for which you have or can give appropriate copyright permission.
+00410 
+00411   Notwithstanding any other provision of this License, for material you
+00412 add to a covered work, you may (if authorized by the copyright holders of
+00413 that material) supplement the terms of this License with terms:
+00414 
+00415     a) Disclaiming warranty or limiting liability differently from the
+00416     terms of sections 15 and 16 of this License; or
+00417 
+00418     b) Requiring preservation of specified reasonable legal notices or
+00419     author attributions in that material or in the Appropriate Legal
+00420     Notices displayed by works containing it; or
+00421 
+00422     c) Prohibiting misrepresentation of the origin of that material, or
+00423     requiring that modified versions of such material be marked in
+00424     reasonable ways as different from the original version; or
+00425 
+00426     d) Limiting the use for publicity purposes of names of licensors or
+00427     authors of the material; or
+00428 
+00429     e) Declining to grant rights under trademark law for use of some
+00430     trade names, trademarks, or service marks; or
+00431 
+00432     f) Requiring indemnification of licensors and authors of that
+00433     material by anyone who conveys the material (or modified versions of
+00434     it) with contractual assumptions of liability to the recipient, for
+00435     any liability that these contractual assumptions directly impose on
+00436     those licensors and authors.
+00437 
+00438   All other non-permissive additional terms are considered "further
+00439 restrictions" within the meaning of section 10.  If the Program as you
+00440 received it, or any part of it, contains a notice stating that it is
+00441 governed by this License along with a term that is a further
+00442 restriction, you may remove that term.  If a license document contains
+00443 a further restriction but permits relicensing or conveying under this
+00444 License, you may add to a covered work material governed by the terms
+00445 of that license document, provided that the further restriction does
+00446 not survive such relicensing or conveying.
+00447 
+00448   If you add terms to a covered work in accord with this section, you
+00449 must place, in the relevant source files, a statement of the
+00450 additional terms that apply to those files, or a notice indicating
+00451 where to find the applicable terms.
+00452 
+00453   Additional terms, permissive or non-permissive, may be stated in the
+00454 form of a separately written license, or stated as exceptions;
+00455 the above requirements apply either way.
+00456 
+00457   8. Termination.
+00458 
+00459   You may not propagate or modify a covered work except as expressly
+00460 provided under this License.  Any attempt otherwise to propagate or
+00461 modify it is void, and will automatically terminate your rights under
+00462 this License (including any patent licenses granted under the third
+00463 paragraph of section 11).
+00464 
+00465   However, if you cease all violation of this License, then your
+00466 license from a particular copyright holder is reinstated (a)
+00467 provisionally, unless and until the copyright holder explicitly and
+00468 finally terminates your license, and (b) permanently, if the copyright
+00469 holder fails to notify you of the violation by some reasonable means
+00470 prior to 60 days after the cessation.
+00471 
+00472   Moreover, your license from a particular copyright holder is
+00473 reinstated permanently if the copyright holder notifies you of the
+00474 violation by some reasonable means, this is the first time you have
+00475 received notice of violation of this License (for any work) from that
+00476 copyright holder, and you cure the violation prior to 30 days after
+00477 your receipt of the notice.
+00478 
+00479   Termination of your rights under this section does not terminate the
+00480 licenses of parties who have received copies or rights from you under
+00481 this License.  If your rights have been terminated and not permanently
+00482 reinstated, you do not qualify to receive new licenses for the same
+00483 material under section 10.
+00484 
+00485   9. Acceptance Not Required for Having Copies.
+00486 
+00487   You are not required to accept this License in order to receive or
+00488 run a copy of the Program.  Ancillary propagation of a covered work
+00489 occurring solely as a consequence of using peer-to-peer transmission
+00490 to receive a copy likewise does not require acceptance.  However,
+00491 nothing other than this License grants you permission to propagate or
+00492 modify any covered work.  These actions infringe copyright if you do
+00493 not accept this License.  Therefore, by modifying or propagating a
+00494 covered work, you indicate your acceptance of this License to do so.
+00495 
+00496   10. Automatic Licensing of Downstream Recipients.
+00497 
+00498   Each time you convey a covered work, the recipient automatically
+00499 receives a license from the original licensors, to run, modify and
+00500 propagate that work, subject to this License.  You are not responsible
+00501 for enforcing compliance by third parties with this License.
+00502 
+00503   An "entity transaction" is a transaction transferring control of an
+00504 organization, or substantially all assets of one, or subdividing an
+00505 organization, or merging organizations.  If propagation of a covered
+00506 work results from an entity transaction, each party to that
+00507 transaction who receives a copy of the work also receives whatever
+00508 licenses to the work the party's predecessor in interest had or could
+00509 give under the previous paragraph, plus a right to possession of the
+00510 Corresponding Source of the work from the predecessor in interest, if
+00511 the predecessor has it or can get it with reasonable efforts.
+00512 
+00513   You may not impose any further restrictions on the exercise of the
+00514 rights granted or affirmed under this License.  For example, you may
+00515 not impose a license fee, royalty, or other charge for exercise of
+00516 rights granted under this License, and you may not initiate litigation
+00517 (including a cross-claim or counterclaim in a lawsuit) alleging that
+00518 any patent claim is infringed by making, using, selling, offering for
+00519 sale, or importing the Program or any portion of it.
+00520 
+00521   11. Patents.
+00522 
+00523   A "contributor" is a copyright holder who authorizes use under this
+00524 License of the Program or a work on which the Program is based.  The
+00525 work thus licensed is called the contributor's "contributor version".
+00526 
+00527   A contributor's "essential patent claims" are all patent claims
+00528 owned or controlled by the contributor, whether already acquired or
+00529 hereafter acquired, that would be infringed by some manner, permitted
+00530 by this License, of making, using, or selling its contributor version,
+00531 but do not include claims that would be infringed only as a
+00532 consequence of further modification of the contributor version.  For
+00533 purposes of this definition, "control" includes the right to grant
+00534 patent sublicenses in a manner consistent with the requirements of
+00535 this License.
+00536 
+00537   Each contributor grants you a non-exclusive, worldwide, royalty-free
+00538 patent license under the contributor's essential patent claims, to
+00539 make, use, sell, offer for sale, import and otherwise run, modify and
+00540 propagate the contents of its contributor version.
+00541 
+00542   In the following three paragraphs, a "patent license" is any express
+00543 agreement or commitment, however denominated, not to enforce a patent
+00544 (such as an express permission to practice a patent or covenant not to
+00545 sue for patent infringement).  To "grant" such a patent license to a
+00546 party means to make such an agreement or commitment not to enforce a
+00547 patent against the party.
+00548 
+00549   If you convey a covered work, knowingly relying on a patent license,
+00550 and the Corresponding Source of the work is not available for anyone
+00551 to copy, free of charge and under the terms of this License, through a
+00552 publicly available network server or other readily accessible means,
+00553 then you must either (1) cause the Corresponding Source to be so
+00554 available, or (2) arrange to deprive yourself of the benefit of the
+00555 patent license for this particular work, or (3) arrange, in a manner
+00556 consistent with the requirements of this License, to extend the patent
+00557 license to downstream recipients.  "Knowingly relying" means you have
+00558 actual knowledge that, but for the patent license, your conveying the
+00559 covered work in a country, or your recipient's use of the covered work
+00560 in a country, would infringe one or more identifiable patents in that
+00561 country that you have reason to believe are valid.
+00562 
+00563   If, pursuant to or in connection with a single transaction or
+00564 arrangement, you convey, or propagate by procuring conveyance of, a
+00565 covered work, and grant a patent license to some of the parties
+00566 receiving the covered work authorizing them to use, propagate, modify
+00567 or convey a specific copy of the covered work, then the patent license
+00568 you grant is automatically extended to all recipients of the covered
+00569 work and works based on it.
+00570 
+00571   A patent license is "discriminatory" if it does not include within
+00572 the scope of its coverage, prohibits the exercise of, or is
+00573 conditioned on the non-exercise of one or more of the rights that are
+00574 specifically granted under this License.  You may not convey a covered
+00575 work if you are a party to an arrangement with a third party that is
+00576 in the business of distributing software, under which you make payment
+00577 to the third party based on the extent of your activity of conveying
+00578 the work, and under which the third party grants, to any of the
+00579 parties who would receive the covered work from you, a discriminatory
+00580 patent license (a) in connection with copies of the covered work
+00581 conveyed by you (or copies made from those copies), or (b) primarily
+00582 for and in connection with specific products or compilations that
+00583 contain the covered work, unless you entered into that arrangement,
+00584 or that patent license was granted, prior to 28 March 2007.
+00585 
+00586   Nothing in this License shall be construed as excluding or limiting
+00587 any implied license or other defenses to infringement that may
+00588 otherwise be available to you under applicable patent law.
+00589 
+00590   12. No Surrender of Others' Freedom.
+00591 
+00592   If conditions are imposed on you (whether by court order, agreement or
+00593 otherwise) that contradict the conditions of this License, they do not
+00594 excuse you from the conditions of this License.  If you cannot convey a
+00595 covered work so as to satisfy simultaneously your obligations under this
+00596 License and any other pertinent obligations, then as a consequence you may
+00597 not convey it at all.  For example, if you agree to terms that obligate you
+00598 to collect a royalty for further conveying from those to whom you convey
+00599 the Program, the only way you could satisfy both those terms and this
+00600 License would be to refrain entirely from conveying the Program.
+00601 
+00602   13. Use with the GNU Affero General Public License.
+00603 
+00604   Notwithstanding any other provision of this License, you have
+00605 permission to link or combine any covered work with a work licensed
+00606 under version 3 of the GNU Affero General Public License into a single
+00607 combined work, and to convey the resulting work.  The terms of this
+00608 License will continue to apply to the part which is the covered work,
+00609 but the special requirements of the GNU Affero General Public License,
+00610 section 13, concerning interaction through a network will apply to the
+00611 combination as such.
+00612 
+00613   14. Revised Versions of this License.
+00614 
+00615   The Free Software Foundation may publish revised and/or new versions of
+00616 the GNU General Public License from time to time.  Such new versions will
+00617 be similar in spirit to the present version, but may differ in detail to
+00618 address new problems or concerns.
+00619 
+00620   Each version is given a distinguishing version number.  If the
+00621 Program specifies that a certain numbered version of the GNU General
+00622 Public License "or any later version" applies to it, you have the
+00623 option of following the terms and conditions either of that numbered
+00624 version or of any later version published by the Free Software
+00625 Foundation.  If the Program does not specify a version number of the
+00626 GNU General Public License, you may choose any version ever published
+00627 by the Free Software Foundation.
+00628 
+00629   If the Program specifies that a proxy can decide which future
+00630 versions of the GNU General Public License can be used, that proxy's
+00631 public statement of acceptance of a version permanently authorizes you
+00632 to choose that version for the Program.
+00633 
+00634   Later license versions may give you additional or different
+00635 permissions.  However, no additional obligations are imposed on any
+00636 author or copyright holder as a result of your choosing to follow a
+00637 later version.
+00638 
+00639   15. Disclaimer of Warranty.
+00640 
+00641   THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+00642 APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+00643 HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+00644 OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+00645 THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+00646 PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+00647 IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+00648 ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+00649 
+00650   16. Limitation of Liability.
+00651 
+00652   IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+00653 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+00654 THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+00655 GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+00656 USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+00657 DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+00658 PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+00659 EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+00660 SUCH DAMAGES.
+00661 
+00662   17. Interpretation of Sections 15 and 16.
+00663 
+00664   If the disclaimer of warranty and limitation of liability provided
+00665 above cannot be given local legal effect according to their terms,
+00666 reviewing courts shall apply local law that most closely approximates
+00667 an absolute waiver of all civil liability in connection with the
+00668 Program, unless a warranty or assumption of liability accompanies a
+00669 copy of the Program in return for a fee.
+00670 
+00671                      END OF TERMS AND CONDITIONS
+00672 
+00673             How to Apply These Terms to Your New Programs
+00674 
+00675   If you develop a new program, and you want it to be of the greatest
+00676 possible use to the public, the best way to achieve this is to make it
+00677 free software which everyone can redistribute and change under these terms.
+00678 
+00679   To do so, attach the following notices to the program.  It is safest
+00680 to attach them to the start of each source file to most effectively
+00681 state the exclusion of warranty; and each file should have at least
+00682 the "copyright" line and a pointer to where the full notice is found.
+00683 
+00684     \{one line to give the program's name and a brief idea of what it does.\}
+00685     Copyright (C) \{year\}  \{name of author\}
+00686 
+00687     This program is free software: you can redistribute it and/or modify
+00688     it under the terms of the GNU General Public License as published by
+00689     the Free Software Foundation, either version 3 of the License, or
+00690     (at your option) any later version.
+00691 
+00692     This program is distributed in the hope that it will be useful,
+00693     but WITHOUT ANY WARRANTY; without even the implied warranty of
+00694     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+00695     GNU General Public License for more details.
+00696 
+00697     You should have received a copy of the GNU General Public License
+00698     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+00699 
+00700 Also add information on how to contact you by electronic and paper mail.
+00701 
+00702   If the program does terminal interaction, make it output a short
+00703 notice like this when it starts in an interactive mode:
+00704 
+00705     \{project\}  Copyright (C) \{year\}  \{fullname\}
+00706     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+00707     This is free software, and you are welcome to redistribute it
+00708     under certain conditions; type `show c' for details.
+00709 
+00710 The hypothetical commands `show w' and `show c' should show the appropriate
+00711 parts of the General Public License.  Of course, your program's commands
+00712 might be different; for a GUI interface, you would use an "about box".
+00713 
+00714   You should also get your employer (if you work as a programmer) or school,
+00715 if any, to sign a "copyright disclaimer" for the program, if necessary.
+00716 For more information on this, and how to apply and follow the GNU GPL, see
+00717 <http://www.gnu.org/licenses/>.
+00718 
+00719   The GNU General Public License does not permit incorporating your program
+00720 into proprietary programs.  If your program is a subroutine library, you
+00721 may consider it more useful to permit linking proprietary applications with
+00722 the library.  If this is what you want to do, use the GNU Lesser General
+00723 Public License instead of this License.  But first, please read
+00724 <http://www.gnu.org/philosophy/why-not-lgpl.html>.
+00725 
+\end{DoxyCode}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['decibels',['decibels',['../namespacevaso.html#af9bb2211cf3478333dfc1873bf316263',1,'vaso']]],
-  ['diff',['diff',['../namespacevaso.html#a7d108bce812e906d8b1810815774c7ea',1,'vaso']]]
+  ['decibels',['decibels',['../namespaceavda.html#a9c0b7f832eace3cbc9c5dddea2ecc9d5',1,'avda']]],
+  ['diff',['diff',['../namespaceavda.html#a3e9b92cfa9d76c4c363e8ed8a4c1a2ce',1,'avda']]]
 ];

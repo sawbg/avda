@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Andrew and Nick's Project", "index.html", [
+  [ "The Automatic Vasospasm Detection Application", "index.html", [
     [ "Bug List", "bug.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],

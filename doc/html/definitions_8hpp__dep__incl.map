@@ -1,7 +1,7 @@
 <map id="src/definitions.hpp" name="src/definitions.hpp">
 <area shape="rect" id="node2" href="$fileio_8hpp.html" title="contains functions related to the file I/O use in this program " alt="" coords="329,155,425,181"/>
 <area shape="rect" id="node3" href="$fileio__test_8cpp.html" title="Contains program that tests the functions in fileio.hpp. " alt="" coords="403,229,528,256"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="contains the main program " alt="" coords="553,229,650,256"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Contains the main program. " alt="" coords="553,229,650,256"/>
 <area shape="rect" id="node7" href="$process_8hpp.html" title="Contains functions related to the program&#39;s threaded processing of audio data. " alt="" coords="551,155,665,181"/>
 <area shape="rect" id="node8" href="$process__test_8cpp.html" title="Contains a program to test the process() function. " alt="" coords="677,229,821,256"/>
 <area shape="rect" id="node9" href="$sigmath_8hpp.html" title="contains the functions necessary to perform the mathematical operations required by this program ..." alt="" coords="551,80,665,107"/>

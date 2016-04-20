@@ -35,7 +35,7 @@ struct \hyperlink{structMaximum}{Maximum}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespacevaso}{vaso}
+ \hyperlink{namespaceavda}{avda}
 \end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -72,22 +72,26 @@ typedef std\+::complex$<$ \hyperlink{definitions_8hpp_aacdc525d6f7bddb3ae95d5c31
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7c}{vaso\+::\+Side} \{ \hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca945d5e233cf7d6240f6b783b36a374ff}{vaso\+::\+Side\+::\+Left}, 
-\hyperlink{namespacevaso_a77c5d9704657d49d456f691ddd8abf7ca92b09c7c48c520c3c55e497875da437c}{vaso\+::\+Side\+::\+Right}
+enum \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786}{avda\+::\+Side} \{ \hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a945d5e233cf7d6240f6b783b36a374ff}{avda\+::\+Side\+::\+Left}, 
+\hyperlink{namespaceavda_af723e82f0d3d45fda6fdc01f6a492786a92b09c7c48c520c3c55e497875da437c}{avda\+::\+Side\+::\+Right}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+const \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H} = 5000
+\item 
 const \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{D\+U\+R\+A\+T\+I\+O\+N} = 6
 \item 
 const \hyperlink{definitions_8hpp_a1a6408291ee3cfd0760a61ac64084154}{sint8} \hyperlink{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{E\+R\+R\+O\+R} = -\/1
 \item 
+const \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q} = 7000
+\item 
 const \hyperlink{definitions_8hpp_adde6aaee8457bee49c2a92621fe22b79}{uint8} \hyperlink{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{R\+E\+C\+\_\+\+C\+O\+U\+N\+T} = 6
 \item 
-const \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T} = 262144
+const \hyperlink{definitions_8hpp_a1134b580f8da4de94ca6b1de4d37975e}{uint32} \hyperlink{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T} = 131072
 \item 
-const \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q} = 48000
+const \hyperlink{definitions_8hpp_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q} = 24000
 \item 
 const std\+::string \hyperlink{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{T\+E\+M\+P\+\_\+\+F\+I\+L\+E} = \char`\"{}.temp\char`\"{}
 \item 
@@ -130,7 +134,7 @@ Definition at line \hyperlink{definitions_8hpp_source_l00020}{20} of file \hyper
 \subsubsection[{cfloat32}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::complex$<${\bf float32}$>$ {\bf cfloat32}}}\label{definitions_8hpp_a960be6b6614c08090c16574dba10a421}
 Complex float32's. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00081}{81} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00092}{92} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_aacdc525d6f7bddb3ae95d5c311bd06a1}{\index{definitions.\+hpp@{definitions.\+hpp}!float32@{float32}}
 \index{float32@{float32}!definitions.\+hpp@{definitions.\+hpp}}
@@ -210,47 +214,61 @@ Definition at line \hyperlink{definitions_8hpp_source_l00021}{21} of file \hyper
 \subsubsection[{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint32} B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E = {\bf S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T} $\ast$ sizeof({\bf float32})}}\label{definitions_8hpp_aca681ed285767aaa2353bf3b42dd60ed}
 Size of the sample buffer. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00073}{73} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00084}{84} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+
+\hypertarget{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}{\index{definitions.\+hpp@{definitions.\+hpp}!D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H@{D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H}}
+\index{D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H@{D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H}!definitions.\+hpp@{definitions.\+hpp}}
+\subsubsection[{D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint16} D\+E\+T\+\_\+\+T\+H\+R\+E\+S\+H = 5000}}\label{definitions_8hpp_aa15adfcc96559f1b86210d217edd3afc}
+Threshold for the differential-\/parameters product to be considered indicative of a vasospasm. 
+
+Definition at line \hyperlink{definitions_8hpp_source_l00043}{43} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}{\index{definitions.\+hpp@{definitions.\+hpp}!D\+U\+R\+A\+T\+I\+O\+N@{D\+U\+R\+A\+T\+I\+O\+N}}
 \index{D\+U\+R\+A\+T\+I\+O\+N@{D\+U\+R\+A\+T\+I\+O\+N}!definitions.\+hpp@{definitions.\+hpp}}
 \subsubsection[{D\+U\+R\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8} D\+U\+R\+A\+T\+I\+O\+N = 6}}\label{definitions_8hpp_ada7a88c013312e76596a2000cc8277fb}
 Duration of recording in seconds. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00042}{42} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00048}{48} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}{\index{definitions.\+hpp@{definitions.\+hpp}!E\+R\+R\+O\+R@{E\+R\+R\+O\+R}}
 \index{E\+R\+R\+O\+R@{E\+R\+R\+O\+R}!definitions.\+hpp@{definitions.\+hpp}}
 \subsubsection[{E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sint8} E\+R\+R\+O\+R = -\/1}}\label{definitions_8hpp_a876fcacb67d51738e846a3312dc08fbb}
 Error integer returned when the program must exit with an error. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00047}{47} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00053}{53} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+
+\hypertarget{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}{\index{definitions.\+hpp@{definitions.\+hpp}!M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q@{M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q}}
+\index{M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q@{M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q}!definitions.\+hpp@{definitions.\+hpp}}
+\subsubsection[{M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint16} M\+A\+X\+\_\+\+D\+R\+O\+P\+\_\+\+F\+R\+E\+Q = 7000}}\label{definitions_8hpp_ab506614aee9be52f401d8d573a8d172c}
+\hyperlink{structMaximum}{Maximum} drop-\/off frequency considered valid. 
+
+Definition at line \hyperlink{definitions_8hpp_source_l00058}{58} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}{\index{definitions.\+hpp@{definitions.\+hpp}!R\+E\+C\+\_\+\+C\+O\+U\+N\+T@{R\+E\+C\+\_\+\+C\+O\+U\+N\+T}}
 \index{R\+E\+C\+\_\+\+C\+O\+U\+N\+T@{R\+E\+C\+\_\+\+C\+O\+U\+N\+T}!definitions.\+hpp@{definitions.\+hpp}}
 \subsubsection[{R\+E\+C\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint8} R\+E\+C\+\_\+\+C\+O\+U\+N\+T = 6}}\label{definitions_8hpp_a2fd18fd694a2918f7d73eba821fd10b2}
 Number of recordings (both left and right) to make. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00052}{52} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00063}{63} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}{\index{definitions.\+hpp@{definitions.\+hpp}!S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T@{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T}}
 \index{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T@{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T}!definitions.\+hpp@{definitions.\+hpp}}
-\subsubsection[{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint32} S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T = 262144}}\label{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}
+\subsubsection[{S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint32} S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T = 131072}}\label{definitions_8hpp_ad3af99f5e7cbf2af51be580e91faa934}
 Number of samples to use in processing the recordings. Must be a power of two. S\+A\+M\+P\+L\+E\+\_\+\+C\+O\+U\+N\+T / S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q $<$ D\+U\+R\+A\+T\+I\+O\+N must be true. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00058}{58} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00069}{69} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}{\index{definitions.\+hpp@{definitions.\+hpp}!S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q@{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q}}
 \index{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q@{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q}!definitions.\+hpp@{definitions.\+hpp}}
-\subsubsection[{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint16} S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q = 48000}}\label{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}
+\subsubsection[{S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf uint16} S\+A\+M\+P\+L\+E\+\_\+\+F\+R\+E\+Q = 24000}}\label{definitions_8hpp_a8ace559345ecba7978591ac2ef22aea4}
 Recording sampling rate in Hz (N\+O\+T k\+Hz). 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00063}{63} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00074}{74} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 
 \hypertarget{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}{\index{definitions.\+hpp@{definitions.\+hpp}!T\+E\+M\+P\+\_\+\+F\+I\+L\+E@{T\+E\+M\+P\+\_\+\+F\+I\+L\+E}}
 \index{T\+E\+M\+P\+\_\+\+F\+I\+L\+E@{T\+E\+M\+P\+\_\+\+F\+I\+L\+E}!definitions.\+hpp@{definitions.\+hpp}}
 \subsubsection[{T\+E\+M\+P\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string T\+E\+M\+P\+\_\+\+F\+I\+L\+E = \char`\"{}.temp\char`\"{}}}\label{definitions_8hpp_a88f32e97c41b89ff0705d0a0b8566b41}
 Filename of the temporary recording file. 
 
-Definition at line \hyperlink{definitions_8hpp_source_l00068}{68} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
+Definition at line \hyperlink{definitions_8hpp_source_l00079}{79} of file \hyperlink{definitions_8hpp_source}{definitions.\+hpp}.
 

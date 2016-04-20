@@ -1,10 +1,10 @@
-.TH "src/main.cpp" 3 "Tue Apr 19 2016" "Andrew and Nick's Project" \" -*- nroff -*-
+.TH "src/main.cpp" 3 "Wed Apr 20 2016" "The Automatic Vasospasm Detection Application" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/main.cpp \- 
 .PP
-contains the main program  
+Contains the main program\&.  
 
 .SH SYNOPSIS
 .br
@@ -43,7 +43,7 @@ contains the main program
 .in -1c
 .SH "Detailed Description"
 .PP 
-contains the main program 
+Contains the main program\&. 
 
 
 .PP
@@ -54,83 +54,126 @@ Samuel Andrew Wisner, awisner94@gmail.com
 Nicholas K\&. Nolan 
 .RE
 .PP
+\fBBug\fP
+.RS 4
+extra newline character inserted into stdin buffer after \fBPatientName()\fP is run 
+.RE
+.PP
 
 .PP
 Definition in file \fBmain\&.cpp\fP\&.
 .SH "Function Documentation"
 .PP 
 .SS "int main (intargc, char **argv)"
-The main program for this project\&. It will detect vasospasms over a period of days\&. 
+The main program for this project\&. It will detect avdaspasms over a period of days\&. 
 .PP
-Definition at line 29 of file main\&.cpp\&.
+Definition at line 31 of file main\&.cpp\&.
 .PP
 .nf
-29                                 {
-30     const string recCommand = string("arecord -t raw -d ")
-31         + to_string(DURATION) + string(" -D plughw:1,0 -f FLOAT -q -r ")
-32          + to_string(SAMPLE_FREQ) + string(" ") + TEMP_FILE;
-33     DataParams params[REC_COUNT];
-34 
-35     string filename = PatientName();  // generate name for patient's file
-36 
-37     // Recorded audio buffer
-38     float32* buffer = (float32*)std::malloc(BUFFER_SIZE);
-39 
-40     // Start recording
-41     for(uint8 i = 0; i < REC_COUNT; i++) {
-42         cout << "Press [ ENTER ] to begin analysis for the "
-43             << (i < REC_COUNT / 2 ? "left" : "right") << " side, depth #"
-44             << (((i >= REC_COUNT / 2) ? (i - REC_COUNT / 2) : i) + 1)
-45             << "\&.\&.\&.";
-46         fflush(stdin);
-47         getchar();  // wait for ENTER to be pressed
-48         cout << "Recording\&.\&.\&." << endl;
-49 
-50         system(recCommand\&.c_str());
-51         sleep(DURATION + 1);
-52 
-53         int file = open(TEMP_FILE\&.c_str(), O_RDONLY);
-54         int retRead = read(file, buffer, BUFFER_SIZE);
-55         close(file);
-56         remove(TEMP_FILE\&.c_str());
+31                                 {
+32     // Recorded audio buffer
+33     float32* buffer = (float32*)std::malloc(BUFFER_SIZE);
+34     bool cont = true;  // whether to continue in the recording loop
+35     DataParams params[REC_COUNT];  // holds DataParam's from recordings
+36     string filename = PatientName();  // generate name for patient's file
+37     map<Side, DataParams> results;  // parameters by side
+38 
+39     // arecord command
+40     const string recCommand = string("arecord -t raw -d ")
+41         + to_string(DURATION) + string(" -D plughw:1,0 -f FLOAT -q -r ")
+42         + to_string(SAMPLE_FREQ) + string(" ") + TEMP_FILE;
+43 
+44     // Recording
+45     while(cont) {
+46         for(uint8 i = 0; i < REC_COUNT; i++) {
+47             // prompt
+48             cout << "Press [ ENTER ] to begin analysis for the "
+49                 << (i < REC_COUNT / 2 ? "left" : "right") << " side, depth #"
+50                 << (((i >= REC_COUNT / 2) ? (i - REC_COUNT / 2) : i) + 1)
+51                 << " ";
+52             getchar();  // wait for ENTER to be pressed
+53             cout << "Analyzing\&.\&.\&." << endl;
+54 
+55             system(recCommand\&.c_str());
+56             usleep(DURATION*1000000 + 1500000);  // sleep DURATION + 1\&.5 seconds
 57 
-58         if(file < 0 || retRead < BUFFER_SIZE) {
-59             cerr << "An error occurred reading the doppler audio! "
-60                 "The program will now exit\&." << endl;
-61             return ERROR;
-62         }
-63 
-64         params[i] = process(buffer, SAMPLE_COUNT, SAMPLE_FREQ);
-65         cout << "The analysis is complete\&." << endl << endl;
-66     }
-67 
-68     free(buffer);
-69     map<Side, DataParams> results;
-70     results[Side::Left] = average(params, REC_COUNT / 2);
-71     results[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
-72 
-73     cout << "Analysis is complete\&." << endl << endl;
+58             int file = open(TEMP_FILE\&.c_str(), O_RDONLY);  // open temp file
+59             int retRead = read(file, buffer, BUFFER_SIZE);  // copy to buffer
+60             close(file);  // close temp file
+61             remove(TEMP_FILE\&.c_str());  // delete temp file
+62 
+63             // if something goes wrong reading the temp file, program exits
+64             if(file < 0 || retRead < BUFFER_SIZE) {
+65                 cerr << "An error occurred reading the doppler audio! "
+66                     "The program will now exit\&." << endl;
+67                 return ERROR;
+68             }
+69 
+70             // process and store parameters
+71             params[i] = process(buffer, SAMPLE_COUNT, SAMPLE_FREQ);
+72             cout << "The analysis is complete\&." << endl << endl;
+73         }
 74 
-75     for(int i = 0; i < 2; i++) {
-76         Side side = (Side)i;
-77         cout << (side == Side::Left ? "[LEFT]" : "[RIGHT]") << endl;
-78         cout << "Drop-off frequency: " << (uint16)(results[side]\&.freq + 0\&.5)
-79             << " Hz" << endl;
-80         cout << "Average relative noiseband power: "
-81             << (sint16)(results[side]\&.noise - 0\&.5) << " dB" << endl <<endl;
-82     }
-83 
-84     try {
-85         map<Side, DataParams> baseParams = ReadParams(filename);
-86         // TODO: Print results & probable diagnosis
-87 
-88     } catch(exception ex) {
-89         
-90         // TODO: Write all results to file
-91     }
-92     
-93 }
+75         // calculate averaged parameters
+76         results[Side::Left] = average(params, REC_COUNT / 2);
+77         results[Side::Right] = average(&params[REC_COUNT / 2], REC_COUNT / 2);
+78 
+79         cout << "Analysis is complete\&." << endl << endl;
+80 
+81         // print averaged side analysis
+82         for(int i = 0; i < 2; i++) {
+83             Side side = (Side)i;
+84             cout << (side == Side::Left ? "[LEFT]" : "[RIGHT]") << endl;
+85             cout << "Drop-off frequency: " << (uint16)(results[side]\&.freq + 0\&.5)
+86                 << " Hz" << endl;
+87             cout << "Average relative noiseband power: "
+88                 << (sint16)(results[side]\&.noise - 0\&.5) << " dB" << endl <<endl;
+89         }
+90 
+91         cont = results[Side::Left]\&.freq > MAX_DROP_FREQ
+92             || results[Side::Right]\&.freq > MAX_DROP_FREQ;
+93 
+94         if(cont) {
+95             cout << "An error in aquisition of the doppler audio has occurred! "
+96                 "Ensure the connection from the doppler machine to this device "
+97                 "is secure and the connection uninterruptable\&." << endl << endl;
+98         }
+99     }
+100 
+101     free(buffer);  // free buffer to prevent memory leak
+102     WriteParams(results, filename);
+103 
+104     // examine likelihood of avdaspasm
+105     try {
+106         map<Side, DataParams> baseParams = ReadParams(filename);
+107         map<Side, bool> comparison;
+108 
+109         for(uint8 i = 0; i < 2; i++) {
+110             Side side = (Side)i;
+111             float comp = (results[side]\&.freq - baseParams[side]\&.freq) 
+112                 * (baseParams[side]\&.noise - results[side]\&.noise);
+113             comparison[side] = comp > DET_THRESH;
+114         }
+115 
+116         string which;
+117 
+118         if(comparison[Side::Left] && !comparison[Side::Right]) {
+119             which = "The left";
+120         } else if(!comparison[Side::Left] && comparison[Side::Right]) {
+121             which = "The right";
+122         } else if (comparison[Side::Left] && comparison[Side::Right]) {
+123             which = "Both";
+124         } else {
+125             which = "Neither";
+126         }
+127 
+128         cout << which << " side seems to show evidence of a vasospasm\&." << endl;
+129     } catch(runtime_error ex) {
+130         cout << "These values will be stored as the baseline parameters to "
+131             "which all future parameters are compared\&." << endl;
+132     }
+133 }
 .fi
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Andrew and Nick's Project from the source code\&.
+Generated automatically by Doxygen for The Automatic Vasospasm Detection Application from the source code\&.

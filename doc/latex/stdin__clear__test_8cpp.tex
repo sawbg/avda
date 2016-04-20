@@ -76,7 +76,7 @@ Definition at line \hyperlink{stdin__clear__test_8cpp_source_l00022}{22} of file
 00026     cout << \textcolor{stringliteral}{"Enter text to ignore: "};
 00027     cout.flush();
 00028     read(STDIN\_FILENO, &text1, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});
-00029     fflush(stdin);
+00029 \textcolor{comment}{//  fflush(stdin);}
 00030     cout << endl << \textcolor{stringliteral}{"Enter text to print: "};
 00031     cout.flush();
 00032     read(STDIN\_FILENO, &text2, \hyperlink{stdin__clear__test_8cpp_a698c124f1c293f98840449d6c5b9d984}{COUNT});

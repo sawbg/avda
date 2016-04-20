@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Andrew and Nick&#39;s Project: src/process_test.cpp Source File</title>
+<title>The Automatic Vasospasm Detection Application: src/process_test.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Andrew and Nick&#39;s Project
+   <div id="projectname">The Automatic Vasospasm Detection Application
    </div>
   </td>
  </tr>
@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('process__test_8cpp_source.html','');})
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">   18</a></span>&#160;<span class="preprocessor">#define COUNT 131072</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacevaso.html">vaso</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceavda.html">avda</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> file = open(<span class="stringliteral">&quot;/home/pi/vaso/etc/audio/test.raw&quot;</span>, O_RDONLY);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> file = open(<span class="stringliteral">&quot;/home/pi/avda/etc/audio/test.raw&quot;</span>, O_RDONLY);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span>(file &lt; 0) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;File unreadable!&quot;</span> &lt;&lt; endl;</div>
@@ -140,22 +140,22 @@ $(document).ready(function(){initNavTree('process__test_8cpp_source.html','');})
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    close(file);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structDataParams.html">DataParams</a> params = <a class="code" href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">process</a>(buffer, <a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a>, <a class="code" href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structDataParams.html">DataParams</a> params = <a class="code" href="namespaceavda.html#a5196cce27286d08ca144a460caee7839">process</a>(buffer, <a class="code" href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a>, <a class="code" href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    free(buffer);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Cutoff: &quot;</span> &lt;&lt; params.<a class="code" href="structDataParams.html#a12566e017407647bc8287d62554ad3fb">freq</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Noise: &quot;</span> &lt;&lt; params.<a class="code" href="structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f">noise</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="ttc" id="definitions_8hpp_html_a8ace559345ecba7978591ac2ef22aea4"><div class="ttname"><a href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a></div><div class="ttdeci">const uint16 SAMPLE_FREQ</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00063">definitions.hpp:63</a></div></div>
+<div class="ttc" id="definitions_8hpp_html_a8ace559345ecba7978591ac2ef22aea4"><div class="ttname"><a href="definitions_8hpp.html#a8ace559345ecba7978591ac2ef22aea4">SAMPLE_FREQ</a></div><div class="ttdeci">const uint16 SAMPLE_FREQ</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00074">definitions.hpp:74</a></div></div>
 <div class="ttc" id="definitions_8hpp_html"><div class="ttname"><a href="definitions_8hpp.html">definitions.hpp</a></div><div class="ttdoc">Contains declarations of system-independant (universal size) integers and float types, shortened type names for some commonly used types, and enumerations. </div></div>
+<div class="ttc" id="namespaceavda_html"><div class="ttname"><a href="namespaceavda.html">avda</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00117">definitions.hpp:117</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="definitions_8hpp_html_aacdc525d6f7bddb3ae95d5c311bd06a1"><div class="ttname"><a href="definitions_8hpp.html#aacdc525d6f7bddb3ae95d5c311bd06a1">float32</a></div><div class="ttdeci">float float32</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00033">definitions.hpp:33</a></div></div>
-<div class="ttc" id="structDataParams_html_a12566e017407647bc8287d62554ad3fb"><div class="ttname"><a href="structDataParams.html#a12566e017407647bc8287d62554ad3fb">DataParams::freq</a></div><div class="ttdeci">float32 freq</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00087">definitions.hpp:87</a></div></div>
-<div class="ttc" id="namespacevaso_html"><div class="ttname"><a href="namespacevaso.html">vaso</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00106">definitions.hpp:106</a></div></div>
-<div class="ttc" id="namespacevaso_html_a8136a2891983f7a41768330e018e3232"><div class="ttname"><a href="namespacevaso.html#a8136a2891983f7a41768330e018e3232">vaso::process</a></div><div class="ttdeci">DataParams process(float32 *data, uint32 size, float32 samplingRate)</div><div class="ttdef"><b>Definition:</b> <a href="process_8hpp_source.html#l00048">process.hpp:48</a></div></div>
+<div class="ttc" id="structDataParams_html_a12566e017407647bc8287d62554ad3fb"><div class="ttname"><a href="structDataParams.html#a12566e017407647bc8287d62554ad3fb">DataParams::freq</a></div><div class="ttdeci">float32 freq</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00098">definitions.hpp:98</a></div></div>
+<div class="ttc" id="namespaceavda_html_a5196cce27286d08ca144a460caee7839"><div class="ttname"><a href="namespaceavda.html#a5196cce27286d08ca144a460caee7839">avda::process</a></div><div class="ttdeci">DataParams process(float32 *data, uint32 size, float32 samplingRate)</div><div class="ttdef"><b>Definition:</b> <a href="process_8hpp_source.html#l00048">process.hpp:48</a></div></div>
 <div class="ttc" id="process__test_8cpp_html_a698c124f1c293f98840449d6c5b9d984"><div class="ttname"><a href="process__test_8cpp.html#a698c124f1c293f98840449d6c5b9d984">COUNT</a></div><div class="ttdeci">#define COUNT</div><div class="ttdef"><b>Definition:</b> <a href="process__test_8cpp_source.html#l00018">process_test.cpp:18</a></div></div>
-<div class="ttc" id="structDataParams_html"><div class="ttname"><a href="structDataParams.html">DataParams</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00086">definitions.hpp:86</a></div></div>
+<div class="ttc" id="structDataParams_html"><div class="ttname"><a href="structDataParams.html">DataParams</a></div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00097">definitions.hpp:97</a></div></div>
 <div class="ttc" id="process__test_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="process__test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="process__test_8cpp_source.html#l00026">process_test.cpp:26</a></div></div>
-<div class="ttc" id="structDataParams_html_a4efd1d2231c6fa7c878c9d5e1650738f"><div class="ttname"><a href="structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f">DataParams::noise</a></div><div class="ttdeci">float32 noise</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00088">definitions.hpp:88</a></div></div>
+<div class="ttc" id="structDataParams_html_a4efd1d2231c6fa7c878c9d5e1650738f"><div class="ttname"><a href="structDataParams.html#a4efd1d2231c6fa7c878c9d5e1650738f">DataParams::noise</a></div><div class="ttdeci">float32 noise</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00099">definitions.hpp:99</a></div></div>
 <div class="ttc" id="process_8hpp_html"><div class="ttname"><a href="process_8hpp.html">process.hpp</a></div><div class="ttdoc">Contains functions related to the program&#39;s threaded processing of audio data. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('process__test_8cpp_source.html','');})
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="process__test_8cpp.html">process_test.cpp</a></li>
-    <li class="footer">Generated on Tue Apr 19 2016 20:03:10 for Andrew and Nick&#39;s Project by
+    <li class="footer">Generated on Wed Apr 20 2016 00:56:09 for The Automatic Vasospasm Detection Application by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

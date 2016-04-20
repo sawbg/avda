@@ -58,12 +58,12 @@ Definition at line \hyperlink{fileio__test_8cpp_source_l00024}{24} of file \hype
 
 \begin{DoxyCode}
 00024            \{
-00025     \textcolor{keywordtype}{string} path = \hyperlink{namespacevaso_a0f49c8240a13e7d853912ad78d5f53c9}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
-00026     map<Side, DataParams> laMap = \hyperlink{namespacevaso_afc1435dcb9c37b3ccde589738b26c909}{ReadParams}(path);
+00025     \textcolor{keywordtype}{string} path = \hyperlink{namespaceavda_a8ee73ec0cb55d4a13e89949764dce89d}{PATIENT\_PATH} + \textcolor{stringliteral}{"wizmack, sammy andy.csv"};
+00026     map<Side, DataParams> laMap = \hyperlink{namespaceavda_a46dc980b65ddfc24749ce25c1290e158}{ReadParams}(path);
 00027     cout <<  laMap[Side::Right].freq << endl;
 00028     cout << laMap[Side::Right].noise << endl;
 00029 
-00030     \hyperlink{namespacevaso_ac272f5c7d73f350442d4657ef0258021}{WriteParams}(laMap, path);
+00030     \hyperlink{namespaceavda_aba04a08b41833ced32ec803d55a63bee}{WriteParams}(laMap, path);
 00031 \}
 \end{DoxyCode}
 
